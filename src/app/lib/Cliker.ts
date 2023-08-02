@@ -15,7 +15,7 @@ export default class Clicker {
   private resourceGeneration: Resource = {
     gold: 0,
     silver: 0,
-    bronze: 1,
+    bronze: 0,
   };
   constructor() {
     this.resource = {
