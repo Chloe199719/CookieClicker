@@ -15,7 +15,7 @@ export default class Clicker {
   private resourceGeneration: Resource = {
     gold: 0,
     silver: 0,
-    bronze: 0,
+    bronze: 1,
   };
   constructor() {
     this.resource = {
@@ -51,6 +51,10 @@ export default class Clicker {
   }
   public getPassiveResourceGeneration(): Resource {
     return this.resourceGeneration;
+  }
+  public buyGrandma(): void {
+    this.grandma.increaseGrandma(this.resource);
+    this.PassiveCalculateResourceGeneration();
   }
   public increaseResource(addValue: Resource): void {
     if (this.resource.bronze + addValue.bronze === 9_999_999_999) {
@@ -101,7 +105,7 @@ class Grandma {
       silver: 0,
       bronze: 10,
     };
-    this.grandmaCostIncrease = 1.15;
+    this.grandmaCostIncrease = 3;
     this.grandmaResourceGeneration = {
       gold: 0,
       silver: 0,
@@ -113,16 +117,48 @@ class Grandma {
       silver: 0,
       bronze: 100,
     } as Resource;
-    this.grandmasUpgradeCostIncrease = 1.15;
+    this.grandmasUpgradeCostIncrease = 2;
   }
   public getGrandmaResourceGeneration(): Resource {
-    return this.grandmaResourceGeneration;
+    return {
+      gold: this.grandmaResourceGeneration.gold * this.grandma,
+      silver: this.grandmaResourceGeneration.silver * this.grandma,
+      bronze: this.grandmaResourceGeneration.bronze * this.grandma,
+    };
   }
   public getGrandmaCost(): Resource {
     return this.grandmaCost;
   }
+  public getGrandmaCostString(): string {
+    let string = "";
+    if (this.grandmaCost.gold > 0) {
+      string += this.grandmaCost.gold.toString();
+    }
+    if (this.grandmaCost.silver > 0) {
+      string += this.grandmaCost.silver.toString();
+    }
+    string += this.grandmaCost.bronze.toString();
+    return string;
+  }
   public getGrandmasUpgradeCost(): Resource {
     return this.grandmasUpgradeCost;
+  }
+  public canBuyGrandma(cookies: Resource): boolean {
+    if (cookies.gold > this.grandmaCost.gold) {
+      return true;
+    } else if (cookies.gold < this.grandmaCost.gold) {
+      return false;
+    }
+
+    // Gold is equal, now compare silver
+    if (cookies.silver > this.grandmaCost.silver) {
+      return true;
+    } else if (cookies.silver < this.grandmaCost.silver) {
+      return false;
+    }
+
+    // Gold and Silver are equal, now compare bronze
+    return cookies.bronze >= this.grandmaCost.bronze;
   }
   public increaseGrandma(cookies: Resource): void {
     cookies.gold -= this.grandmaCost.gold;
