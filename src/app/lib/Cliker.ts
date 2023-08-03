@@ -89,8 +89,76 @@ export default class Clicker {
     return string;
   }
 }
+class Global {
+  //Help Function to update the cost of the upgrade
+  public updateCost(currentCost: Resource, increase: number): Resource {
+    if (currentCost.bronze * increase >= 9_999_999_999) {
+      currentCost.silver += 1;
+      currentCost.bronze = currentCost.bronze * increase - 9_999_999_999;
+    } else {
+      currentCost.bronze *= increase;
+    }
+    if (currentCost.silver * increase >= 9_999_999_999) {
+      currentCost.gold += 1;
+      currentCost.silver = currentCost.silver * increase - 9_999_999_999;
+    } else {
+      currentCost.silver *= increase;
+    }
+    currentCost.gold *= increase;
+    return currentCost;
+  }
+  //Help Function to check if the player can buy the upgrade
+  public canBuy(currentCost: Resource, cookies: Resource): boolean {
+    if (cookies.gold > currentCost.gold) {
+      return true;
+    } else if (cookies.gold < currentCost.gold) {
+      return false;
+    }
 
-class Grandma {
+    // Gold is equal, now compare silver
+    if (cookies.silver > currentCost.silver) {
+      return true;
+    } else if (cookies.silver < currentCost.silver) {
+      return false;
+    }
+
+    // Gold and Silver are equal, now compare bronze
+    return cookies.bronze >= currentCost.bronze;
+  }
+  public buyUpgrade(currentCost: Resource, cookies: Resource): void {
+    cookies.gold -= currentCost.gold;
+    if (cookies.silver - currentCost.silver < 0) {
+      cookies.gold -= 1;
+      cookies.silver += 9_999_999_999;
+      cookies.silver -= currentCost.silver;
+    } else {
+      cookies.silver -= currentCost.silver;
+    }
+    if (cookies.bronze - currentCost.bronze < 0) {
+      if (cookies.silver === 0) {
+        cookies.gold -= 1;
+        cookies.silver += 9_999_999_999;
+      }
+      cookies.silver -= 1;
+      cookies.bronze += 9_999_999_999;
+      cookies.bronze -= currentCost.bronze;
+    } else {
+      cookies.bronze -= currentCost.bronze;
+    }
+  }
+  public ResourceToString(resource: Resource): string {
+    let string = "";
+    if (resource.gold > 0) {
+      string += resource.gold.toString();
+    }
+    if (resource.silver > 0) {
+      string += resource.silver.toString();
+    }
+    string += resource.bronze.toString();
+    return string;
+  }
+}
+class Grandma extends Global {
   private grandma: number;
   private grandmaCost: Resource;
   private grandmaCostIncrease: number;
@@ -99,6 +167,7 @@ class Grandma {
   private grandmasUpgradeCost: Resource;
   private grandmasUpgradeCostIncrease: number;
   constructor() {
+    super();
     this.grandma = 0;
     this.grandmaCost = {
       gold: 0,
@@ -130,75 +199,24 @@ class Grandma {
     return this.grandmaCost;
   }
   public getGrandmaCostString(): string {
-    let string = "";
-    if (this.grandmaCost.gold > 0) {
-      string += this.grandmaCost.gold.toString();
-    }
-    if (this.grandmaCost.silver > 0) {
-      string += this.grandmaCost.silver.toString();
-    }
-    string += this.grandmaCost.bronze.toString();
-    return string;
+    return this.ResourceToString(this.grandmaCost);
   }
   public getGrandmasUpgradeCost(): Resource {
     return this.grandmasUpgradeCost;
   }
   public canBuyGrandma(cookies: Resource): boolean {
-    if (cookies.gold > this.grandmaCost.gold) {
-      return true;
-    } else if (cookies.gold < this.grandmaCost.gold) {
-      return false;
-    }
-
-    // Gold is equal, now compare silver
-    if (cookies.silver > this.grandmaCost.silver) {
-      return true;
-    } else if (cookies.silver < this.grandmaCost.silver) {
-      return false;
-    }
-
-    // Gold and Silver are equal, now compare bronze
-    return cookies.bronze >= this.grandmaCost.bronze;
+    return this.canBuy(this.grandmaCost, cookies);
   }
   public increaseGrandma(cookies: Resource): void {
-    cookies.gold -= this.grandmaCost.gold;
-    if (cookies.silver - this.grandmaCost.silver < 0) {
-      cookies.gold -= 1;
-      cookies.silver += 9_999_999_999;
-      cookies.silver -= this.grandmaCost.silver;
-    } else {
-      cookies.silver -= this.grandmaCost.silver;
-    }
-    if (cookies.bronze - this.grandmaCost.bronze < 0) {
-      if (cookies.silver === 0) {
-        cookies.gold -= 1;
-        cookies.silver += 9_999_999_999;
-      }
-      cookies.silver -= 1;
-      cookies.bronze += 9_999_999_999;
-      cookies.bronze -= this.grandmaCost.bronze;
-    } else {
-      cookies.bronze -= this.grandmaCost.bronze;
-    }
+    this.buyUpgrade(this.grandmaCost, cookies);
     this.grandma += 1;
     this.increaseGrandmaCost();
   }
   private increaseGrandmaCost(): void {
-    if (this.grandmaCost.bronze * this.grandmaCostIncrease >= 9_999_999_999) {
-      this.grandmaCost.silver += 1;
-      this.grandmaCost.bronze =
-        this.grandmaCost.bronze * this.grandmaCostIncrease - 9_999_999_999;
-    } else {
-      this.grandmaCost.bronze *= this.grandmaCostIncrease;
-    }
-    if (this.grandmaCost.silver * this.grandmaCostIncrease >= 9_999_999_999) {
-      this.grandmaCost.gold += 1;
-      this.grandmaCost.silver =
-        this.grandmaCost.silver * this.grandmaCostIncrease - 9_999_999_999;
-    } else {
-      this.grandmaCost.silver *= this.grandmaCostIncrease;
-    }
-    this.grandmaCost.gold *= this.grandmaCostIncrease;
+    this.grandmaCost = this.updateCost(
+      this.grandmaCost,
+      this.grandmaCostIncrease
+    );
   }
   public getGrandmaAmount(): number {
     return this.grandma;
