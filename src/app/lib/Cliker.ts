@@ -125,6 +125,7 @@ class Global {
     // Gold and Silver are equal, now compare bronze
     return cookies.bronze >= currentCost.bronze;
   }
+  //Help Function to buy the upgrade or structure
   public buyUpgrade(currentCost: Resource, cookies: Resource): void {
     cookies.gold -= currentCost.gold;
     if (cookies.silver - currentCost.silver < 0) {
@@ -146,15 +147,16 @@ class Global {
       cookies.bronze -= currentCost.bronze;
     }
   }
+  //Help Function to convert the resource to a string
   public ResourceToString(resource: Resource): string {
     let string = "";
     if (resource.gold > 0) {
-      string += resource.gold.toString();
+      string += Math.trunc(resource.gold).toString();
     }
     if (resource.silver > 0) {
-      string += resource.silver.toString();
+      string += Math.trunc(resource.silver).toString();
     }
-    string += resource.bronze.toString();
+    string += Math.trunc(resource.bronze).toString();
     return string;
   }
 }
