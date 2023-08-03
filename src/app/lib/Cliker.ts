@@ -3,31 +3,88 @@ export type Resource = {
   silver: number;
   bronze: number;
 };
+type gameInit = {
+  resource: Resource;
+  clickResourceGeneration: Resource;
+  resourceGeneration: Resource;
+  grandma: Structure;
+};
 
-export default class Clicker {
-  private resource: Resource;
-  public grandma: Grandma = new Grandma();
-  private clickResourceGeneration: Resource = {
+type StructureInit = {
+  structure: number;
+  structureCost: Resource;
+  structureCostIncrease: number;
+  structureResourceGeneration: Resource;
+  structureUpgrade: number;
+  structureUpgradeMultiplier: number;
+  structureUpgradeCost: Resource;
+  structureUpgradeCostIncrease: number;
+  structureResourceGenerationDefault: Resource;
+};
+const grandmaInit: StructureInit = {
+  structure: 0,
+  structureCost: {
+    gold: 0,
+    silver: 0,
+    bronze: 10,
+  } as Resource,
+  structureCostIncrease: 3,
+  structureResourceGeneration: {
     gold: 0,
     silver: 0,
     bronze: 1,
-  };
-  private resourceGeneration: Resource = {
+  } as Resource,
+  structureUpgrade: 0,
+
+  structureUpgradeCost: {
     gold: 0,
     silver: 0,
-    bronze: 0,
-  };
-  constructor() {
-    this.resource = {
-      gold: 0,
-      silver: 0,
-      bronze: 0,
-    } as Resource;
+    bronze: 100,
+  } as Resource,
+  structureUpgradeMultiplier: 1.4,
+  structureUpgradeCostIncrease: 2,
+  structureResourceGenerationDefault: {
+    gold: 0,
+    silver: 0,
+    bronze: 1,
+  } as Resource,
+};
+
+export default class Clicker {
+  private resource: Resource;
+  public grandma: Structure;
+  private clickResourceGeneration: Resource;
+  private resourceGeneration: Resource;
+  constructor(
+    {
+      resource,
+      clickResourceGeneration,
+      resourceGeneration,
+      grandma,
+    }: gameInit = {
+      resource: {
+        gold: 0,
+        silver: 0,
+        bronze: 0,
+      } as Resource,
+      clickResourceGeneration: { gold: 0, silver: 0, bronze: 1 } as Resource,
+      resourceGeneration: {
+        gold: 0,
+        silver: 0,
+        bronze: 0,
+      } as Resource,
+      grandma: new Structure(grandmaInit),
+    }
+  ) {
+    this.resource = resource;
+    this.clickResourceGeneration = clickResourceGeneration;
+    this.resourceGeneration = resourceGeneration;
+    this.grandma = grandma;
     this.PassiveCalculateResourceGeneration();
   }
   private PassiveCalculateResourceGeneration(): void {
     const Structs: Resource[] = [];
-    Structs.push(this.grandma.getGrandmaResourceGeneration());
+    Structs.push(this.grandma.getStructureResourceGeneration());
     Structs.forEach((struct) => {
       if (this.resourceGeneration.bronze + struct.bronze === 9_999_999_999) {
         this.resourceGeneration.silver += 1;
@@ -53,7 +110,7 @@ export default class Clicker {
     return this.resourceGeneration;
   }
   public buyGrandma(): void {
-    this.grandma.increaseGrandma(this.resource);
+    this.grandma.increaseStructure(this.resource);
     this.PassiveCalculateResourceGeneration();
   }
   public increaseResource(addValue: Resource): void {
@@ -172,108 +229,106 @@ class Global {
     return string;
   }
 }
-class Grandma extends Global {
-  private grandma: number;
-  private grandmaCost: Resource;
-  private grandmaCostIncrease: number;
-  private grandmaResourceGeneration: Resource;
-  private grandmasUpgrade: number;
-  private grandmasUpgradeMultiplier: number;
-  private grandmasUpgradeCost: Resource;
-  private grandmasUpgradeCostIncrease: number;
-  private grandmaResourceGenerationDefault: Resource;
-  constructor() {
+
+class Structure extends Global {
+  private structure: number;
+  private structureCost: Resource;
+  private structureCostIncrease: number;
+  private structureResourceGeneration: Resource;
+  private structureUpgrade: number;
+  private structureUpgradeMultiplier: number;
+  private structureUpgradeCost: Resource;
+  private structureUpgradeCostIncrease: number;
+  private structureResourceGenerationDefault: Resource;
+  constructor({
+    structure,
+    structureCost,
+    structureCostIncrease,
+    structureResourceGeneration,
+    structureResourceGenerationDefault,
+    structureUpgrade,
+    structureUpgradeCost,
+    structureUpgradeCostIncrease,
+    structureUpgradeMultiplier,
+  }: StructureInit) {
     super();
-    this.grandma = 0;
-    this.grandmaCost = {
-      gold: 0,
-      silver: 0,
-      bronze: 10,
-    };
-    this.grandmaCostIncrease = 3;
-    this.grandmaResourceGeneration = {
-      gold: 0,
-      silver: 0,
-      bronze: 1,
-    } as Resource;
-    this.grandmaResourceGenerationDefault = {
-      gold: 0,
-      silver: 0,
-      bronze: 1,
-    } as Resource;
-    this.grandmasUpgrade = 0;
-    this.grandmasUpgradeCost = {
-      gold: 0,
-      silver: 0,
-      bronze: 100,
-    } as Resource;
-    this.grandmasUpgradeCostIncrease = 2;
-    this.grandmasUpgradeMultiplier = 1.4;
+    this.structure = structure;
+    this.structureCost = structureCost;
+    this.structureCostIncrease = structureCostIncrease;
+    this.structureResourceGeneration = structureResourceGeneration;
+    this.structureResourceGenerationDefault =
+      structureResourceGenerationDefault;
+    this.structureUpgrade = structureUpgrade;
+    this.structureUpgradeCost = structureUpgradeCost;
+    this.structureUpgradeCostIncrease = structureUpgradeCostIncrease;
+    this.structureUpgradeMultiplier = structureUpgradeMultiplier;
   }
-  public getGrandmaResourceGeneration(): Resource {
+  public getStructureResourceGeneration(): Resource {
     return {
-      gold: this.grandmaResourceGeneration.gold * this.grandma,
-      silver: this.grandmaResourceGeneration.silver * this.grandma,
-      bronze: this.grandmaResourceGeneration.bronze * this.grandma,
+      gold: this.structureResourceGeneration.gold * this.structure,
+      silver: this.structureResourceGeneration.silver * this.structure,
+      bronze: this.structureResourceGeneration.bronze * this.structure,
     };
   }
   // Not Happy with this function
-  private calculateGrandmaResourceGeneration(): void {
-    for (let i = 0; i < this.grandmasUpgrade; i++) {
+  private calculateStructureResourceGeneration(): void {
+    for (let i = 0; i < this.structureUpgrade; i++) {
       if (
-        this.grandmaResourceGeneration.bronze *
-          this.grandmasUpgradeMultiplier >=
+        this.structureResourceGeneration.bronze *
+          this.structureUpgradeMultiplier >=
         9_999_999_999
       ) {
-        this.grandmaResourceGeneration.silver += 1;
-        this.grandmaResourceGeneration.bronze =
-          this.grandmaResourceGeneration.bronze *
-            this.grandmasUpgradeMultiplier -
+        this.structureResourceGeneration.silver += 1;
+        this.structureResourceGeneration.bronze =
+          this.structureResourceGeneration.bronze *
+            this.structureUpgradeMultiplier -
           9_999_999_999;
       } else {
-        this.grandmaResourceGeneration.bronze *= this.grandmasUpgradeMultiplier;
+        this.structureResourceGeneration.bronze *=
+          this.structureUpgradeMultiplier;
       }
       if (
-        this.grandmaResourceGeneration.silver *
-          this.grandmasUpgradeMultiplier >=
+        this.structureResourceGeneration.silver *
+          this.structureUpgradeMultiplier >=
         9_999_999_999
       ) {
-        this.grandmaResourceGeneration.gold += 1;
-        this.grandmaResourceGeneration.silver =
-          this.grandmaResourceGeneration.silver *
-            this.grandmasUpgradeMultiplier -
+        this.structureResourceGeneration.gold += 1;
+        this.structureResourceGeneration.silver =
+          this.structureResourceGeneration.silver *
+            this.structureUpgradeMultiplier -
           9_999_999_999;
       } else {
-        this.grandmaResourceGeneration.silver *= this.grandmasUpgradeMultiplier;
+        this.structureResourceGeneration.silver *=
+          this.structureUpgradeMultiplier;
       }
-      this.grandmaResourceGeneration.gold *= this.grandmasUpgradeMultiplier;
+      this.structureResourceGeneration.gold *= this.structureUpgradeMultiplier;
     }
   }
 
-  public getGrandmaCost(): Resource {
-    return this.grandmaCost;
+  public getStructureCost(): Resource {
+    return this.structureCost;
   }
-  public getGrandmaCostString(): string {
-    return this.ResourceToString(this.grandmaCost);
+  public getStructureCostString(): string {
+    return this.ResourceToString(this.structureCost);
   }
-  public getGrandmasUpgradeCost(): Resource {
-    return this.grandmasUpgradeCost;
+  public getStructureUpgradeCost(): Resource {
+    return this.structureUpgradeCost;
   }
-  public canBuyGrandma(cookies: Resource): boolean {
-    return this.canBuy(this.grandmaCost, cookies);
+  public canStructureGrandma(cookies: Resource): boolean {
+    return this.canBuy(this.structureCost, cookies);
   }
-  public increaseGrandma(cookies: Resource): void {
-    this.buyUpgrade(this.grandmaCost, cookies);
-    this.grandma += 1;
-    this.increaseGrandmaCost();
+  public increaseStructure(cookies: Resource): void {
+    this.buyUpgrade(this.structureCost, cookies);
+    this.structure += 1;
+    this.increaseStructureCost();
   }
-  private increaseGrandmaCost(): void {
-    this.grandmaCost = this.updateCost(
-      this.grandmaCost,
-      this.grandmaCostIncrease
+  private increaseStructureCost(): void {
+    this.structureCost = this.updateCost(
+      this.structureCost,
+      this.structureCostIncrease
     );
   }
-  public getGrandmaAmount(): number {
-    return this.grandma;
+  public getStructureAmount(): number {
+    return this.structure;
   }
 }
