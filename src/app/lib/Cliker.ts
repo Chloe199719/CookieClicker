@@ -79,13 +79,19 @@ export default class Clicker {
   }
   public get_string_Number(): string {
     let string = "";
-    if (this.resource.gold > 0) {
-      string += this.resource.gold.toString();
-    }
+    string += Math.trunc(this.resource.bronze).toString();
     if (this.resource.silver > 0) {
-      string += this.resource.silver.toString();
+      while (string.length < 10) {
+        string = "0" + string;
+      }
+      string = Math.trunc(this.resource.silver).toString() + string;
     }
-    string += this.resource.bronze.toString();
+    if (this.resource.gold > 0) {
+      while (string.length < 20) {
+        string = "0" + string;
+      }
+      string = Math.trunc(this.resource.gold).toString() + string;
+    }
     return string;
   }
 }
@@ -150,13 +156,19 @@ class Global {
   //Help Function to convert the resource to a string
   public ResourceToString(resource: Resource): string {
     let string = "";
-    if (resource.gold > 0) {
-      string += Math.trunc(resource.gold).toString();
-    }
-    if (resource.silver > 0) {
-      string += Math.trunc(resource.silver).toString();
-    }
     string += Math.trunc(resource.bronze).toString();
+    if (resource.silver > 0) {
+      while (string.length < 10) {
+        string = "0" + string;
+      }
+      string = Math.trunc(resource.silver).toString() + string;
+    }
+    if (resource.gold > 0) {
+      while (string.length < 20) {
+        string = "0" + string;
+      }
+      string = Math.trunc(resource.gold).toString() + string;
+    }
     return string;
   }
 }
@@ -166,8 +178,10 @@ class Grandma extends Global {
   private grandmaCostIncrease: number;
   private grandmaResourceGeneration: Resource;
   private grandmasUpgrade: number;
+  private grandmasUpgradeMultiplier: number;
   private grandmasUpgradeCost: Resource;
   private grandmasUpgradeCostIncrease: number;
+  private grandmaResourceGenerationDefault: Resource;
   constructor() {
     super();
     this.grandma = 0;
@@ -182,6 +196,11 @@ class Grandma extends Global {
       silver: 0,
       bronze: 1,
     } as Resource;
+    this.grandmaResourceGenerationDefault = {
+      gold: 0,
+      silver: 0,
+      bronze: 1,
+    } as Resource;
     this.grandmasUpgrade = 0;
     this.grandmasUpgradeCost = {
       gold: 0,
@@ -189,6 +208,7 @@ class Grandma extends Global {
       bronze: 100,
     } as Resource;
     this.grandmasUpgradeCostIncrease = 2;
+    this.grandmasUpgradeMultiplier = 1.4;
   }
   public getGrandmaResourceGeneration(): Resource {
     return {
@@ -197,6 +217,39 @@ class Grandma extends Global {
       bronze: this.grandmaResourceGeneration.bronze * this.grandma,
     };
   }
+  // Not Happy with this function
+  private calculateGrandmaResourceGeneration(): void {
+    for (let i = 0; i < this.grandmasUpgrade; i++) {
+      if (
+        this.grandmaResourceGeneration.bronze *
+          this.grandmasUpgradeMultiplier >=
+        9_999_999_999
+      ) {
+        this.grandmaResourceGeneration.silver += 1;
+        this.grandmaResourceGeneration.bronze =
+          this.grandmaResourceGeneration.bronze *
+            this.grandmasUpgradeMultiplier -
+          9_999_999_999;
+      } else {
+        this.grandmaResourceGeneration.bronze *= this.grandmasUpgradeMultiplier;
+      }
+      if (
+        this.grandmaResourceGeneration.silver *
+          this.grandmasUpgradeMultiplier >=
+        9_999_999_999
+      ) {
+        this.grandmaResourceGeneration.gold += 1;
+        this.grandmaResourceGeneration.silver =
+          this.grandmaResourceGeneration.silver *
+            this.grandmasUpgradeMultiplier -
+          9_999_999_999;
+      } else {
+        this.grandmaResourceGeneration.silver *= this.grandmasUpgradeMultiplier;
+      }
+      this.grandmaResourceGeneration.gold *= this.grandmasUpgradeMultiplier;
+    }
+  }
+
   public getGrandmaCost(): Resource {
     return this.grandmaCost;
   }
