@@ -41,13 +41,26 @@ function Gameloop() {
           <div>Grandmas: {game.grandma.getStructureAmount()}</div>
           <button
             onClick={() => {
-              if (game.grandma.canStructureGrandma(game.get_resources())) {
+              if (game.grandma.canBuyStructure(game.get_resources())) {
                 game.buyGrandma();
                 setState((prevState) => !prevState);
               }
             }}
           >
             Buy Grandma cost: {game.grandma.getStructureCostString()}
+          </button>
+        </div>
+        <div>
+          <div>Grandma Upgrades: {game.grandma.getStructureUpgrade()} </div>
+          <button
+            onClick={() => {
+              if (game.grandma.canBuyStructureUpgrade(game.get_resources())) {
+                game.buyGrandmaUpgrade();
+                setState((prevState) => !prevState);
+              }
+            }}
+          >
+            Buy Upgrade cost : {game.grandma.getStructureUpgradeCost()}
           </button>
         </div>
       </div>

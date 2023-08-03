@@ -3,14 +3,14 @@ export type Resource = {
   silver: number;
   bronze: number;
 };
-type gameInit = {
+export type gameInit = {
   resource: Resource;
   clickResourceGeneration: Resource;
   resourceGeneration: Resource;
   grandma: Structure;
 };
 
-type StructureInit = {
+export type StructureInit = {
   structure: number;
   structureCost: Resource;
   structureCostIncrease: number;
@@ -21,6 +21,7 @@ type StructureInit = {
   structureUpgradeCostIncrease: number;
   structureResourceGenerationDefault: Resource;
 };
+
 const grandmaInit: StructureInit = {
   structure: 0,
   structureCost: {
@@ -111,6 +112,10 @@ export default class Clicker {
   }
   public buyGrandma(): void {
     this.grandma.increaseStructure(this.resource);
+    this.PassiveCalculateResourceGeneration();
+  }
+  public buyGrandmaUpgrade(): void {
+    this.grandma.buyUpgradeStructure(this.resource);
     this.PassiveCalculateResourceGeneration();
   }
   public increaseResource(addValue: Resource): void {
@@ -272,6 +277,7 @@ class Structure extends Global {
   }
   // Not Happy with this function
   private calculateStructureResourceGeneration(): void {
+    this.structureResourceGeneration = this.structureResourceGenerationDefault;
     for (let i = 0; i < this.structureUpgrade; i++) {
       if (
         this.structureResourceGeneration.bronze *
@@ -304,18 +310,36 @@ class Structure extends Global {
       this.structureResourceGeneration.gold *= this.structureUpgradeMultiplier;
     }
   }
-
+  public buyUpgradeStructure(cookies: Resource): void {
+    this.canBuy(this.structureUpgradeCost, cookies);
+    this.buyUpgrade(this.structureUpgradeCost, cookies);
+    this.structureUpgrade += 1;
+    this.calculateStructureResourceGeneration();
+    this.increaseStructureUpgradeCost();
+  }
+  private increaseStructureUpgradeCost(): void {
+    this.updateCost(
+      this.structureUpgradeCost,
+      this.structureUpgradeCostIncrease
+    );
+  }
   public getStructureCost(): Resource {
     return this.structureCost;
   }
   public getStructureCostString(): string {
     return this.ResourceToString(this.structureCost);
   }
-  public getStructureUpgradeCost(): Resource {
-    return this.structureUpgradeCost;
+  public getStructureUpgradeCost(): string {
+    return this.ResourceToString(this.structureUpgradeCost);
   }
-  public canStructureGrandma(cookies: Resource): boolean {
+  public getStructureUpgrade(): number {
+    return this.structureUpgrade;
+  }
+  public canBuyStructure(cookies: Resource): boolean {
     return this.canBuy(this.structureCost, cookies);
+  }
+  public canBuyStructureUpgrade(cookies: Resource): boolean {
+    return this.canBuy(this.structureUpgradeCost, cookies);
   }
   public increaseStructure(cookies: Resource): void {
     this.buyUpgrade(this.structureCost, cookies);
