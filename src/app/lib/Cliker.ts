@@ -8,6 +8,7 @@ export type gameInit = {
   clickResourceGeneration: Resource;
   resourceGeneration: Resource;
   grandma: Structure;
+  autoClicker: Structure;
 };
 
 export type StructureInit = {
@@ -27,7 +28,7 @@ const grandmaInit: StructureInit = {
   structureCost: {
     gold: 0,
     silver: 0,
-    bronze: 10,
+    bronze: 20,
   } as Resource,
   structureCostIncrease: 3,
   structureResourceGeneration: {
@@ -50,10 +51,38 @@ const grandmaInit: StructureInit = {
     bronze: 1,
   } as Resource,
 };
+const autoClickerInit: StructureInit = {
+  structure: 0,
+  structureCost: {
+    gold: 0,
+    silver: 0,
+    bronze: 10,
+  },
+  structureCostIncrease: 2,
+  structureResourceGeneration: {
+    gold: 0,
+    silver: 0,
+    bronze: 1,
+  } as Resource,
+  structureUpgrade: 0,
+  structureResourceGenerationDefault: {
+    gold: 0,
+    silver: 0,
+    bronze: 1,
+  },
+  structureUpgradeCost: {
+    gold: 0,
+    silver: 0,
+    bronze: 50,
+  } as Resource,
+  structureUpgradeMultiplier: 1.2,
+  structureUpgradeCostIncrease: 2,
+};
 
 export default class Clicker {
   private resource: Resource;
   public grandma: Structure;
+  public autoClicker: Structure;
   private clickResourceGeneration: Resource;
   private resourceGeneration: Resource;
   constructor(
@@ -62,6 +91,7 @@ export default class Clicker {
       clickResourceGeneration,
       resourceGeneration,
       grandma,
+      autoClicker,
     }: gameInit = {
       resource: {
         gold: 0,
@@ -74,6 +104,7 @@ export default class Clicker {
         silver: 0,
         bronze: 0,
       } as Resource,
+      autoClicker: new Structure(autoClickerInit),
       grandma: new Structure(grandmaInit),
     }
   ) {
@@ -81,11 +112,14 @@ export default class Clicker {
     this.clickResourceGeneration = clickResourceGeneration;
     this.resourceGeneration = resourceGeneration;
     this.grandma = grandma;
+    this.autoClicker = autoClicker;
     this.PassiveCalculateResourceGeneration();
   }
   private PassiveCalculateResourceGeneration(): void {
     const Structs: Resource[] = [];
+    // Required to Add more Structures
     Structs.push(this.grandma.getStructureResourceGeneration());
+    Structs.push(this.autoClicker.getStructureResourceGeneration());
     Structs.forEach((struct) => {
       if (this.resourceGeneration.bronze + struct.bronze === 9_999_999_999) {
         this.resourceGeneration.silver += 1;
@@ -110,12 +144,22 @@ export default class Clicker {
   public getPassiveResourceGeneration(): Resource {
     return this.resourceGeneration;
   }
+  // Grandma
   public buyGrandma(): void {
     this.grandma.increaseStructure(this.resource);
     this.PassiveCalculateResourceGeneration();
   }
   public buyGrandmaUpgrade(): void {
     this.grandma.buyUpgradeStructure(this.resource);
+    this.PassiveCalculateResourceGeneration();
+  }
+  // AutoClicker
+  public buyAutoClicker(): void {
+    this.autoClicker.increaseStructure(this.resource);
+    this.PassiveCalculateResourceGeneration();
+  }
+  public buyAutoClickerUpgrade(): void {
+    this.autoClicker.buyUpgradeStructure(this.resource);
     this.PassiveCalculateResourceGeneration();
   }
   public increaseResource(addValue: Resource): void {
