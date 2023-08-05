@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect, useMemo, useState } from "react";
-import Clicker, { Resource } from "./lib/Cliker";
+import Clicker, { Resource } from "./lib/Cliker2";
 
 function Gameloop() {
   const [state, setState] = useState(false);
@@ -20,7 +20,7 @@ function Gameloop() {
   }, [game]);
 
   return (
-    <div className="flex gap-7 justify-center items-center min-h-screen ">
+    <div className="flex gap-7 justify-center items-center min-h-screen bg-black text-white ">
       <div className="flex justify-center items-center flex-col gap-4">
         <div>
           <div>Cookie {game.get_string_Number()}</div>
