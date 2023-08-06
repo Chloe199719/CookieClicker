@@ -115,6 +115,14 @@ export default class Clicker {
   public getClickResourceGeneration(): Resource {
     return this.clickResourceGeneration;
   }
+  public ClickCalculateResourceGeneration(): void {
+    let start = 1;
+    start += this.autoClicker.getStructureAmount();
+    start =
+      start + start * this.autoClicker.getStructureResourceGeneration().cookies;
+    this.clickResourceGeneration.cookies = start;
+    console.log(start);
+  }
   public getPassiveResourceGeneration(): Resource {
     return this.resourceGeneration;
   }
@@ -131,6 +139,7 @@ export default class Clicker {
   public buyAutoClicker(): void {
     this.autoClicker.increaseStructure(this.resource);
     this.PassiveCalculateResourceGeneration();
+    this.ClickCalculateResourceGeneration();
   }
   public buyAutoClickerUpgrade(): void {
     this.autoClicker.buyUpgradeLevel(this.resource);
@@ -402,6 +411,7 @@ class Cursor extends Structure {
     cookies.cookies = cookies.cookies - nextUpgrade.cost.cookies;
     this.increaseStructureLevel();
     this.calculateStructureResourceGeneration1();
+    this.game.ClickCalculateResourceGeneration();
   }
   // Fix name after a concrete Plan
   public calculateStructureResourceGeneration1(): void {
