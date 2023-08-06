@@ -117,11 +117,16 @@ export default class Clicker {
   }
   public ClickCalculateResourceGeneration(): void {
     let start = 1;
-    start += this.autoClicker.getStructureAmount();
-    start =
-      start + start * this.autoClicker.getStructureResourceGeneration().cookies;
+
+    for (let i = 1; i < this.autoClicker.getStructureUpgrade() + 1; i++) {
+      if (i !== 4 && i <= 15) {
+        start *= this.autoClicker.cursorUpgrades.get(i.toString())?.multiplier!;
+      } else if (i === 4) {
+        start += this.autoClicker.getNoneCursorAmount() * 0.1;
+      }
+    }
+
     this.clickResourceGeneration.cookies = start;
-    console.log(start);
   }
   public getPassiveResourceGeneration(): Resource {
     return this.resourceGeneration;
@@ -139,7 +144,6 @@ export default class Clicker {
   public buyAutoClicker(): void {
     this.autoClicker.increaseStructure(this.resource);
     this.PassiveCalculateResourceGeneration();
-    this.ClickCalculateResourceGeneration();
   }
   public buyAutoClickerUpgrade(): void {
     this.autoClicker.buyUpgradeLevel(this.resource);
@@ -452,7 +456,7 @@ class Cursor extends Structure {
     return false;
   }
   // This Function needs to be updated
-  private getNoneCursorAmount(): number {
+  public getNoneCursorAmount(): number {
     let amount = 0;
     amount += this.game.grandma.getStructureAmount();
     return amount;
