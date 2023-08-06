@@ -6,7 +6,7 @@ export type gameInit = {
   clickResourceGeneration: Resource;
   resourceGeneration: Resource;
   grandma: Structure;
-  autoClicker: Cursor;
+  // autoClicker: Cursor;
 };
 
 export type StructureInit = {
@@ -68,7 +68,7 @@ const autoClickerInit: StructureInit = {
 export default class Clicker {
   private resource: Resource;
   public grandma: Structure;
-  public autoClicker: Cursor;
+  public autoClicker: Cursor = new Cursor(this);
   private clickResourceGeneration: Resource;
   private resourceGeneration: Resource;
   constructor(
@@ -77,7 +77,6 @@ export default class Clicker {
       clickResourceGeneration,
       resourceGeneration,
       grandma,
-      autoClicker,
     }: gameInit = {
       resource: {
         cookies: 0,
@@ -86,7 +85,7 @@ export default class Clicker {
       resourceGeneration: {
         cookies: 0,
       } as Resource,
-      autoClicker: new Cursor(),
+
       grandma: new Structure(grandmaInit),
     }
   ) {
@@ -94,9 +93,15 @@ export default class Clicker {
     this.clickResourceGeneration = clickResourceGeneration;
     this.resourceGeneration = resourceGeneration;
     this.grandma = grandma;
-    this.autoClicker = autoClicker;
+
+    // this.autoClicker = autoClicker;
     this.PassiveCalculateResourceGeneration();
+    this.initialize();
   }
+  private initialize(): void {
+    this.autoClicker = new Cursor(this);
+  }
+
   private PassiveCalculateResourceGeneration(): void {
     this.resourceGeneration.cookies = 0;
     const Structs: Resource[] = [];
@@ -124,11 +129,11 @@ export default class Clicker {
   }
   // AutoClicker
   public buyAutoClicker(): void {
-    this.autoClicker.buyUpgradeLevel(this.resource);
+    this.autoClicker.increaseStructure(this.resource);
     this.PassiveCalculateResourceGeneration();
   }
   public buyAutoClickerUpgrade(): void {
-    this.autoClicker.buyUpgradeStructure(this.resource);
+    this.autoClicker.buyUpgradeLevel(this.resource);
     this.PassiveCalculateResourceGeneration();
   }
   public increaseResource(addValue: Resource): void {
@@ -171,7 +176,7 @@ class Global {
   }
 }
 
-class Structure extends Global {
+export class Structure extends Global {
   private structure: number;
   private structureCost: Resource;
 
@@ -258,7 +263,7 @@ class Structure extends Global {
     this.increaseStructureCost();
   }
   public increaseStructureLevel(): void {
-    this.structure += 1;
+    this.structureUpgrade += 1;
   }
   private increaseStructureCost(): void {
     this.structureCost = this.updateCost(
@@ -366,8 +371,9 @@ class Cursor extends Structure {
     },
   };
   public cursorUpgrades = new Map(Object.entries(this.cursorUpgrades1));
+  private game: Clicker;
   // Constructor Needs to be fixed to Allow for Saving
-  constructor() {
+  constructor(game: Clicker) {
     super({
       structure: 0,
       structureCost: { cookies: 15 },
@@ -379,6 +385,7 @@ class Cursor extends Structure {
       structureCostDefault: { cookies: 15 },
       structureUpgradeCostDefault: { cookies: 100 },
     });
+    this.game = game;
     this.calculateStructureResourceGeneration1();
   }
   // Needs Requirements Check TODO
@@ -389,20 +396,27 @@ class Cursor extends Structure {
     if (!nextUpgrade) {
       return;
     }
+    if (!this.canBuyStructureUpgrade(cookies)) {
+      return;
+    }
     cookies.cookies = cookies.cookies - nextUpgrade.cost.cookies;
     this.increaseStructureLevel();
     this.calculateStructureResourceGeneration1();
   }
   // Fix name after a concrete Plan
   public calculateStructureResourceGeneration1(): void {
-    this.structureResourceGeneration = this.structureResourceGenerationDefault;
+    this.structureResourceGeneration.cookies =
+      this.structureResourceGenerationDefault.cookies;
+
     for (let i = 1; i < this.getStructureUpgrade() + 1; i++) {
       if (i !== 4 && i <= 15) {
         this.structureResourceGeneration.cookies *= this.cursorUpgrades.get(
           i.toString()
         )?.multiplier!;
       } else if (i === 4) {
-        // TODO
+        this.structureResourceGeneration.cookies +=
+          this.getNoneCursorAmount() * 0.1;
+        // Check how many other buildigns exist from clicker and multiply by 0.1 per each
       }
     }
   }
@@ -410,5 +424,27 @@ class Cursor extends Structure {
     return this.cursorUpgrades
       .get((this.getStructureUpgrade() + 1).toString())
       ?.cost.cookies.toString()!;
+  }
+  public canBuyStructureUpgrade(cookies: Resource): boolean {
+    const nextUpgrade = this.cursorUpgrades.get(
+      (this.getStructureUpgrade() + 1).toString()
+    );
+    if (!nextUpgrade) {
+      return false;
+    }
+
+    if (
+      cookies.cookies >= nextUpgrade.cost.cookies &&
+      this.getStructureAmount() >= nextUpgrade.requirement
+    ) {
+      return true;
+    }
+    return false;
+  }
+  // This Function needs to be updated
+  private getNoneCursorAmount(): number {
+    let amount = 0;
+    amount += this.game.grandma.getStructureAmount();
+    return amount;
   }
 }

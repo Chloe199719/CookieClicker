@@ -23,7 +23,36 @@ function Gameloop() {
     <div className="flex gap-7 justify-center items-center min-h-screen bg-black text-white ">
       <div className="flex justify-center items-center flex-col gap-4">
         <div>
-          <div>Cookie {game.get_string_Number()}</div>
+          <div className="flex flex-col">
+            Cookie {game.get_string_Number()}{" "}
+            <button
+              className="p2 px-3 bg-red-400 "
+              onClick={() => {
+                game.increaseResource({ cookies: 100 });
+                setState((prevState) => !prevState);
+              }}
+            >
+              Add 100 (dev Only){" "}
+            </button>{" "}
+            <button
+              className="p2 px-3 bg-red-400 "
+              onClick={() => {
+                game.increaseResource({ cookies: 1000 });
+                setState((prevState) => !prevState);
+              }}
+            >
+              Add 1000 (dev Only){" "}
+            </button>
+            <button
+              className="p2 px-3 bg-red-400 "
+              onClick={() => {
+                game.increaseResource({ cookies: 10000 });
+                setState((prevState) => !prevState);
+              }}
+            >
+              Add 10000 (dev Only){" "}
+            </button>
+          </div>
         </div>
         <button
           className=" active:translate-y-1"
