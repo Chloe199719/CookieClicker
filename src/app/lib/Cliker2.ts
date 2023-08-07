@@ -1,11 +1,20 @@
 export type Resource = {
   cookies: number;
 };
+type UpgradeType = {
+  id: number;
+  name: string;
+  cost: Resource;
+  multiplier: number;
+  requirement: number;
+  acquired: boolean;
+  type: "cursor" | "grandma";
+};
 export type gameInit = {
   resource: Resource;
   clickResourceGeneration: Resource;
   resourceGeneration: Resource;
-  grandma: Structure;
+  // grandma: Structure;
   // autoClicker: Cursor;
 };
 
@@ -67,17 +76,13 @@ const autoClickerInit: StructureInit = {
 
 export default class Clicker {
   private resource: Resource;
-  public grandma: Structure;
+  public grandma: Grandma = new Grandma(this);
   public autoClicker: Cursor = new Cursor(this);
+
   private clickResourceGeneration: Resource;
   private resourceGeneration: Resource;
   constructor(
-    {
-      resource,
-      clickResourceGeneration,
-      resourceGeneration,
-      grandma,
-    }: gameInit = {
+    { resource, clickResourceGeneration, resourceGeneration }: gameInit = {
       resource: {
         cookies: 0,
       } as Resource,
@@ -85,14 +90,11 @@ export default class Clicker {
       resourceGeneration: {
         cookies: 0,
       } as Resource,
-
-      grandma: new Structure(grandmaInit),
     }
   ) {
     this.resource = resource;
     this.clickResourceGeneration = clickResourceGeneration;
     this.resourceGeneration = resourceGeneration;
-    this.grandma = grandma;
 
     // this.autoClicker = autoClicker;
     this.PassiveCalculateResourceGeneration();
@@ -100,6 +102,7 @@ export default class Clicker {
   }
   private initialize(): void {
     this.autoClicker = new Cursor(this);
+    this.grandma = new Grandma(this);
   }
 
   private PassiveCalculateResourceGeneration(): void {
@@ -118,13 +121,11 @@ export default class Clicker {
   public ClickCalculateResourceGeneration(): void {
     let start = 1;
 
-    for (let i = 1; i < this.autoClicker.getStructureUpgrade() + 1; i++) {
-      if (i !== 4 && i <= 15) {
-        start *= this.autoClicker.cursorUpgrades.get(i.toString())?.multiplier!;
-      } else if (i === 4) {
-        start += this.autoClicker.getNoneCursorAmount() * 0.1;
+    this.autoClicker.cursorUpgrades.forEach((upgrade) => {
+      if (upgrade.acquired) {
+        start *= upgrade.multiplier;
       }
-    }
+    });
 
     this.clickResourceGeneration.cookies = start;
   }
@@ -145,19 +146,47 @@ export default class Clicker {
     this.autoClicker.increaseStructure(this.resource);
     this.PassiveCalculateResourceGeneration();
   }
-  public buyAutoClickerUpgrade(): void {
-    this.autoClicker.buyUpgradeLevel(this.resource);
+  public buyAutoClickerUpgrade(id: number): void {
+    this.autoClicker.buyUpgradeLevel(this.resource, id);
     this.PassiveCalculateResourceGeneration();
   }
   public increaseResource(addValue: Resource): void {
     this.resource.cookies += addValue.cookies;
   }
+  public buyStructureUpgrade(id: number, type: string): void {
+    if (type === "cursor") {
+      this.autoClicker.buyUpgradeLevel(this.resource, id);
+    }
+    if (type === "grandma") {
+      this.grandma.buyUpgradeLevel(this.resource, id);
+    }
 
+    this.PassiveCalculateResourceGeneration();
+  }
+  public canBuyStructureUpgrade(id: number, type: String): boolean {
+    if (type === "cursor") {
+      return this.autoClicker.canBuyStructureUpgrade(this.resource, id);
+    }
+    if (type === "grandma") {
+      return this.grandma.canBuyStructureUpgrade(this.resource, id);
+    }
+    return false;
+  }
   public get_resources(): Resource {
     return this.resource;
   }
   public get_string_Number(): string {
     return Math.floor(this.resource.cookies).toString();
+  }
+  public getPossibleUpgradeList(): UpgradeType[] {
+    const list: UpgradeType[] = [
+      ...this.autoClicker.getUpgradesInRange(),
+      ...this.grandma.getUpgradesInRange(),
+    ].sort((a, b) => {
+      return a.cost.cookies - b.cost.cookies;
+    });
+
+    return list;
   }
 }
 class Global {
@@ -185,7 +214,7 @@ class Global {
   }
   //Help Function to convert the resource to a string
   public ResourceToString(resource: Resource): string {
-    return resource.cookies.toString();
+    return Math.floor(resource.cookies).toString();
   }
 }
 
@@ -258,7 +287,7 @@ export class Structure extends Global {
   public getStructureCostString(): string {
     return this.ResourceToString(this.structureCost);
   }
-  public getStructureUpgradeCost(): string {
+  public getStructureUpgradeCost(id?: number): string {
     return this.ResourceToString(this.structureUpgradeCost);
   }
   public getStructureUpgrade(): number {
@@ -267,7 +296,7 @@ export class Structure extends Global {
   public canBuyStructure(cookies: Resource): boolean {
     return this.canBuy(this.structureCost, cookies);
   }
-  public canBuyStructureUpgrade(cookies: Resource): boolean {
+  public canBuyStructureUpgrade(cookies: Resource, id?: number): boolean {
     return this.canBuy(this.structureUpgradeCost, cookies);
   }
   public increaseStructure(cookies: Resource): void {
@@ -299,7 +328,8 @@ class Cursor extends Structure {
       multiplier: 2,
       requirement: 1,
       acquired: false,
-    },
+      type: "cursor",
+    } as UpgradeType,
     "2": {
       id: 2,
       name: "Carpal Tunnel Prevention Cream",
@@ -307,7 +337,8 @@ class Cursor extends Structure {
       multiplier: 2,
       requirement: 1,
       acquired: false,
-    },
+      type: "cursor",
+    } as UpgradeType,
     "3": {
       id: 3,
       name: "Ambidextrous",
@@ -315,7 +346,8 @@ class Cursor extends Structure {
       multiplier: 2,
       requirement: 10,
       acquired: false,
-    },
+      type: "cursor",
+    } as UpgradeType,
     "4": {
       id: 4,
       name: "Thousand Fingers",
@@ -323,7 +355,8 @@ class Cursor extends Structure {
       multiplier: 0.1, // This requires a special function to check every Building that exists
       requirement: 25,
       acquired: false,
-    },
+      type: "cursor",
+    } as UpgradeType,
     "5": {
       id: 5,
       name: "Million Fingers",
@@ -331,7 +364,8 @@ class Cursor extends Structure {
       multiplier: 5, // Increase the first 1000 cursor by 5?
       requirement: 50,
       acquired: false,
-    },
+      type: "cursor",
+    } as UpgradeType,
     "6": {
       id: 6,
       name: "Billion Fingers",
@@ -339,7 +373,8 @@ class Cursor extends Structure {
       multiplier: 10, // Increase the first 1000 cursor by 10?
       requirement: 100,
       acquired: false,
-    },
+      type: "cursor",
+    } as UpgradeType,
     "7": {
       id: 7,
       name: "Trillion Fingers",
@@ -347,7 +382,8 @@ class Cursor extends Structure {
       multiplier: 20, // Increase the first 1000 cursor by 20?
       requirement: 150,
       acquired: false,
-    },
+      type: "cursor",
+    } as UpgradeType,
     "8": {
       id: 8,
       name: "Quadrillion Fingers",
@@ -355,7 +391,8 @@ class Cursor extends Structure {
       multiplier: 20, // Increase the first 1000 cursor by 20?
       requirement: 200,
       acquired: false,
-    },
+      type: "cursor",
+    } as UpgradeType,
     "9": {
       id: 9,
       name: "Quintillion Fingers",
@@ -363,7 +400,8 @@ class Cursor extends Structure {
       multiplier: 20, // Increase the first 1000 cursor by 20?
       requirement: 250,
       acquired: false,
-    },
+      type: "cursor",
+    } as UpgradeType,
     "10": {
       id: 10,
       name: "Sextillion Fingers",
@@ -371,7 +409,8 @@ class Cursor extends Structure {
       multiplier: 20, // Increase the first 1000 cursor by 20?
       requirement: 300,
       acquired: false,
-    },
+      type: "cursor",
+    } as UpgradeType,
     "11": {
       id: 11,
       name: "Septillion Fingers",
@@ -379,7 +418,8 @@ class Cursor extends Structure {
       multiplier: 20, // Increase the first 1000 cursor by 20?
       requirement: 350,
       acquired: false,
-    },
+      type: "cursor",
+    } as UpgradeType,
     "12": {
       id: 12,
       name: "Octillion Fingers",
@@ -387,7 +427,8 @@ class Cursor extends Structure {
       multiplier: 20, // Increase the first 1000 cursor by 20?
       requirement: 400,
       acquired: false,
-    },
+      type: "cursor",
+    } as UpgradeType,
     "13": {
       id: 13,
       name: "Nonillion Fingers",
@@ -395,7 +436,8 @@ class Cursor extends Structure {
       multiplier: 20, // Increase the first 1000 cursor by 20?
       requirement: 450,
       acquired: false,
-    },
+      type: "cursor",
+    } as UpgradeType,
     "14": {
       id: 14,
       name: "Decillion Fingers",
@@ -403,7 +445,8 @@ class Cursor extends Structure {
       multiplier: 20, // Increase the first 1000 cursor by 20?
       requirement: 500,
       acquired: false,
-    },
+      type: "cursor",
+    } as UpgradeType,
     "15": {
       id: 15,
       name: "Undecillion Fingers",
@@ -411,7 +454,8 @@ class Cursor extends Structure {
       multiplier: 20, // Increase the first 1000 cursor by 20?
       requirement: 550,
       acquired: false,
-    },
+      type: "cursor",
+    } as UpgradeType,
   };
   public cursorUpgrades = new Map(Object.entries(this.cursorUpgrades1));
   private game: Clicker;
@@ -431,19 +475,26 @@ class Cursor extends Structure {
     this.game = game;
     this.calculateStructureResourceGeneration1();
   }
+  public getUpgradesInRange(): UpgradeType[] {
+    const list: UpgradeType[] = [];
+    this.cursorUpgrades.forEach((value, key) => {
+      if (this.getStructureAmount() >= value.requirement && !value.acquired) {
+        list.push(value);
+      }
+    });
+    return list;
+  }
   // Needs Requirements Check TODO
-  public buyUpgradeLevel(cookies: Resource): void {
-    const nextUpgrade = this.cursorUpgrades.get(
-      (this.getStructureUpgrade() + 1).toString()
-    );
+  public buyUpgradeLevel(cookies: Resource, id: number): void {
+    const nextUpgrade = this.cursorUpgrades.get(id.toString());
     if (!nextUpgrade) {
       return;
     }
-    if (!this.canBuyStructureUpgrade(cookies)) {
+    if (!this.canBuyStructureUpgrade(cookies, id)) {
       return;
     }
     cookies.cookies = cookies.cookies - nextUpgrade.cost.cookies;
-    this.increaseStructureLevel();
+    nextUpgrade.acquired = true;
     this.calculateStructureResourceGeneration1();
     this.game.ClickCalculateResourceGeneration();
   }
@@ -451,28 +502,17 @@ class Cursor extends Structure {
   public calculateStructureResourceGeneration1(): void {
     this.structureResourceGeneration.cookies =
       this.structureResourceGenerationDefault.cookies;
-
-    for (let i = 1; i < this.getStructureUpgrade() + 1; i++) {
-      if (i !== 4 && i <= 15) {
-        this.structureResourceGeneration.cookies *= this.cursorUpgrades.get(
-          i.toString()
-        )?.multiplier!;
-      } else if (i === 4) {
-        this.structureResourceGeneration.cookies +=
-          this.getNoneCursorAmount() * 0.1;
-        // Check how many other buildigns exist from clicker and multiply by 0.1 per each
+    this.cursorUpgrades.forEach((value, key) => {
+      if (value.acquired) {
+        this.structureResourceGeneration.cookies *= value.multiplier;
       }
-    }
+    });
   }
-  public getStructureUpgradeCost(): string {
-    return this.cursorUpgrades
-      .get((this.getStructureUpgrade() + 1).toString())
-      ?.cost.cookies.toString()!;
+  public getStructureUpgradeCost(id: number): string {
+    return this.cursorUpgrades.get(id.toString())?.cost.cookies.toString()!;
   }
-  public canBuyStructureUpgrade(cookies: Resource): boolean {
-    const nextUpgrade = this.cursorUpgrades.get(
-      (this.getStructureUpgrade() + 1).toString()
-    );
+  public canBuyStructureUpgrade(cookies: Resource, id: number): boolean {
+    const nextUpgrade = this.cursorUpgrades.get(id.toString());
     if (!nextUpgrade) {
       return false;
     }
@@ -490,5 +530,210 @@ class Cursor extends Structure {
     let amount = 0;
     amount += this.game.grandma.getStructureAmount();
     return amount;
+  }
+}
+
+class Grandma extends Structure {
+  public grandmaUpgrades1: { [key: string]: UpgradeType } = {
+    "16": {
+      id: 16,
+      name: "Forwards from grandma",
+      cost: { cookies: 1000 },
+      multiplier: 2,
+      requirement: 1,
+      acquired: false,
+      type: "grandma",
+    } as UpgradeType,
+    "17": {
+      id: 17,
+      name: "Steel-plated rolling pins",
+      cost: { cookies: 5000 },
+      multiplier: 2,
+      requirement: 5,
+      acquired: false,
+      type: "grandma",
+    },
+    "18": {
+      id: 18,
+      name: "Lubricated dentures",
+      cost: { cookies: 50000 },
+      multiplier: 2,
+      requirement: 25,
+      acquired: false,
+      type: "grandma",
+    },
+    "19": {
+      id: 19,
+      name: "Prune juice",
+      cost: { cookies: 5_000_000 },
+      multiplier: 2,
+      requirement: 50,
+      acquired: false,
+      type: "grandma",
+    },
+    "20": {
+      id: 20,
+      name: "Double-thick glasses",
+      cost: { cookies: 500_000_000 },
+      multiplier: 2,
+      requirement: 100,
+      acquired: false,
+      type: "grandma",
+    },
+    "21": {
+      id: 21,
+      name: "Aging agents",
+      cost: { cookies: 50_000_000_000 },
+      multiplier: 2,
+      requirement: 150,
+      acquired: false,
+      type: "grandma",
+    },
+    "22": {
+      id: 22,
+      name: "Xtreme walkers",
+      cost: { cookies: 50_000_000_000_000 },
+      multiplier: 2,
+      requirement: 200,
+      acquired: false,
+      type: "grandma",
+    },
+    "23": {
+      id: 23,
+      name: "The Unbridling",
+      cost: { cookies: 50_000_000_000_000_000 },
+      multiplier: 2,
+      requirement: 250,
+      acquired: false,
+      type: "grandma",
+    },
+    "24": {
+      id: 24,
+      name: "Reverse dementia",
+      cost: { cookies: 50_000_000_000_000_000_000 },
+      multiplier: 2,
+      requirement: 300,
+      acquired: false,
+      type: "grandma",
+    },
+    "25": {
+      id: 25,
+      name: "Timeproof hair dyes",
+      cost: { cookies: 50_000_000_000_000_000_000_000 },
+      multiplier: 2,
+      requirement: 350,
+      acquired: false,
+      type: "grandma",
+    },
+    "26": {
+      id: 26,
+      name: "Good manners",
+      cost: { cookies: 50_000_000_000_000_000_000_000_000 },
+      multiplier: 2,
+      requirement: 400,
+      acquired: false,
+      type: "grandma",
+    },
+    "27": {
+      id: 27,
+      name: "Generation degeneration",
+      cost: { cookies: 50_000_000_000_000_000_000_000_000_000 },
+      multiplier: 2,
+      requirement: 450,
+      acquired: false,
+      type: "grandma",
+    },
+    "28": {
+      id: 28,
+      name: "Visits",
+      cost: { cookies: 50_000_000_000_000_000_000_000_000_000_000 },
+      multiplier: 2,
+      requirement: 500,
+      acquired: false,
+      type: "grandma",
+    },
+    "29": {
+      id: 29,
+      name: "Kitchen cabinets",
+      cost: { cookies: 50_000_000_000_000_000_000_000_000_000_000_000 },
+      multiplier: 2,
+      requirement: 550,
+      acquired: false,
+      type: "grandma",
+    },
+    "30": {
+      id: 30,
+      name: "Foam-tipped canes",
+      cost: { cookies: 50_000_000_000_000_000_000_000_000_000_000_000_000 },
+      multiplier: 2,
+      requirement: 600,
+      acquired: false,
+      type: "grandma",
+    },
+  };
+  public grandmaUpgrades: Map<string, UpgradeType> = new Map(
+    Object.entries(this.grandmaUpgrades1)
+  );
+  private game: Clicker;
+  constructor(game: Clicker) {
+    super({
+      structure: 0,
+      structureCost: { cookies: 100 },
+      structureResourceGeneration: { cookies: 1 },
+      structureResourceGenerationDefault: { cookies: 1 },
+      structureUpgrade: 0,
+      structureUpgradeCost: { cookies: 100 },
+      structureUpgradeMultiplier: 2, // Not Used to remove
+      structureCostDefault: { cookies: 100 },
+      structureUpgradeCostDefault: { cookies: 100 },
+    });
+    this.game = game;
+  }
+  public getUpgradesInRange(): UpgradeType[] {
+    const upgrades: UpgradeType[] = [];
+    this.grandmaUpgrades.forEach((upgrade) => {
+      if (
+        upgrade.requirement <= this.getStructureAmount() &&
+        !upgrade.acquired
+      ) {
+        upgrades.push(upgrade);
+      }
+    });
+    return upgrades;
+  }
+  public buyUpgradeLevel(cookies: Resource, id: number): void {
+    const upgrade = this.grandmaUpgrades.get(id.toString());
+    if (!upgrade) return;
+    if (!this.canBuyStructureUpgrade(cookies, id)) return;
+    cookies.cookies -= upgrade.cost.cookies;
+    upgrade.acquired = true;
+    this.calculateStructureResourceGeneration1();
+    this.game.ClickCalculateResourceGeneration();
+  }
+  public calculateStructureResourceGeneration1(): void {
+    this.structureResourceGeneration.cookies =
+      this.structureResourceGenerationDefault.cookies;
+    this.grandmaUpgrades.forEach((value, key) => {
+      if (value.acquired) {
+        this.structureResourceGeneration.cookies *= value.multiplier;
+      }
+    });
+  }
+  public getStructureUpgradeCost(id: number): string {
+    return this.grandmaUpgrades.get(id.toString())?.cost.cookies.toString()!;
+  }
+  public canBuyStructureUpgrade(cookies: Resource, id: number): boolean {
+    const nextUpgrade = this.grandmaUpgrades.get(id.toString());
+    if (!nextUpgrade) {
+      return false;
+    }
+
+    if (
+      cookies.cookies >= nextUpgrade.cost.cookies &&
+      this.getStructureAmount() >= nextUpgrade.requirement
+    ) {
+      return true;
+    }
+    return false;
   }
 }

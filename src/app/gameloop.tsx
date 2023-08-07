@@ -66,6 +66,24 @@ function Gameloop() {
       </div>
       <div className="flex flex-col gap-3">
         <div className="flex flex-col border border-cyan-500 p-5 rounded-xl">
+          <h2 className="text-center">Upgrades </h2>
+          {game.getPossibleUpgradeList().map((upgrade) => {
+            return (
+              <button
+                onClick={() => {
+                  if (game.canBuyStructureUpgrade(upgrade.id, upgrade.type)) {
+                    game.buyStructureUpgrade(upgrade.id, upgrade.type);
+                    setState((prevState) => !prevState);
+                  }
+                }}
+                key={upgrade.id}
+              >
+                {upgrade.name}({upgrade.type}) Cost : {upgrade.cost.cookies}
+              </button>
+            );
+          })}
+        </div>
+        <div className="flex flex-col border border-cyan-500 p-5 rounded-xl">
           <div className="flex items-center gap-7">
             <div className="flex flex-col gap-3">
               <div className="flex flex-col gap-2">
@@ -86,27 +104,7 @@ function Gameloop() {
                   Buy Cursor cost: {game.autoClicker.getStructureCostString()}
                 </button>
               </div>
-              <div className="flex flex-col gap-2">
-                <div>
-                  Auto Click Upgrade: {game.autoClicker.getStructureUpgrade()}{" "}
-                </div>
-                <button
-                  className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-200"
-                  onClick={() => {
-                    if (
-                      game.autoClicker.canBuyStructureUpgrade(
-                        game.get_resources()
-                      )
-                    ) {
-                      game.buyAutoClickerUpgrade();
-                      setState((prevState) => !prevState);
-                    }
-                  }}
-                >
-                  Buy Upgrade cost :{" "}
-                  {game.autoClicker.getStructureUpgradeCost()}
-                </button>
-              </div>
+              <div className="flex flex-col gap-2"></div>
             </div>
             <div>
               <Image
@@ -133,24 +131,6 @@ function Gameloop() {
                   }}
                 >
                   Buy Grandma cost: {game.grandma.getStructureCostString()}
-                </button>
-              </div>
-              <div className="flex flex-col gap-2">
-                <div>
-                  Grandma Upgrades: {game.grandma.getStructureUpgrade()}{" "}
-                </div>
-                <button
-                  className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
-                  onClick={() => {
-                    if (
-                      game.grandma.canBuyStructureUpgrade(game.get_resources())
-                    ) {
-                      game.buyGrandmaUpgrade();
-                      setState((prevState) => !prevState);
-                    }
-                  }}
-                >
-                  Buy Upgrade cost : {game.grandma.getStructureUpgradeCost()}
                 </button>
               </div>
             </div>
