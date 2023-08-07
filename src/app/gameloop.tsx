@@ -204,6 +204,32 @@ function Gameloop() {
             </div>
           </div>
         </div>
+        <div className="flex flex-col border border-cyan-500 p-5 rounded-xl">
+          <div className="flex items-center gap-7">
+            <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-2">
+                <div>Mines: {game.mine.getStructureAmount()}</div>
+                {game.mine.getStructureAmount() > 0 && (
+                  <div>Mine CPS: {game.mine.getBuildingCPS()}</div>
+                )}
+                <button
+                  className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
+                  onClick={() => {
+                    if (game.mine.canBuyStructure(game.get_resources())) {
+                      game.buyFarm();
+                      setState((prevState) => !prevState);
+                    }
+                  }}
+                >
+                  Buy Mine cost: {game.mine.getStructureCostString()}
+                </button>
+              </div>
+            </div>
+            <div>
+              <Image src={`/mine.jpg`} alt="mine" width={200} height={300} />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
