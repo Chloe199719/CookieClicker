@@ -226,7 +226,7 @@ function Gameloop() {
               </div>
             </div>
             <div>
-              <Image src={`/mine.jpg`} alt="mine" width={200} height={300} />
+              <Image src={`/mine.png`} alt="mine" width={200} height={300} />
             </div>
           </div>
         </div>
