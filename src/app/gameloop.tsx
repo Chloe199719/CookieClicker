@@ -169,6 +169,29 @@ function Gameloop() {
             </div>
           </div>
         </div>
+        <div className="flex flex-col border border-cyan-500 p-5 rounded-xl">
+          <div className="flex items-center gap-7">
+            <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-2">
+                <div>Farms: {game.farm.getStructureAmount()}</div>
+                <button
+                  className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
+                  onClick={() => {
+                    if (game.farm.canBuyStructure(game.get_resources())) {
+                      game.buyFarm();
+                      setState((prevState) => !prevState);
+                    }
+                  }}
+                >
+                  Buy Farm cost: {game.farm.getStructureCostString()}
+                </button>
+              </div>
+            </div>
+            <div>
+              <Image src={`/farm.jpg`} alt="farm" width={200} height={300} />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

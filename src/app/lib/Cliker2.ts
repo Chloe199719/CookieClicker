@@ -8,7 +8,7 @@ type UpgradeType = {
   multiplier: number;
   requirement: number;
   acquired: boolean;
-  type: "cursor" | "grandma";
+  type: "cursor" | "grandma" | "farm" | "mine" | "factory" | "bank";
 };
 export type gameInit = {
   resource: Resource;
@@ -78,6 +78,7 @@ export default class Clicker {
   private resource: Resource;
   public grandma: Grandma = new Grandma(this);
   public autoClicker: Cursor = new Cursor(this);
+  public farm: Farm = new Farm(this);
 
   private clickResourceGeneration: Resource;
   private resourceGeneration: Resource;
@@ -103,6 +104,7 @@ export default class Clicker {
   private initialize(): void {
     this.autoClicker = new Cursor(this);
     this.grandma = new Grandma(this);
+    this.farm = new Farm(this);
   }
 
   private PassiveCalculateResourceGeneration(): void {
@@ -111,6 +113,7 @@ export default class Clicker {
     // Required to Add more Structures
     Structs.push(this.grandma.getStructureResourceGeneration());
     Structs.push(this.autoClicker.getStructureResourceGeneration());
+    Structs.push(this.farm.getStructureResourceGeneration());
     Structs.forEach((struct) => {
       this.resourceGeneration.cookies += struct.cookies;
     });
@@ -137,19 +140,17 @@ export default class Clicker {
     this.grandma.increaseStructure(this.resource);
     this.PassiveCalculateResourceGeneration();
   }
-  public buyGrandmaUpgrade(): void {
-    this.grandma.buyUpgradeStructure(this.resource);
-    this.PassiveCalculateResourceGeneration();
-  }
   // AutoClicker
   public buyAutoClicker(): void {
     this.autoClicker.increaseStructure(this.resource);
     this.PassiveCalculateResourceGeneration();
   }
-  public buyAutoClickerUpgrade(id: number): void {
-    this.autoClicker.buyUpgradeLevel(this.resource, id);
+  // Farm
+  public buyFarm(): void {
+    this.farm.increaseStructure(this.resource);
     this.PassiveCalculateResourceGeneration();
   }
+
   public increaseResource(addValue: Resource): void {
     this.resource.cookies += addValue.cookies;
   }
@@ -160,7 +161,9 @@ export default class Clicker {
     if (type === "grandma") {
       this.grandma.buyUpgradeLevel(this.resource, id);
     }
-
+    if (type === "farm") {
+      this.farm.buyUpgradeLevel(this.resource, id);
+    }
     this.PassiveCalculateResourceGeneration();
   }
   public canBuyStructureUpgrade(id: number, type: String): boolean {
@@ -169,6 +172,9 @@ export default class Clicker {
     }
     if (type === "grandma") {
       return this.grandma.canBuyStructureUpgrade(this.resource, id);
+    }
+    if (type === "farm") {
+      return this.farm.canBuyStructureUpgrade(this.resource, id);
     }
     return false;
   }
@@ -182,6 +188,7 @@ export default class Clicker {
     const list: UpgradeType[] = [
       ...this.autoClicker.getUpgradesInRange(),
       ...this.grandma.getUpgradesInRange(),
+      ...this.farm.getUpgradesInRange(),
     ].sort((a, b) => {
       return a.cost.cookies - b.cost.cookies;
     });
@@ -207,8 +214,13 @@ export default class Clicker {
           this.autoClicker.getStructureResourceGeneration(),
         cursorUpgrades: Object.fromEntries(this.autoClicker.cursorUpgrades),
       },
+      farm: {
+        structure: this.farm.getStructureAmount(),
+        structureCost: this.farm.getStructureCost(),
+        structureResourceGeneration: this.farm.getStructureResourceGeneration(),
+        farmUpgrades: Object.fromEntries(this.farm.farmUpgrades),
+      },
     };
-    console.log(save);
     return save;
   }
   public LoadGame(save: any) {
@@ -229,6 +241,11 @@ export default class Clicker {
     this.autoClicker.cursorUpgrades = new Map(
       Object.entries(save.autoClicker.cursorUpgrades)
     );
+    this.farm.structureResourceGeneration =
+      save.farm.structureResourceGeneration;
+    this.farm.structureCost = save.farm.structureCost;
+    this.farm.structure = save.farm.structure;
+    this.farm.farmUpgrades = new Map(Object.entries(save.farm.farmUpgrades));
   }
 }
 class Global {
@@ -766,6 +783,214 @@ class Grandma extends Structure {
   }
   public canBuyStructureUpgrade(cookies: Resource, id: number): boolean {
     const nextUpgrade = this.grandmaUpgrades.get(id.toString());
+    if (!nextUpgrade) {
+      return false;
+    }
+
+    if (
+      cookies.cookies >= nextUpgrade.cost.cookies &&
+      this.getStructureAmount() >= nextUpgrade.requirement
+    ) {
+      return true;
+    }
+    return false;
+  }
+}
+
+class Farm extends Structure {
+  public farmUpgrades1: { [key: string]: UpgradeType } = {
+    "31": {
+      id: 31,
+      name: "Cheap hoes",
+      cost: { cookies: 11_000 },
+      multiplier: 2,
+      requirement: 1,
+      acquired: false,
+      type: "farm",
+    },
+    "32": {
+      id: 32,
+      name: "Fertilizer",
+      cost: { cookies: 55_000 },
+      multiplier: 2,
+      requirement: 5,
+      acquired: false,
+      type: "farm",
+    },
+    "33": {
+      id: 33,
+      name: "Cookie trees",
+      cost: { cookies: 550_000 },
+      multiplier: 2,
+      requirement: 25,
+      acquired: false,
+      type: "farm",
+    },
+    "34": {
+      id: 34,
+      name: "Genetically-modified cookies",
+      cost: { cookies: 55_000_000 },
+      multiplier: 2,
+      requirement: 50,
+      acquired: false,
+      type: "farm",
+    },
+    "35": {
+      id: 35,
+      name: "Gingerbread scarecrows",
+      cost: { cookies: 550_000_000_000 },
+      multiplier: 2,
+      requirement: 100,
+      acquired: false,
+      type: "farm",
+    },
+    "36": {
+      id: 36,
+      name: "Pulsar sprinklers",
+      cost: { cookies: 550_000_000_000_000 },
+      multiplier: 2,
+      requirement: 150,
+      acquired: false,
+      type: "farm",
+    },
+    "37": {
+      id: 37,
+      name: "Fudge fungus",
+      cost: { cookies: 550_000_000_000_000_000 },
+      multiplier: 2,
+      requirement: 200,
+      acquired: false,
+      type: "farm",
+    },
+    "38": {
+      id: 38,
+      name: "Wheat triffids",
+      cost: { cookies: 550_000_000_000_000_000_000 },
+      multiplier: 2,
+      requirement: 250,
+      acquired: false,
+      type: "farm",
+    },
+    "39": {
+      id: 39,
+      name: "Humane pesticides",
+      cost: { cookies: 550_000_000_000_000_000_000_000 },
+      multiplier: 2,
+      requirement: 300,
+      acquired: false,
+      type: "farm",
+    },
+    "40": {
+      id: 40,
+      name: "Barnstars",
+
+      cost: { cookies: 550_000_000_000_000_000_000_000_000 },
+      multiplier: 2,
+      requirement: 350,
+      acquired: false,
+      type: "farm",
+    },
+    "41": {
+      id: 41,
+      name: "Lindworms",
+      cost: { cookies: 550_000_000_000_000_000_000_000_000_000 },
+      multiplier: 2,
+      requirement: 400,
+      acquired: false,
+      type: "farm",
+    },
+    "42": {
+      id: 42,
+      name: "Global seed vault",
+      cost: { cookies: 550_000_000_000_000_000_000_000_000_000_000 },
+      multiplier: 2,
+      requirement: 450,
+      acquired: false,
+      type: "farm",
+    },
+    "43": {
+      id: 43,
+      name: "Reverse-veganism",
+      cost: { cookies: 550_000_000_000_000_000_000_000_000_000_000_000 },
+      multiplier: 2,
+      requirement: 500,
+      acquired: false,
+      type: "farm",
+    },
+    "44": {
+      id: 44,
+      name: "Cookie mulch",
+      cost: { cookies: 550_000_000_000_000_000_000_000_000_000_000_000_000 },
+      multiplier: 2,
+      requirement: 550,
+      acquired: false,
+      type: "farm",
+    },
+    "45": {
+      id: 45,
+      name: "Self-driving tractors",
+      cost: {
+        cookies: 550_000_000_000_000_000_000_000_000_000_000_000_000_000,
+      },
+      multiplier: 2,
+      requirement: 600,
+      acquired: false,
+      type: "farm",
+    },
+  };
+  public farmUpgrades: Map<string, UpgradeType> = new Map(
+    Object.entries(this.farmUpgrades1)
+  );
+  private game: Clicker;
+  constructor(game: Clicker) {
+    super({
+      structure: 0,
+      structureCost: { cookies: 1100 },
+      structureResourceGeneration: { cookies: 8 },
+      structureResourceGenerationDefault: { cookies: 8 },
+      structureUpgrade: 0,
+      structureUpgradeCost: { cookies: 100 },
+      structureUpgradeMultiplier: 2, // Not Used to remove
+      structureCostDefault: { cookies: 1100 },
+      structureUpgradeCostDefault: { cookies: 100 },
+    });
+    this.game = game;
+  }
+  public getUpgradesInRange(): UpgradeType[] {
+    const upgrades: UpgradeType[] = [];
+    this.farmUpgrades.forEach((upgrade) => {
+      if (
+        upgrade.requirement <= this.getStructureAmount() &&
+        !upgrade.acquired
+      ) {
+        upgrades.push(upgrade);
+      }
+    });
+    return upgrades;
+  }
+  public buyUpgradeLevel(cookies: Resource, id: number): void {
+    const upgrade = this.farmUpgrades.get(id.toString());
+    if (!upgrade) return;
+    if (!this.canBuyStructureUpgrade(cookies, id)) return;
+    cookies.cookies -= upgrade.cost.cookies;
+    upgrade.acquired = true;
+    this.calculateStructureResourceGeneration1();
+    this.game.ClickCalculateResourceGeneration();
+  }
+  public calculateStructureResourceGeneration1(): void {
+    this.structureResourceGeneration.cookies =
+      this.structureResourceGenerationDefault.cookies;
+    this.farmUpgrades.forEach((value, key) => {
+      if (value.acquired) {
+        this.structureResourceGeneration.cookies *= value.multiplier;
+      }
+    });
+  }
+  public getStructureUpgradeCost(id: number): string {
+    return this.farmUpgrades.get(id.toString())?.cost.cookies.toString()!;
+  }
+  public canBuyStructureUpgrade(cookies: Resource, id: number): boolean {
+    const nextUpgrade = this.farmUpgrades.get(id.toString());
     if (!nextUpgrade) {
       return false;
     }
