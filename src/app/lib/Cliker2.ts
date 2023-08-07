@@ -21,58 +21,54 @@ export type gameInit = {
 export type StructureInit = {
   structure: number;
   structureCost: Resource;
-
-  structureResourceGeneration: Resource;
-  structureUpgrade: number;
-  structureUpgradeMultiplier: number;
-  structureUpgradeCost: Resource;
-  structureResourceGenerationDefault: Resource;
   structureCostDefault: Resource;
-  structureUpgradeCostDefault: Resource;
+  structureResourceGeneration: Resource;
+
+  structureResourceGenerationDefault: Resource;
 };
 
-const grandmaInit: StructureInit = {
-  structure: 0,
-  structureCost: {
-    cookies: 100,
-  } as Resource,
+// const grandmaInit: StructureInit = {
+//   structure: 0,
+//   structureCost: {
+//     cookies: 100,
+//   } as Resource,
 
-  structureResourceGeneration: {
-    cookies: 1,
-  } as Resource,
-  structureUpgrade: 0,
+//   structureResourceGeneration: {
+//     cookies: 1,
+//   } as Resource,
+//   structureUpgrade: 0,
 
-  structureUpgradeCost: {
-    cookies: 100,
-  } as Resource,
-  structureUpgradeMultiplier: 1.4,
+//   structureUpgradeCost: {
+//     cookies: 100,
+//   } as Resource,
+//   structureUpgradeMultiplier: 1.4,
 
-  structureResourceGenerationDefault: {
-    cookies: 1,
-  } as Resource,
-  structureCostDefault: { cookies: 20 } as Resource,
-  structureUpgradeCostDefault: { cookies: 100 } as Resource,
-};
-const autoClickerInit: StructureInit = {
-  structure: 0,
-  structureCost: {
-    cookies: 15,
-  },
+//   structureResourceGenerationDefault: {
+//     cookies: 1,
+//   } as Resource,
+//   structureCostDefault: { cookies: 20 } as Resource,
+//   structureUpgradeCostDefault: { cookies: 100 } as Resource,
+// };
+// const autoClickerInit: StructureInit = {
+//   structure: 0,
+//   structureCost: {
+//     cookies: 15,
+//   },
 
-  structureResourceGeneration: {
-    cookies: 0.1,
-  } as Resource,
-  structureUpgrade: 0,
-  structureResourceGenerationDefault: {
-    cookies: 1,
-  },
-  structureUpgradeCost: {
-    cookies: 100,
-  } as Resource,
-  structureUpgradeMultiplier: 1.15,
-  structureCostDefault: { cookies: 10 } as Resource,
-  structureUpgradeCostDefault: { cookies: 100 } as Resource,
-};
+//   structureResourceGeneration: {
+//     cookies: 0.1,
+//   } as Resource,
+//   structureUpgrade: 0,
+//   structureResourceGenerationDefault: {
+//     cookies: 1,
+//   },
+//   structureUpgradeCost: {
+//     cookies: 100,
+//   } as Resource,
+//   structureUpgradeMultiplier: 1.15,
+//   structureCostDefault: { cookies: 10 } as Resource,
+//   structureUpgradeCostDefault: { cookies: 100 } as Resource,
+// };
 
 export default class Clicker {
   private resource: Resource;
@@ -201,23 +197,22 @@ export default class Clicker {
       clickResourceGeneration: this.clickResourceGeneration,
       resourceGeneration: this.resourceGeneration,
       grandma: {
-        structure: this.grandma.getStructureAmount(),
-        structureCost: this.grandma.getStructureCost(),
-        structureResourceGeneration:
-          this.grandma.getStructureResourceGeneration(),
+        structure: this.grandma.structure,
+        structureCost: this.grandma.structureCost,
+        structureResourceGeneration: this.grandma.structureResourceGeneration,
         grandmaUpgrades: Object.fromEntries(this.grandma.grandmaUpgrades),
       },
       autoClicker: {
-        structure: this.autoClicker.getStructureAmount(),
-        structureCost: this.autoClicker.getStructureCost(),
+        structure: this.autoClicker.structure,
+        structureCost: this.autoClicker.structureCost,
         structureResourceGeneration:
-          this.autoClicker.getStructureResourceGeneration(),
+          this.autoClicker.structureResourceGeneration,
         cursorUpgrades: Object.fromEntries(this.autoClicker.cursorUpgrades),
       },
       farm: {
         structure: this.farm.getStructureAmount(),
         structureCost: this.farm.getStructureCost(),
-        structureResourceGeneration: this.farm.getStructureResourceGeneration(),
+        structureResourceGeneration: this.farm.structureResourceGeneration,
         farmUpgrades: Object.fromEntries(this.farm.farmUpgrades),
       },
     };
@@ -225,27 +220,25 @@ export default class Clicker {
   }
   public LoadGame(save: any) {
     this.resource = save.resource;
-    this.clickResourceGeneration = save.clickResourceGeneration;
-    this.resourceGeneration = save.resourceGeneration;
-    this.grandma.structureResourceGeneration =
-      save.grandma.structureResourceGeneration;
     this.grandma.structureCost = save.grandma.structureCost;
     this.grandma.structure = save.grandma.structure;
     this.grandma.grandmaUpgrades = new Map(
       Object.entries(save.grandma.grandmaUpgrades)
     );
-    this.autoClicker.structureResourceGeneration =
-      save.autoClicker.structureResourceGeneration;
+    this.grandma.calculateStructureResourceGeneration1();
     this.autoClicker.structureCost = save.autoClicker.structureCost;
     this.autoClicker.structure = save.autoClicker.structure;
     this.autoClicker.cursorUpgrades = new Map(
       Object.entries(save.autoClicker.cursorUpgrades)
     );
-    this.farm.structureResourceGeneration =
-      save.farm.structureResourceGeneration;
+    this.autoClicker.calculateStructureResourceGeneration1();
+
     this.farm.structureCost = save.farm.structureCost;
     this.farm.structure = save.farm.structure;
     this.farm.farmUpgrades = new Map(Object.entries(save.farm.farmUpgrades));
+    this.farm.calculateStructureResourceGeneration1();
+    this.PassiveCalculateResourceGeneration();
+    this.ClickCalculateResourceGeneration();
   }
 }
 class Global {
@@ -282,89 +275,29 @@ export class Structure extends Global {
   public structureCost: Resource;
 
   public structureResourceGeneration: Resource;
-  private structureUpgrade: number;
-  private structureUpgradeMultiplier: number;
-  private structureUpgradeCost: Resource;
-  public structureResourceGenerationDefault: Resource;
+
   private structureCostDefault: Resource;
-  private structureUpgradeCostDefault: Resource;
+  public structureResourceGenerationDefault: Resource;
+
   constructor({
     structure,
     structureCost,
-
+    structureCostDefault,
     structureResourceGeneration,
     structureResourceGenerationDefault,
-    structureUpgrade,
-    structureUpgradeCost,
-    structureUpgradeMultiplier,
-    structureCostDefault,
-    structureUpgradeCostDefault,
   }: StructureInit) {
     super();
     this.structure = structure;
     this.structureCost = structureCost;
+    this.structureCostDefault = structureCostDefault;
     this.structureResourceGeneration = structureResourceGeneration;
     this.structureResourceGenerationDefault =
       structureResourceGenerationDefault;
-    this.structureUpgrade = structureUpgrade;
-    this.structureUpgradeCost = structureUpgradeCost;
-
-    this.structureUpgradeMultiplier = structureUpgradeMultiplier;
-    this.structureCostDefault = structureCostDefault;
-    this.structureUpgradeCostDefault = structureUpgradeCostDefault;
-  }
-  public getStructureResourceGeneration(): Resource {
-    return {
-      cookies: this.structureResourceGeneration.cookies * this.structure,
-    };
-  }
-  // Not Happy with this function
-  private calculateStructureResourceGeneration(): void {
-    this.structureResourceGeneration = this.structureResourceGenerationDefault;
-    for (let i = 0; i < this.structureUpgrade; i++) {
-      this.structureResourceGeneration.cookies *=
-        this.structureUpgradeMultiplier;
-    }
-  }
-  public buyUpgradeStructure(cookies: Resource): void {
-    this.canBuy(this.structureUpgradeCost, cookies);
-    this.buyUpgrade(this.structureUpgradeCost, cookies);
-    this.structureUpgrade += 1;
-    this.calculateStructureResourceGeneration();
-    this.increaseStructureUpgradeCost();
-  }
-  private increaseStructureUpgradeCost(): void {
-    this.updateCost(
-      this.structureUpgradeCost,
-      this.structureUpgradeCostDefault,
-      this.structureUpgrade
-    );
-  }
-  public getStructureCost(): Resource {
-    return this.structureCost;
-  }
-  public getStructureCostString(): string {
-    return this.ResourceToString(this.structureCost);
-  }
-  public getStructureUpgradeCost(id?: number): string {
-    return this.ResourceToString(this.structureUpgradeCost);
-  }
-  public getStructureUpgrade(): number {
-    return this.structureUpgrade;
-  }
-  public canBuyStructure(cookies: Resource): boolean {
-    return this.canBuy(this.structureCost, cookies);
-  }
-  public canBuyStructureUpgrade(cookies: Resource, id?: number): boolean {
-    return this.canBuy(this.structureUpgradeCost, cookies);
   }
   public increaseStructure(cookies: Resource): void {
     this.buyUpgrade(this.structureCost, cookies);
     this.structure += 1;
     this.increaseStructureCost();
-  }
-  public increaseStructureLevel(): void {
-    this.structureUpgrade += 1;
   }
   private increaseStructureCost(): void {
     this.structureCost = this.updateCost(
@@ -373,6 +306,28 @@ export class Structure extends Global {
       this.structure
     );
   }
+  public getStructureResourceGeneration(): Resource {
+    return {
+      cookies: this.structureResourceGeneration.cookies * this.structure,
+    };
+  }
+
+  public getStructureCost(): Resource {
+    return this.structureCost;
+  }
+  public getStructureCostString(): string {
+    return this.ResourceToString(this.structureCost);
+  }
+
+  public canBuyStructure(cookies: Resource): boolean {
+    return this.canBuy(this.structureCost, cookies);
+  }
+  public getBuildingCPS(): string {
+    return (this.structureResourceGeneration.cookies * this.structure).toFixed(
+      2
+    );
+  }
+
   public getStructureAmount(): number {
     return this.structure;
   }
@@ -523,13 +478,10 @@ class Cursor extends Structure {
     super({
       structure: 0,
       structureCost: { cookies: 15 },
-      structureResourceGeneration: { cookies: 0.1 },
+      structureResourceGeneration: { cookies: 0.0 },
       structureResourceGenerationDefault: { cookies: 0.1 },
-      structureUpgrade: 0,
-      structureUpgradeCost: { cookies: 100 },
-      structureUpgradeMultiplier: 2, // Not Used to remove
+
       structureCostDefault: { cookies: 15 },
-      structureUpgradeCostDefault: { cookies: 100 },
     });
     this.game = game;
     this.calculateStructureResourceGeneration1();
@@ -740,11 +692,8 @@ class Grandma extends Structure {
       structureCost: { cookies: 100 },
       structureResourceGeneration: { cookies: 1 },
       structureResourceGenerationDefault: { cookies: 1 },
-      structureUpgrade: 0,
-      structureUpgradeCost: { cookies: 100 },
-      structureUpgradeMultiplier: 2, // Not Used to remove
+
       structureCostDefault: { cookies: 100 },
-      structureUpgradeCostDefault: { cookies: 100 },
     });
     this.game = game;
   }
@@ -948,11 +897,8 @@ class Farm extends Structure {
       structureCost: { cookies: 1100 },
       structureResourceGeneration: { cookies: 8 },
       structureResourceGenerationDefault: { cookies: 8 },
-      structureUpgrade: 0,
-      structureUpgradeCost: { cookies: 100 },
-      structureUpgradeMultiplier: 2, // Not Used to remove
+
       structureCostDefault: { cookies: 1100 },
-      structureUpgradeCostDefault: { cookies: 100 },
     });
     this.game = game;
   }

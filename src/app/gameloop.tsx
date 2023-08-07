@@ -34,7 +34,8 @@ function Gameloop() {
       <div className="flex justify-center items-center flex-col gap-4">
         <div>
           <div className="flex flex-col">
-            Cookie {game.get_string_Number()}{" "}
+            Cookie {game.get_string_Number()} | Total CPS:{" "}
+            {game.getPassiveResourceGeneration().cookies.toFixed(2)}
             <button
               className="p2 px-3 bg-red-400 "
               onClick={() => {
@@ -67,7 +68,7 @@ function Gameloop() {
                 localStorage.setItem("save", JSON.stringify(game.SaveGame()));
               }}
             >
-              Save
+              Save (unstable)
             </button>
             <button
               onClick={() => {
@@ -75,7 +76,7 @@ function Gameloop() {
                 game.LoadGame(x);
               }}
             >
-              Load
+              Load (unstable)
             </button>
           </div>
         </div>
@@ -88,6 +89,10 @@ function Gameloop() {
         >
           <Image src={`/cookie.jpg`} alt="cookie" width={200} height={200} />
         </button>
+        <div>
+          Cookies Per Click{" "}
+          {game.getClickResourceGeneration().cookies.toFixed(2)}
+        </div>
       </div>
       <div className="flex flex-col gap-3">
         <div className="flex flex-col border border-cyan-500 p-5 rounded-xl">
@@ -112,9 +117,10 @@ function Gameloop() {
           <div className="flex items-center gap-7">
             <div className="flex flex-col gap-3">
               <div className="flex flex-col gap-2">
-                <div>
-                  AutoClicker Cursors: {game.autoClicker.getStructureAmount()}
-                </div>
+                <div>Cursors: {game.autoClicker.getStructureAmount()}</div>
+                {game.autoClicker.getStructureAmount() > 0 && (
+                  <div>Cursor CPS: {game.autoClicker.getBuildingCPS()}</div>
+                )}
                 <button
                   className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-200"
                   onClick={() => {
@@ -146,6 +152,9 @@ function Gameloop() {
             <div className="flex flex-col gap-3">
               <div className="flex flex-col gap-2">
                 <div>Grandmas: {game.grandma.getStructureAmount()}</div>
+                {game.grandma.getStructureAmount() > 0 && (
+                  <div>Grandmas CPS: {game.grandma.getBuildingCPS()}</div>
+                )}
                 <button
                   className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
                   onClick={() => {
@@ -174,6 +183,9 @@ function Gameloop() {
             <div className="flex flex-col gap-3">
               <div className="flex flex-col gap-2">
                 <div>Farms: {game.farm.getStructureAmount()}</div>
+                {game.farm.getStructureAmount() > 0 && (
+                  <div>Farm CPS: {game.farm.getBuildingCPS()}</div>
+                )}
                 <button
                   className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
                   onClick={() => {
