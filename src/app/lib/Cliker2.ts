@@ -188,6 +188,48 @@ export default class Clicker {
 
     return list;
   }
+  public SaveGame() {
+    let save = {
+      resource: this.resource,
+      clickResourceGeneration: this.clickResourceGeneration,
+      resourceGeneration: this.resourceGeneration,
+      grandma: {
+        structure: this.grandma.getStructureAmount(),
+        structureCost: this.grandma.getStructureCost(),
+        structureResourceGeneration:
+          this.grandma.getStructureResourceGeneration(),
+        grandmaUpgrades: Object.fromEntries(this.grandma.grandmaUpgrades),
+      },
+      autoClicker: {
+        structure: this.autoClicker.getStructureAmount(),
+        structureCost: this.autoClicker.getStructureCost(),
+        structureResourceGeneration:
+          this.autoClicker.getStructureResourceGeneration(),
+        cursorUpgrades: Object.fromEntries(this.autoClicker.cursorUpgrades),
+      },
+    };
+    console.log(save);
+    return save;
+  }
+  public LoadGame(save: any) {
+    this.resource = save.resource;
+    this.clickResourceGeneration = save.clickResourceGeneration;
+    this.resourceGeneration = save.resourceGeneration;
+    this.grandma.structureResourceGeneration =
+      save.grandma.structureResourceGeneration;
+    this.grandma.structureCost = save.grandma.structureCost;
+    this.grandma.structure = save.grandma.structure;
+    this.grandma.grandmaUpgrades = new Map(
+      Object.entries(save.grandma.grandmaUpgrades)
+    );
+    this.autoClicker.structureResourceGeneration =
+      save.autoClicker.structureResourceGeneration;
+    this.autoClicker.structureCost = save.autoClicker.structureCost;
+    this.autoClicker.structure = save.autoClicker.structure;
+    this.autoClicker.cursorUpgrades = new Map(
+      Object.entries(save.autoClicker.cursorUpgrades)
+    );
+  }
 }
 class Global {
   //Help Function to update the cost of the upgrade
@@ -219,8 +261,8 @@ class Global {
 }
 
 export class Structure extends Global {
-  private structure: number;
-  private structureCost: Resource;
+  public structure: number;
+  public structureCost: Resource;
 
   public structureResourceGeneration: Resource;
   private structureUpgrade: number;

@@ -18,6 +18,16 @@ function Gameloop() {
       clearInterval(timer);
     };
   }, [game]);
+  // useEffect(() => {
+  //   const timer = setInterval(() => {
+  //     console.log("saving");
+  //     localStorage.setItem("save", JSON.stringify(game.SaveGame()));
+  //   }, 1000 * 60);
+
+  //   return () => {
+  //     clearInterval(timer);
+  //   };
+  // });
 
   return (
     <div className="flex gap-7 justify-center items-center min-h-screen bg-black text-white ">
@@ -51,6 +61,21 @@ function Gameloop() {
               }}
             >
               Add 10000 (dev Only){" "}
+            </button>
+            <button
+              onClick={() => {
+                localStorage.setItem("save", JSON.stringify(game.SaveGame()));
+              }}
+            >
+              Save
+            </button>
+            <button
+              onClick={() => {
+                let x = JSON.parse(localStorage.getItem("save")!);
+                game.LoadGame(x);
+              }}
+            >
+              Load
             </button>
           </div>
         </div>
