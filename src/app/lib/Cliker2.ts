@@ -293,94 +293,124 @@ export class Structure extends Global {
 class Cursor extends Structure {
   public cursorUpgrades1 = {
     "1": {
+      id: 1,
       name: "Reinforced Index Finger",
       cost: { cookies: 100 },
       multiplier: 2,
       requirement: 1,
+      acquired: false,
     },
     "2": {
+      id: 2,
       name: "Carpal Tunnel Prevention Cream",
       cost: { cookies: 500 },
       multiplier: 2,
       requirement: 1,
+      acquired: false,
     },
     "3": {
+      id: 3,
       name: "Ambidextrous",
       cost: { cookies: 10000 },
       multiplier: 2,
       requirement: 10,
+      acquired: false,
     },
     "4": {
+      id: 4,
       name: "Thousand Fingers",
       cost: { cookies: 100000 },
       multiplier: 0.1, // This requires a special function to check every Building that exists
       requirement: 25,
+      acquired: false,
     },
     "5": {
+      id: 5,
       name: "Million Fingers",
       cost: { cookies: 10000000 },
       multiplier: 5, // Increase the first 1000 cursor by 5?
       requirement: 50,
+      acquired: false,
     },
     "6": {
+      id: 6,
       name: "Billion Fingers",
       cost: { cookies: 1000000000 },
       multiplier: 10, // Increase the first 1000 cursor by 10?
       requirement: 100,
+      acquired: false,
     },
     "7": {
+      id: 7,
       name: "Trillion Fingers",
       cost: { cookies: 100000000000 },
       multiplier: 20, // Increase the first 1000 cursor by 20?
       requirement: 150,
+      acquired: false,
     },
     "8": {
+      id: 8,
       name: "Quadrillion Fingers",
       cost: { cookies: 10000000000000 },
       multiplier: 20, // Increase the first 1000 cursor by 20?
       requirement: 200,
+      acquired: false,
     },
     "9": {
+      id: 9,
       name: "Quintillion Fingers",
       cost: { cookies: 1000000000000000 },
       multiplier: 20, // Increase the first 1000 cursor by 20?
       requirement: 250,
+      acquired: false,
     },
     "10": {
+      id: 10,
       name: "Sextillion Fingers",
       cost: { cookies: 100000000000000000 },
       multiplier: 20, // Increase the first 1000 cursor by 20?
       requirement: 300,
+      acquired: false,
     },
     "11": {
+      id: 11,
       name: "Septillion Fingers",
       cost: { cookies: 10000000000000000000 },
       multiplier: 20, // Increase the first 1000 cursor by 20?
       requirement: 350,
+      acquired: false,
     },
     "12": {
+      id: 12,
       name: "Octillion Fingers",
       cost: { cookies: 1000000000000000000000 },
       multiplier: 20, // Increase the first 1000 cursor by 20?
       requirement: 400,
+      acquired: false,
     },
     "13": {
+      id: 13,
       name: "Nonillion Fingers",
       cost: { cookies: 100000000000000000000000 },
       multiplier: 20, // Increase the first 1000 cursor by 20?
       requirement: 450,
+      acquired: false,
     },
     "14": {
+      id: 14,
       name: "Decillion Fingers",
       cost: { cookies: 10000000000000000000000000 },
       multiplier: 20, // Increase the first 1000 cursor by 20?
       requirement: 500,
+      acquired: false,
     },
     "15": {
+      id: 15,
       name: "Undecillion Fingers",
       cost: { cookies: 1000000000000000000000000000 },
       multiplier: 20, // Increase the first 1000 cursor by 20?
       requirement: 550,
+      acquired: false,
     },
   };
   public cursorUpgrades = new Map(Object.entries(this.cursorUpgrades1));
