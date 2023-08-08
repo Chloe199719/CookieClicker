@@ -34,6 +34,7 @@ function Gameloop() {
       return;
     }
     game.LoadGame(x);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const numbers = NumberFormatter;
@@ -341,6 +342,47 @@ function Gameloop() {
                   className="w-48 "
                   src={`/temple.png`}
                   alt="temple"
+                  width={200}
+                  height={300}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col border border-cyan-500 p-5 rounded-xl">
+            <div className="flex items-center gap-7">
+              <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-2">
+                  <div>
+                    Wizard Tower: {game.wizardTower.getStructureAmount()}
+                  </div>
+                  {game.wizardTower.getStructureAmount() > 0 && (
+                    <div>
+                      Wizard Tower CPS: {game.wizardTower.getBuildingCPS()}
+                    </div>
+                  )}
+                  <button
+                    className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
+                    onClick={() => {
+                      if (
+                        game.wizardTower.canBuyStructure(game.get_resources())
+                      ) {
+                        game.buyWizardTower();
+                        setState((prevState) => !prevState);
+                      }
+                    }}
+                  >
+                    Buy Wizard Tower cost:{" "}
+                    {numbers.format(
+                      game.wizardTower.getStructureCost().cookies
+                    )}
+                  </button>
+                </div>
+              </div>
+              <div>
+                <Image
+                  className="w-48 "
+                  src={`/wizardtower.png`}
+                  alt="wizardTower"
                   width={200}
                   height={300}
                 />
