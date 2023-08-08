@@ -31,7 +31,7 @@ function Gameloop() {
 
   const numbers = NumberFormatter;
   return (
-    <div className="flex gap-7 justify-center items-center min-h-screen bg-black text-white ">
+    <div className="flex gap-7 justify-center items-center min-h-screen  bg-black text-white ">
       <div className="flex justify-center items-center flex-col gap-4">
         <div>
           <div className="flex flex-col">
@@ -95,7 +95,7 @@ function Gameloop() {
           {game.getClickResourceGeneration().cookies.toFixed(2)}
         </div>
       </div>
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-3 max-h-screen">
         <div className="flex flex-col border border-cyan-500 p-5 rounded-xl">
           <h2 className="text-center">Upgrades </h2>
           {game.getPossibleUpgradeList().map((upgrade) => {
@@ -109,224 +109,228 @@ function Gameloop() {
                 }}
                 key={upgrade.id}
               >
-                {upgrade.name}({upgrade.type}) Cost : {upgrade.cost.cookies}
+                {upgrade.name}({upgrade.type}) Cost :{" "}
+                {numbers.format(upgrade.cost.cookies)}
               </button>
             );
           })}
         </div>
-        <div className="flex flex-col border border-cyan-500 p-5 rounded-xl">
-          <div className="flex items-center gap-7">
-            <div className="flex flex-col gap-3">
-              <div className="flex flex-col gap-2">
-                <div>Cursors: {game.autoClicker.getStructureAmount()}</div>
-                {game.autoClicker.getStructureAmount() > 0 && (
-                  <div>Cursor CPS: {game.autoClicker.getBuildingCPS()}</div>
-                )}
-                <button
-                  className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-200"
-                  onClick={() => {
-                    if (
-                      game.autoClicker.canBuyStructure(game.get_resources())
-                    ) {
-                      game.buyAutoClicker();
-                      setState((prevState) => !prevState);
-                    }
-                  }}
-                >
-                  Buy Cursor cost: {game.autoClicker.getStructureCostString()}
-                </button>
-              </div>
-              <div className="flex flex-col gap-2"></div>
-            </div>
-            <div>
-              <Image
-                src={`/cursor.png`}
-                alt="grandma"
-                width={200}
-                height={300}
-              />
-            </div>
-          </div>
-        </div>
-        <div className="flex flex-col border border-cyan-500 p-5 rounded-xl">
-          <div className="flex items-center gap-7">
-            <div className="flex flex-col gap-3">
-              <div className="flex flex-col gap-2">
-                <div>Grandmas: {game.grandma.getStructureAmount()}</div>
-                {game.grandma.getStructureAmount() > 0 && (
-                  <div>Grandmas CPS: {game.grandma.getBuildingCPS()}</div>
-                )}
-                <button
-                  className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
-                  onClick={() => {
-                    if (game.grandma.canBuyStructure(game.get_resources())) {
-                      game.buyGrandma();
-                      setState((prevState) => !prevState);
-                    }
-                  }}
-                >
-                  Buy Grandma cost: {game.grandma.getStructureCostString()}
-                </button>
-              </div>
-            </div>
-            <div>
-              <Image
-                src={`/grandma.jpg`}
-                alt="grandma"
-                width={200}
-                height={300}
-              />
-            </div>
-          </div>
-        </div>
-        <div className="flex flex-col border border-cyan-500 p-5 rounded-xl">
-          <div className="flex items-center gap-7">
-            <div className="flex flex-col gap-3">
-              <div className="flex flex-col gap-2">
-                <div>Farms: {game.farm.getStructureAmount()}</div>
-                {game.farm.getStructureAmount() > 0 && (
-                  <div>Farm CPS: {game.farm.getBuildingCPS()}</div>
-                )}
-                <button
-                  className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
-                  onClick={() => {
-                    if (game.farm.canBuyStructure(game.get_resources())) {
-                      game.buyFarm();
-                      setState((prevState) => !prevState);
-                    }
-                  }}
-                >
-                  Buy Farm cost: {game.farm.getStructureCostString()}
-                </button>
-              </div>
-            </div>
-            <div>
-              <Image src={`/farm.jpg`} alt="farm" width={200} height={300} />
-            </div>
-          </div>
-        </div>
-        <div className="flex flex-col border border-cyan-500 p-5 rounded-xl">
-          <div className="flex items-center gap-7">
-            <div className="flex flex-col gap-3">
-              <div className="flex flex-col gap-2">
-                <div>Mines: {game.mine.getStructureAmount()}</div>
-                {game.mine.getStructureAmount() > 0 && (
-                  <div>Mine CPS: {game.mine.getBuildingCPS()}</div>
-                )}
-                <button
-                  className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
-                  onClick={() => {
-                    if (game.mine.canBuyStructure(game.get_resources())) {
-                      game.buyMine();
-                      setState((prevState) => !prevState);
-                    }
-                  }}
-                >
-                  Buy Mine cost: {game.mine.getStructureCostString()}
-                </button>
-              </div>
-            </div>
-            <div>
-              <Image src={`/mine.png`} alt="mine" width={200} height={300} />
-            </div>
-          </div>
-        </div>
-        <div className="flex flex-col border border-cyan-500 p-5 rounded-xl">
-          <div className="flex items-center gap-7">
-            <div className="flex flex-col gap-3">
-              <div className="flex flex-col gap-2">
-                <div>Factorys: {game.factory.getStructureAmount()}</div>
-                {game.factory.getStructureAmount() > 0 && (
-                  <div>Factory CPS: {game.factory.getBuildingCPS()}</div>
-                )}
-                <button
-                  className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
-                  onClick={() => {
-                    if (game.factory.canBuyStructure(game.get_resources())) {
-                      game.buyFactory();
-                      setState((prevState) => !prevState);
-                    }
-                  }}
-                >
-                  Buy Factory cost:{" "}
-                  {numbers.format(game.factory.getStructureCost().cookies)}
-                </button>
-              </div>
-            </div>
-            <div>
-              <Image
-                src={`/factory.jpg`}
-                alt="factory"
-                width={200}
-                height={300}
-              />
-            </div>
-          </div>
-        </div>
-        <div className="flex flex-col border border-cyan-500 p-5 rounded-xl">
-          <div className="flex items-center gap-7">
-            <div className="flex flex-col gap-3">
-              <div className="flex flex-col gap-2">
-                <div>Banks: {game.bank.getStructureAmount()}</div>
-                {game.bank.getStructureAmount() > 0 && (
-                  <div>Banks CPS: {game.bank.getBuildingCPS()}</div>
-                )}
-                <button
-                  className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
-                  onClick={() => {
-                    if (game.bank.canBuyStructure(game.get_resources())) {
-                      game.buyBank();
-                      setState((prevState) => !prevState);
-                    }
-                  }}
-                >
-                  Buy Bank cost:{" "}
-                  {numbers.format(game.bank.getStructureCost().cookies)}
-                </button>
-              </div>
-            </div>
-            <div>
-              <Image
-                className="w-48 "
-                src={`/bank.jpg`}
-                alt="bank"
-                width={200}
-                height={300}
-              />
-            </div>
-          </div>
-        </div>
 
-        <div className="flex flex-col border border-cyan-500 p-5 rounded-xl">
-          <div className="flex items-center gap-7">
-            <div className="flex flex-col gap-3">
-              <div className="flex flex-col gap-2">
-                <div>Temple: {game.temple.getStructureAmount()}</div>
-                {game.temple.getStructureAmount() > 0 && (
-                  <div>Temple CPS: {game.temple.getBuildingCPS()}</div>
-                )}
-                <button
-                  className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
-                  onClick={() => {
-                    if (game.temple.canBuyStructure(game.get_resources())) {
-                      game.buyTemple();
-                      setState((prevState) => !prevState);
-                    }
-                  }}
-                >
-                  Buy Temple cost:{" "}
-                  {numbers.format(game.temple.getStructureCost().cookies)}
-                </button>
+        <div className="flex flex-col gap-3 overflow-y-auto">
+          <div className="flex flex-col border border-cyan-500 p-5 rounded-xl">
+            <div className="flex items-center gap-7">
+              <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-2">
+                  <div>Cursors: {game.autoClicker.getStructureAmount()}</div>
+                  {game.autoClicker.getStructureAmount() > 0 && (
+                    <div>Cursor CPS: {game.autoClicker.getBuildingCPS()}</div>
+                  )}
+                  <button
+                    className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-200"
+                    onClick={() => {
+                      if (
+                        game.autoClicker.canBuyStructure(game.get_resources())
+                      ) {
+                        game.buyAutoClicker();
+                        setState((prevState) => !prevState);
+                      }
+                    }}
+                  >
+                    Buy Cursor cost: {game.autoClicker.getStructureCostString()}
+                  </button>
+                </div>
+                <div className="flex flex-col gap-2"></div>
+              </div>
+              <div>
+                <Image
+                  src={`/cursor.png`}
+                  alt="grandma"
+                  width={200}
+                  height={300}
+                />
               </div>
             </div>
-            <div>
-              <Image
-                className="w-48 "
-                src={`/temple.png`}
-                alt="temple"
-                width={200}
-                height={300}
-              />
+          </div>
+          <div className="flex flex-col border border-cyan-500 p-5 rounded-xl">
+            <div className="flex items-center gap-7">
+              <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-2">
+                  <div>Grandmas: {game.grandma.getStructureAmount()}</div>
+                  {game.grandma.getStructureAmount() > 0 && (
+                    <div>Grandmas CPS: {game.grandma.getBuildingCPS()}</div>
+                  )}
+                  <button
+                    className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
+                    onClick={() => {
+                      if (game.grandma.canBuyStructure(game.get_resources())) {
+                        game.buyGrandma();
+                        setState((prevState) => !prevState);
+                      }
+                    }}
+                  >
+                    Buy Grandma cost: {game.grandma.getStructureCostString()}
+                  </button>
+                </div>
+              </div>
+              <div>
+                <Image
+                  src={`/grandma.jpg`}
+                  alt="grandma"
+                  width={200}
+                  height={300}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col border border-cyan-500 p-5 rounded-xl">
+            <div className="flex items-center gap-7">
+              <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-2">
+                  <div>Farms: {game.farm.getStructureAmount()}</div>
+                  {game.farm.getStructureAmount() > 0 && (
+                    <div>Farm CPS: {game.farm.getBuildingCPS()}</div>
+                  )}
+                  <button
+                    className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
+                    onClick={() => {
+                      if (game.farm.canBuyStructure(game.get_resources())) {
+                        game.buyFarm();
+                        setState((prevState) => !prevState);
+                      }
+                    }}
+                  >
+                    Buy Farm cost: {game.farm.getStructureCostString()}
+                  </button>
+                </div>
+              </div>
+              <div>
+                <Image src={`/farm.jpg`} alt="farm" width={200} height={300} />
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col border border-cyan-500 p-5 rounded-xl">
+            <div className="flex items-center gap-7">
+              <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-2">
+                  <div>Mines: {game.mine.getStructureAmount()}</div>
+                  {game.mine.getStructureAmount() > 0 && (
+                    <div>Mine CPS: {game.mine.getBuildingCPS()}</div>
+                  )}
+                  <button
+                    className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
+                    onClick={() => {
+                      if (game.mine.canBuyStructure(game.get_resources())) {
+                        game.buyMine();
+                        setState((prevState) => !prevState);
+                      }
+                    }}
+                  >
+                    Buy Mine cost: {game.mine.getStructureCostString()}
+                  </button>
+                </div>
+              </div>
+              <div>
+                <Image src={`/mine.png`} alt="mine" width={200} height={300} />
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col border border-cyan-500 p-5 rounded-xl">
+            <div className="flex items-center gap-7">
+              <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-2">
+                  <div>Factorys: {game.factory.getStructureAmount()}</div>
+                  {game.factory.getStructureAmount() > 0 && (
+                    <div>Factory CPS: {game.factory.getBuildingCPS()}</div>
+                  )}
+                  <button
+                    className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
+                    onClick={() => {
+                      if (game.factory.canBuyStructure(game.get_resources())) {
+                        game.buyFactory();
+                        setState((prevState) => !prevState);
+                      }
+                    }}
+                  >
+                    Buy Factory cost:{" "}
+                    {numbers.format(game.factory.getStructureCost().cookies)}
+                  </button>
+                </div>
+              </div>
+              <div>
+                <Image
+                  src={`/factory.jpg`}
+                  alt="factory"
+                  width={200}
+                  height={300}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col border border-cyan-500 p-5 rounded-xl">
+            <div className="flex items-center gap-7">
+              <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-2">
+                  <div>Banks: {game.bank.getStructureAmount()}</div>
+                  {game.bank.getStructureAmount() > 0 && (
+                    <div>Banks CPS: {game.bank.getBuildingCPS()}</div>
+                  )}
+                  <button
+                    className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
+                    onClick={() => {
+                      if (game.bank.canBuyStructure(game.get_resources())) {
+                        game.buyBank();
+                        setState((prevState) => !prevState);
+                      }
+                    }}
+                  >
+                    Buy Bank cost:{" "}
+                    {numbers.format(game.bank.getStructureCost().cookies)}
+                  </button>
+                </div>
+              </div>
+              <div>
+                <Image
+                  className="w-48 "
+                  src={`/bank.jpg`}
+                  alt="bank"
+                  width={200}
+                  height={300}
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col border border-cyan-500 p-5 rounded-xl">
+            <div className="flex items-center gap-7">
+              <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-2">
+                  <div>Temple: {game.temple.getStructureAmount()}</div>
+                  {game.temple.getStructureAmount() > 0 && (
+                    <div>Temple CPS: {game.temple.getBuildingCPS()}</div>
+                  )}
+                  <button
+                    className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
+                    onClick={() => {
+                      if (game.temple.canBuyStructure(game.get_resources())) {
+                        game.buyTemple();
+                        setState((prevState) => !prevState);
+                      }
+                    }}
+                  >
+                    Buy Temple cost:{" "}
+                    {numbers.format(game.temple.getStructureCost().cookies)}
+                  </button>
+                </div>
+              </div>
+              <div>
+                <Image
+                  className="w-48 "
+                  src={`/temple.png`}
+                  alt="temple"
+                  width={200}
+                  height={300}
+                />
+              </div>
             </div>
           </div>
         </div>
