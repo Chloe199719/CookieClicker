@@ -10,9 +10,11 @@ function Gameloop() {
   let game = useMemo(() => new Clicker(), []);
   useEffect(() => {
     const timer = setInterval(() => {
-      game.increaseResource(game.getPassiveResourceGeneration());
+      game.increaseResource({
+        cookies: game.getPassiveResourceGeneration().cookies / 5,
+      });
       setState((prevState) => !prevState);
-    }, 1000);
+    }, 200);
 
     // This will clear Timer on unmount
     return () => {
@@ -30,7 +32,7 @@ function Gameloop() {
   }, [game]);
   useEffect(() => {
     let x = JSON.parse(localStorage.getItem("save")!);
-    if (!x) {
+    if (!x.wizardTower) {
       return;
     }
     game.LoadGame(x);
@@ -71,6 +73,15 @@ function Gameloop() {
               }}
             >
               Add 10000 (dev Only){" "}
+            </button>
+            <button
+              className="p2 px-3 bg-red-400 "
+              onClick={() => {
+                game.increaseResource({ cookies: 100000 });
+                setState((prevState) => !prevState);
+              }}
+            >
+              Add 100000 (dev Only){" "}
             </button>
             <button
               onClick={() => {
