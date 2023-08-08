@@ -34,13 +34,13 @@ Welcome to the Cookie Clicker game repository. This game is all about clicking c
 
 3. Install Depenecies:
 
-  ```bash
+   ```bash
    yarn install
    ```
 
 4. Start Server
 
- ```bash
+   ```bash
    yarn run dev
    ```
 
