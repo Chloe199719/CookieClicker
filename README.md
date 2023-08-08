@@ -23,16 +23,22 @@ Welcome to the Cookie Clicker game repository. This game is all about clicking c
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/cookie-clicker-game.git
+   git clone https://github.com/Chloe199719/CookieClicker.git
    ```
 
 2. Navigate to the project directory:
 
    ```bash
-   cd cookie-clicker-game
+   cd CookieClicker
    ```
 
-3. Open `index.html` in your preferred browser.
+3. ```bash
+   yarn install
+   ```
+   
+4. ```bash
+   yarn run dev
+   ```
 
 ## How to Play
 
