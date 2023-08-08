@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React, { useEffect, useMemo, useState } from "react";
 import Clicker, { Resource } from "./lib/Cliker2";
+import { NumberFormatter } from "./lib/NumberFormater";
 
 function Gameloop() {
   const [state, setState] = useState(false);
@@ -28,12 +29,13 @@ function Gameloop() {
     };
   }, [game]);
 
+  const numbers = NumberFormatter;
   return (
     <div className="flex gap-7 justify-center items-center min-h-screen bg-black text-white ">
       <div className="flex justify-center items-center flex-col gap-4">
         <div>
           <div className="flex flex-col">
-            Cookie {game.get_string_Number()} | Total CPS:{" "}
+            Cookie {numbers.format(game.get_resources().cookies)} | Total CPS:{" "}
             {game.getPassiveResourceGeneration().cookies.toFixed(2)}
             <button
               className="p2 px-3 bg-red-400 "
@@ -42,7 +44,7 @@ function Gameloop() {
                 setState((prevState) => !prevState);
               }}
             >
-              Add 100 (dev Only){" "}
+              Add 100 (dev Only)
             </button>{" "}
             <button
               className="p2 px-3 bg-red-400 "
@@ -246,7 +248,8 @@ function Gameloop() {
                     }
                   }}
                 >
-                  Buy Factory cost: {game.factory.getStructureCostString()}
+                  Buy Factory cost:{" "}
+                  {numbers.format(game.factory.getStructureCost().cookies)}
                 </button>
               </div>
             </div>
@@ -277,7 +280,8 @@ function Gameloop() {
                     }
                   }}
                 >
-                  Buy Bank cost: {game.bank.getStructureCostString()}
+                  Buy Bank cost:{" "}
+                  {numbers.format(game.bank.getStructureCost().cookies)}
                 </button>
               </div>
             </div>
@@ -286,6 +290,40 @@ function Gameloop() {
                 className="w-48 "
                 src={`/bank.jpg`}
                 alt="bank"
+                width={200}
+                height={300}
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col border border-cyan-500 p-5 rounded-xl">
+          <div className="flex items-center gap-7">
+            <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-2">
+                <div>Temple: {game.temple.getStructureAmount()}</div>
+                {game.temple.getStructureAmount() > 0 && (
+                  <div>Temple CPS: {game.temple.getBuildingCPS()}</div>
+                )}
+                <button
+                  className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
+                  onClick={() => {
+                    if (game.temple.canBuyStructure(game.get_resources())) {
+                      game.buyTemple();
+                      setState((prevState) => !prevState);
+                    }
+                  }}
+                >
+                  Buy Temple cost:{" "}
+                  {numbers.format(game.temple.getStructureCost().cookies)}
+                </button>
+              </div>
+            </div>
+            <div>
+              <Image
+                className="w-48 "
+                src={`/temple.png`}
+                alt="temple"
                 width={200}
                 height={300}
               />
