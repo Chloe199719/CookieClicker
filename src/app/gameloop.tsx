@@ -260,6 +260,38 @@ function Gameloop() {
             </div>
           </div>
         </div>
+        <div className="flex flex-col border border-cyan-500 p-5 rounded-xl">
+          <div className="flex items-center gap-7">
+            <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-2">
+                <div>Banks: {game.bank.getStructureAmount()}</div>
+                {game.bank.getStructureAmount() > 0 && (
+                  <div>Banks CPS: {game.bank.getBuildingCPS()}</div>
+                )}
+                <button
+                  className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
+                  onClick={() => {
+                    if (game.bank.canBuyStructure(game.get_resources())) {
+                      game.buyBank();
+                      setState((prevState) => !prevState);
+                    }
+                  }}
+                >
+                  Buy Bank cost: {game.bank.getStructureCostString()}
+                </button>
+              </div>
+            </div>
+            <div>
+              <Image
+                className="w-48 "
+                src={`/bank.jpg`}
+                alt="bank"
+                width={200}
+                height={300}
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
