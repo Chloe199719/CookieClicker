@@ -1,34 +1,62 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Cookie Clicker Game 🍪
 
-## Getting Started
+Welcome to the Cookie Clicker game repository. This game is all about clicking cookies, earning points, and unlocking achievements to boost your gameplay.
 
-First, run the development server:
+## Table of Contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- [Features](#features)
+- [Installation](#installation)
+- [How to Play](#how-to-play)
+- [Screenshots](#screenshots)
+- [Contribute](#contribute)
+- [License](#license)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Basic Gameplay**: Click on the cookie to earn points.
+- **Upgrades**: Use your points to buy upgrades that help you earn points faster.
+- **Achievements**: Unlock special achievements for reaching milestones.
+- **Responsive Design**: Play on any device, from mobile to desktop.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Installation
 
-## Learn More
+1. Clone the repository:
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   git clone https://github.com/yourusername/cookie-clicker-game.git
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Navigate to the project directory:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   ```bash
+   cd cookie-clicker-game
+   ```
 
-## Deploy on Vercel
+3. Open `index.html` in your preferred browser.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## How to Play
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. Click on the cookie in the center of the screen to earn points.
+2. As you accumulate points, you can spend them on upgrades available on the side.
+3. Achievements are unlocked automatically when you reach certain milestones.
+
+## Screenshots
+
+![Screenshot 1](link_to_screenshot1.png)
+![Screenshot 2](link_to_screenshot2.png)
+
+> Replace `link_to_screenshot1.png` and `link_to_screenshot2.png` with the actual paths to your screenshots.
+
+## Contribute
+
+Want to contribute to the Cookie Clicker Game? Here's how:
+
+1. Fork the repository.
+2. Create a new branch: `git checkout -b your-branch-name`.
+3. Make your changes and commit: `git commit -m 'Your Commit Message'`.
+4. Push to the original branch: `git push origin your-branch-name`.
+5. Create a pull request.
+
+## License
+
+This project is licensed under the MIT License. See `LICENSE.md` for more information.
