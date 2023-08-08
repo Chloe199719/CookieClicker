@@ -340,6 +340,18 @@ export default class Clicker {
     this.PassiveCalculateResourceGeneration();
     this.ClickCalculateResourceGeneration();
   }
+  public resetGame(): void {
+    this.resource = { cookies: 0 };
+    this.grandma = new Grandma(this);
+    this.autoClicker = new Cursor(this);
+    this.farm = new Farm(this);
+    this.mine = new Mine(this);
+    this.factory = new Factory(this);
+    this.bank = new Bank(this);
+    this.temple = new Temple(this);
+    this.PassiveCalculateResourceGeneration();
+    this.ClickCalculateResourceGeneration();
+  }
 }
 class Global {
   //Help Function to update the cost of the upgrade

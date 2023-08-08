@@ -7,7 +7,7 @@ import { NumberFormatter } from "./lib/NumberFormater";
 function Gameloop() {
   const [state, setState] = useState(false);
 
-  const game = useMemo(() => new Clicker(), []);
+  let game = useMemo(() => new Clicker(), []);
   useEffect(() => {
     const timer = setInterval(() => {
       game.increaseResource(game.getPassiveResourceGeneration());
@@ -28,6 +28,13 @@ function Gameloop() {
       clearInterval(timer);
     };
   }, [game]);
+  useEffect(() => {
+    let x = JSON.parse(localStorage.getItem("save")!);
+    if (!x) {
+      return;
+    }
+    game.LoadGame(x);
+  }, []);
 
   const numbers = NumberFormatter;
   return (
@@ -78,6 +85,13 @@ function Gameloop() {
               }}
             >
               Load (unstable)
+            </button>
+            <button
+              onClick={() => {
+                game.resetGame();
+              }}
+            >
+              Reset game
             </button>
           </div>
         </div>
