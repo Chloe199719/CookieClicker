@@ -18,16 +18,15 @@ function Gameloop() {
       clearInterval(timer);
     };
   }, [game]);
-  // useEffect(() => {
-  //   const timer = setInterval(() => {
-  //     console.log("saving");
-  //     localStorage.setItem("save", JSON.stringify(game.SaveGame()));
-  //   }, 1000 * 60);
+  useEffect(() => {
+    const timer = setInterval(() => {
+      localStorage.setItem("save", JSON.stringify(game.SaveGame()));
+    }, 1000 * 60 * 5);
 
-  //   return () => {
-  //     clearInterval(timer);
-  //   };
-  // });
+    return () => {
+      clearInterval(timer);
+    };
+  }, [game]);
 
   return (
     <div className="flex gap-7 justify-center items-center min-h-screen bg-black text-white ">
