@@ -32,11 +32,15 @@ Welcome to the Cookie Clicker game repository. This game is all about clicking c
    cd CookieClicker
    ```
 
-3. ```bash
+3. Install Depenecies:
+
+  ```bash
    yarn install
    ```
-   
-4. ```bash
+
+4. Start Server
+
+ ```bash
    yarn run dev
    ```
 
