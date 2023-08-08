@@ -87,7 +87,7 @@ function Gameloop() {
             setState((prevState) => !prevState);
           }}
         >
-          <Image src={`/cookie.jpg`} alt="cookie" width={200} height={200} />
+          <Image src={`/cookie.png`} alt="cookie" width={200} height={200} />
         </button>
         <div>
           Cookies Per Click{" "}
@@ -227,6 +227,37 @@ function Gameloop() {
             </div>
             <div>
               <Image src={`/mine.png`} alt="mine" width={200} height={300} />
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col border border-cyan-500 p-5 rounded-xl">
+          <div className="flex items-center gap-7">
+            <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-2">
+                <div>Factorys: {game.factory.getStructureAmount()}</div>
+                {game.factory.getStructureAmount() > 0 && (
+                  <div>Factory CPS: {game.factory.getBuildingCPS()}</div>
+                )}
+                <button
+                  className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
+                  onClick={() => {
+                    if (game.factory.canBuyStructure(game.get_resources())) {
+                      game.buyFactory();
+                      setState((prevState) => !prevState);
+                    }
+                  }}
+                >
+                  Buy Factory cost: {game.factory.getStructureCostString()}
+                </button>
+              </div>
+            </div>
+            <div>
+              <Image
+                src={`/factory.jpg`}
+                alt="factory"
+                width={200}
+                height={300}
+              />
             </div>
           </div>
         </div>
