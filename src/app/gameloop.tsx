@@ -33,7 +33,7 @@ function Gameloop() {
   }, [game]);
   useEffect(() => {
     let x = JSON.parse(localStorage.getItem("save")!) as SaveType | null;
-    if (!x?.alchemyLab) {
+    if (!x?.timeMachine) {
       return;
     }
     game.LoadGame(x);
@@ -495,6 +495,80 @@ function Gameloop() {
                   className="w-48 "
                   src={`/alchemylab.png`}
                   alt="alchemyLab"
+                  width={200}
+                  height={300}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col border border-cyan-500 p-5 rounded-xl">
+            <div className="flex items-center gap-7">
+              <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-2">
+                  <div>Portal : {game.portal.getStructureAmount()}</div>
+                  {game.portal.getStructureAmount() > 0 && (
+                    <div>Portal CPS: {game.portal.getBuildingCPS()}</div>
+                  )}
+                  <button
+                    className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
+                    onClick={() => {
+                      if (game.portal.canBuyStructure(game.get_resources())) {
+                        game.buyBuilding("portal", 1);
+                        setState((prevState) => !prevState);
+                      }
+                    }}
+                  >
+                    Buy Portal cost:{" "}
+                    {numbers.format(game.portal.getStructureCost().cookies)}
+                  </button>
+                </div>
+              </div>
+              <div>
+                <Image
+                  className="w-48 "
+                  src={`/portal.jpeg`}
+                  alt="Portal"
+                  width={200}
+                  height={300}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col border border-cyan-500 p-5 rounded-xl">
+            <div className="flex items-center gap-7">
+              <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-2">
+                  <div>
+                    Time Machine : {game.timeMachine.getStructureAmount()}
+                  </div>
+                  {game.timeMachine.getStructureAmount() > 0 && (
+                    <div>
+                      Time Machine CPS: {game.timeMachine.getBuildingCPS()}
+                    </div>
+                  )}
+                  <button
+                    className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
+                    onClick={() => {
+                      if (
+                        game.timeMachine.canBuyStructure(game.get_resources())
+                      ) {
+                        game.buyBuilding("timeMachine", 1);
+                        setState((prevState) => !prevState);
+                      }
+                    }}
+                  >
+                    Buy Time Machine cost:{" "}
+                    {numbers.format(
+                      game.timeMachine.getStructureCost().cookies
+                    )}
+                  </button>
+                </div>
+              </div>
+              <div>
+                <Image
+                  className="w-48 "
+                  src={`/timemachine.png`}
+                  alt="Time Machine"
                   width={200}
                   height={300}
                 />

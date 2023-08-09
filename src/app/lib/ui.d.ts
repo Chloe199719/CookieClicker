@@ -64,4 +64,16 @@ export interface SaveType {
     lifeTimeCookiesBuilding: Resource;
     alchemyLabUpgrades: { [key: string]: UpgradeType };
   }
+  portal: {
+    structure: number;
+    structureCost: Resource;
+    lifeTimeCookiesBuilding: Resource;
+    portalUpgrades: { [key: string]: UpgradeType };
+  }
+  timeMachine: {
+    structure: number;
+    structureCost: Resource;
+    lifeTimeCookiesBuilding: Resource;
+    timeMachineUpgrades: { [key: string]: UpgradeType };
+  }
 }
