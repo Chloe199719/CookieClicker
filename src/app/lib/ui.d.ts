@@ -58,4 +58,10 @@ export interface SaveType {
     lifeTimeCookiesBuilding: Resource;
     shipmentUpgrades: { [key: string]: UpgradeType };
   };
+  alchemyLab: {
+    structure: number;
+    structureCost: Resource;
+    lifeTimeCookiesBuilding: Resource;
+    alchemyLabUpgrades: { [key: string]: UpgradeType };
+  }
 }

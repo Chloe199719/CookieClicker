@@ -33,7 +33,7 @@ function Gameloop() {
   }, [game]);
   useEffect(() => {
     let x = JSON.parse(localStorage.getItem("save")!) as SaveType | null;
-    if (!x?.shipment) {
+    if (!x?.alchemyLab) {
       return;
     }
     game.LoadGame(x);
@@ -456,6 +456,45 @@ function Gameloop() {
                   className="w-48 "
                   src={`/shipment.png`}
                   alt="shipment"
+                  width={200}
+                  height={300}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col border border-cyan-500 p-5 rounded-xl">
+            <div className="flex items-center gap-7">
+              <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-2">
+                  <div>
+                    Alchemy Lab : {game.alchemyLab.getStructureAmount()}
+                  </div>
+                  {game.alchemyLab.getStructureAmount() > 0 && (
+                    <div>
+                      Alchemy Lab CPS: {game.alchemyLab.getBuildingCPS()}
+                    </div>
+                  )}
+                  <button
+                    className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
+                    onClick={() => {
+                      if (
+                        game.alchemyLab.canBuyStructure(game.get_resources())
+                      ) {
+                        game.buyBuilding("alchemyLab", 1);
+                        setState((prevState) => !prevState);
+                      }
+                    }}
+                  >
+                    Buy Alchemy Lab cost:{" "}
+                    {numbers.format(game.alchemyLab.getStructureCost().cookies)}
+                  </button>
+                </div>
+              </div>
+              <div>
+                <Image
+                  className="w-48 "
+                  src={`/alchemylab.png`}
+                  alt="alchemyLab"
                   width={200}
                   height={300}
                 />

@@ -1,19 +1,19 @@
 import Clicker, { Resource, Structure, UpgradeType } from "../Cliker2";
 
-export class Shipment extends Structure {
-  public shipmentUpgrades1: { [key: string]: UpgradeType } = {};
-  public shipmentUpgrades: Map<string, UpgradeType> = new Map(
-    Object.entries(this.shipmentUpgrades1)
+export class AlchemyLab extends Structure {
+  public AlchemyLabUpgrades1: { [key: string]: UpgradeType } = {};
+  public alchemyLabUpgrades: Map<string, UpgradeType> = new Map(
+    Object.entries(this.AlchemyLabUpgrades1)
   );
   private game: Clicker;
   constructor(game: Clicker) {
     super({
       structure: 0,
-      structureCost: { cookies: 330_000_000 },
-      structureResourceGeneration: { cookies: 44_800 },
-      structureResourceGenerationDefault: { cookies: 44_800 },
+      structureCost: { cookies: 75_000_000_000 },
+      structureResourceGeneration: { cookies: 1_600_000 },
+      structureResourceGenerationDefault: { cookies: 1_600_000 },
 
-      structureCostDefault: { cookies: 330_000_000 },
+      structureCostDefault: { cookies: 75_000_000_000 },
     });
     this.game = game;
   }
@@ -23,7 +23,7 @@ export class Shipment extends Structure {
   // }
   public getUpgradesInRange(): UpgradeType[] {
     const upgrades: UpgradeType[] = [];
-    this.shipmentUpgrades.forEach((upgrade) => {
+    this.alchemyLabUpgrades.forEach((upgrade) => {
       if (
         upgrade.requirement <= this.getStructureAmount() &&
         !upgrade.acquired
@@ -34,7 +34,7 @@ export class Shipment extends Structure {
     return upgrades;
   }
   public buyUpgradeLevel(cookies: Resource, id: number): void {
-    const upgrade = this.shipmentUpgrades.get(id.toString());
+    const upgrade = this.alchemyLabUpgrades.get(id.toString());
     if (!upgrade) return;
     if (!this.canBuyStructureUpgrade(cookies, id)) return;
     cookies.cookies -= upgrade.cost.cookies;
@@ -45,17 +45,17 @@ export class Shipment extends Structure {
   public calculateStructureResourceGeneration1(): void {
     this.structureResourceGeneration.cookies =
       this.structureResourceGenerationDefault.cookies;
-    this.shipmentUpgrades.forEach((value, key) => {
+    this.alchemyLabUpgrades.forEach((value, key) => {
       if (value.acquired) {
         this.structureResourceGeneration.cookies *= value.multiplier;
       }
     });
   }
   public getStructureUpgradeCost(id: number): string {
-    return this.shipmentUpgrades.get(id.toString())?.cost.cookies.toString()!;
+    return this.alchemyLabUpgrades.get(id.toString())?.cost.cookies.toString()!;
   }
   public canBuyStructureUpgrade(cookies: Resource, id: number): boolean {
-    const nextUpgrade = this.shipmentUpgrades.get(id.toString());
+    const nextUpgrade = this.alchemyLabUpgrades.get(id.toString());
     if (!nextUpgrade) {
       return false;
     }
