@@ -52,4 +52,10 @@ export interface SaveType {
     lifeTimeCookiesBuilding: Resource;
     wizardTowerUpgrades: { [key: string]: UpgradeType };
   };
+  shipment: {
+    structure: number;
+    structureCost: Resource;
+    lifeTimeCookiesBuilding: Resource;
+    shipmentUpgrades: { [key: string]: UpgradeType };
+  };
 }

@@ -33,7 +33,7 @@ function Gameloop() {
   }, [game]);
   useEffect(() => {
     let x = JSON.parse(localStorage.getItem("save")!) as SaveType | null;
-    if (!x?.lifeTimeCookies) {
+    if (!x?.shipment) {
       return;
     }
     game.LoadGame(x);
@@ -42,12 +42,18 @@ function Gameloop() {
 
   const numbers = NumberFormatter;
   return (
-    <div className="flex gap-7 justify-center items-center min-h-screen  bg-black text-white ">
+    <div className="flex gap-7 justify-center items-center min-h-screen my-4  ">
+      {" "}
+      {/* bg-black text-white // Dev Dark Mode to Save my eyes*/}
       <div className="flex justify-center items-center flex-col gap-4">
         <div>
           <div className="flex flex-col">
             Cookie {numbers.format(game.get_resources().cookies)} | Total CPS:{" "}
-            {game.getPassiveResourceGeneration().cookies.toFixed(2)}
+            {numbers.format(game.getPassiveResourceGeneration().cookies)}
+            <div>
+              Life Time Cookies Baked:{" "}
+              {numbers.format(game.get_lifeTimeCookies().cookies)}
+            </div>
             <button
               className="p2 px-3 bg-red-400 "
               onClick={() => {
@@ -357,7 +363,7 @@ function Gameloop() {
                     className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
                     onClick={() => {
                       if (game.temple.canBuyStructure(game.get_resources())) {
-                        game.buyTemple();
+                        game.buyBuilding("temple", 1);
                         setState((prevState) => !prevState);
                       }
                     }}
@@ -413,6 +419,43 @@ function Gameloop() {
                   className="w-48 "
                   src={`/wizardtower.png`}
                   alt="wizardTower"
+                  width={200}
+                  height={300}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-col border border-cyan-500 p-5 rounded-xl">
+            <div className="flex items-center gap-7">
+              <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-2">
+                  <div>
+                    Shipment Tower: {game.shipment.getStructureAmount()}
+                  </div>
+                  {game.shipment.getStructureAmount() > 0 && (
+                    <div>
+                      Shipment Tower CPS: {game.shipment.getBuildingCPS()}
+                    </div>
+                  )}
+                  <button
+                    className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
+                    onClick={() => {
+                      if (game.shipment.canBuyStructure(game.get_resources())) {
+                        game.buyBuilding("shipment", 1);
+                        setState((prevState) => !prevState);
+                      }
+                    }}
+                  >
+                    Buy Shipment Tower cost:{" "}
+                    {numbers.format(game.shipment.getStructureCost().cookies)}
+                  </button>
+                </div>
+              </div>
+              <div>
+                <Image
+                  className="w-48 "
+                  src={`/shipment.png`}
+                  alt="shipment"
                   width={200}
                   height={300}
                 />
