@@ -12,7 +12,7 @@ function Gameloop() {
   useEffect(() => {
     const timer = setInterval(() => {
       game.increaseResource({
-        cookies: game.getPassiveResourceGeneration().cookies / 5,
+        cookies: game.getPassiveResourceGeneration() / 5,
       });
       setState((prevState) => !prevState);
     }, 200);
@@ -49,7 +49,7 @@ function Gameloop() {
         <div>
           <div className="flex flex-col">
             Cookie {numbers.format(game.get_resources().cookies)} | Total CPS:{" "}
-            {numbers.format(game.getPassiveResourceGeneration().cookies)}
+            {numbers.format(game.getPassiveResourceGeneration())}
             <div>
               Life Time Cookies Baked:{" "}
               {numbers.format(game.get_lifeTimeCookies().cookies)}
@@ -174,7 +174,10 @@ function Gameloop() {
                 <div className="flex flex-col gap-2">
                   <div>Cursors: {game.autoClicker.getStructureAmount()}</div>
                   {game.autoClicker.getStructureAmount() > 0 && (
-                    <div>Cursor CPS: {game.autoClicker.getBuildingCPS()}</div>
+                    <div>
+                      Cursor CPS:{" "}
+                      {numbers.format(game.autoClicker.getBuildingCPS())}
+                    </div>
                   )}
                   <button
                     className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-200"
@@ -208,7 +211,10 @@ function Gameloop() {
                 <div className="flex flex-col gap-2">
                   <div>Grandmas: {game.grandma.getStructureAmount()}</div>
                   {game.grandma.getStructureAmount() > 0 && (
-                    <div>Grandmas CPS: {game.grandma.getBuildingCPS()}</div>
+                    <div>
+                      Grandmas CPS:{" "}
+                      {numbers.format(game.grandma.getBuildingCPS())}
+                    </div>
                   )}
                   <button
                     className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
@@ -239,7 +245,9 @@ function Gameloop() {
                 <div className="flex flex-col gap-2">
                   <div>Farms: {game.farm.getStructureAmount()}</div>
                   {game.farm.getStructureAmount() > 0 && (
-                    <div>Farm CPS: {game.farm.getBuildingCPS()}</div>
+                    <div>
+                      Farm CPS: {numbers.format(game.farm.getBuildingCPS())}
+                    </div>
                   )}
                   <button
                     className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
@@ -265,7 +273,9 @@ function Gameloop() {
                 <div className="flex flex-col gap-2">
                   <div>Mines: {game.mine.getStructureAmount()}</div>
                   {game.mine.getStructureAmount() > 0 && (
-                    <div>Mine CPS: {game.mine.getBuildingCPS()}</div>
+                    <div>
+                      Mine CPS: {numbers.format(game.mine.getBuildingCPS())}
+                    </div>
                   )}
                   <button
                     className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
@@ -291,7 +301,10 @@ function Gameloop() {
                 <div className="flex flex-col gap-2">
                   <div>Factorys: {game.factory.getStructureAmount()}</div>
                   {game.factory.getStructureAmount() > 0 && (
-                    <div>Factory CPS: {game.factory.getBuildingCPS()}</div>
+                    <div>
+                      Factory CPS:{" "}
+                      {numbers.format(game.factory.getBuildingCPS())}
+                    </div>
                   )}
                   <button
                     className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
@@ -323,7 +336,9 @@ function Gameloop() {
                 <div className="flex flex-col gap-2">
                   <div>Banks: {game.bank.getStructureAmount()}</div>
                   {game.bank.getStructureAmount() > 0 && (
-                    <div>Banks CPS: {game.bank.getBuildingCPS()}</div>
+                    <div>
+                      Banks CPS: {numbers.format(game.bank.getBuildingCPS())}
+                    </div>
                   )}
                   <button
                     className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
@@ -357,7 +372,9 @@ function Gameloop() {
                 <div className="flex flex-col gap-2">
                   <div>Temple: {game.temple.getStructureAmount()}</div>
                   {game.temple.getStructureAmount() > 0 && (
-                    <div>Temple CPS: {game.temple.getBuildingCPS()}</div>
+                    <div>
+                      Temple CPS: {numbers.format(game.temple.getBuildingCPS())}
+                    </div>
                   )}
                   <button
                     className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
@@ -393,7 +410,8 @@ function Gameloop() {
                   </div>
                   {game.wizardTower.getStructureAmount() > 0 && (
                     <div>
-                      Wizard Tower CPS: {game.wizardTower.getBuildingCPS()}
+                      Wizard Tower CPS:{" "}
+                      {numbers.format(game.wizardTower.getBuildingCPS())}
                     </div>
                   )}
                   <button
@@ -434,7 +452,8 @@ function Gameloop() {
                   </div>
                   {game.shipment.getStructureAmount() > 0 && (
                     <div>
-                      Shipment Tower CPS: {game.shipment.getBuildingCPS()}
+                      Shipment Tower CPS:{" "}
+                      {numbers.format(game.shipment.getBuildingCPS())}
                     </div>
                   )}
                   <button
@@ -471,7 +490,8 @@ function Gameloop() {
                   </div>
                   {game.alchemyLab.getStructureAmount() > 0 && (
                     <div>
-                      Alchemy Lab CPS: {game.alchemyLab.getBuildingCPS()}
+                      Alchemy Lab CPS:{" "}
+                      {numbers.format(game.alchemyLab.getBuildingCPS())}
                     </div>
                   )}
                   <button
@@ -507,7 +527,9 @@ function Gameloop() {
                 <div className="flex flex-col gap-2">
                   <div>Portal : {game.portal.getStructureAmount()}</div>
                   {game.portal.getStructureAmount() > 0 && (
-                    <div>Portal CPS: {game.portal.getBuildingCPS()}</div>
+                    <div>
+                      Portal CPS: {numbers.format(game.portal.getBuildingCPS())}
+                    </div>
                   )}
                   <button
                     className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
@@ -543,7 +565,8 @@ function Gameloop() {
                   </div>
                   {game.timeMachine.getStructureAmount() > 0 && (
                     <div>
-                      Time Machine CPS: {game.timeMachine.getBuildingCPS()}
+                      Time Machine CPS:{" "}
+                      {numbers.format(game.timeMachine.getBuildingCPS())}
                     </div>
                   )}
                   <button
