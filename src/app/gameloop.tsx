@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useEffect, useMemo, useState } from "react";
 import Clicker, { Resource } from "./lib/Cliker2";
 import { NumberFormatter } from "./lib/NumberFormater";
+import { SaveType } from "./lib/ui";
 
 function Gameloop() {
   const [state, setState] = useState(false);
@@ -31,8 +32,8 @@ function Gameloop() {
     };
   }, [game]);
   useEffect(() => {
-    let x = JSON.parse(localStorage.getItem("save")!);
-    if (!x.wizardTower) {
+    let x = JSON.parse(localStorage.getItem("save")!) as SaveType | null;
+    if (!x?.lifeTimeCookies) {
       return;
     }
     game.LoadGame(x);
@@ -84,6 +85,24 @@ function Gameloop() {
               Add 100000 (dev Only){" "}
             </button>
             <button
+              className="p2 px-3 bg-red-400 "
+              onClick={() => {
+                game.increaseResource({ cookies: 1000000 });
+                setState((prevState) => !prevState);
+              }}
+            >
+              Add 1000000 (dev Only){" "}
+            </button>
+            <button
+              className="p2 px-3 bg-red-400 "
+              onClick={() => {
+                game.increaseResource({ cookies: 100000000 });
+                setState((prevState) => !prevState);
+              }}
+            >
+              Add 100000000 (dev Only){" "}
+            </button>
+            <button
               onClick={() => {
                 localStorage.setItem("save", JSON.stringify(game.SaveGame()));
               }}
@@ -110,7 +129,7 @@ function Gameloop() {
         <button
           className=" active:translate-y-1"
           onClick={() => {
-            game.increaseResource(game.getClickResourceGeneration());
+            game.increaseResourceClick(game.getClickResourceGeneration());
             setState((prevState) => !prevState);
           }}
         >
@@ -377,7 +396,7 @@ function Gameloop() {
                       if (
                         game.wizardTower.canBuyStructure(game.get_resources())
                       ) {
-                        game.buyWizardTower();
+                        game.buyBuilding("wizardTower", 1);
                         setState((prevState) => !prevState);
                       }
                     }}

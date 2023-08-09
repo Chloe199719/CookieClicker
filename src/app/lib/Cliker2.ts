@@ -1,6 +1,17 @@
+import { SaveType } from "./ui";
+
 export type Resource = {
   cookies: number;
 };
+export type BuildingType =
+  | "cursor"
+  | "grandma"
+  | "farm"
+  | "mine"
+  | "factory"
+  | "bank"
+  | "temple"
+  | "wizardTower";
 export type UpgradeType = {
   id: number;
   name: string;
@@ -9,15 +20,7 @@ export type UpgradeType = {
   requirement: number;
   acquired: boolean;
   description: string;
-  type:
-    | "cursor"
-    | "grandma"
-    | "farm"
-    | "mine"
-    | "factory"
-    | "bank"
-    | "temple"
-    | "wizardTower";
+  type: BuildingType;
 };
 export type gameInit = {
   resource: Resource;
@@ -35,7 +38,10 @@ export type StructureInit = {
 };
 
 export default class Clicker {
-  private resource: Resource;
+  public resource: Resource;
+  private lifeTimeCookies: Resource = { cookies: 0 };
+  private lifeTimeCookiesClick: Resource = { cookies: 0 };
+  private multiplier: number = 100;
   public grandma: Grandma = new Grandma(this);
   public autoClicker: Cursor = new Cursor(this);
   public farm: Farm = new Farm(this);
@@ -129,7 +135,7 @@ export default class Clicker {
   public getPassiveResourceGeneration(): Resource {
     return this.resourceGeneration;
   }
-
+  //Methods here to be deleted
   // Grandma
   public buyGrandma(): void {
     this.grandma.increaseStructure(this.resource);
@@ -169,15 +175,57 @@ export default class Clicker {
     this.PassiveCalculateResourceGeneration();
   }
 
-  // WizardTower
-  public buyWizardTower(): void {
-    this.wizardTower.increaseStructure(this.resource);
+  // WizardTower Unused
+  // public buyWizardTower(): void {
+  //   this.wizardTower.increaseStructure(this.resource);
+  //   this.PassiveCalculateResourceGeneration();
+  // }
+  // ----------To be deleted end--------
+  public buyBuilding(type: BuildingType, amount: number = 1): void {
+    if (type === "cursor") {
+      this.autoClicker.increaseStructure(this.resource, amount);
+    }
+    if (type === "grandma") {
+      this.grandma.increaseStructure(this.resource, amount);
+    }
+    if (type === "farm") {
+      this.farm.increaseStructure(this.resource, amount);
+    }
+    if (type === "mine") {
+      this.mine.increaseStructure(this.resource, amount);
+    }
+    if (type === "factory") {
+      this.factory.increaseStructure(this.resource, amount);
+    }
+    if (type === "bank") {
+      this.bank.increaseStructure(this.resource, amount);
+    }
+    if (type === "temple") {
+      this.temple.increaseStructure(this.resource, amount);
+    }
+    if (type === "wizardTower") {
+      this.wizardTower.increaseStructure(this.resource, amount);
+    }
     this.PassiveCalculateResourceGeneration();
   }
-
   // Method Called by clock and click to increase resource(cookies)
   public increaseResource(addValue: Resource): void {
-    this.resource.cookies += addValue.cookies;
+    this.resource.cookies += (addValue.cookies * this.multiplier) / 100;
+    this.lifeTimeCookies.cookies += (addValue.cookies * this.multiplier) / 100;
+    this.autoClicker.gameTick(this.multiplier);
+    this.grandma.gameTick(this.multiplier);
+    this.farm.gameTick(this.multiplier);
+    this.mine.gameTick(this.multiplier);
+    this.factory.gameTick(this.multiplier);
+    this.bank.gameTick(this.multiplier);
+    this.temple.gameTick(this.multiplier);
+    this.wizardTower.gameTick(this.multiplier);
+  }
+  public increaseResourceClick(addValue: Resource): void {
+    this.resource.cookies += (addValue.cookies * this.multiplier) / 100;
+    this.lifeTimeCookies.cookies += (addValue.cookies * this.multiplier) / 100;
+    this.lifeTimeCookiesClick.cookies +=
+      (addValue.cookies * this.multiplier) / 100;
   }
 
   // Buy an Upgrade for a Structure (Grandma, AutoClicker, Farm, Mine...)
@@ -268,46 +316,54 @@ export default class Clicker {
   public SaveGame() {
     let save = {
       resource: this.resource,
+      lifeTimeCookies: this.lifeTimeCookies,
+      multiplier: this.multiplier,
       grandma: {
         structure: this.grandma.structure,
         structureCost: this.grandma.structureCost,
+        lifeTimeCookiesBuilding: this.grandma.lifeTimeCookiesBuilding,
         grandmaUpgrades: Object.fromEntries(this.grandma.grandmaUpgrades),
       },
       autoClicker: {
         structure: this.autoClicker.structure,
         structureCost: this.autoClicker.structureCost,
-
+        lifeTimeCookiesBuilding: this.autoClicker.lifeTimeCookiesBuilding,
         cursorUpgrades: Object.fromEntries(this.autoClicker.cursorUpgrades),
       },
       farm: {
         structure: this.farm.structure,
         structureCost: this.farm.structureCost,
-
+        lifeTimeCookiesBuilding: this.farm.lifeTimeCookiesBuilding,
         farmUpgrades: Object.fromEntries(this.farm.farmUpgrades),
       },
       mine: {
         structure: this.mine.structure,
         structureCost: this.mine.structureCost,
+        lifeTimeCookiesBuilding: this.mine.lifeTimeCookiesBuilding,
         mineUpgrades: Object.fromEntries(this.mine.mineUpgrades),
       },
       factory: {
         structure: this.factory.structure,
         structureCost: this.factory.structureCost,
+        lifeTimeCookiesBuilding: this.factory.lifeTimeCookiesBuilding,
         factoryUpgrades: Object.fromEntries(this.factory.factoryUpgrades),
       },
       bank: {
         structure: this.bank.structure,
         structureCost: this.bank.structureCost,
+        lifeTimeCookiesBuilding: this.bank.lifeTimeCookiesBuilding,
         bankUpgrades: Object.fromEntries(this.bank.bankUpgrades),
       },
       temple: {
         structure: this.temple.structure,
         structureCost: this.temple.structureCost,
+        lifeTimeCookiesBuilding: this.temple.lifeTimeCookiesBuilding,
         templeUpgrades: Object.fromEntries(this.temple.templeUpgrades),
       },
       wizardTower: {
         structure: this.wizardTower.structure,
         structureCost: this.wizardTower.structureCost,
+        lifeTimeCookiesBuilding: this.wizardTower.lifeTimeCookiesBuilding,
         wizardTowerUpgrades: Object.fromEntries(
           this.wizardTower.WizardTowerUpgrades
         ),
@@ -318,12 +374,16 @@ export default class Clicker {
 
   // Load Game from LocalStorage (not Stable)
   //TODO: Type Save
-  public LoadGame(save: any) {
+  public LoadGame(save: SaveType) {
     // Set Cookies
     this.resource = save.resource;
+    this.lifeTimeCookies = save.lifeTimeCookies;
+    this.multiplier = save.multiplier ?? 100;
     // Set the Grandma
     this.grandma.structureCost = save.grandma.structureCost;
     this.grandma.structure = save.grandma.structure;
+    this.grandma.lifeTimeCookiesBuilding = save.grandma
+      .lifeTimeCookiesBuilding ?? { cookies: 0 };
     this.grandma.grandmaUpgrades = new Map(
       Object.entries(save.grandma.grandmaUpgrades)
     );
@@ -331,6 +391,8 @@ export default class Clicker {
     // Set the Cursor
     this.autoClicker.structureCost = save.autoClicker.structureCost;
     this.autoClicker.structure = save.autoClicker.structure;
+    this.autoClicker.lifeTimeCookiesBuilding = save.autoClicker
+      .lifeTimeCookiesBuilding ?? { cookies: 0 };
     this.autoClicker.cursorUpgrades = new Map(
       Object.entries(save.autoClicker.cursorUpgrades)
     );
@@ -338,17 +400,25 @@ export default class Clicker {
     // Set the farm
     this.farm.structureCost = save.farm.structureCost;
     this.farm.structure = save.farm.structure;
+    this.farm.lifeTimeCookiesBuilding = save.farm.lifeTimeCookiesBuilding ?? {
+      cookies: 0,
+    };
     this.farm.farmUpgrades = new Map(Object.entries(save.farm.farmUpgrades));
     this.farm.calculateStructureResourceGeneration1();
     // Set the mine
     this.mine.structureCost = save.mine.structureCost;
     this.mine.structure = save.mine.structure;
+    this.mine.lifeTimeCookiesBuilding = save.mine.lifeTimeCookiesBuilding ?? {
+      cookies: 0,
+    };
     this.mine.mineUpgrades = new Map(Object.entries(save.mine.mineUpgrades));
     this.mine.calculateStructureResourceGeneration1();
 
     // Set the factory
     this.factory.structureCost = save.factory.structureCost;
     this.factory.structure = save.factory.structure;
+    this.factory.lifeTimeCookiesBuilding = save.factory
+      .lifeTimeCookiesBuilding ?? { cookies: 0 };
     this.factory.factoryUpgrades = new Map(
       Object.entries(save.factory.factoryUpgrades)
     );
@@ -357,12 +427,17 @@ export default class Clicker {
     // Set the bank
     this.bank.structureCost = save.bank.structureCost;
     this.bank.structure = save.bank.structure;
+    this.bank.lifeTimeCookiesBuilding = save.bank.lifeTimeCookiesBuilding ?? {
+      cookies: 0,
+    };
     this.bank.bankUpgrades = new Map(Object.entries(save.bank.bankUpgrades));
     this.bank.calculateStructureResourceGeneration1();
 
     // Set the temple
     this.temple.structureCost = save.temple.structureCost;
     this.temple.structure = save.temple.structure;
+    this.temple.lifeTimeCookiesBuilding = save.temple
+      .lifeTimeCookiesBuilding ?? { cookies: 0 };
     this.temple.templeUpgrades = new Map(
       Object.entries(save.temple.templeUpgrades)
     );
@@ -371,6 +446,8 @@ export default class Clicker {
     // Set the wizardTower
     this.wizardTower.structureCost = save.wizardTower.structureCost;
     this.wizardTower.structure = save.wizardTower.structure;
+    this.wizardTower.lifeTimeCookiesBuilding = save.wizardTower
+      .lifeTimeCookiesBuilding ?? { cookies: 0 };
     this.wizardTower.WizardTowerUpgrades = new Map(
       Object.entries(save.wizardTower.wizardTowerUpgrades)
     );
@@ -382,6 +459,8 @@ export default class Clicker {
   }
   public resetGame(): void {
     this.resource = { cookies: 0 };
+    this.lifeTimeCookies = { cookies: 0 };
+    this.multiplier = 100;
     this.grandma = new Grandma(this);
     this.autoClicker = new Cursor(this);
     this.farm = new Farm(this);
@@ -405,17 +484,10 @@ class Global {
     return currentCost;
   }
   //Help Function to check if the player can buy the upgrade
-  public canBuy(currentCost: Resource, cookies: Resource): boolean {
-    if (cookies.cookies > currentCost.cookies) {
-      return true;
-    }
 
-    // Gold and Silver are equal, now compare bronze
-    return false;
-  }
   //Help Function to buy the upgrade or structure
-  public buyUpgrade(currentCost: Resource, cookies: Resource): void {
-    cookies.cookies -= currentCost.cookies;
+  public buyUpgrade(cost: number, cookies: Resource): void {
+    cookies.cookies -= cost;
   }
   //Help Function to convert the resource to a string
   public ResourceToString(resource: Resource): string {
@@ -424,6 +496,35 @@ class Global {
 }
 
 export class Structure extends Global {
+  public canBuy(cookies: Resource, amount: number = 1): boolean {
+    if (amount === 1) {
+      if (cookies.cookies > this.structureCost.cookies) {
+        return true;
+      }
+    } else {
+      let total = 0;
+      for (let i = 0; i < amount; i++) {
+        total += this.checkFutureCost(i);
+      }
+      if (cookies.cookies > total) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+    return false;
+  }
+
+  public checkFutureCost(amount: number): number {
+    if (amount === 0) {
+      return this.structureCost.cookies;
+    }
+    let currentCostTemp =
+      this.structureCostDefault.cookies * 1.15 ** (this.structure + amount);
+
+    return currentCostTemp;
+  }
   //How many of this Building the player has.
   public structure: number;
 
@@ -437,7 +538,7 @@ export class Structure extends Global {
   private structureCostDefault: Resource;
   //The default generation of the Building
   public structureResourceGenerationDefault: Resource;
-
+  public lifeTimeCookiesBuilding: { cookies: number } = { cookies: 0 };
   constructor({
     structure,
     structureCost,
@@ -455,10 +556,20 @@ export class Structure extends Global {
   }
 
   //Buy a structure
-  public increaseStructure(cookies: Resource): void {
-    this.buyUpgrade(this.structureCost, cookies);
-    this.structure += 1;
-    this.increaseStructureCost();
+  public increaseStructure(cookies: Resource, amount: number = 1): void {
+    if (this.canBuy(cookies, amount)) {
+      this.buyUpgrade(this.getStructureCost(amount).cookies, cookies);
+      this.structure += amount;
+      this.increaseStructureCost();
+    }
+  }
+  //
+  public gameTick(multiplier: number): void {
+    this.lifeTimeCookiesBuilding.cookies +=
+      (this.getStructureResourceGeneration().cookies * multiplier) / 100 / 5;
+  }
+  public getLifeTimeCookiesBuilding(): number {
+    return this.lifeTimeCookiesBuilding.cookies;
   }
 
   //Update the cost of the structure after buying one
@@ -478,8 +589,15 @@ export class Structure extends Global {
   }
 
   //Get Cost of the next structure
-  public getStructureCost(): Resource {
-    return this.structureCost;
+  public getStructureCost(amount: number = 1): Resource {
+    if (amount === 1) {
+      return this.structureCost;
+    }
+    let total = 0;
+    for (let i = 0; i < amount; i++) {
+      total += this.checkFutureCost(i);
+    }
+    return { cookies: total };
   }
 
   //Get the cost of the next structure as a string
@@ -489,7 +607,7 @@ export class Structure extends Global {
 
   // If the player can buy the structure
   public canBuyStructure(cookies: Resource): boolean {
-    return this.canBuy(this.structureCost, cookies);
+    return this.canBuy(cookies);
   }
 
   //Get the generation of the structure as a string
@@ -2273,6 +2391,10 @@ export class WizardTower extends Structure {
     });
     this.game = game;
   }
+  // public buyBuilding(amount: number = 1): void {
+  //   this.increaseStructure(this.game.resource, amount);
+  //   this.calculateStructureResourceGeneration1();
+  // }
   public getUpgradesInRange(): UpgradeType[] {
     const upgrades: UpgradeType[] = [];
     this.WizardTowerUpgrades.forEach((upgrade) => {
