@@ -459,6 +459,7 @@ export default class Clicker {
       resource: this.resource,
       lifeTimeCookies: this.lifeTimeCookies,
       multiplier: this.multiplier,
+      flavoredCookies: this.flavoredCookies,
       grandma: {
         structure: this.grandma.structure,
         structureCost: this.grandma.structureCost,
@@ -548,6 +549,7 @@ export default class Clicker {
     this.resource = save.resource;
     this.lifeTimeCookies = save.lifeTimeCookies;
     this.multiplier = save.multiplier ?? 100;
+    this.flavoredCookies = save.flavoredCookies ?? FlavoredCookies;
     // Set the Grandma
     this.grandma.structureCost = save.grandma.structureCost;
     this.grandma.structure = save.grandma.structure;
@@ -667,6 +669,7 @@ export default class Clicker {
     // Reload Game generation
     this.PassiveCalculateResourceGeneration();
     this.ClickCalculateResourceGeneration();
+    this.calculateMultiplier();
   }
   public resetGame(): void {
     this.resource = { cookies: 0 };

@@ -4,6 +4,7 @@ export interface SaveType {
   resource: Resource;
   lifeTimeCookies: Resource;
   multiplier: number;
+  flavoredCookies: UpgradeType[];
   grandma: {
     structure: number;
     structureCost: Resource;
@@ -63,17 +64,17 @@ export interface SaveType {
     structureCost: Resource;
     lifeTimeCookiesBuilding: Resource;
     alchemyLabUpgrades: { [key: string]: UpgradeType };
-  }
+  };
   portal: {
     structure: number;
     structureCost: Resource;
     lifeTimeCookiesBuilding: Resource;
     portalUpgrades: { [key: string]: UpgradeType };
-  }
+  };
   timeMachine: {
     structure: number;
     structureCost: Resource;
     lifeTimeCookiesBuilding: Resource;
     timeMachineUpgrades: { [key: string]: UpgradeType };
-  }
+  };
 }
