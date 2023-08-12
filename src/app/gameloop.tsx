@@ -42,10 +42,10 @@ function Gameloop() {
 
   const numbers = NumberFormatter;
   return (
-    <div className="flex gap-7 justify-center items-center min-h-screen my-4  ">
+    <div className="grid grid-cols-8 flex-1 gap-7 justify-center items-center">
       {" "}
       {/* bg-black text-white // Dev Dark Mode to Save my eyes*/}
-      <div className="flex justify-center items-center flex-col gap-4">
+      <div className="flex justify-center items-center flex-col gap-4 col-span-6">
         <div>
           <div className="flex flex-col">
             Cookie {numbers.format(game.get_resources().cookies)} | Total CPS:{" "}
@@ -146,9 +146,14 @@ function Gameloop() {
           {game.getClickResourceGeneration().cookies.toFixed(2)}
         </div>
       </div>
-      <div className="flex flex-col gap-3 max-h-screen">
-        <div className="flex flex-col border border-cyan-500 p-5 rounded-xl">
-          <h2 className="text-center">Upgrades </h2>
+      <div
+        className=" flex flex-col gap-3 col-span-2 overflow-y-auto"
+        style={{ height: "calc(100vh - 80px)" }}
+      >
+        <h2 className="text-center bg-zinc-700 text-white py-4  text-xl">
+          Upgrades{" "}
+        </h2>
+        <div className="flex flex-col p-5 rounded-xl">
           {game.getPossibleUpgradeList().map((upgrade) => {
             return (
               <button
@@ -167,7 +172,7 @@ function Gameloop() {
           })}
         </div>
 
-        <div className="flex flex-col gap-3 overflow-y-auto">
+        <div className="flex flex-col gap-3 ">
           <div className="flex flex-col border border-cyan-500 p-5 rounded-xl">
             <div className="flex items-center gap-7">
               <div className="flex flex-col gap-3">
