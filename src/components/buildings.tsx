@@ -13,7 +13,7 @@ function Buildings({ game, setState }: Props) {
   const numbers = NumberFormatter;
   return (
     <div className="flex flex-col text-black/50 ">
-      <div className="flex gap-5 justify-evenly p-1 items-center  text-white">
+      <div className="flex gap-5 justify-evenly p-1 items-center  text-white bg-gray-800">
         <div>
           <p className="hover:text-neutral-50 hover:font-bold">Buy</p>
           <p className="hover:text-neutral-50 hover:font-bold">Sell</p>
