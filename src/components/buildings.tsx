@@ -887,6 +887,13 @@ function Buildings({ game, setState }: Props) {
           {numbers.format(game.antimatterCondenser.getBuildingCPS())}
         </HoverCardContent>
       </HoverCard>
+      <Image
+        className="w-full h-3 "
+        src={`/stuff.jpg`}
+        alt="grandma"
+        width={200}
+        height={30}
+      />
     </div>
   );
 }

@@ -20,7 +20,7 @@ export type BuildingType =
   | "flavoredCookies";
 
 interface ExtraType {
-  tiers:
+  tier:
     | "Plain"
     | "Berrylium"
     | "Blueberrylium"
@@ -35,9 +35,10 @@ interface ExtraType {
     | "Alabascream"
     | "Iridyum"
     | "Glucosmium"
-    | "Glimmeringue";
+    | "Glimmeringue"
+    | "None";
 }
-export interface UpgradeType {
+export interface UpgradeType extends ExtraType {
   id: number;
   name: string;
   cost: Resource;
@@ -949,6 +950,7 @@ class Cursor extends Structure {
       requirement: 1,
       acquired: false,
       type: "cursor",
+      tier: "Plain",
     } as UpgradeType,
     "2": {
       id: 2,
@@ -960,6 +962,7 @@ class Cursor extends Structure {
       requirement: 1,
       acquired: false,
       type: "cursor",
+      tier: "Berrylium",
     } as UpgradeType,
     "3": {
       id: 3,
@@ -971,6 +974,7 @@ class Cursor extends Structure {
       requirement: 10,
       acquired: false,
       type: "cursor",
+      tier: "Blueberrylium",
     } as UpgradeType,
     "4": {
       id: 4,
@@ -981,6 +985,7 @@ class Cursor extends Structure {
       requirement: 25,
       acquired: false,
       type: "cursor",
+      tier: "Chalcedhoney",
     } as UpgradeType,
     "5": {
       id: 5,
@@ -992,6 +997,7 @@ class Cursor extends Structure {
       requirement: 50,
       acquired: false,
       type: "cursor",
+      tier: "Buttergold",
     } as UpgradeType,
     "6": {
       id: 6,
@@ -1002,6 +1008,7 @@ class Cursor extends Structure {
       requirement: 100,
       acquired: false,
       type: "cursor",
+      tier: "Sugarmuck",
     } as UpgradeType,
     "7": {
       id: 7,
@@ -1012,6 +1019,7 @@ class Cursor extends Structure {
       requirement: 150,
       acquired: false,
       type: "cursor",
+      tier: "Jetmint",
     } as UpgradeType,
     "8": {
       id: 8,
@@ -1022,6 +1030,7 @@ class Cursor extends Structure {
       requirement: 200,
       acquired: false,
       type: "cursor",
+      tier: "Cherrysilver",
     } as UpgradeType,
     "9": {
       id: 9,
@@ -1032,6 +1041,7 @@ class Cursor extends Structure {
       requirement: 250,
       acquired: false,
       type: "cursor",
+      tier: "Hazelrald",
     } as UpgradeType,
     "10": {
       id: 10,
@@ -1042,6 +1052,7 @@ class Cursor extends Structure {
       requirement: 300,
       acquired: false,
       type: "cursor",
+      tier: "Mooncandy",
     } as UpgradeType,
     "11": {
       id: 11,
@@ -1052,6 +1063,7 @@ class Cursor extends Structure {
       requirement: 350,
       acquired: false,
       type: "cursor",
+      tier: "Astrofudge",
     } as UpgradeType,
     "12": {
       id: 12,
@@ -1062,6 +1074,7 @@ class Cursor extends Structure {
       requirement: 400,
       acquired: false,
       type: "cursor",
+      tier: "Alabascream",
     } as UpgradeType,
     "13": {
       id: 13,
@@ -1072,6 +1085,7 @@ class Cursor extends Structure {
       requirement: 450,
       acquired: false,
       type: "cursor",
+      tier: "Iridyum",
     } as UpgradeType,
     "14": {
       id: 14,
@@ -1082,6 +1096,7 @@ class Cursor extends Structure {
       requirement: 500,
       acquired: false,
       type: "cursor",
+      tier: "Glucosmium",
     } as UpgradeType,
     "15": {
       id: 15,
@@ -1092,6 +1107,7 @@ class Cursor extends Structure {
       requirement: 550,
       acquired: false,
       type: "cursor",
+      tier: "Glimmeringue",
     } as UpgradeType,
   };
   public cursorUpgrades = new Map(Object.entries(this.cursorUpgrades1));
@@ -1202,6 +1218,7 @@ class Grandma extends Structure {
       requirement: 1,
       acquired: false,
       type: "grandma",
+      tier: "Plain",
     },
     "17": {
       id: 17,
@@ -1213,6 +1230,7 @@ class Grandma extends Structure {
       requirement: 5,
       acquired: false,
       type: "grandma",
+      tier: "Berrylium",
     },
     "18": {
       id: 18,
@@ -1224,6 +1242,7 @@ class Grandma extends Structure {
       requirement: 25,
       acquired: false,
       type: "grandma",
+      tier: "Blueberrylium",
     },
     "19": {
       id: 19,
@@ -1235,6 +1254,7 @@ class Grandma extends Structure {
       type: "grandma",
       description: `Grandmas are twice as efficient.
       "Gets me going."`,
+      tier: "Chalcedhoney",
     },
     "20": {
       id: 20,
@@ -1246,6 +1266,7 @@ class Grandma extends Structure {
       type: "grandma",
       description: `Grandmas are twice as efficient.
       "Oh... so THAT's what I've been baking."`,
+      tier: "Buttergold",
     },
     "21": {
       id: 21,
@@ -1257,6 +1278,7 @@ class Grandma extends Structure {
       type: "grandma",
       description: `Grandmas are twice as efficient.
       "Counter-intuitively, grandmas have the uncanny ability to become more powerful the older they get."`,
+      tier: "Sugarmuck",
     },
     "22": {
       id: 22,
@@ -1268,6 +1290,7 @@ class Grandma extends Structure {
       type: "grandma",
       description: `Grandmas are twice as efficient.
       "Complete with flame decals and a little horn that goes "toot"."`,
+      tier: "Jetmint",
     },
     "23": {
       id: 23,
@@ -1279,6 +1302,7 @@ class Grandma extends Structure {
       type: "grandma",
       description: `Grandmas are twice as efficient.
       "It might be a classic tale of bad parenting, but let's see where grandma is going with this."`,
+      tier: "Cherrysilver",
     },
     "24": {
       id: 24,
@@ -1290,6 +1314,7 @@ class Grandma extends Structure {
       type: "grandma",
       description: `Grandmas are twice as efficient.
       "Extremely unsettling, and somehow even worse than the regular kind."`,
+      tier: "Hazelrald",
     },
     "25": {
       id: 25,
@@ -1301,6 +1326,7 @@ class Grandma extends Structure {
       type: "grandma",
       description: `Grandmas are twice as efficient.
       "Why do they always have those strange wispy pink dos? What do they know about candy floss that we don't?"`,
+      tier: "Mooncandy",
     },
     "26": {
       id: 26,
@@ -1312,6 +1338,7 @@ class Grandma extends Structure {
       type: "grandma",
       description: `Grandmas are twice as efficient.
       "Apparently these ladies are much more amiable if you take the time to learn their strange, ancient customs, which seem to involve saying "please" and "thank you" and staring at the sun with bulging eyes while muttering eldritch curses under your breath."`,
+      tier: "Astrofudge",
     },
     "27": {
       id: 27,
@@ -1321,6 +1348,7 @@ class Grandma extends Structure {
       requirement: 450,
       acquired: false,
       type: "grandma",
+      tier: "Alabascream",
       description: `Grandmas are twice as efficient.
       "Genetic testing shows that most of your grandmas are infected with a strange degenerative disease that only seems to further their powers; the more time passes, the older they get. This should concern you."`,
     },
@@ -1332,6 +1360,7 @@ class Grandma extends Structure {
       requirement: 500,
       acquired: false,
       type: "grandma",
+      tier: "Iridyum",
       description: `Grandmas are twice as efficient.
       "In an extensive double-blind study (sample size: 12 millions), your researchers have found evidence that grandmas are up to twice as productive if you just come by and say hi once in a while. It's nice to check up on your grans! (Do not under any circumstances ingest any tea or tea-like substances the grandmas may offer you.)."`,
     },
@@ -1343,6 +1372,7 @@ class Grandma extends Structure {
       requirement: 550,
       acquired: false,
       type: "grandma",
+      tier: "Glucosmium",
       description: `Grandmas are twice as efficient.
       "A grandma's kitchen cabinet is a befuddling place. Through lesser-studied aggregating instincts, grandmas will tend to gradually fill all nearby cabinets with various sorts of things, such as curious coconut snacks or dietetic powders. By contract, these are legally yours, which opens up exciting opportunities for your substance investigation department."`,
     },
@@ -1354,6 +1384,7 @@ class Grandma extends Structure {
       requirement: 600,
       acquired: false,
       type: "grandma",
+      tier: "Glimmeringue",
       description: `Grandmas are twice as efficient.
       "Perhaps the result of prolonged service, your grandmas have developed all kinds of odd and aggressive hierarchies among themselves; these will help them not hurt each other as bad during their endless turf wars."`,
     },
@@ -1442,6 +1473,7 @@ class Farm extends Structure {
       type: "farm",
       description: `Farms are twice as efficient.
       "Rake in the dough!"`,
+      tier: "Plain",
     },
     "32": {
       id: 32,
@@ -1453,6 +1485,7 @@ class Farm extends Structure {
       type: "farm",
       description: `Farms are twice as efficient.
       "It's chocolate, I swear."`,
+      tier: "Berrylium",
     },
     "33": {
       id: 33,
@@ -1464,6 +1497,7 @@ class Farm extends Structure {
       type: "farm",
       description: `Farms are twice as efficient.
       "A relative of the breadfruit."`,
+      tier: "Blueberrylium",
     },
     "34": {
       id: 34,
@@ -1475,6 +1509,7 @@ class Farm extends Structure {
       type: "farm",
       description: `Farms are twice as efficient.
       "All-natural mutations."`,
+      tier: "Chalcedhoney",
     },
     "35": {
       id: 35,
@@ -1486,6 +1521,7 @@ class Farm extends Structure {
       type: "farm",
       description: `Farms are twice as efficient.
       "Staring at your crops with mischievous glee."`,
+      tier: "Buttergold",
     },
     "36": {
       id: 36,
@@ -1497,6 +1533,7 @@ class Farm extends Structure {
       type: "farm",
       description: `Farms are twice as efficient.
       "There's no such thing as over-watering. The moistest is the bestest."`,
+      tier: "Sugarmuck",
     },
     "37": {
       id: 37,
@@ -1509,6 +1546,7 @@ class Farm extends Structure {
       description: `Farms are twice as efficient.
       "A sugary parasite whose tendrils help cookie growth.
       Please do not breathe in the spores. In case of spore ingestion, seek medical help within the next 36 seconds."`,
+      tier: "Jetmint",
     },
     "38": {
       id: 38,
@@ -1521,6 +1559,7 @@ class Farm extends Structure {
       description: `Farms are twice as efficient.
       "Taking care of crops is so much easier when your plants can just walk about and help around the farm.
       Do not pet. Do not feed. Do not attempt to converse with."`,
+      tier: "Cherrysilver",
     },
     "39": {
       id: 39,
@@ -1532,6 +1571,7 @@ class Farm extends Structure {
       type: "farm",
       description: `Farms are twice as efficient.
       "Made by people, for people, from people and ready to unleash some righteous scorching pain on those pesky insects that so deserve it."`,
+      tier: "Hazelrald",
     },
     "40": {
       id: 40,
@@ -1544,6 +1584,7 @@ class Farm extends Structure {
       type: "farm",
       description: `Farms are twice as efficient.
       "Ah, yes. These help quite a bit. Somehow."`,
+      tier: "Mooncandy",
     },
     "41": {
       id: 41,
@@ -1555,6 +1596,7 @@ class Farm extends Structure {
       type: "farm",
       description: `Farms are twice as efficient.
       "You have to import these from far up north, but they really help areate the soil!"`,
+      tier: "Astrofudge",
     },
     "42": {
       id: 42,
@@ -1566,6 +1608,7 @@ class Farm extends Structure {
       type: "farm",
       description: `Farms are twice as efficient.
       "An enormous genetic repository that could outlive an apocalypse. Guarantees the survival of your empire, or at the very least its agricultural components, should civilization fall. Which should be any day now."`,
+      tier: "Alabascream",
     },
     "43": {
       id: 43,
@@ -1577,6 +1620,7 @@ class Farm extends Structure {
       type: "farm",
       description: `Farms are twice as efficient.
       "Plants aren't for eating, plants are for exploitative agriculture and astronomical profit margins!"`,
+      tier: "Iridyum",
     },
     "44": {
       id: 44,
@@ -1586,6 +1630,7 @@ class Farm extends Structure {
       requirement: 550,
       acquired: false,
       type: "farm",
+      tier: "Glucosmium",
       description: `Farms are twice as efficient.
       "Grinding surplus cookies into paste that you then spread onto your fields enables a strange feedback loop in the quality of your cookie crops. Cookie feeding on cookie should be an abomination, but then why does it taste so good?"`,
     },
@@ -1601,6 +1646,7 @@ class Farm extends Structure {
       type: "farm",
       description: `Farms are twice as efficient.
       "Embarked AI lets your field vehicles sow and harvest cookie crops at any time of the day or night, and with so few human casualties, too!"`,
+      tier: "Glimmeringue",
     },
   };
   public farmUpgrades: Map<string, UpgradeType> = new Map(
@@ -1686,6 +1732,7 @@ class Mine extends Structure {
       type: "mine",
       description: `Mines are twice as efficient.
       "A pink, volatile gas, found in the depths of some chocolate caves."`,
+      tier: "Plain",
     },
     "47": {
       id: 47,
@@ -1697,6 +1744,7 @@ class Mine extends Structure {
       type: "mine",
       description: `Mines are twice as efficient.
       "You're in deep."`,
+      tier: "Berrylium",
     },
     "48": {
       id: 48,
@@ -1708,6 +1756,7 @@ class Mine extends Structure {
       type: "mine",
       description: `Mines are twice as efficient.
       "Finally caved in?"`,
+      tier: "Blueberrylium",
     },
     "49": {
       id: 49,
@@ -1719,6 +1768,7 @@ class Mine extends Structure {
       type: "mine",
       description: `Mines are twice as efficient.
       "Pierce the heavens, etc."`,
+      tier: "Chalcedhoney",
     },
     "50": {
       id: 50,
@@ -1730,6 +1780,7 @@ class Mine extends Structure {
       type: "mine",
       description: `Mines are twice as efficient.
       "Questionable efficiency, but spectacular nonetheless."`,
+      tier: "Buttergold",
     },
     "51": {
       id: 51,
@@ -1741,6 +1792,7 @@ class Mine extends Structure {
       type: "mine",
       description: `Mines are twice as efficient.
       "You've finally dug a tunnel down to the Earth's core. It's pretty warm down here."`,
+      tier: "Sugarmuck",
     },
     "52": {
       id: 52,
@@ -1750,6 +1802,7 @@ class Mine extends Structure {
       requirement: 200,
       acquired: false,
       type: "mine",
+      tier: "Jetmint",
       description: `Mines are twice as efficient.
       "These new state-of-the-art excavators have been tested on Merula, Globort and Flwanza VI, among other distant planets which have been curiously quiet lately."`,
     },
@@ -1761,6 +1814,7 @@ class Mine extends Structure {
       requirement: 250,
       acquired: false,
       type: "mine",
+      tier: "Cherrysilver",
       description: `Mines are twice as efficient.
       "A previously untapped resource, canola oil permeates the underground olifers which grant it its particular taste and lucrative properties."`,
     },
@@ -1772,6 +1826,7 @@ class Mine extends Structure {
       requirement: 300,
       acquired: false,
       type: "mine",
+      tier: "Hazelrald",
       description: `Mines are twice as efficient.
       "Engineered from real human beings within your very labs, these sturdy little folks have a knack for finding the tastiest underground minerals in conditions that more expensive machinery probably wouldn't survive."`,
     },
@@ -1785,6 +1840,7 @@ class Mine extends Structure {
       type: "mine",
       description: `Mines are twice as efficient.
       "These aren't used for anything freaky! The miners just enjoy having a pet or two down there."`,
+      tier: "Mooncandy",
     },
     "56": {
       id: 56,
@@ -1794,6 +1850,7 @@ class Mine extends Structure {
       requirement: 400,
       acquired: false,
       type: "mine",
+      tier: "Astrofudge",
       description: `Mines are twice as efficient.
       "After extracting so much sediment for so long, you've formed some veritable mountains of your own from the accumulated piles of rock and dirt. Time to dig through those and see if you find anything fun!"`,
     },
@@ -1805,6 +1862,7 @@ class Mine extends Structure {
       requirement: 450,
       acquired: false,
       type: "mine",
+      tier: "Alabascream",
       description: `Mines are twice as efficient.
       "You've dug your drills through just about every solid surface you could find. But did you know recent advances have revealed untold riches hiding within non-solid surfaces too?"`,
     },
@@ -1816,6 +1874,7 @@ class Mine extends Structure {
       requirement: 500,
       acquired: false,
       type: "mine",
+      tier: "Iridyum",
       description: `Mines are twice as efficient.
       "Your geologists have isolated a family of once-overlooked sugary ores that, when combined, may be turned into even more cookie ingredients. Your millions of miles of previously useless tunnels probably house insane amounts of the stuff!"`,
     },
@@ -1827,6 +1886,7 @@ class Mine extends Structure {
       requirement: 550,
       acquired: false,
       type: "mine",
+      tier: "Glucosmium",
       description: `Mines are twice as efficient.
       "Stratum after stratum, you've extracted strange new minerals heretofore unknown to geology. Ushering a new era of materials research, your scientists have been able to identify every new element your mines have discovered, including whatever those things are in the upgrade tier names."`,
     },
@@ -1838,6 +1898,7 @@ class Mine extends Structure {
       requirement: 600,
       acquired: false,
       type: "mine",
+      tier: "Glimmeringue",
       description: `Mines are twice as efficient.
       "You were rather skeptical about installing such embarrassingly low-tech implements, but limiting the number of daily cave-ins really does help with that annoying employee turnover!"`,
     },
@@ -1925,6 +1986,7 @@ class Factory extends Structure {
       acquired: false,
       type: "factory",
       description: `Factories are twice as efficient.`,
+      tier: "Plain",
     },
     "62": {
       id: 62,
@@ -1935,6 +1997,7 @@ class Factory extends Structure {
       acquired: false,
       type: "factory",
       description: `Factories are twice as efficient.`,
+      tier: "Berrylium",
     },
     "63": {
       id: 63,
@@ -1945,6 +2008,7 @@ class Factory extends Structure {
       acquired: false,
       type: "factory",
       description: `Factories are twice as efficient.`,
+      tier: "Blueberrylium",
     },
     "64": {
       id: 64,
@@ -1955,6 +2019,7 @@ class Factory extends Structure {
       acquired: false,
       type: "factory",
       description: `Factories are twice as efficient.`,
+      tier: "Chalcedhoney",
     },
     "65": {
       id: 65,
@@ -1965,6 +2030,7 @@ class Factory extends Structure {
       acquired: false,
       type: "factory",
       description: `Factories are twice as efficient.`,
+      tier: "Buttergold",
     },
     "66": {
       id: 66,
@@ -1975,6 +2041,7 @@ class Factory extends Structure {
       acquired: false,
       type: "factory",
       description: `Factories are twice as efficient.`,
+      tier: "Sugarmuck",
     },
     "67": {
       id: 67,
@@ -1985,6 +2052,7 @@ class Factory extends Structure {
       acquired: false,
       type: "factory",
       description: `Factories are twice as efficient.`,
+      tier: "Jetmint",
     },
     "68": {
       id: 68,
@@ -1995,6 +2063,7 @@ class Factory extends Structure {
       acquired: false,
       type: "factory",
       description: `Factories are twice as efficient.`,
+      tier: "Cherrysilver",
     },
     "69": {
       id: 69,
@@ -2005,6 +2074,7 @@ class Factory extends Structure {
       acquired: false,
       type: "factory",
       description: `Factories are twice as efficient.`,
+      tier: "Hazelrald",
     },
     "70": {
       id: 70,
@@ -2015,6 +2085,7 @@ class Factory extends Structure {
       acquired: false,
       type: "factory",
       description: `Factories are twice as efficient.`,
+      tier: "Mooncandy",
     },
     "71": {
       id: 71,
@@ -2025,6 +2096,7 @@ class Factory extends Structure {
       acquired: false,
       type: "factory",
       description: `Factories are twice as efficient.`,
+      tier: "Astrofudge",
     },
     "72": {
       id: 72,
@@ -2035,6 +2107,7 @@ class Factory extends Structure {
       acquired: false,
       type: "factory",
       description: `Factories are twice as efficient.`,
+      tier: "Alabascream",
     },
     "73": {
       id: 73,
@@ -2045,6 +2118,7 @@ class Factory extends Structure {
       acquired: false,
       type: "factory",
       description: `Factories are twice as efficient.`,
+      tier: "Iridyum",
     },
     "74": {
       id: 74,
@@ -2055,6 +2129,7 @@ class Factory extends Structure {
       acquired: false,
       type: "factory",
       description: `Factories are twice as efficient.`,
+      tier: "Glucosmium",
     },
     "75": {
       id: 75,
@@ -2065,6 +2140,7 @@ class Factory extends Structure {
       acquired: false,
       type: "factory",
       description: `Factories are twice as efficient.`,
+      tier: "Glimmeringue",
     },
   };
   public factoryUpgrades: Map<string, UpgradeType> = new Map(
@@ -2150,6 +2226,7 @@ class Bank extends Structure {
       acquired: false,
       type: "bank",
       description: `Banks are twice as efficient.`,
+      tier: "Plain",
     },
     "77": {
       id: 77,
@@ -2160,6 +2237,7 @@ class Bank extends Structure {
       acquired: false,
       type: "bank",
       description: `Banks are twice as efficient.`,
+      tier: "Berrylium",
     },
     "78": {
       id: 78,
@@ -2170,6 +2248,7 @@ class Bank extends Structure {
       acquired: false,
       type: "bank",
       description: `Banks are twice as efficient.`,
+      tier: "Blueberrylium",
     },
     "79": {
       id: 79,
@@ -2180,6 +2259,7 @@ class Bank extends Structure {
       acquired: false,
       type: "bank",
       description: `Banks are twice as efficient.`,
+      tier: "Chalcedhoney",
     },
     "80": {
       id: 80,
@@ -2190,6 +2270,7 @@ class Bank extends Structure {
       acquired: false,
       type: "bank",
       description: `Banks are twice as efficient.`,
+      tier: "Buttergold",
     },
     "81": {
       id: 81,
@@ -2200,6 +2281,7 @@ class Bank extends Structure {
       acquired: false,
       type: "bank",
       description: `Banks are twice as efficient.`,
+      tier: "Sugarmuck",
     },
     "82": {
       id: 82,
@@ -2210,6 +2292,7 @@ class Bank extends Structure {
       acquired: false,
       type: "bank",
       description: `Banks are twice as efficient.`,
+      tier: "Jetmint",
     },
     "83": {
       id: 83,
@@ -2220,6 +2303,7 @@ class Bank extends Structure {
       acquired: false,
       type: "bank",
       description: `Banks are twice as efficient.`,
+      tier: "Cherrysilver",
     },
     "84": {
       id: 84,
@@ -2230,6 +2314,7 @@ class Bank extends Structure {
       acquired: false,
       type: "bank",
       description: `Banks are twice as efficient.`,
+      tier: "Hazelrald",
     },
     "85": {
       id: 85,
@@ -2240,6 +2325,7 @@ class Bank extends Structure {
       acquired: false,
       type: "bank",
       description: `Banks are twice as efficient.`,
+      tier: "Mooncandy",
     },
     "86": {
       id: 86,
@@ -2250,6 +2336,7 @@ class Bank extends Structure {
       acquired: false,
       type: "bank",
       description: `Banks are twice as efficient.`,
+      tier: "Astrofudge",
     },
     "87": {
       id: 87,
@@ -2260,6 +2347,7 @@ class Bank extends Structure {
       acquired: false,
       type: "bank",
       description: `Banks are twice as efficient.`,
+      tier: "Alabascream",
     },
     "88": {
       id: 88,
@@ -2270,6 +2358,7 @@ class Bank extends Structure {
       acquired: false,
       type: "bank",
       description: `Banks are twice as efficient.`,
+      tier: "Iridyum",
     },
     "89": {
       id: 89,
@@ -2280,6 +2369,7 @@ class Bank extends Structure {
       acquired: false,
       type: "bank",
       description: `Banks are twice as efficient.`,
+      tier: "Glucosmium",
     },
     "90": {
       id: 90,
@@ -2292,6 +2382,7 @@ class Bank extends Structure {
       acquired: false,
       type: "bank",
       description: `Banks are twice as efficient.`,
+      tier: "Glimmeringue",
     },
   };
   public bankUpgrades: Map<string, UpgradeType> = new Map(
@@ -2377,6 +2468,7 @@ class Temple extends Structure {
       acquired: false,
       type: "temple",
       description: `Temples are twice as efficient.`,
+      tier: "Plain",
     },
     "92": {
       id: 92,
@@ -2387,6 +2479,7 @@ class Temple extends Structure {
       acquired: false,
       type: "temple",
       description: `Temples are twice as efficient.`,
+      tier: "Berrylium",
     },
     "93": {
       id: 93,
@@ -2397,6 +2490,7 @@ class Temple extends Structure {
       acquired: false,
       type: "temple",
       description: `Temples are twice as efficient.`,
+      tier: "Blueberrylium",
     },
     "94": {
       id: 94,
@@ -2407,6 +2501,7 @@ class Temple extends Structure {
       acquired: false,
       type: "temple",
       description: `Temples are twice as efficient.`,
+      tier: "Chalcedhoney",
     },
     "95": {
       id: 95,
@@ -2417,6 +2512,7 @@ class Temple extends Structure {
       acquired: false,
       type: "temple",
       description: `Temples are twice as efficient.`,
+      tier: "Buttergold",
     },
     "96": {
       id: 96,
@@ -2427,6 +2523,7 @@ class Temple extends Structure {
       acquired: false,
       type: "temple",
       description: `Temples are twice as efficient.`,
+      tier: "Sugarmuck",
     },
     "97": {
       id: 97,
@@ -2437,6 +2534,7 @@ class Temple extends Structure {
       acquired: false,
       type: "temple",
       description: `Temples are twice as efficient.`,
+      tier: "Jetmint",
     },
     "98": {
       id: 98,
@@ -2447,6 +2545,7 @@ class Temple extends Structure {
       acquired: false,
       type: "temple",
       description: `Temples are twice as efficient.`,
+      tier: "Cherrysilver",
     },
     "99": {
       id: 99,
@@ -2457,6 +2556,7 @@ class Temple extends Structure {
       acquired: false,
       type: "temple",
       description: `Temples are twice as efficient.`,
+      tier: "Hazelrald",
     },
     "100": {
       id: 100,
@@ -2467,6 +2567,7 @@ class Temple extends Structure {
       acquired: false,
       type: "temple",
       description: `Temples are twice as efficient.`,
+      tier: "Mooncandy",
     },
     "101": {
       id: 101,
@@ -2477,6 +2578,7 @@ class Temple extends Structure {
       acquired: false,
       type: "temple",
       description: `Temples are twice as efficient.`,
+      tier: "Astrofudge",
     },
     "102": {
       id: 102,
@@ -2487,6 +2589,7 @@ class Temple extends Structure {
       acquired: false,
       type: "temple",
       description: `Temples are twice as efficient.`,
+      tier: "Alabascream",
     },
     "103": {
       id: 103,
@@ -2497,6 +2600,7 @@ class Temple extends Structure {
       acquired: false,
       type: "temple",
       description: `Temples are twice as efficient.`,
+      tier: "Iridyum",
     },
     "104": {
       id: 104,
@@ -2509,6 +2613,7 @@ class Temple extends Structure {
       acquired: false,
       type: "temple",
       description: `Temples are twice as efficient.`,
+      tier: "Glucosmium",
     },
     "105": {
       id: 105,
@@ -2521,6 +2626,7 @@ class Temple extends Structure {
       acquired: false,
       type: "temple",
       description: `Temples are twice as efficient.`,
+      tier: "Glimmeringue",
     },
   };
   public templeUpgrades: Map<string, UpgradeType> = new Map(
@@ -2606,6 +2712,7 @@ class WizardTower extends Structure {
       acquired: false,
       type: "wizardTower",
       description: `Wizard towers are twice as efficient.`,
+      tier: "Plain",
     },
     "107": {
       id: 107,
@@ -2616,6 +2723,7 @@ class WizardTower extends Structure {
       acquired: false,
       type: "wizardTower",
       description: `Wizard towers are twice as efficient.`,
+      tier: "Berrylium",
     },
     "108": {
       id: 108,
@@ -2626,6 +2734,7 @@ class WizardTower extends Structure {
       acquired: false,
       type: "wizardTower",
       description: `Wizard towers are twice as efficient.`,
+      tier: "Blueberrylium",
     },
     "109": {
       id: 109,
@@ -2636,6 +2745,7 @@ class WizardTower extends Structure {
       acquired: false,
       type: "wizardTower",
       description: `Wizard towers are twice as efficient.`,
+      tier: "Chalcedhoney",
     },
     "110": {
       id: 110,
@@ -2646,6 +2756,7 @@ class WizardTower extends Structure {
       acquired: false,
       type: "wizardTower",
       description: `Wizard towers are twice as efficient.`,
+      tier: "Buttergold",
     },
     "111": {
       id: 111,
@@ -2656,6 +2767,7 @@ class WizardTower extends Structure {
       acquired: false,
       type: "wizardTower",
       description: `Wizard towers are twice as efficient.`,
+      tier: "Sugarmuck",
     },
     "112": {
       id: 112,
@@ -2666,6 +2778,7 @@ class WizardTower extends Structure {
       acquired: false,
       type: "wizardTower",
       description: `Wizard towers are twice as efficient.`,
+      tier: "Jetmint",
     },
     "113": {
       id: 113,
@@ -2676,6 +2789,7 @@ class WizardTower extends Structure {
       acquired: false,
       type: "wizardTower",
       description: `Wizard towers are twice as efficient.`,
+      tier: "Cherrysilver",
     },
     "114": {
       id: 114,
@@ -2686,6 +2800,7 @@ class WizardTower extends Structure {
       acquired: false,
       type: "wizardTower",
       description: `Wizard towers are twice as efficient.`,
+      tier: "Hazelrald",
     },
     "115": {
       id: 115,
@@ -2696,6 +2811,7 @@ class WizardTower extends Structure {
       acquired: false,
       type: "wizardTower",
       description: `Wizard towers are twice as efficient.`,
+      tier: "Mooncandy",
     },
     "116": {
       id: 116,
@@ -2706,6 +2822,7 @@ class WizardTower extends Structure {
       acquired: false,
       type: "wizardTower",
       description: `Wizard towers are twice as efficient.`,
+      tier: "Astrofudge",
     },
     "117": {
       id: 117,
@@ -2716,6 +2833,7 @@ class WizardTower extends Structure {
       acquired: false,
       type: "wizardTower",
       description: `Wizard towers are twice as efficient.`,
+      tier: "Alabascream",
     },
     "118": {
       id: 118,
@@ -2726,6 +2844,7 @@ class WizardTower extends Structure {
       acquired: false,
       type: "wizardTower",
       description: `Wizard towers are twice as efficient.`,
+      tier: "Iridyum",
     },
     "119": {
       id: 119,
@@ -2738,6 +2857,7 @@ class WizardTower extends Structure {
       acquired: false,
       type: "wizardTower",
       description: `Wizard towers are twice as efficient.`,
+      tier: "Glucosmium",
     },
     "120": {
       id: 120,
@@ -2750,6 +2870,7 @@ class WizardTower extends Structure {
       acquired: false,
       type: "wizardTower",
       description: `Wizard towers are twice as efficient.`,
+      tier: "Glimmeringue",
     },
   };
   public WizardTowerUpgrades: Map<string, UpgradeType> = new Map(
@@ -2841,6 +2962,7 @@ class Shipment extends Structure {
       acquired: false,
       type: "shipment",
       description: `Shipments are twice as efficient.`,
+      tier: "Plain",
     },
     "122": {
       id: 122,
@@ -2851,6 +2973,7 @@ class Shipment extends Structure {
       acquired: false,
       type: "shipment",
       description: `Shipments are twice as efficient.`,
+      tier: "Berrylium",
     },
     "123": {
       id: 123,
@@ -2861,6 +2984,7 @@ class Shipment extends Structure {
       acquired: false,
       type: "shipment",
       description: `Shipments are twice as efficient.`,
+      tier: "Blueberrylium",
     },
     "124": {
       id: 124,
@@ -2871,6 +2995,7 @@ class Shipment extends Structure {
       acquired: false,
       type: "shipment",
       description: `Shipments are twice as efficient.`,
+      tier: "Chalcedhoney",
     },
     "125": {
       id: 125,
@@ -2881,6 +3006,7 @@ class Shipment extends Structure {
       acquired: false,
       type: "shipment",
       description: `Shipments are twice as efficient.`,
+      tier: "Buttergold",
     },
     "126": {
       id: 126,
@@ -2891,6 +3017,7 @@ class Shipment extends Structure {
       acquired: false,
       type: "shipment",
       description: `Shipments are twice as efficient.`,
+      tier: "Sugarmuck",
     },
     "127": {
       id: 127,
@@ -2901,6 +3028,7 @@ class Shipment extends Structure {
       acquired: false,
       type: "shipment",
       description: `Shipments are twice as efficient.`,
+      tier: "Jetmint",
     },
     128: {
       id: 128,
@@ -2911,6 +3039,7 @@ class Shipment extends Structure {
       acquired: false,
       type: "shipment",
       description: `Shipments are twice as efficient.`,
+      tier: "Cherrysilver",
     },
     129: {
       id: 129,
@@ -2921,6 +3050,7 @@ class Shipment extends Structure {
       acquired: false,
       type: "shipment",
       description: `Shipments are twice as efficient.`,
+      tier: "Hazelrald",
     },
     130: {
       id: 130,
@@ -2931,6 +3061,7 @@ class Shipment extends Structure {
       acquired: false,
       type: "shipment",
       description: `Shipments are twice as efficient.`,
+      tier: "Mooncandy",
     },
     131: {
       id: 131,
@@ -2941,6 +3072,7 @@ class Shipment extends Structure {
       acquired: false,
       type: "shipment",
       description: `Shipments are twice as efficient.`,
+      tier: "Astrofudge",
     },
     132: {
       id: 132,
@@ -2951,6 +3083,7 @@ class Shipment extends Structure {
       acquired: false,
       type: "shipment",
       description: `Shipments are twice as efficient.`,
+      tier: "Alabascream",
     },
     133: {
       id: 133,
@@ -2961,6 +3094,7 @@ class Shipment extends Structure {
       acquired: false,
       type: "shipment",
       description: `Shipments are twice as efficient.`,
+      tier: "Iridyum",
     },
     134: {
       id: 134,
@@ -2973,6 +3107,7 @@ class Shipment extends Structure {
       acquired: false,
       type: "shipment",
       description: `Shipments are twice as efficient.`,
+      tier: "Glucosmium",
     },
     135: {
       id: 135,
@@ -2985,6 +3120,7 @@ class Shipment extends Structure {
       acquired: false,
       type: "shipment",
       description: `Shipments are twice as efficient.`,
+      tier: "Glimmeringue",
     },
   };
   public shipmentUpgrades: Map<string, UpgradeType> = new Map(
@@ -3074,6 +3210,7 @@ class AlchemyLab extends Structure {
       acquired: false,
       type: "alchemyLab",
       description: `Alchemy labs are twice as efficient.`,
+      tier: "Plain",
     },
 
     137: {
@@ -3085,6 +3222,7 @@ class AlchemyLab extends Structure {
       acquired: false,
       type: "alchemyLab",
       description: `Alchemy labs are twice as efficient.`,
+      tier: "Berrylium",
     },
     138: {
       id: 138,
@@ -3095,6 +3233,7 @@ class AlchemyLab extends Structure {
       acquired: false,
       type: "alchemyLab",
       description: `Alchemy labs are twice as efficient.`,
+      tier: "Blueberrylium",
     },
     139: {
       id: 139,
@@ -3105,6 +3244,7 @@ class AlchemyLab extends Structure {
       acquired: false,
       type: "alchemyLab",
       description: `Alchemy labs are twice as efficient.`,
+      tier: "Chalcedhoney",
     },
     140: {
       id: 140,
@@ -3115,6 +3255,7 @@ class AlchemyLab extends Structure {
       acquired: false,
       type: "alchemyLab",
       description: `Alchemy labs are twice as efficient.`,
+      tier: "Buttergold",
     },
     141: {
       id: 141,
@@ -3125,6 +3266,7 @@ class AlchemyLab extends Structure {
       acquired: false,
       type: "alchemyLab",
       description: `Alchemy labs are twice as efficient.`,
+      tier: "Sugarmuck",
     },
     142: {
       id: 142,
@@ -3135,6 +3277,7 @@ class AlchemyLab extends Structure {
       acquired: false,
       type: "alchemyLab",
       description: `Alchemy labs are twice as efficient.`,
+      tier: "Jetmint",
     },
     143: {
       id: 143,
@@ -3145,6 +3288,7 @@ class AlchemyLab extends Structure {
       acquired: false,
       type: "alchemyLab",
       description: `Alchemy labs are twice as efficient.`,
+      tier: "Cherrysilver",
     },
     144: {
       id: 144,
@@ -3155,6 +3299,7 @@ class AlchemyLab extends Structure {
       acquired: false,
       type: "alchemyLab",
       description: `Alchemy labs are twice as efficient.`,
+      tier: "Hazelrald",
     },
     145: {
       id: 145,
@@ -3165,6 +3310,7 @@ class AlchemyLab extends Structure {
       acquired: false,
       type: "alchemyLab",
       description: `Alchemy labs are twice as efficient.`,
+      tier: "Mooncandy",
     },
     146: {
       id: 146,
@@ -3176,6 +3322,7 @@ class AlchemyLab extends Structure {
       acquired: false,
       type: "alchemyLab",
       description: `Alchemy labs are twice as efficient.`,
+      tier: "Astrofudge",
     },
     147: {
       id: 147,
@@ -3186,6 +3333,7 @@ class AlchemyLab extends Structure {
       acquired: false,
       type: "alchemyLab",
       description: `Alchemy labs are twice as efficient.`,
+      tier: "Alabascream",
     },
     148: {
       id: 148,
@@ -3196,6 +3344,7 @@ class AlchemyLab extends Structure {
       acquired: false,
       type: "alchemyLab",
       description: `Alchemy labs are twice as efficient.`,
+      tier: "Iridyum",
     },
     149: {
       id: 149,
@@ -3208,6 +3357,7 @@ class AlchemyLab extends Structure {
       acquired: false,
       type: "alchemyLab",
       description: `Alchemy labs are twice as efficient.`,
+      tier: "Glucosmium",
     },
   };
   public alchemyLabUpgrades: Map<string, UpgradeType> = new Map(
@@ -3293,6 +3443,7 @@ class Portal extends Structure {
       acquired: false,
       type: "portal",
       description: `Portals are twice as efficient.`,
+      tier: "Plain",
     },
     151: {
       id: 151,
@@ -3303,6 +3454,7 @@ class Portal extends Structure {
       acquired: false,
       type: "portal",
       description: `Portals are twice as efficient.`,
+      tier: "Berrylium",
     },
     152: {
       id: 152,
@@ -3313,6 +3465,7 @@ class Portal extends Structure {
       acquired: false,
       type: "portal",
       description: `Portals are twice as efficient.`,
+      tier: "Blueberrylium",
     },
     153: {
       id: 153,
@@ -3323,6 +3476,7 @@ class Portal extends Structure {
       acquired: false,
       type: "portal",
       description: `Portals are twice as efficient.`,
+      tier: "Chalcedhoney",
     },
     154: {
       id: 154,
@@ -3333,6 +3487,7 @@ class Portal extends Structure {
       acquired: false,
       type: "portal",
       description: `Portals are twice as efficient.`,
+      tier: "Buttergold",
     },
     155: {
       id: 155,
@@ -3343,6 +3498,7 @@ class Portal extends Structure {
       acquired: false,
       type: "portal",
       description: `Portals are twice as efficient.`,
+      tier: "Sugarmuck",
     },
     156: {
       id: 156,
@@ -3353,6 +3509,7 @@ class Portal extends Structure {
       acquired: false,
       type: "portal",
       description: `Portals are twice as efficient.`,
+      tier: "Jetmint",
     },
     157: {
       id: 157,
@@ -3363,6 +3520,7 @@ class Portal extends Structure {
       acquired: false,
       type: "portal",
       description: `Portals are twice as efficient.`,
+      tier: "Cherrysilver",
     },
     158: {
       id: 158,
@@ -3373,6 +3531,7 @@ class Portal extends Structure {
       acquired: false,
       type: "portal",
       description: `Portals are twice as efficient.`,
+      tier: "Hazelrald",
     },
     159: {
       id: 159,
@@ -3384,6 +3543,7 @@ class Portal extends Structure {
       acquired: false,
       type: "portal",
       description: `Portals are twice as efficient.`,
+      tier: "Mooncandy",
     },
     160: {
       id: 160,
@@ -3394,6 +3554,7 @@ class Portal extends Structure {
       acquired: false,
       type: "portal",
       description: `Portals are twice as efficient.`,
+      tier: "Astrofudge",
     },
     161: {
       id: 161,
@@ -3405,6 +3566,7 @@ class Portal extends Structure {
       acquired: false,
       type: "portal",
       description: `Portals are twice as efficient.`,
+      tier: "Alabascream",
     },
     162: {
       id: 162,
@@ -3417,6 +3579,7 @@ class Portal extends Structure {
       acquired: false,
       type: "portal",
       description: `Portals are twice as efficient.`,
+      tier: "Iridyum",
     },
     163: {
       id: 163,
@@ -3429,6 +3592,7 @@ class Portal extends Structure {
       acquired: false,
       type: "portal",
       description: `Portals are twice as efficient.`,
+      tier: "Glucosmium",
     },
     164: {
       id: 164,
@@ -3441,6 +3605,7 @@ class Portal extends Structure {
       acquired: false,
       type: "portal",
       description: `Portals are twice as efficient.`,
+      tier: "Glimmeringue",
     },
   };
   public PortalUpgrades: Map<string, UpgradeType> = new Map(
@@ -3527,6 +3692,7 @@ class TimeMachine extends Structure {
       acquired: false,
       type: "timeMachine",
       description: `Time machines are twice as efficient.`,
+      tier: "Plain",
     },
     166: {
       id: 166,
@@ -3537,6 +3703,7 @@ class TimeMachine extends Structure {
       acquired: false,
       type: "timeMachine",
       description: `Time machines are twice as efficient.`,
+      tier: "Berrylium",
     },
     167: {
       id: 167,
@@ -3547,6 +3714,7 @@ class TimeMachine extends Structure {
       acquired: false,
       type: "timeMachine",
       description: `Time machines are twice as efficient.`,
+      tier: "Blueberrylium",
     },
     168: {
       id: 168,
@@ -3557,6 +3725,7 @@ class TimeMachine extends Structure {
       acquired: false,
       type: "timeMachine",
       description: `Time machines are twice as efficient.`,
+      tier: "Chalcedhoney",
     },
     169: {
       id: 169,
@@ -3567,6 +3736,7 @@ class TimeMachine extends Structure {
       acquired: false,
       type: "timeMachine",
       description: `Time machines are twice as efficient.`,
+      tier: "Buttergold",
     },
     170: {
       id: 170,
@@ -3577,6 +3747,7 @@ class TimeMachine extends Structure {
       acquired: false,
       type: "timeMachine",
       description: `Time machines are twice as efficient.`,
+      tier: "Sugarmuck",
     },
     171: {
       id: 171,
@@ -3587,6 +3758,7 @@ class TimeMachine extends Structure {
       acquired: false,
       type: "timeMachine",
       description: `Time machines are twice as efficient.`,
+      tier: "Jetmint",
     },
     172: {
       id: 172,
@@ -3597,6 +3769,7 @@ class TimeMachine extends Structure {
       acquired: false,
       type: "timeMachine",
       description: `Time machines are twice as efficient.`,
+      tier: "Cherrysilver",
     },
     173: {
       id: 173,
@@ -3607,6 +3780,7 @@ class TimeMachine extends Structure {
       acquired: false,
       type: "timeMachine",
       description: `Time machines are twice as efficient.`,
+      tier: "Hazelrald",
     },
     174: {
       id: 174,
@@ -3617,6 +3791,7 @@ class TimeMachine extends Structure {
       acquired: false,
       type: "timeMachine",
       description: `Time machines are twice as efficient.`,
+      tier: "Mooncandy",
     },
     175: {
       id: 175,
@@ -3627,6 +3802,7 @@ class TimeMachine extends Structure {
       acquired: false,
       type: "timeMachine",
       description: `Time machines are twice as efficient.`,
+      tier: "Astrofudge",
     },
     176: {
       id: 176,
@@ -3639,6 +3815,7 @@ class TimeMachine extends Structure {
       acquired: false,
       type: "timeMachine",
       description: `Time machines are twice as efficient.`,
+      tier: "Alabascream",
     },
     177: {
       id: 177,
@@ -3651,6 +3828,7 @@ class TimeMachine extends Structure {
       acquired: false,
       type: "timeMachine",
       description: `Time machines are twice as efficient.`,
+      tier: "Iridyum",
     },
     178: {
       id: 178,
@@ -3663,6 +3841,7 @@ class TimeMachine extends Structure {
       acquired: false,
       type: "timeMachine",
       description: `Time machines are twice as efficient.`,
+      tier: "Glucosmium",
     },
     179: {
       id: 179,
@@ -3675,6 +3854,7 @@ class TimeMachine extends Structure {
       acquired: false,
       type: "timeMachine",
       description: `Time machines are twice as efficient.`,
+      tier: "Glimmeringue",
     },
   };
   public timeMachineUpgrades: Map<string, UpgradeType> = new Map(
@@ -3764,6 +3944,7 @@ class AntiMatterCondenser extends Structure {
       acquired: false,
       type: "antimatterCondenser",
       description: `Antimatter condensers are twice as efficient.`,
+      tier: "Plain",
     },
     2: {
       id: 2,
@@ -3776,6 +3957,7 @@ class AntiMatterCondenser extends Structure {
       acquired: false,
       type: "antimatterCondenser",
       description: `Antimatter condensers are twice as efficient.`,
+      tier: "Berrylium",
     },
     3: {
       id: 3,
@@ -3786,6 +3968,7 @@ class AntiMatterCondenser extends Structure {
       acquired: false,
       type: "antimatterCondenser",
       description: `Antimatter condensers are twice as efficient.`,
+      tier: "Blueberrylium",
     },
     4: {
       id: 4,
@@ -3796,6 +3979,7 @@ class AntiMatterCondenser extends Structure {
       acquired: false,
       type: "antimatterCondenser",
       description: `Antimatter condensers are twice as efficient.`,
+      tier: "Chalcedhoney",
     },
     5: {
       id: 5,
@@ -3806,6 +3990,7 @@ class AntiMatterCondenser extends Structure {
       acquired: false,
       type: "antimatterCondenser",
       description: `Antimatter condensers are twice as efficient.`,
+      tier: "Buttergold",
     },
     6: {
       id: 6,
@@ -3816,6 +4001,7 @@ class AntiMatterCondenser extends Structure {
       acquired: false,
       type: "antimatterCondenser",
       description: `Antimatter condensers are twice as efficient.`,
+      tier: "Sugarmuck",
     },
     7: {
       id: 7,
@@ -3826,6 +4012,7 @@ class AntiMatterCondenser extends Structure {
       acquired: false,
       type: "antimatterCondenser",
       description: `Antimatter condensers are twice as efficient.`,
+      tier: "Jetmint",
     },
     8: {
       id: 8,
@@ -3836,6 +4023,7 @@ class AntiMatterCondenser extends Structure {
       acquired: false,
       type: "antimatterCondenser",
       description: `Antimatter condensers are twice as efficient.`,
+      tier: "Cherrysilver",
     },
     9: {
       id: 9,
@@ -3846,6 +4034,7 @@ class AntiMatterCondenser extends Structure {
       acquired: false,
       type: "antimatterCondenser",
       description: `Antimatter condensers are twice as efficient.`,
+      tier: "Hazelrald",
     },
     10: {
       id: 10,
@@ -3856,6 +4045,7 @@ class AntiMatterCondenser extends Structure {
       acquired: false,
       type: "antimatterCondenser",
       description: `Antimatter condensers are twice as efficient.`,
+      tier: "Mooncandy",
     },
     11: {
       id: 11,
@@ -3866,6 +4056,7 @@ class AntiMatterCondenser extends Structure {
       acquired: false,
       type: "antimatterCondenser",
       description: `Antimatter condensers are twice as efficient.`,
+      tier: "Astrofudge",
     },
     12: {
       id: 12,
@@ -3876,6 +4067,7 @@ class AntiMatterCondenser extends Structure {
       acquired: false,
       type: "antimatterCondenser",
       description: `Antimatter condensers are twice as efficient.`,
+      tier: "Alabascream",
     },
     13: {
       id: 13,
@@ -3888,6 +4080,7 @@ class AntiMatterCondenser extends Structure {
       acquired: false,
       type: "antimatterCondenser",
       description: `Antimatter condensers are twice as efficient.`,
+      tier: "Iridyum",
     },
     14: {
       id: 14,
@@ -3900,6 +4093,7 @@ class AntiMatterCondenser extends Structure {
       acquired: false,
       type: "antimatterCondenser",
       description: `Antimatter condensers are twice as efficient.`,
+      tier: "Glucosmium",
     },
     15: {
       id: 15,
@@ -3912,6 +4106,7 @@ class AntiMatterCondenser extends Structure {
       acquired: false,
       type: "antimatterCondenser",
       description: `Antimatter condensers are twice as efficient.`,
+      tier: "Glimmeringue",
     },
   };
   public antimatterCondenserUpgrades: Map<string, UpgradeType> = new Map(

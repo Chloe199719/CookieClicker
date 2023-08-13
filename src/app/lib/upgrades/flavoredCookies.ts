@@ -10,6 +10,7 @@ const FlavoredCookies: UpgradeType[] = [
     acquired: false,
     multiplier: 1,
     type: "flavoredCookies",
+    tier: "None",
   },
   {
     id: 181,
@@ -20,6 +21,7 @@ const FlavoredCookies: UpgradeType[] = [
     acquired: false,
     multiplier: 1,
     type: "flavoredCookies",
+    tier: "None",
   },
   {
     id: 182,
@@ -30,6 +32,7 @@ const FlavoredCookies: UpgradeType[] = [
     acquired: false,
     multiplier: 1,
     type: "flavoredCookies",
+    tier: "None",
   },
   {
     id: 183,
@@ -40,6 +43,7 @@ const FlavoredCookies: UpgradeType[] = [
     acquired: false,
     multiplier: 2,
     type: "flavoredCookies",
+    tier: "None",
   },
   {
     id: 184,
@@ -50,6 +54,7 @@ const FlavoredCookies: UpgradeType[] = [
     acquired: false,
     multiplier: 2,
     type: "flavoredCookies",
+    tier: "None",
   },
   {
     id: 185,
@@ -60,6 +65,7 @@ const FlavoredCookies: UpgradeType[] = [
     acquired: false,
     multiplier: 2,
     type: "flavoredCookies",
+    tier: "None",
   },
   {
     id: 186,
@@ -70,6 +76,7 @@ const FlavoredCookies: UpgradeType[] = [
     acquired: false,
     multiplier: 2,
     type: "flavoredCookies",
+    tier: "None",
   },
   {
     id: 187,
@@ -81,6 +88,7 @@ const FlavoredCookies: UpgradeType[] = [
     acquired: false,
     multiplier: 2,
     type: "flavoredCookies",
+    tier: "None",
   },
   {
     id: 188,
@@ -92,6 +100,7 @@ const FlavoredCookies: UpgradeType[] = [
     acquired: false,
     multiplier: 2,
     type: "flavoredCookies",
+    tier: "None",
   },
   {
     id: 189,
@@ -103,6 +112,7 @@ const FlavoredCookies: UpgradeType[] = [
     acquired: false,
     multiplier: 2,
     type: "flavoredCookies",
+    tier: "None",
   },
   {
     id: 190,
@@ -114,6 +124,7 @@ const FlavoredCookies: UpgradeType[] = [
     acquired: false,
     multiplier: 2,
     type: "flavoredCookies",
+    tier: "None",
   },
   {
     id: 191,
@@ -125,6 +136,7 @@ const FlavoredCookies: UpgradeType[] = [
     acquired: false,
     multiplier: 2,
     type: "flavoredCookies",
+    tier: "None",
   },
   {
     id: 192,
@@ -137,6 +149,7 @@ const FlavoredCookies: UpgradeType[] = [
     acquired: false,
     multiplier: 2,
     type: "flavoredCookies",
+    tier: "None",
   },
   {
     id: 193,
@@ -147,6 +160,7 @@ const FlavoredCookies: UpgradeType[] = [
     acquired: false,
     multiplier: 2,
     type: "flavoredCookies",
+    tier: "None",
   },
   {
     id: 194,
@@ -158,6 +172,7 @@ const FlavoredCookies: UpgradeType[] = [
     acquired: false,
     multiplier: 2,
     type: "flavoredCookies",
+    tier: "None",
   },
   {
     id: 195,
@@ -169,6 +184,7 @@ const FlavoredCookies: UpgradeType[] = [
     acquired: false,
     multiplier: 5,
     type: "flavoredCookies",
+    tier: "None",
   },
   {
     id: 196,
@@ -179,6 +195,7 @@ const FlavoredCookies: UpgradeType[] = [
     acquired: false,
     multiplier: 5,
     type: "flavoredCookies",
+    tier: "None",
   },
   {
     id: 197,
@@ -189,6 +206,7 @@ const FlavoredCookies: UpgradeType[] = [
     acquired: false,
     multiplier: 2,
     type: "flavoredCookies",
+    tier: "None",
   },
   {
     id: 198,
@@ -199,6 +217,7 @@ const FlavoredCookies: UpgradeType[] = [
     acquired: false,
     multiplier: 2,
     type: "flavoredCookies",
+    tier: "None",
   },
   {
     id: 199,
@@ -210,6 +229,7 @@ const FlavoredCookies: UpgradeType[] = [
     acquired: false,
     multiplier: 2,
     type: "flavoredCookies",
+    tier: "None",
   },
   {
     id: 200,
@@ -220,6 +240,7 @@ const FlavoredCookies: UpgradeType[] = [
     acquired: false,
     multiplier: 2,
     type: "flavoredCookies",
+    tier: "None",
   },
   {
     id: 201,
@@ -231,6 +252,7 @@ const FlavoredCookies: UpgradeType[] = [
     acquired: false,
     multiplier: 2,
     type: "flavoredCookies",
+    tier: "None",
   },
   {
     id: 202,
@@ -241,6 +263,7 @@ const FlavoredCookies: UpgradeType[] = [
     acquired: false,
     multiplier: 2,
     type: "flavoredCookies",
+    tier: "None",
   },
   {
     id: 203,
@@ -251,6 +274,7 @@ const FlavoredCookies: UpgradeType[] = [
     acquired: false,
     multiplier: 2,
     type: "flavoredCookies",
+    tier: "None",
   },
   {
     id: 204,
@@ -261,6 +285,7 @@ const FlavoredCookies: UpgradeType[] = [
     acquired: false,
     multiplier: 2,
     type: "flavoredCookies",
+    tier: "None",
   },
   {
     id: 205,
@@ -271,6 +296,7 @@ const FlavoredCookies: UpgradeType[] = [
     acquired: false,
     multiplier: 2,
     type: "flavoredCookies",
+    tier: "None",
   },
   {
     id: 206,
@@ -281,6 +307,7 @@ const FlavoredCookies: UpgradeType[] = [
     acquired: false,
     multiplier: 2,
     type: "flavoredCookies",
+    tier: "None",
   },
   {
     id: 207,
@@ -291,6 +318,7 @@ const FlavoredCookies: UpgradeType[] = [
     acquired: false,
     multiplier: 2,
     type: "flavoredCookies",
+    tier: "None",
   },
   {
     id: 208,
@@ -301,6 +329,7 @@ const FlavoredCookies: UpgradeType[] = [
     acquired: false,
     multiplier: 2,
     type: "flavoredCookies",
+    tier: "None",
   },
   {
     id: 209,
@@ -312,6 +341,7 @@ const FlavoredCookies: UpgradeType[] = [
     acquired: false,
     multiplier: 5,
     type: "flavoredCookies",
+    tier: "None",
   },
   {
     id: 210,
@@ -323,6 +353,7 @@ const FlavoredCookies: UpgradeType[] = [
     acquired: false,
     multiplier: 5,
     type: "flavoredCookies",
+    tier: "None",
   },
 ];
 
