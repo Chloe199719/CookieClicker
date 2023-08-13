@@ -378,257 +378,461 @@ function Buildings({ game, setState }: Props) {
         width={200}
         height={30}
       />
-
-      <div className="flex flex-col border border-cyan-500 p-5 rounded-xl">
-        <div className="flex items-center gap-7">
-          <div className="flex flex-col gap-3">
-            <div className="flex flex-col gap-2">
-              <div>Banks: {game.bank.getStructureAmount()}</div>
-              {game.bank.getStructureAmount() > 0 && (
-                <div>
-                  Banks CPS: {numbers.format(game.bank.getBuildingCPS())}
-                </div>
-              )}
-              <button
-                className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
-                onClick={() => {
-                  if (game.bank.canBuyStructure(game.get_resources())) {
-                    game.buyBank();
-                    setState((prevState) => !prevState);
-                  }
-                }}
-              >
-                Buy Bank cost:{" "}
-                {numbers.format(game.bank.getStructureCost().cookies)}
-              </button>
-            </div>
-          </div>
-          <div>
+      <HoverCard>
+        <HoverCardTrigger>
+          {" "}
+          <div
+            onClick={() => {
+              if (game.canBuyBuilding("bank", buyAmount)) {
+                game.buyBuilding("bank", buyAmount);
+                setState((prevState) => !prevState);
+              }
+            }}
+            className="flex flex-col border hover:-translate-y-1 active:scale-95 relative h-22"
+          >
             <Image
-              className="w-48 "
-              src={`/bank.jpg`}
-              alt="bank"
+              className=" absolute w-full h-20 "
+              src={`/test4.jpg`}
+              alt="grandma"
               width={200}
               height={300}
             />
-          </div>
-        </div>
-      </div>
-
-      <div className="flex flex-col border border-cyan-500 p-5 rounded-xl">
-        <div className="flex items-center gap-7">
-          <div className="flex flex-col gap-3">
-            <div className="flex flex-col gap-2">
-              <div>Temple: {game.temple.getStructureAmount()}</div>
-              {game.temple.getStructureAmount() > 0 && (
-                <div>
-                  Temple CPS: {numbers.format(game.temple.getBuildingCPS())}
-                </div>
-              )}
-              <button
-                className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
-                onClick={() => {
-                  if (game.temple.canBuyStructure(game.get_resources())) {
-                    game.buyBuilding("temple", 1);
-                    setState((prevState) => !prevState);
-                  }
-                }}
-              >
-                Buy Temple cost:{" "}
-                {numbers.format(game.temple.getStructureCost().cookies)}
-              </button>
+            <div className="z-10  grid grid-cols-4 items-center  h-20">
+              <div className="h-20 flex items-center px-3 gap-3">
+                <Image
+                  className="rounded-full"
+                  src={`/bank.jpg`}
+                  alt="farm"
+                  width={80}
+                  height={80}
+                />
+              </div>
+              <div className="h-20 pt-2 col-span-2">
+                <h2 className="text-2xl font-bold uppercase ">Bank</h2>
+                <p className="flex gap-2 items-center">
+                  x{buyAmount}
+                  <FaCookie className="w-4 h-4 text-yellow-500" />
+                  <span
+                    className={`${
+                      game.canBuyBuilding("bank", buyAmount)
+                        ? "text-green-600"
+                        : "text-red-400"
+                    } font-bold`}
+                  >
+                    {numbers.format(
+                      game.bank.getStructureCost(buyAmount).cookies
+                    )}
+                  </span>
+                </p>
+              </div>
+              <div className="justify-self-end  text-4xl pr-8 font-bold">
+                {" "}
+                {game.bank.getStructureAmount()}
+              </div>
             </div>
           </div>
-          <div>
+        </HoverCardTrigger>
+        <HoverCardContent align="start">
+          Bank CPS: {numbers.format(game.bank.getBuildingCPS())}
+        </HoverCardContent>
+      </HoverCard>
+      <Image
+        className="w-full h-3 "
+        src={`/stuff.jpg`}
+        alt="grandma"
+        width={200}
+        height={30}
+      />
+      <HoverCard>
+        <HoverCardTrigger>
+          {" "}
+          <div
+            onClick={() => {
+              if (game.canBuyBuilding("temple", buyAmount)) {
+                game.buyBuilding("temple", buyAmount);
+                setState((prevState) => !prevState);
+              }
+            }}
+            className="flex flex-col border hover:-translate-y-1 active:scale-95 relative h-22"
+          >
             <Image
-              className="w-48 "
-              src={`/temple.png`}
-              alt="temple"
+              className=" absolute w-full h-20 "
+              src={`/test4.jpg`}
+              alt="grandma"
               width={200}
               height={300}
             />
-          </div>
-        </div>
-      </div>
-      <div className="flex flex-col border border-cyan-500 p-5 rounded-xl">
-        <div className="flex items-center gap-7">
-          <div className="flex flex-col gap-3">
-            <div className="flex flex-col gap-2">
-              <div>Wizard Tower: {game.wizardTower.getStructureAmount()}</div>
-              {game.wizardTower.getStructureAmount() > 0 && (
-                <div>
-                  Wizard Tower CPS:{" "}
-                  {numbers.format(game.wizardTower.getBuildingCPS())}
-                </div>
-              )}
-              <button
-                className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
-                onClick={() => {
-                  if (game.wizardTower.canBuyStructure(game.get_resources())) {
-                    game.buyBuilding("wizardTower", 1);
-                    setState((prevState) => !prevState);
-                  }
-                }}
-              >
-                Buy Wizard Tower cost:{" "}
-                {numbers.format(game.wizardTower.getStructureCost().cookies)}
-              </button>
+            <div className="z-10  grid grid-cols-4 items-center  h-20">
+              <div className="h-20 flex items-center px-3 gap-3">
+                <Image
+                  className="rounded-full"
+                  src={`/temple.png`}
+                  alt="farm"
+                  width={80}
+                  height={80}
+                />
+              </div>
+              <div className="h-20 pt-2 col-span-2">
+                <h2 className="text-2xl font-bold uppercase ">Temple</h2>
+                <p className="flex gap-2 items-center">
+                  x{buyAmount}
+                  <FaCookie className="w-4 h-4 text-yellow-500" />
+                  <span
+                    className={`${
+                      game.canBuyBuilding("temple", buyAmount)
+                        ? "text-green-600"
+                        : "text-red-400"
+                    } font-bold`}
+                  >
+                    {numbers.format(
+                      game.temple.getStructureCost(buyAmount).cookies
+                    )}
+                  </span>
+                </p>
+              </div>
+              <div className="justify-self-end  text-4xl pr-8 font-bold">
+                {" "}
+                {game.temple.getStructureAmount()}
+              </div>
             </div>
           </div>
-          <div>
+        </HoverCardTrigger>
+        <HoverCardContent align="start">
+          Temple CPS: {numbers.format(game.temple.getBuildingCPS())}
+        </HoverCardContent>
+      </HoverCard>
+      <Image
+        className="w-full h-3 "
+        src={`/stuff.jpg`}
+        alt="grandma"
+        width={200}
+        height={30}
+      />
+      <HoverCard>
+        <HoverCardTrigger>
+          {" "}
+          <div
+            onClick={() => {
+              if (game.canBuyBuilding("wizardTower", buyAmount)) {
+                game.buyBuilding("wizardTower", buyAmount);
+                setState((prevState) => !prevState);
+              }
+            }}
+            className="flex flex-col border hover:-translate-y-1 active:scale-95 relative h-22"
+          >
             <Image
-              className="w-48 "
-              src={`/wizardtower.png`}
-              alt="wizardTower"
+              className=" absolute w-full h-20 "
+              src={`/test4.jpg`}
+              alt="grandma"
               width={200}
               height={300}
             />
-          </div>
-        </div>
-      </div>
-      <div className="flex flex-col border border-cyan-500 p-5 rounded-xl">
-        <div className="flex items-center gap-7">
-          <div className="flex flex-col gap-3">
-            <div className="flex flex-col gap-2">
-              <div>Shipment Tower: {game.shipment.getStructureAmount()}</div>
-              {game.shipment.getStructureAmount() > 0 && (
-                <div>
-                  Shipment Tower CPS:{" "}
-                  {numbers.format(game.shipment.getBuildingCPS())}
-                </div>
-              )}
-              <button
-                className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
-                onClick={() => {
-                  if (game.shipment.canBuyStructure(game.get_resources())) {
-                    game.buyBuilding("shipment", 1);
-                    setState((prevState) => !prevState);
-                  }
-                }}
-              >
-                Buy Shipment Tower cost:{" "}
-                {numbers.format(game.shipment.getStructureCost().cookies)}
-              </button>
+            <div className="z-10  grid grid-cols-4 items-center  h-20">
+              <div className="h-20 flex items-center px-3 gap-3">
+                <Image
+                  className="rounded-full"
+                  src={`/wizardtower.png`}
+                  alt="farm"
+                  width={80}
+                  height={80}
+                />
+              </div>
+              <div className="h-20 pt-2 col-span-2">
+                <h2 className="text-2xl font-bold uppercase ">Wizard Tower</h2>
+                <p className="flex gap-2 items-center">
+                  x{buyAmount}
+                  <FaCookie className="w-4 h-4 text-yellow-500" />
+                  <span
+                    className={`${
+                      game.canBuyBuilding("wizardTower", buyAmount)
+                        ? "text-green-600"
+                        : "text-red-400"
+                    } font-bold`}
+                  >
+                    {numbers.format(
+                      game.wizardTower.getStructureCost(buyAmount).cookies
+                    )}
+                  </span>
+                </p>
+              </div>
+              <div className="justify-self-end  text-4xl pr-8 font-bold">
+                {" "}
+                {game.wizardTower.getStructureAmount()}
+              </div>
             </div>
           </div>
-          <div>
+        </HoverCardTrigger>
+        <HoverCardContent align="start">
+          Wizard Tower CPS: {numbers.format(game.wizardTower.getBuildingCPS())}
+        </HoverCardContent>
+      </HoverCard>
+      <Image
+        className="w-full h-3 "
+        src={`/stuff.jpg`}
+        alt="grandma"
+        width={200}
+        height={30}
+      />
+      <HoverCard>
+        <HoverCardTrigger>
+          {" "}
+          <div
+            onClick={() => {
+              if (game.canBuyBuilding("shipment", buyAmount)) {
+                game.buyBuilding("shipment", buyAmount);
+                setState((prevState) => !prevState);
+              }
+            }}
+            className="flex flex-col border hover:-translate-y-1 active:scale-95 relative h-22"
+          >
             <Image
-              className="w-48 "
-              src={`/shipment.png`}
-              alt="shipment"
+              className=" absolute w-full h-20 "
+              src={`/test4.jpg`}
+              alt="grandma"
               width={200}
               height={300}
             />
-          </div>
-        </div>
-      </div>
-      <div className="flex flex-col border border-cyan-500 p-5 rounded-xl">
-        <div className="flex items-center gap-7">
-          <div className="flex flex-col gap-3">
-            <div className="flex flex-col gap-2">
-              <div>Alchemy Lab : {game.alchemyLab.getStructureAmount()}</div>
-              {game.alchemyLab.getStructureAmount() > 0 && (
-                <div>
-                  Alchemy Lab CPS:{" "}
-                  {numbers.format(game.alchemyLab.getBuildingCPS())}
-                </div>
-              )}
-              <button
-                className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
-                onClick={() => {
-                  if (game.alchemyLab.canBuyStructure(game.get_resources())) {
-                    game.buyBuilding("alchemyLab", 1);
-                    setState((prevState) => !prevState);
-                  }
-                }}
-              >
-                Buy Alchemy Lab cost:{" "}
-                {numbers.format(game.alchemyLab.getStructureCost().cookies)}
-              </button>
+            <div className="z-10  grid grid-cols-4 items-center  h-20">
+              <div className="h-20 flex items-center px-3 gap-3">
+                <Image
+                  className="rounded-full"
+                  src={`/shipment.png`}
+                  alt="farm"
+                  width={80}
+                  height={80}
+                />
+              </div>
+              <div className="h-20 pt-2 col-span-2">
+                <h2 className="text-2xl font-bold uppercase ">Shipment</h2>
+                <p className="flex gap-2 items-center">
+                  x{buyAmount}
+                  <FaCookie className="w-4 h-4 text-yellow-500" />
+                  <span
+                    className={`${
+                      game.canBuyBuilding("shipment", buyAmount)
+                        ? "text-green-600"
+                        : "text-red-400"
+                    } font-bold`}
+                  >
+                    {numbers.format(
+                      game.shipment.getStructureCost(buyAmount).cookies
+                    )}
+                  </span>
+                </p>
+              </div>
+              <div className="justify-self-end  text-4xl pr-8 font-bold">
+                {" "}
+                {game.shipment.getStructureAmount()}
+              </div>
             </div>
           </div>
-          <div>
+        </HoverCardTrigger>
+        <HoverCardContent align="start">
+          Shipment CPS: {numbers.format(game.shipment.getBuildingCPS())}
+        </HoverCardContent>
+      </HoverCard>
+      <Image
+        className="w-full h-3 "
+        src={`/stuff.jpg`}
+        alt="grandma"
+        width={200}
+        height={30}
+      />
+      <HoverCard>
+        <HoverCardTrigger>
+          {" "}
+          <div
+            onClick={() => {
+              if (game.canBuyBuilding("alchemyLab", buyAmount)) {
+                game.buyBuilding("alchemyLab", buyAmount);
+                setState((prevState) => !prevState);
+              }
+            }}
+            className="flex flex-col border hover:-translate-y-1 active:scale-95 relative h-22"
+          >
             <Image
-              className="w-48 "
-              src={`/alchemylab.png`}
-              alt="alchemyLab"
+              className=" absolute w-full h-20 "
+              src={`/test4.jpg`}
+              alt="grandma"
               width={200}
               height={300}
             />
-          </div>
-        </div>
-      </div>
-      <div className="flex flex-col border border-cyan-500 p-5 rounded-xl">
-        <div className="flex items-center gap-7">
-          <div className="flex flex-col gap-3">
-            <div className="flex flex-col gap-2">
-              <div>Portal : {game.portal.getStructureAmount()}</div>
-              {game.portal.getStructureAmount() > 0 && (
-                <div>
-                  Portal CPS: {numbers.format(game.portal.getBuildingCPS())}
-                </div>
-              )}
-              <button
-                className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
-                onClick={() => {
-                  if (game.portal.canBuyStructure(game.get_resources())) {
-                    game.buyBuilding("portal", 1);
-                    setState((prevState) => !prevState);
-                  }
-                }}
-              >
-                Buy Portal cost:{" "}
-                {numbers.format(game.portal.getStructureCost().cookies)}
-              </button>
+            <div className="z-10  grid grid-cols-4 items-center  h-20">
+              <div className="h-20 flex items-center px-3 gap-3">
+                <Image
+                  className="rounded-full"
+                  src={`/alchemylab.png`}
+                  alt="farm"
+                  width={80}
+                  height={80}
+                />
+              </div>
+              <div className="h-20 pt-2 col-span-2">
+                <h2 className="text-2xl font-bold uppercase ">Alchemy Lab</h2>
+                <p className="flex gap-2 items-center">
+                  x{buyAmount}
+                  <FaCookie className="w-4 h-4 text-yellow-500" />
+                  <span
+                    className={`${
+                      game.canBuyBuilding("alchemyLab", buyAmount)
+                        ? "text-green-600"
+                        : "text-red-400"
+                    } font-bold`}
+                  >
+                    {numbers.format(
+                      game.alchemyLab.getStructureCost(buyAmount).cookies
+                    )}
+                  </span>
+                </p>
+              </div>
+              <div className="justify-self-end  text-4xl pr-8 font-bold">
+                {" "}
+                {game.alchemyLab.getStructureAmount()}
+              </div>
             </div>
           </div>
-          <div>
+        </HoverCardTrigger>
+        <HoverCardContent align="start">
+          Alchemy Lab CPS: {numbers.format(game.alchemyLab.getBuildingCPS())}
+        </HoverCardContent>
+      </HoverCard>
+      <Image
+        className="w-full h-3 "
+        src={`/stuff.jpg`}
+        alt="grandma"
+        width={200}
+        height={30}
+      />
+      <HoverCard>
+        <HoverCardTrigger>
+          {" "}
+          <div
+            onClick={() => {
+              if (game.canBuyBuilding("portal", buyAmount)) {
+                game.buyBuilding("portal", buyAmount);
+                setState((prevState) => !prevState);
+              }
+            }}
+            className="flex flex-col border hover:-translate-y-1 active:scale-95 relative h-22"
+          >
             <Image
-              className="w-48 "
-              src={`/portal.jpeg`}
-              alt="Portal"
+              className=" absolute w-full h-20 "
+              src={`/test4.jpg`}
+              alt="grandma"
               width={200}
               height={300}
             />
-          </div>
-        </div>
-      </div>
-      <div className="flex flex-col border border-cyan-500 p-5 rounded-xl">
-        <div className="flex items-center gap-7">
-          <div className="flex flex-col gap-3">
-            <div className="flex flex-col gap-2">
-              <div>Time Machine : {game.timeMachine.getStructureAmount()}</div>
-              {game.timeMachine.getStructureAmount() > 0 && (
-                <div>
-                  Time Machine CPS:{" "}
-                  {numbers.format(game.timeMachine.getBuildingCPS())}
-                </div>
-              )}
-              <button
-                className=" active:translate-y-1 hover:-translate-y-1 px-3 py-2 rounded-lg bg-pink-300"
-                onClick={() => {
-                  if (game.timeMachine.canBuyStructure(game.get_resources())) {
-                    game.buyBuilding("timeMachine", 1);
-                    setState((prevState) => !prevState);
-                  }
-                }}
-              >
-                Buy Time Machine cost:{" "}
-                {numbers.format(game.timeMachine.getStructureCost().cookies)}
-              </button>
+            <div className="z-10  grid grid-cols-4 items-center  h-20">
+              <div className="h-20 flex items-center px-3 gap-3">
+                <Image
+                  className="rounded-full"
+                  src={`/portal.jpeg`}
+                  alt="farm"
+                  width={80}
+                  height={80}
+                />
+              </div>
+              <div className="h-20 pt-2 col-span-2">
+                <h2 className="text-2xl font-bold uppercase ">Portal</h2>
+                <p className="flex gap-2 items-center">
+                  x{buyAmount}
+                  <FaCookie className="w-4 h-4 text-yellow-500" />
+                  <span
+                    className={`${
+                      game.canBuyBuilding("portal", buyAmount)
+                        ? "text-green-600"
+                        : "text-red-400"
+                    } font-bold`}
+                  >
+                    {numbers.format(
+                      game.portal.getStructureCost(buyAmount).cookies
+                    )}
+                  </span>
+                </p>
+              </div>
+              <div className="justify-self-end  text-4xl pr-8 font-bold">
+                {" "}
+                {game.portal.getStructureAmount()}
+              </div>
             </div>
           </div>
-          <div>
+        </HoverCardTrigger>
+        <HoverCardContent align="start">
+          Portal CPS: {numbers.format(game.portal.getBuildingCPS())}
+        </HoverCardContent>
+      </HoverCard>
+      <Image
+        className="w-full h-3 "
+        src={`/stuff.jpg`}
+        alt="grandma"
+        width={200}
+        height={30}
+      />
+      <HoverCard>
+        <HoverCardTrigger>
+          {" "}
+          <div
+            onClick={() => {
+              if (game.canBuyBuilding("timeMachine", buyAmount)) {
+                game.buyBuilding("timeMachine", buyAmount);
+                setState((prevState) => !prevState);
+              }
+            }}
+            className="flex flex-col border hover:-translate-y-1 active:scale-95 relative h-22"
+          >
             <Image
-              className="w-48 "
-              src={`/timemachine.png`}
-              alt="Time Machine"
+              className=" absolute w-full h-20 "
+              src={`/test4.jpg`}
+              alt="grandma"
               width={200}
               height={300}
             />
+            <div className="z-10  grid grid-cols-4 items-center  h-20">
+              <div className="h-20 flex items-center px-3 gap-3">
+                <Image
+                  className="rounded-full"
+                  src={`/timemachine.png`}
+                  alt="farm"
+                  width={80}
+                  height={80}
+                />
+              </div>
+              <div className="h-20 pt-2 col-span-2">
+                <h2 className="text-2xl font-bold uppercase ">Time Machine</h2>
+                <p className="flex gap-2 items-center">
+                  x{buyAmount}
+                  <FaCookie className="w-4 h-4 text-yellow-500" />
+                  <span
+                    className={`${
+                      game.canBuyBuilding("timeMachine", buyAmount)
+                        ? "text-green-600"
+                        : "text-red-400"
+                    } font-bold`}
+                  >
+                    {numbers.format(
+                      game.timeMachine.getStructureCost(buyAmount).cookies
+                    )}
+                  </span>
+                </p>
+              </div>
+              <div className="justify-self-end  text-4xl pr-8 font-bold">
+                {" "}
+                {game.timeMachine.getStructureAmount()}
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        </HoverCardTrigger>
+        <HoverCardContent align="start">
+          Time Machine CPS: {numbers.format(game.timeMachine.getBuildingCPS())}
+        </HoverCardContent>
+      </HoverCard>
+      <Image
+        className="w-full h-3 "
+        src={`/stuff.jpg`}
+        alt="grandma"
+        width={200}
+        height={30}
+      />
     </div>
   );
 }
