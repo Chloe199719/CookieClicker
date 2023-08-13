@@ -16,8 +16,28 @@ export type BuildingType =
   | "alchemyLab"
   | "portal"
   | "timeMachine"
+  | "antimatterCondenser"
   | "flavoredCookies";
-export type UpgradeType = {
+
+interface ExtraType {
+  tiers:
+    | "Plain"
+    | "Berrylium"
+    | "Blueberrylium"
+    | "Chalcedhoney"
+    | "Buttergold"
+    | "Sugarmuck"
+    | "Jetmint"
+    | "Cherrysilver"
+    | "Hazelrald"
+    | "Mooncandy"
+    | "Astrofudge"
+    | "Alabascream"
+    | "Iridyum"
+    | "Glucosmium"
+    | "Glimmeringue";
+}
+export interface UpgradeType {
   id: number;
   name: string;
   cost: Resource;
@@ -26,7 +46,7 @@ export type UpgradeType = {
   acquired: boolean;
   description: string;
   type: BuildingType;
-};
+}
 export type gameInit = {
   resource: Resource;
   clickResourceGeneration: Resource;
@@ -62,6 +82,9 @@ export default class Clicker {
   public alchemyLab: AlchemyLab = new AlchemyLab(this);
   public portal: Portal = new Portal(this);
   public timeMachine: TimeMachine = new TimeMachine(this);
+  public antimatterCondenser: AntiMatterCondenser = new AntiMatterCondenser(
+    this
+  );
 
   // Generation
   private clickResourceGeneration: Resource;
@@ -100,6 +123,7 @@ export default class Clicker {
     this.alchemyLab = new AlchemyLab(this);
     this.portal = new Portal(this);
     this.timeMachine = new TimeMachine(this);
+    this.antimatterCondenser = new AntiMatterCondenser(this);
   }
 
   private getUpgradesInRange(): UpgradeType[] {
@@ -130,6 +154,7 @@ export default class Clicker {
     this.alchemyLab.calculateStructureResourceGeneration1();
     this.portal.calculateStructureResourceGeneration1();
     this.timeMachine.calculateStructureResourceGeneration1();
+    this.antimatterCondenser.calculateStructureResourceGeneration1();
 
     this.resourceGeneration.cookies = 0;
     const Structs: Resource[] = [];
@@ -146,6 +171,7 @@ export default class Clicker {
     Structs.push(this.alchemyLab.getStructureResourceGeneration());
     Structs.push(this.portal.getStructureResourceGeneration());
     Structs.push(this.timeMachine.getStructureResourceGeneration());
+    Structs.push(this.antimatterCondenser.getStructureResourceGeneration());
     Structs.forEach((struct) => {
       this.resourceGeneration.cookies += struct.cookies;
     });
@@ -258,6 +284,9 @@ export default class Clicker {
     if (type === "timeMachine") {
       this.timeMachine.increaseStructure(this.resource, amount);
     }
+    if (type === "antimatterCondenser") {
+      this.antimatterCondenser.increaseStructure(this.resource, amount);
+    }
     this.PassiveCalculateResourceGeneration();
   }
   public canBuyBuilding(type: BuildingType, amount: number = 1): boolean {
@@ -297,6 +326,9 @@ export default class Clicker {
     if (type === "timeMachine") {
       return this.timeMachine.canBuy(this.resource, amount);
     }
+    if (type === "antimatterCondenser") {
+      return this.antimatterCondenser.canBuy(this.resource, amount);
+    }
     return false;
   }
   // Method Called by clock and click to increase resource(cookies)
@@ -315,6 +347,7 @@ export default class Clicker {
     this.alchemyLab.gameTick(this.multiplier);
     this.portal.gameTick(this.multiplier);
     this.timeMachine.gameTick(this.multiplier);
+    this.antimatterCondenser.gameTick(this.multiplier);
   }
   public increaseResourceClick(addValue: Resource): void {
     this.resource.cookies += (addValue.cookies * this.multiplier) / 100;
@@ -399,6 +432,9 @@ export default class Clicker {
     if (type === "timeMachine") {
       this.timeMachine.buyUpgradeLevel(this.resource, id);
     }
+    if (type === "antimatterCondenser") {
+      this.antimatterCondenser.buyUpgradeLevel(this.resource, id);
+    }
     this.PassiveCalculateResourceGeneration();
   }
 
@@ -454,6 +490,9 @@ export default class Clicker {
     if (type === "timeMachine") {
       return this.timeMachine.canBuyStructureUpgrade(this.resource, id);
     }
+    if (type === "antimatterCondenser") {
+      return this.antimatterCondenser.canBuyStructureUpgrade(this.resource, id);
+    }
     return false;
   }
 
@@ -485,6 +524,7 @@ export default class Clicker {
       ...this.alchemyLab.getUpgradesInRange(),
       ...this.portal.getUpgradesInRange(),
       ...this.timeMachine.getUpgradesInRange(),
+      ...this.antimatterCondenser.getUpgradesInRange(),
     ].sort((a, b) => {
       return a.cost.cookies - b.cost.cookies;
     });
@@ -575,6 +615,15 @@ export default class Clicker {
         lifeTimeCookiesBuilding: this.timeMachine.lifeTimeCookiesBuilding,
         timeMachineUpgrades: Object.fromEntries(
           this.timeMachine.timeMachineUpgrades
+        ),
+      },
+      antimatterCondenser: {
+        structure: this.antimatterCondenser.structure,
+        structureCost: this.antimatterCondenser.structureCost,
+        lifeTimeCookiesBuilding:
+          this.antimatterCondenser.lifeTimeCookiesBuilding,
+        antimatterCondenserUpgrades: Object.fromEntries(
+          this.antimatterCondenser.antimatterCondenserUpgrades
         ),
       },
     };
@@ -705,6 +754,18 @@ export default class Clicker {
     );
     this.timeMachine.calculateStructureResourceGeneration1();
 
+    // Set the antimatterCondenser
+
+    this.antimatterCondenser.structureCost =
+      save.antimatterCondenser.structureCost;
+    this.antimatterCondenser.structure = save.antimatterCondenser.structure;
+    this.antimatterCondenser.lifeTimeCookiesBuilding = save.antimatterCondenser
+      .lifeTimeCookiesBuilding ?? { cookies: 0 };
+    this.antimatterCondenser.antimatterCondenserUpgrades = new Map(
+      Object.entries(save.antimatterCondenser.antimatterCondenserUpgrades)
+    );
+    this.antimatterCondenser.calculateStructureResourceGeneration1();
+
     // Reload Game generation
     this.PassiveCalculateResourceGeneration();
     this.ClickCalculateResourceGeneration();
@@ -726,6 +787,7 @@ export default class Clicker {
     this.alchemyLab = new AlchemyLab(this);
     this.portal = new Portal(this);
     this.timeMachine = new TimeMachine(this);
+    this.antimatterCondenser = new AntiMatterCondenser(this);
     this.PassiveCalculateResourceGeneration();
     this.ClickCalculateResourceGeneration();
   }
@@ -1123,6 +1185,7 @@ class Cursor extends Structure {
     amount += this.game.alchemyLab.getStructureAmount();
     amount += this.game.portal.getStructureAmount();
     amount += this.game.timeMachine.getStructureAmount();
+    amount += this.game.antimatterCondenser.getStructureAmount();
     return amount;
   }
 }
@@ -3674,6 +3737,243 @@ class TimeMachine extends Structure {
   }
   public canBuyStructureUpgrade(cookies: Resource, id: number): boolean {
     const nextUpgrade = this.timeMachineUpgrades.get(id.toString());
+    if (!nextUpgrade) {
+      return false;
+    }
+
+    if (
+      cookies.cookies >= nextUpgrade.cost.cookies &&
+      this.getStructureAmount() >= nextUpgrade.requirement
+    ) {
+      return true;
+    }
+    return false;
+  }
+}
+
+class AntiMatterCondenser extends Structure {
+  public antimatterCondenserUpgrades1: { [key: string]: UpgradeType } = {
+    1: {
+      id: 1,
+      name: "Sugar bosons",
+      cost: {
+        cookies: 1_700_000_000_000_000,
+      },
+      multiplier: 2,
+      requirement: 1,
+      acquired: false,
+      type: "antimatterCondenser",
+      description: `Antimatter condensers are twice as efficient.`,
+    },
+    2: {
+      id: 2,
+      name: "String theory",
+      cost: {
+        cookies: 8_500_000_000_000_000,
+      },
+      multiplier: 2,
+      requirement: 5,
+      acquired: false,
+      type: "antimatterCondenser",
+      description: `Antimatter condensers are twice as efficient.`,
+    },
+    3: {
+      id: 3,
+      name: "Large macaron collider",
+      cost: { cookies: 85_000_000_000_000_000 },
+      multiplier: 2,
+      requirement: 25,
+      acquired: false,
+      type: "antimatterCondenser",
+      description: `Antimatter condensers are twice as efficient.`,
+    },
+    4: {
+      id: 4,
+      name: "Big bang bake",
+      cost: { cookies: 8_500_000_000_000_000_000 },
+      multiplier: 2,
+      requirement: 50,
+      acquired: false,
+      type: "antimatterCondenser",
+      description: `Antimatter condensers are twice as efficient.`,
+    },
+    5: {
+      id: 5,
+      name: "Reverse cyclotrons",
+      cost: { cookies: 850_000_000_000_000_000_000 },
+      multiplier: 2,
+      requirement: 100,
+      acquired: false,
+      type: "antimatterCondenser",
+      description: `Antimatter condensers are twice as efficient.`,
+    },
+    6: {
+      id: 6,
+      name: "Nanocosmics",
+      cost: { cookies: 85_000_000_000_000_000_000_000 },
+      multiplier: 2,
+      requirement: 150,
+      acquired: false,
+      type: "antimatterCondenser",
+      description: `Antimatter condensers are twice as efficient.`,
+    },
+    7: {
+      id: 7,
+      name: "The Pulse",
+      cost: { cookies: 85_000_000_000_000_000_000_000_000 },
+      multiplier: 2,
+      requirement: 200,
+      acquired: false,
+      type: "antimatterCondenser",
+      description: `Antimatter condensers are twice as efficient.`,
+    },
+    8: {
+      id: 8,
+      name: "Some other super-tiny fundamental particle? Probably?",
+      cost: { cookies: 85_000_000_000_000_000_000_000_000_000 },
+      multiplier: 2,
+      requirement: 250,
+      acquired: false,
+      type: "antimatterCondenser",
+      description: `Antimatter condensers are twice as efficient.`,
+    },
+    9: {
+      id: 9,
+      name: "Quantum comb",
+      cost: { cookies: 85_000_000_000_000_000_000_000_000_000_000 },
+      multiplier: 2,
+      requirement: 300,
+      acquired: false,
+      type: "antimatterCondenser",
+      description: `Antimatter condensers are twice as efficient.`,
+    },
+    10: {
+      id: 10,
+      name: "Baking Nobel prize",
+      cost: { cookies: 85_000_000_000_000_000_000_000_000_000_000_000 },
+      multiplier: 2,
+      requirement: 350,
+      acquired: false,
+      type: "antimatterCondenser",
+      description: `Antimatter condensers are twice as efficient.`,
+    },
+    11: {
+      id: 11,
+      name: "The definite molecule",
+      cost: { cookies: 850_000_000_000_000_000_000_000_000_000_000_000_000 },
+      multiplier: 2,
+      requirement: 400,
+      acquired: false,
+      type: "antimatterCondenser",
+      description: `Antimatter condensers are twice as efficient.`,
+    },
+    12: {
+      id: 12,
+      name: "Flavor itself",
+      cost: { cookies: 8_500_000_000_000_000_000_000_000_000_000_000_000_000 },
+      multiplier: 2,
+      requirement: 450,
+      acquired: false,
+      type: "antimatterCondenser",
+      description: `Antimatter condensers are twice as efficient.`,
+    },
+    13: {
+      id: 13,
+      name: "Delicious pull",
+      cost: {
+        cookies: 85_000_000_000_000_000_000_000_000_000_000_000_000_000_000,
+      },
+      multiplier: 2,
+      requirement: 500,
+      acquired: false,
+      type: "antimatterCondenser",
+      description: `Antimatter condensers are twice as efficient.`,
+    },
+    14: {
+      id: 14,
+      name: "The chocolate nexus",
+      cost: {
+        cookies: 850_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000,
+      },
+      multiplier: 2,
+      requirement: 550,
+      acquired: false,
+      type: "antimatterCondenser",
+      description: `Antimatter condensers are twice as efficient.`,
+    },
+    15: {
+      id: 15,
+      name: "Candied atoms",
+      cost: {
+        cookies: 8_500_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000,
+      },
+      multiplier: 2,
+      requirement: 600,
+      acquired: false,
+      type: "antimatterCondenser",
+      description: `Antimatter condensers are twice as efficient.`,
+    },
+  };
+  public antimatterCondenserUpgrades: Map<string, UpgradeType> = new Map(
+    Object.entries(this.antimatterCondenserUpgrades1)
+  );
+  private game: Clicker;
+  constructor(game: Clicker) {
+    super({
+      structure: 0,
+      structureCost: { cookies: 170_000_000_000_000 },
+      structureResourceGeneration: { cookies: 430_000_000 },
+      structureResourceGenerationDefault: { cookies: 430_000_000 },
+
+      structureCostDefault: { cookies: 170_000_000_000_000 },
+    });
+    this.game = game;
+  }
+  public getUpgradesInRange(): UpgradeType[] {
+    const upgrades: UpgradeType[] = [];
+    this.antimatterCondenserUpgrades.forEach((upgrade) => {
+      if (
+        upgrade.requirement <= this.getStructureAmount() &&
+        !upgrade.acquired
+      ) {
+        upgrades.push(upgrade);
+      }
+    });
+    return upgrades;
+  }
+  public buyUpgradeLevel(cookies: Resource, id: number): void {
+    const upgrade = this.antimatterCondenserUpgrades.get(id.toString());
+    if (!upgrade) return;
+    if (!this.canBuyStructureUpgrade(cookies, id)) return;
+    cookies.cookies -= upgrade.cost.cookies;
+    upgrade.acquired = true;
+    this.calculateStructureResourceGeneration1();
+    this.game.ClickCalculateResourceGeneration();
+  }
+  public calculateStructureResourceGeneration1(): void {
+    this.structureResourceGeneration.cookies =
+      this.structureResourceGenerationDefault.cookies;
+    this.antimatterCondenserUpgrades.forEach((value, key) => {
+      if (value.acquired) {
+        this.structureResourceGeneration.cookies *= value.multiplier;
+      }
+    });
+  }
+  public getStructureUpgradeCost(id: number): string {
+    return this.antimatterCondenserUpgrades
+      .get(id.toString())
+      ?.cost.cookies.toString()!;
+  }
+  public getBuildingCPS(): number {
+    return (
+      (this.structureResourceGeneration.cookies *
+        this.structure *
+        this.game.multiplier) /
+      100
+    );
+  }
+  public canBuyStructureUpgrade(cookies: Resource, id: number): boolean {
+    const nextUpgrade = this.antimatterCondenserUpgrades.get(id.toString());
     if (!nextUpgrade) {
       return false;
     }

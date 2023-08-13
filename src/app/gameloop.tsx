@@ -35,7 +35,7 @@ function Gameloop() {
   }, [game]);
   useEffect(() => {
     let x = JSON.parse(localStorage.getItem("save")!) as SaveType | null;
-    if (!x?.timeMachine) {
+    if (!x?.antimatterCondenser) {
       return;
     }
     game.LoadGame(x);

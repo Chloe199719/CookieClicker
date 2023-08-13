@@ -77,4 +77,10 @@ export interface SaveType {
     lifeTimeCookiesBuilding: Resource;
     timeMachineUpgrades: { [key: string]: UpgradeType };
   };
+  antimatterCondenser: {
+    structure: number;
+    structureCost: Resource;
+    lifeTimeCookiesBuilding: Resource;
+    antimatterCondenserUpgrades: { [key: string]: UpgradeType };
+  };
 }

@@ -1,9 +1,9 @@
 import Clicker, { Resource, Structure, UpgradeType } from "../Cliker2";
 
-export class TimeMachine extends Structure {
-  public timeMachineUpgrades1: { [key: string]: UpgradeType } = {};
-  public timeMachineUpgrades: Map<string, UpgradeType> = new Map(
-    Object.entries(this.timeMachineUpgrades1)
+export class AntiMatterCondenser extends Structure {
+  public antimatterCondenserUpgrades1: { [key: string]: UpgradeType } = {};
+  public antimatterCondenserUpgrades: Map<string, UpgradeType> = new Map(
+    Object.entries(this.antimatterCondenserUpgrades1)
   );
   private game: Clicker;
   constructor(game: Clicker) {
@@ -19,7 +19,7 @@ export class TimeMachine extends Structure {
   }
   public getUpgradesInRange(): UpgradeType[] {
     const upgrades: UpgradeType[] = [];
-    this.timeMachineUpgrades.forEach((upgrade) => {
+    this.antimatterCondenserUpgrades.forEach((upgrade) => {
       if (
         upgrade.requirement <= this.getStructureAmount() &&
         !upgrade.acquired
@@ -30,7 +30,7 @@ export class TimeMachine extends Structure {
     return upgrades;
   }
   public buyUpgradeLevel(cookies: Resource, id: number): void {
-    const upgrade = this.timeMachineUpgrades.get(id.toString());
+    const upgrade = this.antimatterCondenserUpgrades.get(id.toString());
     if (!upgrade) return;
     if (!this.canBuyStructureUpgrade(cookies, id)) return;
     cookies.cookies -= upgrade.cost.cookies;
@@ -41,19 +41,19 @@ export class TimeMachine extends Structure {
   public calculateStructureResourceGeneration1(): void {
     this.structureResourceGeneration.cookies =
       this.structureResourceGenerationDefault.cookies;
-    this.timeMachineUpgrades.forEach((value, key) => {
+    this.antimatterCondenserUpgrades.forEach((value, key) => {
       if (value.acquired) {
         this.structureResourceGeneration.cookies *= value.multiplier;
       }
     });
   }
   public getStructureUpgradeCost(id: number): string {
-    return this.timeMachineUpgrades
+    return this.antimatterCondenserUpgrades
       .get(id.toString())
       ?.cost.cookies.toString()!;
   }
   public canBuyStructureUpgrade(cookies: Resource, id: number): boolean {
-    const nextUpgrade = this.timeMachineUpgrades.get(id.toString());
+    const nextUpgrade = this.antimatterCondenserUpgrades.get(id.toString());
     if (!nextUpgrade) {
       return false;
     }

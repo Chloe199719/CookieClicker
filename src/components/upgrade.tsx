@@ -87,5 +87,14 @@ function CookieIcon({ type }: Props2) {
       return (
         <Image src="/machine.png" alt="timeMachine" width={32} height={32} />
       );
+    case "antimatterCondenser":
+      return (
+        <Image
+          src="/antimatter.png"
+          alt="antimatterCondenser"
+          width={32}
+          height={32}
+        />
+      );
   }
 }
