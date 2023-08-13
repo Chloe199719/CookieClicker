@@ -4,7 +4,8 @@ import React, { useEffect, useMemo, useState } from "react";
 import Clicker, { Resource } from "./lib/Cliker2";
 import { NumberFormatter } from "./lib/NumberFormater";
 import { SaveType } from "./lib/ui";
-
+import { GiArrowCursor } from "react-icons/gi";
+import Upgrade from "@/components/upgrade";
 function Gameloop() {
   const [state, setState] = useState(false);
 
@@ -109,6 +110,15 @@ function Gameloop() {
               Add 100000000 (dev Only){" "}
             </button>
             <button
+              className="p2 px-3 bg-red-400 "
+              onClick={() => {
+                game.increaseResource({ cookies: 100000000000000 });
+                setState((prevState) => !prevState);
+              }}
+            >
+              Add 100000000000000 (dev Only){" "}
+            </button>
+            <button
               onClick={() => {
                 localStorage.setItem("save", JSON.stringify(game.SaveGame()));
               }}
@@ -147,31 +157,13 @@ function Gameloop() {
         </div>
       </div>
       <div
-        className=" flex flex-col gap-3 col-span-2 overflow-y-auto"
+        className=" flex flex-col col-span-2 overflow-y-auto"
         style={{ height: "calc(100vh - 80px)" }}
       >
         <h2 className="text-center bg-zinc-700 text-white py-4  text-xl">
           Upgrades{" "}
         </h2>
-        <div className="flex flex-col p-5 rounded-xl">
-          {game.getPossibleUpgradeList().map((upgrade) => {
-            return (
-              <button
-                onClick={() => {
-                  if (game.canBuyStructureUpgrade(upgrade.id, upgrade.type)) {
-                    game.buyStructureUpgrade(upgrade.id, upgrade.type);
-                    setState((prevState) => !prevState);
-                  }
-                }}
-                key={upgrade.id}
-              >
-                {upgrade.name}({upgrade.type}) Cost :{" "}
-                {numbers.format(upgrade.cost.cookies)}
-              </button>
-            );
-          })}
-        </div>
-
+        <Upgrade game={game} setState={setState} />
         <div className="flex flex-col gap-3 ">
           <div className="flex flex-col border border-cyan-500 p-5 rounded-xl">
             <div className="flex items-center gap-7">
