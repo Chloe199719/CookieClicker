@@ -3,12 +3,6 @@ import { NumberFormatter } from "@/app/lib/NumberFormater";
 import Image from "next/image";
 import { useState } from "react";
 import { FaCookie } from "react-icons/fa";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "./ui/tooltip";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card";
 type Props = {
   game: Clicker;

@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.className}>
+    <html lang="en" data-theme="dark" className={inter.className}>
       <body className="max-h-screen flex flex-col">
         <ThemeProvider>
           <header className="flex px-6 h-20 py-4 justify-between bg-orange-300  dark:bg-red-700">
