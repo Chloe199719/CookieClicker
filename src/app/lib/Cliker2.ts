@@ -260,6 +260,45 @@ export default class Clicker {
     }
     this.PassiveCalculateResourceGeneration();
   }
+  public canBuyBuilding(type: BuildingType, amount: number = 1): boolean {
+    if (type === "cursor") {
+      return this.autoClicker.canBuy(this.resource, amount);
+    }
+    if (type === "grandma") {
+      return this.grandma.canBuy(this.resource, amount);
+    }
+    if (type === "farm") {
+      return this.farm.canBuy(this.resource, amount);
+    }
+    if (type === "mine") {
+      return this.mine.canBuy(this.resource, amount);
+    }
+    if (type === "factory") {
+      return this.factory.canBuy(this.resource, amount);
+    }
+    if (type === "bank") {
+      return this.bank.canBuy(this.resource, amount);
+    }
+    if (type === "temple") {
+      return this.temple.canBuy(this.resource, amount);
+    }
+    if (type === "wizardTower") {
+      return this.wizardTower.canBuy(this.resource, amount);
+    }
+    if (type === "shipment") {
+      return this.shipment.canBuy(this.resource, amount);
+    }
+    if (type === "alchemyLab") {
+      return this.alchemyLab.canBuy(this.resource, amount);
+    }
+    if (type === "portal") {
+      return this.portal.canBuy(this.resource, amount);
+    }
+    if (type === "timeMachine") {
+      return this.timeMachine.canBuy(this.resource, amount);
+    }
+    return false;
+  }
   // Method Called by clock and click to increase resource(cookies)
   public increaseResource(addValue: Resource): void {
     this.resource.cookies += (addValue.cookies * this.multiplier) / 100;
