@@ -55,8 +55,7 @@ function Gameloop() {
               {" "}
               Cookie {numbers.format(game.get_resources().cookies)} | Total CPS:{" "}
               {numbers.format(game.getPassiveResourceGeneration())} | Cookies
-              Per Click :{" "}
-              {numbers.format(game.getClickResourceGeneration().cookies)}
+              Per Click : {numbers.format(game.getClickResourceGeneration())}
             </h2>
           </div>
           <div className="flex gap-4">
@@ -75,7 +74,9 @@ function Gameloop() {
           <button
             className=" hover:scale-105 active:translate-y-1 z-10"
             onClick={() => {
-              game.increaseResourceClick(game.getClickResourceGeneration());
+              game.increaseResourceClick({
+                cookies: game.getClickResourceGeneration(),
+              });
               setState((prevState) => !prevState);
             }}
           >
