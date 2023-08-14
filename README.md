@@ -52,8 +52,8 @@ Welcome to the Cookie Clicker game repository. This game is all about clicking c
 
 ## Screenshots
 
-![Screenshot 1](link_to_screenshot1.png)
-![Screenshot 2](link_to_screenshot2.png)
+![Screenshot 1]([link_to_screenshot1.png](https://cdn.discordapp.com/attachments/1054197800545570836/1140460626343362662/image.png))
+
 
 > Replace `link_to_screenshot1.png` and `link_to_screenshot2.png` with the actual paths to your screenshots.
 
