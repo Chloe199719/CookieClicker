@@ -79,6 +79,6 @@ export class NumberFormatter {
     // if (Math.abs(value) >= 1e3) {
     //   return `${(Math.abs(value) / 1e3).toFixed(3)} thousand`;
     // }
-    return `${value.toFixed(0)}`;
+    return `${value.toFixed(1)}`;
   }
 }
