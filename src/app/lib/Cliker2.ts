@@ -9,7 +9,7 @@ export interface AchievementType {
   name: string;
   description: string;
   acquired: boolean;
-  requirement: number;
+  condition: number;
   type: BuildingType | "Generation" | "Click" | "Total";
 }
 export type BuildingType =
