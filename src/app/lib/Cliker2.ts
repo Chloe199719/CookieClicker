@@ -11,6 +11,7 @@ export interface AchievementType {
   acquired: boolean;
   condition: number;
   type: BuildingType | "Generation" | "Click" | "Total";
+  achievementType: "Having" | "Baking";
 }
 export type BuildingType =
   | "cursor"
@@ -347,8 +348,8 @@ export default class Clicker {
     let now = new Date();
 
     let diff = (now.getTime() - this.time.getTime()) / 1000;
-    const cookiesToAdd =
-      (this.getPassiveResourceGeneration() * diff * this.multiplier) / 100;
+
+    const cookiesToAdd = this.getPassiveResourceGeneration() * diff;
     this.time = now;
     this.resource.cookies += cookiesToAdd;
     this.lifeTimeCookies.cookies += cookiesToAdd;
