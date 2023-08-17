@@ -1,6 +1,6 @@
 import { AchievementType } from "../Cliker2";
 
-const totalCookiesAchievements: AchievementType[] = [
+export const totalCookiesAchievements: AchievementType[] = [
   {
     id: 0,
     name: "Wake and bake",
