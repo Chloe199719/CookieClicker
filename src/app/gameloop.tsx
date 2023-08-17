@@ -10,12 +10,17 @@ import Buildings from "@/components/buildings";
 import Options from "@/components/Options";
 function Gameloop() {
   const [state, setState] = useState(false);
-
+  let date = new Date();
   let game = useMemo(() => new Clicker(), []);
   useEffect(() => {
     const timer = setInterval(() => {
+      const now = new Date();
+
+      const diff = (now.getTime() - date.getTime()) / 1000;
+      // console.log(diff);
+      date = now;
       game.increaseResource({
-        cookies: game.getPassiveResourceGeneration() / 5,
+        cookies: game.getPassiveResourceGeneration() * diff,
       });
       setState((prevState) => !prevState);
     }, 200);
