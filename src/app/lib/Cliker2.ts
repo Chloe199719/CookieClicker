@@ -73,6 +73,7 @@ export type StructureInit = {
 };
 
 export default class Clicker {
+  private time = new Date();
   public resource: Resource;
   private lifeTimeCookies: Resource = { cookies: 0 };
   private lifeTimeCookiesClick: Resource = { cookies: 0 };
@@ -342,22 +343,28 @@ export default class Clicker {
     return false;
   }
   // Method Called by clock and click to increase resource(cookies)
-  public increaseResource(addValue: Resource): void {
-    this.resource.cookies += (addValue.cookies * this.multiplier) / 100;
-    this.lifeTimeCookies.cookies += (addValue.cookies * this.multiplier) / 100;
-    this.autoClicker.gameTick(this.multiplier);
-    this.grandma.gameTick(this.multiplier);
-    this.farm.gameTick(this.multiplier);
-    this.mine.gameTick(this.multiplier);
-    this.factory.gameTick(this.multiplier);
-    this.bank.gameTick(this.multiplier);
-    this.temple.gameTick(this.multiplier);
-    this.wizardTower.gameTick(this.multiplier);
-    this.shipment.gameTick(this.multiplier);
-    this.alchemyLab.gameTick(this.multiplier);
-    this.portal.gameTick(this.multiplier);
-    this.timeMachine.gameTick(this.multiplier);
-    this.antimatterCondenser.gameTick(this.multiplier);
+  public increaseResource(): void {
+    let now = new Date();
+
+    let diff = (now.getTime() - this.time.getTime()) / 1000;
+    const cookiesToAdd =
+      (this.getPassiveResourceGeneration() * diff * this.multiplier) / 100;
+    this.time = now;
+    this.resource.cookies += cookiesToAdd;
+    this.lifeTimeCookies.cookies += cookiesToAdd;
+    this.autoClicker.gameTick(this.multiplier, diff);
+    this.grandma.gameTick(this.multiplier, diff);
+    this.farm.gameTick(this.multiplier, diff);
+    this.mine.gameTick(this.multiplier, diff);
+    this.factory.gameTick(this.multiplier, diff);
+    this.bank.gameTick(this.multiplier, diff);
+    this.temple.gameTick(this.multiplier, diff);
+    this.wizardTower.gameTick(this.multiplier, diff);
+    this.shipment.gameTick(this.multiplier, diff);
+    this.alchemyLab.gameTick(this.multiplier, diff);
+    this.portal.gameTick(this.multiplier, diff);
+    this.timeMachine.gameTick(this.multiplier, diff);
+    this.antimatterCondenser.gameTick(this.multiplier, diff);
   }
   public increaseResourceClick(addValue: Resource): void {
     this.resource.cookies += (addValue.cookies * this.multiplier) / 100;
@@ -893,9 +900,9 @@ export class Structure extends Global {
     }
   }
   //
-  public gameTick(multiplier: number): void {
+  public gameTick(multiplier: number, diff: number): void {
     this.lifeTimeCookiesBuilding.cookies +=
-      (this.getStructureResourceGeneration().cookies * multiplier) / 100 / 5;
+      (this.getStructureResourceGeneration().cookies * multiplier * diff) / 100;
   }
   public getLifeTimeCookiesBuilding(): number {
     return this.lifeTimeCookiesBuilding.cookies;
