@@ -23,7 +23,7 @@ function Options({ game, setState }: Props) {
           <SheetTitle>Options</SheetTitle>
         </SheetHeader>
         <div className="flex flex-col">
-          <button
+          {/* <button
             className="p2 px-3 bg-red-400 "
             onClick={() => {
               game.increaseResource({ cookies: 100 });
@@ -85,7 +85,7 @@ function Options({ game, setState }: Props) {
             }}
           >
             Add 100000000000000 (dev Only){" "}
-          </button>
+          </button> */}
           <button
             onClick={() => {
               localStorage.setItem("save", JSON.stringify(game.SaveGame()));
