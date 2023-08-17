@@ -23,10 +23,10 @@ function Options({ game, setState }: Props) {
           <SheetTitle>Options</SheetTitle>
         </SheetHeader>
         <div className="flex flex-col">
-          {/* <button
+          <button
             className="p2 px-3 bg-red-400 "
             onClick={() => {
-              game.increaseResource({ cookies: 100 });
+              game.devModeIncreaseResource({ cookies: 100 });
               setState((prevState) => !prevState);
             }}
           >
@@ -35,7 +35,7 @@ function Options({ game, setState }: Props) {
           <button
             className="p2 px-3 bg-red-400 "
             onClick={() => {
-              game.increaseResource({ cookies: 1000 });
+              game.devModeIncreaseResource({ cookies: 1000 });
               setState((prevState) => !prevState);
             }}
           >
@@ -44,7 +44,7 @@ function Options({ game, setState }: Props) {
           <button
             className="p2 px-3 bg-red-400 "
             onClick={() => {
-              game.increaseResource({ cookies: 10000 });
+              game.devModeIncreaseResource({ cookies: 10000 });
               setState((prevState) => !prevState);
             }}
           >
@@ -53,7 +53,7 @@ function Options({ game, setState }: Props) {
           <button
             className="p2 px-3 bg-red-400 "
             onClick={() => {
-              game.increaseResource({ cookies: 100000 });
+              game.devModeIncreaseResource({ cookies: 100000 });
               setState((prevState) => !prevState);
             }}
           >
@@ -62,7 +62,7 @@ function Options({ game, setState }: Props) {
           <button
             className="p2 px-3 bg-red-400 "
             onClick={() => {
-              game.increaseResource({ cookies: 1000000 });
+              game.devModeIncreaseResource({ cookies: 1000000 });
               setState((prevState) => !prevState);
             }}
           >
@@ -71,7 +71,7 @@ function Options({ game, setState }: Props) {
           <button
             className="p2 px-3 bg-red-400 "
             onClick={() => {
-              game.increaseResource({ cookies: 100000000 });
+              game.devModeIncreaseResource({ cookies: 100000000 });
               setState((prevState) => !prevState);
             }}
           >
@@ -80,12 +80,12 @@ function Options({ game, setState }: Props) {
           <button
             className="p2 px-3 bg-red-400 "
             onClick={() => {
-              game.increaseResource({ cookies: 100000000000000 });
+              game.devModeIncreaseResource({ cookies: 100000000000000 });
               setState((prevState) => !prevState);
             }}
           >
             Add 100000000000000 (dev Only){" "}
-          </button> */}
+          </button>
           <button
             onClick={() => {
               localStorage.setItem("save", JSON.stringify(game.SaveGame()));

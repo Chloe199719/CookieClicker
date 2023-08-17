@@ -366,6 +366,11 @@ export default class Clicker {
     this.timeMachine.gameTick(this.multiplier, diff);
     this.antimatterCondenser.gameTick(this.multiplier, diff);
   }
+  public devModeIncreaseResource(addValue: Resource): void {
+    this.resource.cookies += addValue.cookies;
+    this.lifeTimeCookies.cookies += addValue.cookies;
+  }
+
   public increaseResourceClick(addValue: Resource): void {
     this.resource.cookies += (addValue.cookies * this.multiplier) / 100;
     this.lifeTimeCookies.cookies += (addValue.cookies * this.multiplier) / 100;
