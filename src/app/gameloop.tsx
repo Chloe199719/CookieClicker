@@ -8,6 +8,7 @@ import { GiArrowCursor } from "react-icons/gi";
 import Upgrade from "@/components/upgrade";
 import Buildings from "@/components/buildings";
 import Options from "@/components/Options";
+import { Toaster } from "react-hot-toast";
 function Gameloop() {
   const [state, setState] = useState(false);
   let game = useMemo(() => new Clicker(), []);
@@ -86,6 +87,7 @@ function Gameloop() {
             />
           </button>
         </div>
+        <Toaster />
       </div>
       <div
         className=" flex flex-col col-span-2 overflow-y-auto mr-1"

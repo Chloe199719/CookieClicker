@@ -1,5 +1,6 @@
 import { SaveType } from "./ui";
 import FlavoredCookies from "./upgrades/flavoredCookies";
+import toast from "react-hot-toast";
 export type Resource = {
   cookies: number;
 };
@@ -213,52 +214,7 @@ export default class Clicker {
   public getPassiveResourceGeneration(): number {
     return (this.resourceGeneration.cookies * this.multiplier) / 100;
   }
-  //Methods here to be deleted
-  // Grandma
-  public buyGrandma(): void {
-    this.grandma.increaseStructure(this.resource);
-    this.PassiveCalculateResourceGeneration();
-  }
 
-  // // AutoClicker
-  // public buyAutoClicker(): void {
-  //   this.autoClicker.increaseStructure(this.resource);
-  //   this.PassiveCalculateResourceGeneration();
-  // }
-
-  // // Farm
-  // public buyFarm(): void {
-  //   this.farm.increaseStructure(this.resource);
-  //   this.PassiveCalculateResourceGeneration();
-  // }
-
-  // // Mine
-  // public buyMine(): void {
-  //   this.mine.increaseStructure(this.resource);
-  //   this.PassiveCalculateResourceGeneration();
-  // }
-  // // Factory
-  // public buyFactory(): void {
-  //   this.factory.increaseStructure(this.resource);
-  //   this.PassiveCalculateResourceGeneration();
-  // }
-  // // Bank
-  // public buyBank(): void {
-  //   this.bank.increaseStructure(this.resource);
-  //   this.PassiveCalculateResourceGeneration();
-  // }
-  // // Temple
-  // public buyTemple(): void {
-  //   this.temple.increaseStructure(this.resource);
-  //   this.PassiveCalculateResourceGeneration();
-  // }
-
-  // WizardTower Unused
-  // public buyWizardTower(): void {
-  //   this.wizardTower.increaseStructure(this.resource);
-  //   this.PassiveCalculateResourceGeneration();
-  // }
-  // ----------To be deleted end--------
   public buyBuilding(type: BuildingType, amount: number = 1): void {
     if (type === "cursor") {
       this.autoClicker.increaseStructure(this.resource, amount);
@@ -650,6 +606,8 @@ export default class Clicker {
         ),
       },
     };
+
+    toast("Saved", { duration: 4000, position: "bottom-center" });
     return save;
   }
 
