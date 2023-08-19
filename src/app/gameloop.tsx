@@ -9,6 +9,7 @@ import Upgrade from "@/components/upgrade";
 import Buildings from "@/components/buildings";
 import Options from "@/components/Options";
 import { Toaster } from "react-hot-toast";
+import Achievements from "@/components/Achivements";
 function Gameloop() {
   const [state, setState] = useState(false);
   let game = useMemo(() => new Clicker(), []);
@@ -57,6 +58,7 @@ function Gameloop() {
             </h2>
           </div>
           <div className="flex gap-4">
+            <Achievements game={game} />
             <div className="text-lg">Statistics</div>
             <Options game={game} setState={setState} />
           </div>
