@@ -28,6 +28,13 @@ export type BuildingType =
   | "portal"
   | "timeMachine"
   | "antimatterCondenser"
+  | "prism"
+  | "chancemaker"
+  | "fractalEngine"
+  | "javascriptConsole"
+  | "idleverse"
+  | "cortexBaker"
+  | "you"
   | "flavoredCookies";
 
 interface ExtraType {
