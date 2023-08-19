@@ -1,6 +1,6 @@
 import { AchievementType } from "../Cliker2";
 
-export const CookiesPerSec: AchievementType[] = [
+export const cookiesPerSecondAchievements: AchievementType[] = [
   {
     id: 48,
     name: "Casual baking",
