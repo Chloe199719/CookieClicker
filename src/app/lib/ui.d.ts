@@ -99,4 +99,11 @@ export interface SaveType {
     antimatterCondenserUpgrades: { [key: string]: UpgradeType };
     antimatterCondenserAchievements: AchievementType[];
   };
+  prism: {
+    structure: number;
+    structureCost: Resource;
+    lifeTimeCookiesBuilding: Resource;
+    prismUpgrades: { [key: string]: UpgradeType };
+    prismAchievements: AchievementType[];
+  }
 }

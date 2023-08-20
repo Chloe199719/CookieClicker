@@ -1,6 +1,6 @@
 import { AchievementType } from "../Cliker2";
 
-export const PrismAchievement: AchievementType[] = [
+export const PrismAchievements: AchievementType[] = [
   {
     id: 360,
     name: "Lone photon",

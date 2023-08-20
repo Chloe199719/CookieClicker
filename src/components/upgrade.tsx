@@ -96,5 +96,7 @@ function CookieIcon({ type }: Props2) {
           height={32}
         />
       );
+    case "prism":
+      return <Image src="/prism.png" alt="prism" width={32} height={32} />;
   }
 }

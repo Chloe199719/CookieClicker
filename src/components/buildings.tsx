@@ -894,6 +894,71 @@ function Buildings({ game, setState }: Props) {
         width={200}
         height={30}
       />
+      <HoverCard>
+        <HoverCardTrigger>
+          {" "}
+          <div
+            onClick={() => {
+              if (game.canBuyBuilding("prism", buyAmount)) {
+                game.buyBuilding("prism", buyAmount);
+                setState((prevState) => !prevState);
+              }
+            }}
+            className="flex flex-col border hover:-translate-y-1 active:scale-95 relative h-22"
+          >
+            <Image
+              className=" absolute w-full h-20 "
+              src={`/test4.jpg`}
+              alt="grandma"
+              width={200}
+              height={300}
+            />
+            <div className="z-10  grid grid-cols-4 items-center  h-20">
+              <div className="h-20 flex items-center px-3 gap-3">
+                <Image
+                  className="rounded-full"
+                  src={`/prism.png`}
+                  alt="farm"
+                  width={80}
+                  height={80}
+                />
+              </div>
+              <div className="h-20 pt-2 col-span-2">
+                <h2 className="text-2xl font-bold uppercase ">Prism</h2>
+                <p className="flex gap-2 items-center">
+                  x{buyAmount}
+                  <FaCookie className="w-4 h-4 text-yellow-500" />
+                  <span
+                    className={`${
+                      game.canBuyBuilding("prism", buyAmount)
+                        ? "text-green-600"
+                        : "text-red-400"
+                    } font-bold`}
+                  >
+                    {numbers.format(
+                      game.prism.getStructureCost(buyAmount).cookies
+                    )}
+                  </span>
+                </p>
+              </div>
+              <div className="justify-self-end  text-4xl pr-8 font-bold">
+                {" "}
+                {game.prism.getStructureAmount()}
+              </div>
+            </div>
+          </div>
+        </HoverCardTrigger>
+        <HoverCardContent align="start">
+          Prism CPS: {numbers.format(game.antimatterCondenser.getBuildingCPS())}
+        </HoverCardContent>
+      </HoverCard>
+      <Image
+        className="w-full h-3 "
+        src={`/stuff.jpg`}
+        alt="grandma"
+        width={200}
+        height={30}
+      />
     </div>
   );
 }
