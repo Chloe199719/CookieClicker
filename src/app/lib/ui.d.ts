@@ -3,7 +3,10 @@ import { Resource } from "./Cliker2";
 export interface SaveType {
   resource: Resource;
   lifeTimeCookies: Resource;
+  lifeTimeCookiesClicking: Resource;
   multiplier: number;
+  clickingMultiplier: number;
+  clickingUpgrades: UpgradeType[];
   flavoredCookies: UpgradeType[];
   kittens: UpgradeType[];
   clickingAchievements: AchievementType[];

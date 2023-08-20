@@ -16,6 +16,7 @@ import { TimeMachineAchievements } from "./achievements/TimeMachine";
 import { totalCookiesAchievements } from "./achievements/TotalCookies";
 import { WizardTowerAchievements } from "./achievements/WizardTowers";
 import { SaveType } from "./ui";
+import { ClickingUpgrades } from "./upgrades/Clicking";
 import { KittensUpgrades } from "./upgrades/Kittens";
 import { PrismUpgrades } from "./upgrades/Prism";
 import FlavoredCookies from "./upgrades/flavoredCookies";
@@ -55,7 +56,8 @@ export type BuildingType =
   | "cortexBaker"
   | "you"
   | "flavoredCookies"
-  | "kittens";
+  | "kittens"
+  | "clicking";
 
 interface ExtraType {
   tier:
@@ -110,10 +112,12 @@ export default class Clicker {
   public milk: number = 0;
   public milkMultiplier: number = 1;
   public earnedAchievements: number = 0;
+  public clickingMultiplier: number = 0;
 
   //Upgrades
   private flavoredCookies: UpgradeType[] = FlavoredCookies;
   private kittens: UpgradeType[] = KittensUpgrades;
+  private clickingUpgrades: UpgradeType[] = ClickingUpgrades;
 
   //Building's
   public grandma: Grandma = new Grandma(this);
@@ -202,6 +206,14 @@ export default class Clicker {
         list.push(value);
       }
     });
+    this.clickingUpgrades.forEach((value) => {
+      if (
+        this.lifeTimeCookiesClick.cookies >= value.requirement &&
+        !value.acquired
+      ) {
+        list.push(value);
+      }
+    });
     return list;
   }
   // Achievements Check
@@ -241,7 +253,14 @@ export default class Clicker {
       }
     });
   }
-
+  private calculateClickingMultiplier(): void {
+    this.clickingMultiplier = 0;
+    this.clickingUpgrades.forEach((upgrade) => {
+      if (upgrade.acquired) {
+        this.clickingMultiplier += upgrade.multiplier;
+      }
+    });
+  }
   private calculateMilk(): void {
     let milk = 0;
     let list = [
@@ -420,7 +439,8 @@ export default class Clicker {
   public getClickResourceGeneration(): number {
     return (
       ((this.clickResourceGeneration.cookies * this.multiplier) / 100) *
-      this.milkMultiplier
+        this.milkMultiplier +
+      this.getPassiveResourceGeneration() * this.clickingMultiplier
     );
   }
 
@@ -583,6 +603,23 @@ export default class Clicker {
     });
   }
   public buyStructureUpgrade(id: number, type: BuildingType): void {
+    if (type === "clicking") {
+      for (const element of this.clickingUpgrades) {
+        if (element.id === id) {
+          if (
+            this.lifeTimeCookiesClick.cookies >= element.requirement &&
+            !element.acquired &&
+            this.resource.cookies >= element.cost.cookies
+          ) {
+            this.resource.cookies -= element.cost.cookies;
+            element.acquired = true;
+            this.calculateClickingMultiplier();
+          } else {
+            return;
+          }
+        }
+      }
+    }
     if (type === "flavoredCookies") {
       for (const element of this.flavoredCookies) {
         if (element.id === id) {
@@ -663,6 +700,21 @@ export default class Clicker {
 
   // Check if the player can buy an upgrade for a structure
   public canBuyStructureUpgrade(id: number, type: BuildingType): boolean {
+    if (type === "clicking") {
+      for (const clickingUpgrade of this.clickingUpgrades) {
+        if (clickingUpgrade.id === id) {
+          if (
+            this.lifeTimeCookiesClick.cookies >= clickingUpgrade.requirement &&
+            !clickingUpgrade.acquired &&
+            this.resource.cookies >= clickingUpgrade.cost.cookies
+          ) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+      }
+    }
     if (type === "flavoredCookies") {
       for (const flavoredCookie of this.flavoredCookies) {
         if (flavoredCookie.id === id) {
@@ -779,11 +831,14 @@ export default class Clicker {
     let save: SaveType = {
       resource: this.resource,
       lifeTimeCookies: this.lifeTimeCookies,
+      lifeTimeCookiesClicking: this.lifeTimeCookiesClick,
       multiplier: this.multiplier,
+      clickingMultiplier: this.clickingMultiplier,
       clickingAchievements: this.clickingAchievements,
       TotalCookiesAchievements: this.TotalCookiesAchievements,
       cookiesPerSecondAchievement: this.cookiesPerSecondAchievements,
       flavoredCookies: this.flavoredCookies,
+      clickingUpgrades: this.clickingUpgrades,
       kittens: this.kittens,
       grandma: {
         structure: this.grandma.structure,
@@ -905,7 +960,9 @@ export default class Clicker {
     // Set Cookies
     this.resource = save.resource;
     this.lifeTimeCookies = save.lifeTimeCookies;
+    this.lifeTimeCookiesClick = save.lifeTimeCookiesClicking ?? { cookies: 0 };
     this.multiplier = save.multiplier ?? 100;
+    this.clickingMultiplier = save.clickingMultiplier ?? 0;
     // Set Achievements
     this.clickingAchievements =
       save.clickingAchievements ?? ClickingAchievements;
@@ -916,6 +973,7 @@ export default class Clicker {
     //Upgrade's
     this.flavoredCookies = save.flavoredCookies ?? FlavoredCookies;
     this.kittens = save.kittens ?? KittensUpgrades;
+    this.clickingUpgrades = save.clickingUpgrades ?? ClickingUpgrades;
     // Set the Grandma
     this.grandma.structureCost = save.grandma.structureCost;
     this.grandma.structure = save.grandma.structure;
@@ -1089,7 +1147,11 @@ export default class Clicker {
   public resetGame(): void {
     this.resource = { cookies: 0 };
     this.lifeTimeCookies = { cookies: 0 };
+    this.lifeTimeCookiesClick = { cookies: 0 };
     this.multiplier = 100;
+    this.milkMultiplier = 1;
+    this.milk = 0;
+    this.earnedAchievements = 0;
     this.grandma = new Grandma(this);
     this.autoClicker = new Cursor(this);
     this.farm = new Farm(this);
@@ -1103,10 +1165,12 @@ export default class Clicker {
     this.portal = new Portal(this);
     this.timeMachine = new TimeMachine(this);
     this.antimatterCondenser = new AntiMatterCondenser(this);
+    this.prism = new Prism(this);
     this.flavoredCookies = FlavoredCookies;
     this.clickingAchievements = ClickingAchievements;
     this.TotalCookiesAchievements = totalCookiesAchievements;
     this.cookiesPerSecondAchievements = cookiesPerSecondAchievements;
+    this.kittens = KittensUpgrades;
     this.PassiveCalculateResourceGeneration();
     this.ClickCalculateResourceGeneration();
   }

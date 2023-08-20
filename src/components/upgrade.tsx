@@ -69,6 +69,8 @@ function CookieIcon({ type }: Props2) {
       return <FaCookie className="w-8 h-8 text-yellow-500" />;
     case "cursor":
       return <GiArrowCursor className="w-8 h-8 text-yellow-50" />;
+    case "clicking":
+      return <GiArrowCursor className="w-8 h-8 text-yellow-50" />;
     case "grandma":
       return <Image src="/grandma.png" alt="grandma" width={32} height={32} />;
     case "farm":
