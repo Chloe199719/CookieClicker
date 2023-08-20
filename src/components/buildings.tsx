@@ -96,9 +96,19 @@ function Buildings({ game, setState }: Props) {
             </div>
           </div>
         </HoverCardTrigger>
-        <HoverCardContent align="start">
+        <HoverCardContent align="start" className="w-fit">
           <div>
-            Cursor CPS: {numbers.format(game.autoClicker.getBuildingCPS())}
+            Cursors CPS: {numbers.format(game.autoClicker.getBuildingCPS())} |{" "}
+            {(
+              (game.autoClicker.getBuildingCPS() /
+                game.getPassiveResourceGeneration()) *
+              100
+            ).toFixed(2)}
+            %
+          </div>
+          <div>
+            Cursor CPS:{" "}
+            {numbers.format(game.autoClicker.getSingleBuildingCPS())} x1
           </div>
         </HoverCardContent>
       </HoverCard>
@@ -164,8 +174,20 @@ function Buildings({ game, setState }: Props) {
             </div>
           </div>
         </HoverCardTrigger>
-        <HoverCardContent align="start">
-          Grandma CPS: {numbers.format(game.grandma.getBuildingCPS())}
+        <HoverCardContent align="start" className="w-fit">
+          <div>
+            Grandmas CPS: {numbers.format(game.grandma.getBuildingCPS())} |{" "}
+            {(
+              (game.grandma.getBuildingCPS() /
+                game.getPassiveResourceGeneration()) *
+              100
+            ).toFixed(2)}
+            %
+          </div>
+          <div>
+            Grandma CPS: {numbers.format(game.grandma.getSingleBuildingCPS())}{" "}
+            x1
+          </div>
         </HoverCardContent>
       </HoverCard>
 
@@ -230,8 +252,19 @@ function Buildings({ game, setState }: Props) {
             </div>
           </div>
         </HoverCardTrigger>
-        <HoverCardContent align="start">
-          Farms CPS: {numbers.format(game.farm.getBuildingCPS())}
+        <HoverCardContent align="start" className="w-fit">
+          <div>
+            Farms CPS: {numbers.format(game.farm.getBuildingCPS())} |{" "}
+            {(
+              (game.farm.getBuildingCPS() /
+                game.getPassiveResourceGeneration()) *
+              100
+            ).toFixed(2)}
+            %
+          </div>
+          <div>
+            Farm CPS: {numbers.format(game.farm.getSingleBuildingCPS())} x1
+          </div>
         </HoverCardContent>
       </HoverCard>
       <Image
@@ -295,8 +328,19 @@ function Buildings({ game, setState }: Props) {
             </div>
           </div>
         </HoverCardTrigger>
-        <HoverCardContent align="start">
-          Mines CPS: {numbers.format(game.mine.getBuildingCPS())}
+        <HoverCardContent align="start" className="w-fit">
+          <div>
+            Mines CPS: {numbers.format(game.mine.getBuildingCPS())} |{" "}
+            {(
+              (game.mine.getBuildingCPS() /
+                game.getPassiveResourceGeneration()) *
+              100
+            ).toFixed(2)}
+            %
+          </div>
+          <div>
+            Mine CPS: {numbers.format(game.mine.getSingleBuildingCPS())} x1
+          </div>
         </HoverCardContent>
       </HoverCard>
 
@@ -361,8 +405,20 @@ function Buildings({ game, setState }: Props) {
             </div>
           </div>
         </HoverCardTrigger>
-        <HoverCardContent align="start">
-          Factory CPS: {numbers.format(game.factory.getBuildingCPS())}
+        <HoverCardContent align="start" className="w-fit">
+          <div>
+            Factorys CPS: {numbers.format(game.factory.getBuildingCPS())} |{" "}
+            {(
+              (game.factory.getBuildingCPS() /
+                game.getPassiveResourceGeneration()) *
+              100
+            ).toFixed(2)}
+            %
+          </div>
+          <div>
+            Factory CPS: {numbers.format(game.factory.getSingleBuildingCPS())}{" "}
+            x1
+          </div>
         </HoverCardContent>
       </HoverCard>
       <Image
@@ -426,8 +482,19 @@ function Buildings({ game, setState }: Props) {
             </div>
           </div>
         </HoverCardTrigger>
-        <HoverCardContent align="start">
-          Bank CPS: {numbers.format(game.bank.getBuildingCPS())}
+        <HoverCardContent align="start" className="w-fit">
+          <div>
+            Banks CPS: {numbers.format(game.bank.getBuildingCPS())} |{" "}
+            {(
+              (game.bank.getBuildingCPS() /
+                game.getPassiveResourceGeneration()) *
+              100
+            ).toFixed(2)}
+            %
+          </div>
+          <div>
+            bank CPS: {numbers.format(game.bank.getSingleBuildingCPS())} x1
+          </div>
         </HoverCardContent>
       </HoverCard>
       <Image
@@ -491,8 +558,19 @@ function Buildings({ game, setState }: Props) {
             </div>
           </div>
         </HoverCardTrigger>
-        <HoverCardContent align="start">
-          Temple CPS: {numbers.format(game.temple.getBuildingCPS())}
+        <HoverCardContent align="start" className="w-fit">
+          <div>
+            Temples CPS: {numbers.format(game.temple.getBuildingCPS())} |{" "}
+            {(
+              (game.temple.getBuildingCPS() /
+                game.getPassiveResourceGeneration()) *
+              100
+            ).toFixed(2)}
+            %
+          </div>
+          <div>
+            Temple CPS: {numbers.format(game.temple.getSingleBuildingCPS())} x1
+          </div>
         </HoverCardContent>
       </HoverCard>
       <Image
@@ -556,8 +634,21 @@ function Buildings({ game, setState }: Props) {
             </div>
           </div>
         </HoverCardTrigger>
-        <HoverCardContent align="start">
-          Wizard Tower CPS: {numbers.format(game.wizardTower.getBuildingCPS())}
+        <HoverCardContent align="start" className="w-fit">
+          <div>
+            WizardTowers CPS:{" "}
+            {numbers.format(game.wizardTower.getBuildingCPS())} |{" "}
+            {(
+              (game.wizardTower.getBuildingCPS() /
+                game.getPassiveResourceGeneration()) *
+              100
+            ).toFixed(2)}
+            %
+          </div>
+          <div>
+            WizardTower CPS:{" "}
+            {numbers.format(game.wizardTower.getSingleBuildingCPS())} x1
+          </div>
         </HoverCardContent>
       </HoverCard>
       <Image
@@ -621,8 +712,20 @@ function Buildings({ game, setState }: Props) {
             </div>
           </div>
         </HoverCardTrigger>
-        <HoverCardContent align="start">
-          Shipment CPS: {numbers.format(game.shipment.getBuildingCPS())}
+        <HoverCardContent align="start" className="w-fit">
+          <div>
+            Shipments CPS: {numbers.format(game.shipment.getBuildingCPS())} |{" "}
+            {(
+              (game.shipment.getBuildingCPS() /
+                game.getPassiveResourceGeneration()) *
+              100
+            ).toFixed(2)}
+            %
+          </div>
+          <div>
+            Shipment CPS: {numbers.format(game.shipment.getSingleBuildingCPS())}{" "}
+            x1
+          </div>
         </HoverCardContent>
       </HoverCard>
       <Image
@@ -686,8 +789,21 @@ function Buildings({ game, setState }: Props) {
             </div>
           </div>
         </HoverCardTrigger>
-        <HoverCardContent align="start">
-          Alchemy Lab CPS: {numbers.format(game.alchemyLab.getBuildingCPS())}
+        <HoverCardContent align="start" className="w-fit">
+          <div>
+            Alchemy Labs CPS: {numbers.format(game.alchemyLab.getBuildingCPS())}{" "}
+            |{" "}
+            {(
+              (game.alchemyLab.getBuildingCPS() /
+                game.getPassiveResourceGeneration()) *
+              100
+            ).toFixed(2)}
+            %
+          </div>
+          <div>
+            Alchemy Lab:{" "}
+            {numbers.format(game.alchemyLab.getSingleBuildingCPS())} x1
+          </div>
         </HoverCardContent>
       </HoverCard>
       <Image
@@ -751,8 +867,19 @@ function Buildings({ game, setState }: Props) {
             </div>
           </div>
         </HoverCardTrigger>
-        <HoverCardContent align="start">
-          Portal CPS: {numbers.format(game.portal.getBuildingCPS())}
+        <HoverCardContent align="start" className="w-fit">
+          <div>
+            Portals CPS: {numbers.format(game.portal.getBuildingCPS())} |{" "}
+            {(
+              (game.portal.getBuildingCPS() /
+                game.getPassiveResourceGeneration()) *
+              100
+            ).toFixed(2)}
+            %
+          </div>
+          <div>
+            Portal: {numbers.format(game.portal.getSingleBuildingCPS())} x1
+          </div>
         </HoverCardContent>
       </HoverCard>
       <Image
@@ -816,8 +943,21 @@ function Buildings({ game, setState }: Props) {
             </div>
           </div>
         </HoverCardTrigger>
-        <HoverCardContent align="start">
-          Time Machine CPS: {numbers.format(game.timeMachine.getBuildingCPS())}
+        <HoverCardContent align="start" className="w-fit">
+          <div>
+            TimeMachines CPS:{" "}
+            {numbers.format(game.timeMachine.getBuildingCPS())} |{" "}
+            {(
+              (game.timeMachine.getBuildingCPS() /
+                game.getPassiveResourceGeneration()) *
+              100
+            ).toFixed(2)}
+            %
+          </div>
+          <div>
+            TimeMachine:{" "}
+            {numbers.format(game.timeMachine.getSingleBuildingCPS())} x1
+          </div>
         </HoverCardContent>
       </HoverCard>
       <Image
@@ -882,9 +1022,21 @@ function Buildings({ game, setState }: Props) {
             </div>
           </div>
         </HoverCardTrigger>
-        <HoverCardContent align="start">
-          AntiMatter CPS:{" "}
-          {numbers.format(game.antimatterCondenser.getBuildingCPS())}
+        <HoverCardContent align="start" className="w-fit">
+          <div>
+            AntiMatters CPS:{" "}
+            {numbers.format(game.antimatterCondenser.getBuildingCPS())} |{" "}
+            {(
+              (game.antimatterCondenser.getBuildingCPS() /
+                game.getPassiveResourceGeneration()) *
+              100
+            ).toFixed(2)}
+            %
+          </div>
+          <div>
+            Antimatter:{" "}
+            {numbers.format(game.antimatterCondenser.getSingleBuildingCPS())} x1
+          </div>
         </HoverCardContent>
       </HoverCard>
       <Image
@@ -948,8 +1100,19 @@ function Buildings({ game, setState }: Props) {
             </div>
           </div>
         </HoverCardTrigger>
-        <HoverCardContent align="start">
-          Prism CPS: {numbers.format(game.antimatterCondenser.getBuildingCPS())}
+        <HoverCardContent align="start" className="w-fit">
+          <div>
+            Prisms CPS: {numbers.format(game.prism.getBuildingCPS())} |{" "}
+            {(
+              (game.prism.getBuildingCPS() /
+                game.getPassiveResourceGeneration()) *
+              100
+            ).toFixed(2)}
+            %
+          </div>
+          <div>
+            Prism: {numbers.format(game.prism.getSingleBuildingCPS())} x1
+          </div>
         </HoverCardContent>
       </HoverCard>
       <Image

@@ -559,10 +559,9 @@ export default class Clicker {
   }
 
   public increaseResourceClick(addValue: Resource): void {
-    this.resource.cookies += (addValue.cookies * this.multiplier) / 100;
-    this.lifeTimeCookies.cookies += (addValue.cookies * this.multiplier) / 100;
-    this.lifeTimeCookiesClick.cookies +=
-      (addValue.cookies * this.multiplier) / 100;
+    this.resource.cookies += addValue.cookies;
+    this.lifeTimeCookies.cookies += addValue.cookies;
+    this.lifeTimeCookiesClick.cookies += addValue.cookies;
     this.checkTotalCookiesAchievements();
     this.checkClickingAchievements();
   }
@@ -1516,10 +1515,18 @@ class Cursor extends Structure {
   }
   public getBuildingCPS(): number {
     return (
-      (this.structureResourceGeneration.cookies *
+      ((this.structureResourceGeneration.cookies *
         this.structure *
         this.game.multiplier) /
-      100
+        100) *
+      this.game.milkMultiplier
+    );
+  }
+  public getSingleBuildingCPS(): number {
+    return (
+      ((this.structureResourceGeneration.cookies * this.game.multiplier) /
+        100) *
+      this.game.milkMultiplier
     );
   }
   public canBuyStructureUpgrade(cookies: Resource, id: number): boolean {
@@ -1552,6 +1559,7 @@ class Cursor extends Structure {
     amount += this.game.portal.getStructureAmount();
     amount += this.game.timeMachine.getStructureAmount();
     amount += this.game.antimatterCondenser.getStructureAmount();
+    amount += this.game.prism.getStructureAmount();
     return amount;
   }
 }
@@ -1809,10 +1817,18 @@ class Grandma extends Structure {
   }
   public getBuildingCPS(): number {
     return (
-      (this.structureResourceGeneration.cookies *
+      ((this.structureResourceGeneration.cookies *
         this.structure *
         this.game.multiplier) /
-      100
+        100) *
+      this.game.milkMultiplier
+    );
+  }
+  public getSingleBuildingCPS(): number {
+    return (
+      ((this.structureResourceGeneration.cookies * this.game.multiplier) /
+        100) *
+      this.game.milkMultiplier
     );
   }
   public canBuyStructureUpgrade(cookies: Resource, id: number): boolean {
@@ -2089,10 +2105,18 @@ class Farm extends Structure {
   }
   public getBuildingCPS(): number {
     return (
-      (this.structureResourceGeneration.cookies *
+      ((this.structureResourceGeneration.cookies *
         this.structure *
         this.game.multiplier) /
-      100
+        100) *
+      this.game.milkMultiplier
+    );
+  }
+  public getSingleBuildingCPS(): number {
+    return (
+      ((this.structureResourceGeneration.cookies * this.game.multiplier) /
+        100) *
+      this.game.milkMultiplier
     );
   }
   public canBuyStructureUpgrade(cookies: Resource, id: number): boolean {
@@ -2363,10 +2387,18 @@ class Mine extends Structure {
   }
   public getBuildingCPS(): number {
     return (
-      (this.structureResourceGeneration.cookies *
+      ((this.structureResourceGeneration.cookies *
         this.structure *
         this.game.multiplier) /
-      100
+        100) *
+      this.game.milkMultiplier
+    );
+  }
+  public getSingleBuildingCPS(): number {
+    return (
+      ((this.structureResourceGeneration.cookies * this.game.multiplier) /
+        100) *
+      this.game.milkMultiplier
     );
   }
   public canBuyStructureUpgrade(cookies: Resource, id: number): boolean {
@@ -2623,10 +2655,18 @@ class Factory extends Structure {
   }
   public getBuildingCPS(): number {
     return (
-      (this.structureResourceGeneration.cookies *
+      ((this.structureResourceGeneration.cookies *
         this.structure *
         this.game.multiplier) /
-      100
+        100) *
+      this.game.milkMultiplier
+    );
+  }
+  public getSingleBuildingCPS(): number {
+    return (
+      ((this.structureResourceGeneration.cookies * this.game.multiplier) /
+        100) *
+      this.game.milkMultiplier
     );
   }
   public canBuyStructureUpgrade(cookies: Resource, id: number): boolean {
@@ -2885,10 +2925,18 @@ class Bank extends Structure {
   }
   public getBuildingCPS(): number {
     return (
-      (this.structureResourceGeneration.cookies *
+      ((this.structureResourceGeneration.cookies *
         this.structure *
         this.game.multiplier) /
-      100
+        100) *
+      this.game.milkMultiplier
+    );
+  }
+  public getSingleBuildingCPS(): number {
+    return (
+      ((this.structureResourceGeneration.cookies * this.game.multiplier) /
+        100) *
+      this.game.milkMultiplier
     );
   }
   public canBuyStructureUpgrade(cookies: Resource, id: number): boolean {
@@ -3149,10 +3197,18 @@ class Temple extends Structure {
   }
   public getBuildingCPS(): number {
     return (
-      (this.structureResourceGeneration.cookies *
+      ((this.structureResourceGeneration.cookies *
         this.structure *
         this.game.multiplier) /
-      100
+        100) *
+      this.game.milkMultiplier
+    );
+  }
+  public getSingleBuildingCPS(): number {
+    return (
+      ((this.structureResourceGeneration.cookies * this.game.multiplier) /
+        100) *
+      this.game.milkMultiplier
     );
   }
   public canBuyStructureUpgrade(cookies: Resource, id: number): boolean {
@@ -3415,10 +3471,18 @@ class WizardTower extends Structure {
   }
   public getBuildingCPS(): number {
     return (
-      (this.structureResourceGeneration.cookies *
+      ((this.structureResourceGeneration.cookies *
         this.structure *
         this.game.multiplier) /
-      100
+        100) *
+      this.game.milkMultiplier
+    );
+  }
+  public getSingleBuildingCPS(): number {
+    return (
+      ((this.structureResourceGeneration.cookies * this.game.multiplier) /
+        100) *
+      this.game.milkMultiplier
     );
   }
   public canBuyStructureUpgrade(cookies: Resource, id: number): boolean {
@@ -3680,10 +3744,18 @@ class Shipment extends Structure {
   }
   public getBuildingCPS(): number {
     return (
-      (this.structureResourceGeneration.cookies *
+      ((this.structureResourceGeneration.cookies *
         this.structure *
         this.game.multiplier) /
-      100
+        100) *
+      this.game.milkMultiplier
+    );
+  }
+  public getSingleBuildingCPS(): number {
+    return (
+      ((this.structureResourceGeneration.cookies * this.game.multiplier) /
+        100) *
+      this.game.milkMultiplier
     );
   }
   public canBuyStructureUpgrade(cookies: Resource, id: number): boolean {
@@ -3933,10 +4005,18 @@ class AlchemyLab extends Structure {
   }
   public getBuildingCPS(): number {
     return (
-      (this.structureResourceGeneration.cookies *
+      ((this.structureResourceGeneration.cookies *
         this.structure *
         this.game.multiplier) /
-      100
+        100) *
+      this.game.milkMultiplier
+    );
+  }
+  public getSingleBuildingCPS(): number {
+    return (
+      ((this.structureResourceGeneration.cookies * this.game.multiplier) /
+        100) *
+      this.game.milkMultiplier
     );
   }
   public canBuyStructureUpgrade(cookies: Resource, id: number): boolean {
@@ -4202,10 +4282,18 @@ class Portal extends Structure {
 
   public getBuildingCPS(): number {
     return (
-      (this.structureResourceGeneration.cookies *
+      ((this.structureResourceGeneration.cookies *
         this.structure *
         this.game.multiplier) /
-      100
+        100) *
+      this.game.milkMultiplier
+    );
+  }
+  public getSingleBuildingCPS(): number {
+    return (
+      ((this.structureResourceGeneration.cookies * this.game.multiplier) /
+        100) *
+      this.game.milkMultiplier
     );
   }
   public canBuyStructureUpgrade(cookies: Resource, id: number): boolean {
@@ -4472,10 +4560,18 @@ class TimeMachine extends Structure {
   }
   public getBuildingCPS(): number {
     return (
-      (this.structureResourceGeneration.cookies *
+      ((this.structureResourceGeneration.cookies *
         this.structure *
         this.game.multiplier) /
-      100
+        100) *
+      this.game.milkMultiplier
+    );
+  }
+  public getSingleBuildingCPS(): number {
+    return (
+      ((this.structureResourceGeneration.cookies * this.game.multiplier) /
+        100) *
+      this.game.milkMultiplier
     );
   }
   public canBuyStructureUpgrade(cookies: Resource, id: number): boolean {
@@ -4745,10 +4841,18 @@ class AntiMatterCondenser extends Structure {
   }
   public getBuildingCPS(): number {
     return (
-      (this.structureResourceGeneration.cookies *
+      ((this.structureResourceGeneration.cookies *
         this.structure *
         this.game.multiplier) /
-      100
+        100) *
+      this.game.milkMultiplier
+    );
+  }
+  public getSingleBuildingCPS(): number {
+    return (
+      ((this.structureResourceGeneration.cookies * this.game.multiplier) /
+        100) *
+      this.game.milkMultiplier
     );
   }
   public canBuyStructureUpgrade(cookies: Resource, id: number): boolean {
@@ -4838,10 +4942,18 @@ class Prism extends Structure {
   }
   public getBuildingCPS(): number {
     return (
-      (this.structureResourceGeneration.cookies *
+      ((this.structureResourceGeneration.cookies *
         this.structure *
         this.game.multiplier) /
-      100
+        100) *
+      this.game.milkMultiplier
+    );
+  }
+  public getSingleBuildingCPS(): number {
+    return (
+      ((this.structureResourceGeneration.cookies * this.game.multiplier) /
+        100) *
+      this.game.milkMultiplier
     );
   }
   public canBuyStructureUpgrade(cookies: Resource, id: number): boolean {
