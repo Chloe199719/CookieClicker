@@ -1,6 +1,6 @@
 import { AchievementType } from "../Cliker2";
 
-export const Cursors: AchievementType[] = [
+export const CursorAchievements: AchievementType[] = [
   {
     id: 113,
     name: "Click",

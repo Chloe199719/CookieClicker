@@ -1,6 +1,6 @@
 import { AchievementType } from "../Cliker2";
 
-export const TempleAchievement: AchievementType[] = [
+export const TempleAchievements: AchievementType[] = [
   {
     id: 228,
     name: "Your time to shrine",

@@ -1,6 +1,6 @@
 import { AchievementType } from "../Cliker2";
 
-export const BankAchievement: AchievementType[] = [
+export const BankAchievements: AchievementType[] = [
   {
     id: 209,
     name: "Pretty penny",

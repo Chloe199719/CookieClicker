@@ -1,6 +1,6 @@
 import { AchievementType } from "../Cliker2";
 
-export const AntimatterAchievement: AchievementType[] = [
+export const AntiMatterCondenserAchievements: AchievementType[] = [
   {
     id: 341,
     name: "Antibatter",

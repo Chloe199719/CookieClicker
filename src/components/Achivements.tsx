@@ -22,11 +22,14 @@ function Achievements({ game }: Props) {
       <SheetTrigger>
         <div className="text-lg">Achievements</div>
       </SheetTrigger>
-      <SheetContent side="left" className="bg-gray-700">
+      <SheetContent
+        side="left"
+        className="bg-gray-700 max-h-screen overflow-y-scroll"
+      >
         <SheetHeader>
           <SheetTitle>Achievements</SheetTitle>
         </SheetHeader>
-        <div className="grid grid-cols-6 gap-2">
+        <div className="grid grid-cols-6 gap-2 ">
           {game.getAchievementList().map((achievement) => {
             return (
               <HoverCard key={achievement.id}>

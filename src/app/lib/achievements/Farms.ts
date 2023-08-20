@@ -1,6 +1,6 @@
 import { AchievementType } from "../Cliker2";
 
-export const Farms: AchievementType[] = [
+export const FarmAchievements: AchievementType[] = [
   {
     id: 152,
     name: "My first farm",

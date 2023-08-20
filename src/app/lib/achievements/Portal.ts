@@ -1,6 +1,6 @@
 import { AchievementType } from "../Cliker2";
 
-export const PortalAchievement: AchievementType[] = [
+export const PortalAchievements: AchievementType[] = [
   {
     id: 304,
     name: "A whole new world",

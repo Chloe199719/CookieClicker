@@ -1,6 +1,6 @@
 import { AchievementType } from "../Cliker2";
 
-export const AlchemyLabAchievement: AchievementType[] = [
+export const AlchemyLabAchievements: AchievementType[] = [
   {
     id: 285,
     name: "Transmutation",

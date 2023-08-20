@@ -1,6 +1,6 @@
 import { AchievementType } from "../Cliker2";
 
-export const FactoryAchievement: AchievementType[] = [
+export const FactoryAchievements: AchievementType[] = [
   {
     id: 190,
     name: "Production chain",

@@ -1,6 +1,6 @@
 import { AchievementType } from "../Cliker2";
 
-export const TimeMachineAchievement: AchievementType[] = [
+export const TimeMachineAchievements: AchievementType[] = [
   {
     id: 323,
     name: "Time warp",

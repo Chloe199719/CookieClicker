@@ -13,77 +13,90 @@ export interface SaveType {
     structureCost: Resource;
     lifeTimeCookiesBuilding: Resource;
     grandmaUpgrades: { [key: string]: UpgradeType };
+    grandmaAchievements: AchievementType[];
   };
   autoClicker: {
     structure: number;
     structureCost: Resource;
     lifeTimeCookiesBuilding: Resource;
     cursorUpgrades: { [key: string]: UpgradeType };
+    CursorAchievements: AchievementType[];
   };
   farm: {
     structure: number;
     structureCost: Resource;
     lifeTimeCookiesBuilding: Resource;
     farmUpgrades: { [key: string]: UpgradeType };
+    farmAchievements: AchievementType[];
   };
   mine: {
     structure: number;
     structureCost: Resource;
     lifeTimeCookiesBuilding: Resource;
     mineUpgrades: { [key: string]: UpgradeType };
+    mineAchievements: AchievementType[];
   };
   factory: {
     structure: number;
     structureCost: Resource;
     lifeTimeCookiesBuilding: Resource;
     factoryUpgrades: { [key: string]: UpgradeType };
+    factoryAchievements: AchievementType[];
   };
   bank: {
     structure: number;
     structureCost: Resource;
     lifeTimeCookiesBuilding: Resource;
     bankUpgrades: { [key: string]: UpgradeType };
+    bankAchievements: AchievementType[];
   };
   temple: {
     structure: number;
     structureCost: Resource;
     lifeTimeCookiesBuilding: Resource;
     templeUpgrades: { [key: string]: UpgradeType };
+    templeAchievements: AchievementType[];
   };
   wizardTower: {
     structure: number;
     structureCost: Resource;
     lifeTimeCookiesBuilding: Resource;
     wizardTowerUpgrades: { [key: string]: UpgradeType };
+    wizardTowerAchievements: AchievementType[];
   };
   shipment: {
     structure: number;
     structureCost: Resource;
     lifeTimeCookiesBuilding: Resource;
     shipmentUpgrades: { [key: string]: UpgradeType };
+    shipmentAchievements: AchievementType[];
   };
   alchemyLab: {
     structure: number;
     structureCost: Resource;
     lifeTimeCookiesBuilding: Resource;
     alchemyLabUpgrades: { [key: string]: UpgradeType };
+    alchemyLabAchievements: AchievementType[];
   };
   portal: {
     structure: number;
     structureCost: Resource;
     lifeTimeCookiesBuilding: Resource;
     portalUpgrades: { [key: string]: UpgradeType };
+    portalAchievements: AchievementType[];
   };
   timeMachine: {
     structure: number;
     structureCost: Resource;
     lifeTimeCookiesBuilding: Resource;
     timeMachineUpgrades: { [key: string]: UpgradeType };
+    timeMachineAchievements: AchievementType[];
   };
   antimatterCondenser: {
     structure: number;
     structureCost: Resource;
     lifeTimeCookiesBuilding: Resource;
     antimatterCondenserUpgrades: { [key: string]: UpgradeType };
+    antimatterCondenserAchievements: AchievementType[];
   };
 }

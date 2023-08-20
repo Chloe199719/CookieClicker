@@ -1,6 +1,6 @@
 import { AchievementType } from "../Cliker2";
 
-export const WizardTowersAchievement: AchievementType[] = [
+export const WizardTowerAchievements: AchievementType[] = [
   {
     id: 247,
     name: "Bewitched",
