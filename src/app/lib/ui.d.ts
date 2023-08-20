@@ -1,4 +1,4 @@
-import { Resource } from "./Cliker2";
+import { Resource } from "./Cliker";
 
 export interface SaveType {
   resource: Resource;

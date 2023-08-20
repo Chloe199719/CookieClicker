@@ -1,4 +1,4 @@
-import { UpgradeType } from "../Cliker2";
+import { UpgradeType } from "../Cliker";
 
 export const PrismUpgrades: { [key: string]: UpgradeType } = {
   "1": {

@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect, useMemo, useState } from "react";
-import Clicker, { Resource } from "./lib/Cliker2";
+import Clicker, { Resource } from "./lib/Cliker";
 import { NumberFormatter } from "./lib/NumberFormater";
 import { SaveType } from "./lib/ui";
 import { GiArrowCursor } from "react-icons/gi";

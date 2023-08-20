@@ -1,4 +1,4 @@
-import Clicker from "@/app/lib/Cliker2";
+import Clicker from "@/app/lib/Cliker";
 import {
   Sheet,
   SheetContent,

@@ -1,4 +1,4 @@
-import { UpgradeType } from "../Cliker2";
+import { UpgradeType } from "../Cliker";
 
 const FlavoredCookies: UpgradeType[] = [
   {

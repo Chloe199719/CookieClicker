@@ -1,4 +1,4 @@
-import Clicker, { BuildingType } from "@/app/lib/Cliker2";
+import Clicker, { BuildingType } from "@/app/lib/Cliker";
 import { GiArrowCursor } from "react-icons/gi";
 import { FaCookie } from "react-icons/fa";
 import { NumberFormatter } from "../app/lib/NumberFormater";

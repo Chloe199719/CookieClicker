@@ -1,4 +1,4 @@
-import { AchievementType } from "../Cliker2";
+import { AchievementType } from "../Cliker";
 
 export const ChangeMakerAchievement: AchievementType[] = [
   {

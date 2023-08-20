@@ -1,4 +1,4 @@
-import Clicker from "@/app/lib/Cliker2";
+import Clicker from "@/app/lib/Cliker";
 import { NumberFormatter } from "@/app/lib/NumberFormater";
 import Image from "next/image";
 import { useState } from "react";
