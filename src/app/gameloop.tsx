@@ -54,7 +54,8 @@ function Gameloop() {
               {" "}
               Cookie {numbers.format(game.get_resources().cookies)} | Total CPS:{" "}
               {numbers.format(game.getPassiveResourceGeneration())} | Cookies
-              Per Click : {numbers.format(game.getClickResourceGeneration())}
+              Per Click : {numbers.format(game.getClickResourceGeneration())} |
+              Milk: {game.milk}
             </h2>
           </div>
           <div className="flex gap-4">
