@@ -55,6 +55,16 @@ type Props2 = {
 };
 function CookieIcon({ type }: Props2) {
   switch (type) {
+    case "kittens":
+      return (
+        <Image
+          className="w-8 h-8"
+          src="/kitten.jpg"
+          alt="bank"
+          width={32}
+          height={32}
+        />
+      );
     case "flavoredCookies":
       return <FaCookie className="w-8 h-8 text-yellow-500" />;
     case "cursor":

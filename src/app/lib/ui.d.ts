@@ -5,6 +5,7 @@ export interface SaveType {
   lifeTimeCookies: Resource;
   multiplier: number;
   flavoredCookies: UpgradeType[];
+  kittens: UpgradeType[];
   clickingAchievements: AchievementType[];
   TotalCookiesAchievements: AchievementType[];
   cookiesPerSecondAchievement: AchievementType[];
@@ -105,5 +106,5 @@ export interface SaveType {
     lifeTimeCookiesBuilding: Resource;
     prismUpgrades: { [key: string]: UpgradeType };
     prismAchievements: AchievementType[];
-  }
+  };
 }

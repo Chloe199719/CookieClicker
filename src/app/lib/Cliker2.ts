@@ -16,6 +16,7 @@ import { TimeMachineAchievements } from "./achievements/TimeMachine";
 import { totalCookiesAchievements } from "./achievements/TotalCookies";
 import { WizardTowerAchievements } from "./achievements/WizardTowers";
 import { SaveType } from "./ui";
+import { KittensUpgrades } from "./upgrades/Kittens";
 import { PrismUpgrades } from "./upgrades/Prism";
 import FlavoredCookies from "./upgrades/flavoredCookies";
 import toast from "react-hot-toast";
@@ -107,10 +108,12 @@ export default class Clicker {
   private lifeTimeCookiesClick: Resource = { cookies: 0 };
   public multiplier: number = 100;
   public milk: number = 0;
+  public milkMultiplier: number = 1;
   public earnedAchievements: number = 0;
 
   //Upgrades
   private flavoredCookies: UpgradeType[] = FlavoredCookies;
+  private kittens: UpgradeType[] = KittensUpgrades;
 
   //Building's
   public grandma: Grandma = new Grandma(this);
@@ -194,6 +197,11 @@ export default class Clicker {
         list.push(value);
       }
     });
+    this.kittens.forEach((value, key) => {
+      if (this.earnedAchievements >= value.requirement && !value.acquired) {
+        list.push(value);
+      }
+    });
     return list;
   }
   // Achievements Check
@@ -261,6 +269,7 @@ export default class Clicker {
       }
     });
     this.milk = milk;
+    this.earnedAchievements = milk / 4;
   }
   //Get Achievement List
   public getAchievementList(): AchievementType[] {
@@ -409,11 +418,17 @@ export default class Clicker {
 
   // Getters
   public getClickResourceGeneration(): number {
-    return (this.clickResourceGeneration.cookies * this.multiplier) / 100;
+    return (
+      ((this.clickResourceGeneration.cookies * this.multiplier) / 100) *
+      this.milkMultiplier
+    );
   }
 
   public getPassiveResourceGeneration(): number {
-    return (this.resourceGeneration.cookies * this.multiplier) / 100;
+    return (
+      ((this.resourceGeneration.cookies * this.multiplier) / 100) *
+      this.milkMultiplier
+    );
   }
 
   public buyBuilding(type: BuildingType, amount: number = 1): void {
@@ -517,20 +532,24 @@ export default class Clicker {
     this.time = now;
     this.resource.cookies += cookiesToAdd;
     this.lifeTimeCookies.cookies += cookiesToAdd;
-    this.autoClicker.gameTick(this.multiplier, diff);
-    this.grandma.gameTick(this.multiplier, diff);
-    this.farm.gameTick(this.multiplier, diff);
-    this.mine.gameTick(this.multiplier, diff);
-    this.factory.gameTick(this.multiplier, diff);
-    this.bank.gameTick(this.multiplier, diff);
-    this.temple.gameTick(this.multiplier, diff);
-    this.wizardTower.gameTick(this.multiplier, diff);
-    this.shipment.gameTick(this.multiplier, diff);
-    this.alchemyLab.gameTick(this.multiplier, diff);
-    this.portal.gameTick(this.multiplier, diff);
-    this.timeMachine.gameTick(this.multiplier, diff);
-    this.antimatterCondenser.gameTick(this.multiplier, diff);
-    this.prism.gameTick(this.multiplier, diff);
+    this.autoClicker.gameTick(this.multiplier, this.milkMultiplier, diff);
+    this.grandma.gameTick(this.multiplier, this.milkMultiplier, diff);
+    this.farm.gameTick(this.multiplier, this.milkMultiplier, diff);
+    this.mine.gameTick(this.multiplier, this.milkMultiplier, diff);
+    this.factory.gameTick(this.multiplier, this.milkMultiplier, diff);
+    this.bank.gameTick(this.multiplier, this.milkMultiplier, diff);
+    this.temple.gameTick(this.multiplier, this.milkMultiplier, diff);
+    this.wizardTower.gameTick(this.multiplier, this.milkMultiplier, diff);
+    this.shipment.gameTick(this.multiplier, this.milkMultiplier, diff);
+    this.alchemyLab.gameTick(this.multiplier, this.milkMultiplier, diff);
+    this.portal.gameTick(this.multiplier, this.milkMultiplier, diff);
+    this.timeMachine.gameTick(this.multiplier, this.milkMultiplier, diff);
+    this.antimatterCondenser.gameTick(
+      this.multiplier,
+      this.milkMultiplier,
+      diff
+    );
+    this.prism.gameTick(this.multiplier, this.milkMultiplier, diff);
     this.checkTotalCookiesAchievements();
   }
   public devModeIncreaseResource(addValue: Resource): void {
@@ -556,6 +575,14 @@ export default class Clicker {
       }
     });
   }
+  public calculateMilkMultiplier(): void {
+    this.milkMultiplier = 1;
+    this.kittens.forEach((element) => {
+      if (element.acquired) {
+        this.milkMultiplier *= 1 + (this.milk / 100) * element.multiplier;
+      }
+    });
+  }
   public buyStructureUpgrade(id: number, type: BuildingType): void {
     if (type === "flavoredCookies") {
       for (const element of this.flavoredCookies) {
@@ -567,6 +594,23 @@ export default class Clicker {
             this.resource.cookies -= element.cost.cookies;
             element.acquired = true;
             this.calculateMultiplier();
+          } else {
+            return;
+          }
+        }
+      }
+    }
+    if (type === "kittens") {
+      for (const element of this.kittens) {
+        if (element.id === id) {
+          if (
+            this.earnedAchievements >= element.requirement &&
+            !element.acquired &&
+            this.resource.cookies >= element.cost.cookies
+          ) {
+            this.resource.cookies -= element.cost.cookies;
+            element.acquired = true;
+            this.calculateMilkMultiplier();
           } else {
             return;
           }
@@ -626,6 +670,21 @@ export default class Clicker {
           if (
             this.resource.cookies >= flavoredCookie.cost.cookies &&
             flavoredCookie.acquired === false
+          ) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+      }
+    }
+    if (type === "kittens") {
+      for (const kitten of this.kittens) {
+        if (kitten.id === id) {
+          if (
+            this.earnedAchievements >= kitten.requirement &&
+            kitten.acquired === false &&
+            this.resource.cookies >= kitten.cost.cookies
           ) {
             return true;
           } else {
@@ -726,6 +785,7 @@ export default class Clicker {
       TotalCookiesAchievements: this.TotalCookiesAchievements,
       cookiesPerSecondAchievement: this.cookiesPerSecondAchievements,
       flavoredCookies: this.flavoredCookies,
+      kittens: this.kittens,
       grandma: {
         structure: this.grandma.structure,
         structureCost: this.grandma.structureCost,
@@ -854,7 +914,9 @@ export default class Clicker {
       save.TotalCookiesAchievements ?? totalCookiesAchievements;
     this.cookiesPerSecondAchievements =
       save.cookiesPerSecondAchievement ?? cookiesPerSecondAchievements;
+    //Upgrade's
     this.flavoredCookies = save.flavoredCookies ?? FlavoredCookies;
+    this.kittens = save.kittens ?? KittensUpgrades;
     // Set the Grandma
     this.grandma.structureCost = save.grandma.structureCost;
     this.grandma.structure = save.grandma.structure;
@@ -1023,6 +1085,7 @@ export default class Clicker {
     this.PassiveCalculateResourceGeneration();
     this.ClickCalculateResourceGeneration();
     this.calculateMultiplier();
+    this.calculateMilkMultiplier();
   }
   public resetGame(): void {
     this.resource = { cookies: 0 };
@@ -1140,9 +1203,15 @@ class Structure extends Global {
     }
   }
   //
-  public gameTick(multiplier: number, diff: number): void {
+  public gameTick(
+    multiplier: number,
+    milkMultiplier: number,
+    diff: number
+  ): void {
     this.lifeTimeCookiesBuilding.cookies +=
-      (this.getStructureResourceGeneration().cookies * multiplier * diff) / 100;
+      ((this.getStructureResourceGeneration().cookies * multiplier * diff) /
+        100) *
+      milkMultiplier;
     if (this.lifeTimeCookiesBuilding.cookies > 1e20) {
       this.checkAchievements();
     }
