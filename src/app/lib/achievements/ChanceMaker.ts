@@ -1,6 +1,6 @@
 import { AchievementType } from "../Cliker";
 
-export const ChangeMakerAchievement: AchievementType[] = [
+export const ChanceMakerAchievements: AchievementType[] = [
   {
     id: 379,
     name: "Lucked out",

@@ -1122,6 +1122,472 @@ function Buildings({ game, setState }: Props) {
         width={200}
         height={30}
       />
+      <HoverCard>
+        <HoverCardTrigger>
+          {" "}
+          <div
+            onClick={() => {
+              if (game.canBuyBuilding("chancemaker", buyAmount)) {
+                game.buyBuilding("chancemaker", buyAmount);
+                setState((prevState) => !prevState);
+              }
+            }}
+            className="flex flex-col border hover:-translate-y-1 active:scale-95 relative h-22"
+          >
+            <Image
+              className=" absolute w-full h-20 "
+              src={`/test4.jpg`}
+              alt="grandma"
+              width={200}
+              height={300}
+            />
+            <div className="z-10  grid grid-cols-4 items-center  h-20">
+              <div className="h-20 flex items-center px-3 gap-3">
+                <Image
+                  className="rounded-full"
+                  src={`/chance.png`}
+                  alt="farm"
+                  width={80}
+                  height={80}
+                />
+              </div>
+              <div className="h-20 pt-2 col-span-2">
+                <h2 className="text-2xl font-bold uppercase ">ChanceMaker</h2>
+                <p className="flex gap-2 items-center">
+                  x{buyAmount}
+                  <FaCookie className="w-4 h-4 text-yellow-500" />
+                  <span
+                    className={`${
+                      game.canBuyBuilding("chancemaker", buyAmount)
+                        ? "text-green-600"
+                        : "text-red-400"
+                    } font-bold`}
+                  >
+                    {numbers.format(
+                      game.chanceMaker.getStructureCost(buyAmount).cookies
+                    )}
+                  </span>
+                </p>
+              </div>
+              <div className="justify-self-end  text-4xl pr-8 font-bold">
+                {" "}
+                {game.chanceMaker.getStructureAmount()}
+              </div>
+            </div>
+          </div>
+        </HoverCardTrigger>
+        <HoverCardContent align="start" className="w-fit">
+          <div>
+            ChanceMakers CPS:{" "}
+            {numbers.format(game.chanceMaker.getBuildingCPS())} |{" "}
+            {(
+              (game.chanceMaker.getBuildingCPS() /
+                game.getPassiveResourceGeneration()) *
+              100
+            ).toFixed(2)}
+            %
+          </div>
+          <div>
+            ChanceMaker:{" "}
+            {numbers.format(game.chanceMaker.getSingleBuildingCPS())} x1
+          </div>
+        </HoverCardContent>
+      </HoverCard>
+      <Image
+        className="w-full h-3 "
+        src={`/stuff.jpg`}
+        alt="grandma"
+        width={200}
+        height={30}
+      />
+      <HoverCard>
+        <HoverCardTrigger>
+          {" "}
+          <div
+            onClick={() => {
+              if (game.canBuyBuilding("fractalEngine", buyAmount)) {
+                game.buyBuilding("fractalEngine", buyAmount);
+                setState((prevState) => !prevState);
+              }
+            }}
+            className="flex flex-col border hover:-translate-y-1 active:scale-95 relative h-22"
+          >
+            <Image
+              className=" absolute w-full h-20 "
+              src={`/test4.jpg`}
+              alt="grandma"
+              width={200}
+              height={300}
+            />
+            <div className="z-10  grid grid-cols-4 items-center  h-20">
+              <div className="h-20 flex items-center px-3 gap-3">
+                <Image
+                  className="rounded-full"
+                  src={`/fractal.png`}
+                  alt="fractal"
+                  width={80}
+                  height={80}
+                />
+              </div>
+              <div className="h-20 pt-2 col-span-2">
+                <h2 className="text-2xl font-bold uppercase ">FractalEngine</h2>
+                <p className="flex gap-2 items-center">
+                  x{buyAmount}
+                  <FaCookie className="w-4 h-4 text-yellow-500" />
+                  <span
+                    className={`${
+                      game.canBuyBuilding("fractalEngine", buyAmount)
+                        ? "text-green-600"
+                        : "text-red-400"
+                    } font-bold`}
+                  >
+                    {numbers.format(
+                      game.fractalEngine.getStructureCost(buyAmount).cookies
+                    )}
+                  </span>
+                </p>
+              </div>
+              <div className="justify-self-end  text-4xl pr-8 font-bold">
+                {" "}
+                {game.fractalEngine.getStructureAmount()}
+              </div>
+            </div>
+          </div>
+        </HoverCardTrigger>
+        <HoverCardContent align="start" className="w-fit">
+          <div>
+            FractalEngines CPS:{" "}
+            {numbers.format(game.fractalEngine.getBuildingCPS())} |{" "}
+            {(
+              (game.fractalEngine.getBuildingCPS() /
+                game.getPassiveResourceGeneration()) *
+              100
+            ).toFixed(2)}
+            %
+          </div>
+          <div>
+            FractalEngine:{" "}
+            {numbers.format(game.fractalEngine.getSingleBuildingCPS())} x1
+          </div>
+        </HoverCardContent>
+      </HoverCard>
+      <Image
+        className="w-full h-3 "
+        src={`/stuff.jpg`}
+        alt="grandma"
+        width={200}
+        height={30}
+      />
+      <HoverCard>
+        <HoverCardTrigger>
+          {" "}
+          <div
+            onClick={() => {
+              if (game.canBuyBuilding("javascriptConsole", buyAmount)) {
+                game.buyBuilding("javascriptConsole", buyAmount);
+                setState((prevState) => !prevState);
+              }
+            }}
+            className="flex flex-col border hover:-translate-y-1 active:scale-95 relative h-22"
+          >
+            <Image
+              className=" absolute w-full h-20 "
+              src={`/test4.jpg`}
+              alt="grandma"
+              width={200}
+              height={300}
+            />
+            <div className="z-10  grid grid-cols-4 items-center  h-20">
+              <div className="h-20 flex items-center px-3 gap-3">
+                <Image
+                  className="rounded-full"
+                  src={`/typescript.png`}
+                  alt="javascriptConsole"
+                  width={80}
+                  height={80}
+                />
+              </div>
+              <div className="h-20 pt-2 col-span-2">
+                <h2 className="text-2xl font-bold uppercase ">
+                  JavaScriptCons
+                </h2>
+                <p className="flex gap-2 items-center">
+                  x{buyAmount}
+                  <FaCookie className="w-4 h-4 text-yellow-500" />
+                  <span
+                    className={`${
+                      game.canBuyBuilding("javascriptConsole", buyAmount)
+                        ? "text-green-600"
+                        : "text-red-400"
+                    } font-bold`}
+                  >
+                    {numbers.format(
+                      game.javascriptConsole.getStructureCost(buyAmount).cookies
+                    )}
+                  </span>
+                </p>
+              </div>
+              <div className="justify-self-end  text-4xl pr-8 font-bold">
+                {" "}
+                {game.javascriptConsole.getStructureAmount()}
+              </div>
+            </div>
+          </div>
+        </HoverCardTrigger>
+        <HoverCardContent align="start" className="w-fit">
+          <div>
+            JavaScriptConsoles CPS:{" "}
+            {numbers.format(game.javascriptConsole.getBuildingCPS())} |{" "}
+            {(
+              (game.javascriptConsole.getBuildingCPS() /
+                game.getPassiveResourceGeneration()) *
+              100
+            ).toFixed(2)}
+            %
+          </div>
+          <div>
+            JavaScriptConsole:{" "}
+            {numbers.format(game.javascriptConsole.getSingleBuildingCPS())} x1
+          </div>
+        </HoverCardContent>
+      </HoverCard>
+      <Image
+        className="w-full h-3 "
+        src={`/stuff.jpg`}
+        alt="grandma"
+        width={200}
+        height={30}
+      />
+      <HoverCard>
+        <HoverCardTrigger>
+          {" "}
+          <div
+            onClick={() => {
+              if (game.canBuyBuilding("idleverse", buyAmount)) {
+                game.buyBuilding("idleverse", buyAmount);
+                setState((prevState) => !prevState);
+              }
+            }}
+            className="flex flex-col border hover:-translate-y-1 active:scale-95 relative h-22"
+          >
+            <Image
+              className=" absolute w-full h-20 "
+              src={`/test4.jpg`}
+              alt="grandma"
+              width={200}
+              height={300}
+            />
+            <div className="z-10  grid grid-cols-4 items-center  h-20">
+              <div className="h-20 flex items-center px-3 gap-3">
+                <Image
+                  className="rounded-full"
+                  src={`/idelverse.jpg`}
+                  alt="idleverse"
+                  width={80}
+                  height={80}
+                />
+              </div>
+              <div className="h-20 pt-2 col-span-2">
+                <h2 className="text-2xl font-bold uppercase ">IdleVerse</h2>
+                <p className="flex gap-2 items-center">
+                  x{buyAmount}
+                  <FaCookie className="w-4 h-4 text-yellow-500" />
+                  <span
+                    className={`${
+                      game.canBuyBuilding("idleverse", buyAmount)
+                        ? "text-green-600"
+                        : "text-red-400"
+                    } font-bold`}
+                  >
+                    {numbers.format(
+                      game.idleverse.getStructureCost(buyAmount).cookies
+                    )}
+                  </span>
+                </p>
+              </div>
+              <div className="justify-self-end  text-4xl pr-8 font-bold">
+                {" "}
+                {game.idleverse.getStructureAmount()}
+              </div>
+            </div>
+          </div>
+        </HoverCardTrigger>
+        <HoverCardContent align="start" className="w-fit">
+          <div>
+            IdleVerses CPS: {numbers.format(game.idleverse.getBuildingCPS())} |{" "}
+            {(
+              (game.idleverse.getBuildingCPS() /
+                game.getPassiveResourceGeneration()) *
+              100
+            ).toFixed(2)}
+            %
+          </div>
+          <div>
+            IdleVerse: {numbers.format(game.idleverse.getSingleBuildingCPS())}{" "}
+            x1
+          </div>
+        </HoverCardContent>
+      </HoverCard>
+      <Image
+        className="w-full h-3 "
+        src={`/stuff.jpg`}
+        alt="grandma"
+        width={200}
+        height={30}
+      />
+      <HoverCard>
+        <HoverCardTrigger>
+          {" "}
+          <div
+            onClick={() => {
+              if (game.canBuyBuilding("cortexBaker", buyAmount)) {
+                game.buyBuilding("cortexBaker", buyAmount);
+                setState((prevState) => !prevState);
+              }
+            }}
+            className="flex flex-col border hover:-translate-y-1 active:scale-95 relative h-22"
+          >
+            <Image
+              className=" absolute w-full h-20 "
+              src={`/test4.jpg`}
+              alt="grandma"
+              width={200}
+              height={300}
+            />
+            <div className="z-10  grid grid-cols-4 items-center  h-20">
+              <div className="h-20 flex items-center px-3 gap-3">
+                <Image
+                  className="rounded-full"
+                  src={`/cortex.png`}
+                  alt="cortexBaker"
+                  width={80}
+                  height={80}
+                />
+              </div>
+              <div className="h-20 pt-2 col-span-2">
+                <h2 className="text-2xl font-bold uppercase ">CortexBaker</h2>
+                <p className="flex gap-2 items-center">
+                  x{buyAmount}
+                  <FaCookie className="w-4 h-4 text-yellow-500" />
+                  <span
+                    className={`${
+                      game.canBuyBuilding("cortexBaker", buyAmount)
+                        ? "text-green-600"
+                        : "text-red-400"
+                    } font-bold`}
+                  >
+                    {numbers.format(
+                      game.cortexBaker.getStructureCost(buyAmount).cookies
+                    )}
+                  </span>
+                </p>
+              </div>
+              <div className="justify-self-end  text-4xl pr-8 font-bold">
+                {" "}
+                {game.cortexBaker.getStructureAmount()}
+              </div>
+            </div>
+          </div>
+        </HoverCardTrigger>
+        <HoverCardContent align="start" className="w-fit">
+          <div>
+            IdleVerses CPS: {numbers.format(game.cortexBaker.getBuildingCPS())}{" "}
+            |{" "}
+            {(
+              (game.cortexBaker.getBuildingCPS() /
+                game.getPassiveResourceGeneration()) *
+              100
+            ).toFixed(2)}
+            %
+          </div>
+          <div>
+            IdleVerse: {numbers.format(game.cortexBaker.getSingleBuildingCPS())}{" "}
+            x1
+          </div>
+        </HoverCardContent>
+      </HoverCard>
+      <Image
+        className="w-full h-3 "
+        src={`/stuff.jpg`}
+        alt="grandma"
+        width={200}
+        height={30}
+      />
+
+      <HoverCard>
+        <HoverCardTrigger>
+          {" "}
+          <div
+            onClick={() => {
+              if (game.canBuyBuilding("you", buyAmount)) {
+                game.buyBuilding("you", buyAmount);
+                setState((prevState) => !prevState);
+              }
+            }}
+            className="flex flex-col border hover:-translate-y-1 active:scale-95 relative h-22"
+          >
+            <Image
+              className=" absolute w-full h-20 "
+              src={`/test4.jpg`}
+              alt="grandma"
+              width={200}
+              height={300}
+            />
+            <div className="z-10  grid grid-cols-4 items-center  h-20">
+              <div className="h-20 flex items-center px-3 gap-3">
+                <Image
+                  className="rounded-full"
+                  src={`/youfemale.jpg`}
+                  alt="you"
+                  width={80}
+                  height={80}
+                />
+              </div>
+              <div className="h-20 pt-2 col-span-2">
+                <h2 className="text-2xl font-bold uppercase ">You</h2>
+                <p className="flex gap-2 items-center">
+                  x{buyAmount}
+                  <FaCookie className="w-4 h-4 text-yellow-500" />
+                  <span
+                    className={`${
+                      game.canBuyBuilding("you", buyAmount)
+                        ? "text-green-600"
+                        : "text-red-400"
+                    } font-bold`}
+                  >
+                    {numbers.format(
+                      game.you.getStructureCost(buyAmount).cookies
+                    )}
+                  </span>
+                </p>
+              </div>
+              <div className="justify-self-end  text-4xl pr-8 font-bold">
+                {" "}
+                {game.you.getStructureAmount()}
+              </div>
+            </div>
+          </div>
+        </HoverCardTrigger>
+        <HoverCardContent align="start" className="w-fit">
+          <div>
+            Yous CPS: {numbers.format(game.you.getBuildingCPS())} |{" "}
+            {(
+              (game.you.getBuildingCPS() /
+                game.getPassiveResourceGeneration()) *
+              100
+            ).toFixed(2)}
+            %
+          </div>
+          <div>You: {numbers.format(game.you.getSingleBuildingCPS())} x1</div>
+        </HoverCardContent>
+      </HoverCard>
+      <Image
+        className="w-full h-3 "
+        src={`/stuff.jpg`}
+        alt="grandma"
+        width={200}
+        height={30}
+      />
     </div>
   );
 }

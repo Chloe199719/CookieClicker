@@ -110,5 +110,32 @@ function CookieIcon({ type }: Props2) {
       );
     case "prism":
       return <Image src="/prism.png" alt="prism" width={32} height={32} />;
+    case "chancemaker":
+      return (
+        <Image src="/chance.png" alt="ChanceMaker" width={32} height={32} />
+      );
+    case "fractalEngine":
+      return (
+        <Image src="/fractal.png" alt="fractalEngine" width={32} height={32} />
+      );
+    case "javascriptConsole":
+      return (
+        <Image
+          src="/typescript.png"
+          alt="Javascript console"
+          width={32}
+          height={32}
+        />
+      );
+    case "idleverse":
+      return (
+        <Image src="/idelverse.jpg" alt="Idleverse" width={32} height={32} />
+      );
+    case "cortexBaker":
+      return (
+        <Image src="/cortex.png" alt="Cortex Baker" width={32} height={32} />
+      );
+    case "you":
+      return <Image src="/youfemale.png" alt="You" width={32} height={32} />;
   }
 }

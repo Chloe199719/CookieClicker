@@ -1,12 +1,17 @@
 import { AlchemyLabAchievements } from "./achievements/AlchemyLab";
 import { AntiMatterCondenserAchievements } from "./achievements/AntiMatter";
 import { BankAchievements } from "./achievements/Bank";
+import { ChanceMakerAchievements } from "./achievements/ChanceMaker";
 import { ClickingAchievements } from "./achievements/Clicking";
 import { cookiesPerSecondAchievements } from "./achievements/CookiesPerSec";
+import { CortexBakerAchievements } from "./achievements/CortexBaker";
 import { CursorAchievements } from "./achievements/Cursors";
 import { FactoryAchievements } from "./achievements/Factory";
 import { FarmAchievements } from "./achievements/Farms";
+import { FractalEngineAchievements } from "./achievements/FractalEngine";
 import { GrandmaAchievements } from "./achievements/Grandma";
+import { IdleVerseAchievements } from "./achievements/IdleVerse";
+import { JavascriptConsoleAchievement } from "./achievements/JavascriptConsole";
 import { MineAchievements } from "./achievements/Mines";
 import { PortalAchievements } from "./achievements/Portal";
 import { PrismAchievements } from "./achievements/Prism";
@@ -15,10 +20,17 @@ import { TempleAchievements } from "./achievements/Temple";
 import { TimeMachineAchievements } from "./achievements/TimeMachine";
 import { totalCookiesAchievements } from "./achievements/TotalCookies";
 import { WizardTowerAchievements } from "./achievements/WizardTowers";
+import { YouAchievements } from "./achievements/You";
 import { SaveType } from "./ui";
+import { ChanceMakersUpgrades } from "./upgrades/Chancemaker";
 import { ClickingUpgrades } from "./upgrades/Clicking";
+import { CortexBakerUpgrades } from "./upgrades/CortexBaker";
+import { FractalEngineUpgrades } from "./upgrades/FractalEngine";
+import { IdleverseUpgrades } from "./upgrades/Idleverse";
+import { JavaScriptConsoleUpgrades } from "./upgrades/JavaScriptConsole";
 import { KittensUpgrades } from "./upgrades/Kittens";
 import { PrismUpgrades } from "./upgrades/Prism";
+import { YouUpgrades } from "./upgrades/You";
 import FlavoredCookies from "./upgrades/flavoredCookies";
 import toast from "react-hot-toast";
 export type Resource = {
@@ -136,6 +148,12 @@ export default class Clicker {
     this
   );
   public prism: Prism = new Prism(this);
+  public chanceMaker: ChanceMaker = new ChanceMaker(this);
+  public fractalEngine: FractalEngine = new FractalEngine(this);
+  public javascriptConsole: JavaScriptConsole = new JavaScriptConsole(this);
+  public idleverse: IdleVerse = new IdleVerse(this);
+  public cortexBaker: CortexBaker = new CortexBaker(this);
+  public you: You = new You(this);
 
   //Achievements
   public clickingAchievements: AchievementType[] = ClickingAchievements;
@@ -181,6 +199,12 @@ export default class Clicker {
     this.timeMachine = new TimeMachine(this);
     this.antimatterCondenser = new AntiMatterCondenser(this);
     this.prism = new Prism(this);
+    this.chanceMaker = new ChanceMaker(this);
+    this.fractalEngine = new FractalEngine(this);
+    this.javascriptConsole = new JavaScriptConsole(this);
+    this.idleverse = new IdleVerse(this);
+    this.cortexBaker = new CortexBaker(this);
+    this.you = new You(this);
   }
 
   //React Toast
@@ -281,6 +305,12 @@ export default class Clicker {
       ...this.timeMachine.timeMachineAchievements,
       ...this.antimatterCondenser.antimatterCondenserAchievements,
       ...this.prism.prismAchievements,
+      ...this.chanceMaker.chanceMakerAchievements,
+      ...this.fractalEngine.fractalEngineAchievements,
+      ...this.javascriptConsole.javascriptConsoleAchievements,
+      ...this.idleverse.idleVerseAchievements,
+      ...this.cortexBaker.cortexBakerAchievements,
+      ...this.you.youAchievements,
     ];
     list.forEach((achievement) => {
       if (achievement.acquired) {
@@ -310,6 +340,12 @@ export default class Clicker {
       ...this.timeMachine.timeMachineAchievements,
       ...this.antimatterCondenser.antimatterCondenserAchievements,
       ...this.prism.prismAchievements,
+      ...this.chanceMaker.chanceMakerAchievements,
+      ...this.fractalEngine.fractalEngineAchievements,
+      ...this.javascriptConsole.javascriptConsoleAchievements,
+      ...this.idleverse.idleVerseAchievements,
+      ...this.cortexBaker.cortexBakerAchievements,
+      ...this.you.youAchievements,
     ].sort((a, b) => {
       return a.acquired === b.acquired ? 0 : a.acquired ? -1 : 1;
     });
@@ -358,6 +394,24 @@ export default class Clicker {
     if (type === "prism") {
       this.prism.checkAchievements();
     }
+    if (type === "chancemaker") {
+      this.chanceMaker.checkAchievements();
+    }
+    if (type === "fractalEngine") {
+      this.fractalEngine.checkAchievements();
+    }
+    if (type === "javascriptConsole") {
+      this.javascriptConsole.checkAchievements();
+    }
+    if (type === "idleverse") {
+      this.idleverse.checkAchievements();
+    }
+    if (type === "cortexBaker") {
+      this.cortexBaker.checkAchievements();
+    }
+    if (type === "you") {
+      this.you.checkAchievements();
+    }
     this.calculateMilk();
   }
   public InitCheckBuildingsAchievements(): void {
@@ -375,6 +429,12 @@ export default class Clicker {
     this.timeMachine.checkAchievements();
     this.antimatterCondenser.checkAchievements();
     this.prism.checkAchievements();
+    this.chanceMaker.checkAchievements();
+    this.fractalEngine.checkAchievements();
+    this.javascriptConsole.checkAchievements();
+    this.idleverse.checkAchievements();
+    this.cortexBaker.checkAchievements();
+    this.you.checkAchievements();
     this.calculateMilk();
   }
 
@@ -395,6 +455,12 @@ export default class Clicker {
     this.timeMachine.calculateStructureResourceGeneration1();
     this.antimatterCondenser.calculateStructureResourceGeneration1();
     this.prism.calculateStructureResourceGeneration1();
+    this.chanceMaker.calculateStructureResourceGeneration1();
+    this.fractalEngine.calculateStructureResourceGeneration1();
+    this.javascriptConsole.calculateStructureResourceGeneration1();
+    this.idleverse.calculateStructureResourceGeneration1();
+    this.cortexBaker.calculateStructureResourceGeneration1();
+    this.you.calculateStructureResourceGeneration1();
 
     this.resourceGeneration.cookies = 0;
     const Structs: Resource[] = [];
@@ -413,6 +479,12 @@ export default class Clicker {
     Structs.push(this.timeMachine.getStructureResourceGeneration());
     Structs.push(this.antimatterCondenser.getStructureResourceGeneration());
     Structs.push(this.prism.getStructureResourceGeneration());
+    Structs.push(this.chanceMaker.getStructureResourceGeneration());
+    Structs.push(this.fractalEngine.getStructureResourceGeneration());
+    Structs.push(this.javascriptConsole.getStructureResourceGeneration());
+    Structs.push(this.idleverse.getStructureResourceGeneration());
+    Structs.push(this.cortexBaker.getStructureResourceGeneration());
+    Structs.push(this.you.getStructureResourceGeneration());
     Structs.forEach((struct) => {
       this.resourceGeneration.cookies += struct.cookies;
     });
@@ -494,6 +566,24 @@ export default class Clicker {
     if (type === "prism") {
       this.prism.increaseStructure(this.resource, amount);
     }
+    if (type === "chancemaker") {
+      this.chanceMaker.increaseStructure(this.resource, amount);
+    }
+    if (type === "fractalEngine") {
+      this.fractalEngine.increaseStructure(this.resource, amount);
+    }
+    if (type === "javascriptConsole") {
+      this.javascriptConsole.increaseStructure(this.resource, amount);
+    }
+    if (type === "idleverse") {
+      this.idleverse.increaseStructure(this.resource, amount);
+    }
+    if (type === "cortexBaker") {
+      this.cortexBaker.increaseStructure(this.resource, amount);
+    }
+    if (type === "you") {
+      this.you.increaseStructure(this.resource, amount);
+    }
     this.PassiveCalculateResourceGeneration();
     this.checkBuildingsAchievements(type);
   }
@@ -540,6 +630,24 @@ export default class Clicker {
     if (type === "prism") {
       return this.prism.canBuy(this.resource, amount);
     }
+    if (type === "chancemaker") {
+      return this.chanceMaker.canBuy(this.resource, amount);
+    }
+    if (type === "fractalEngine") {
+      return this.fractalEngine.canBuy(this.resource, amount);
+    }
+    if (type === "javascriptConsole") {
+      return this.javascriptConsole.canBuy(this.resource, amount);
+    }
+    if (type === "idleverse") {
+      return this.idleverse.canBuy(this.resource, amount);
+    }
+    if (type === "cortexBaker") {
+      return this.cortexBaker.canBuy(this.resource, amount);
+    }
+    if (type === "you") {
+      return this.you.canBuy(this.resource, amount);
+    }
     return false;
   }
   // Method Called by clock and click to increase resource(cookies)
@@ -570,6 +678,12 @@ export default class Clicker {
       diff
     );
     this.prism.gameTick(this.multiplier, this.milkMultiplier, diff);
+    this.chanceMaker.gameTick(this.multiplier, this.milkMultiplier, diff);
+    this.fractalEngine.gameTick(this.multiplier, this.milkMultiplier, diff);
+    this.javascriptConsole.gameTick(this.multiplier, this.milkMultiplier, diff);
+    this.idleverse.gameTick(this.multiplier, this.milkMultiplier, diff);
+    this.cortexBaker.gameTick(this.multiplier, this.milkMultiplier, diff);
+    this.you.gameTick(this.multiplier, this.milkMultiplier, diff);
     this.checkTotalCookiesAchievements();
   }
   public devModeIncreaseResource(addValue: Resource): void {
@@ -695,6 +809,24 @@ export default class Clicker {
     if (type === "prism") {
       this.prism.buyUpgradeLevel(this.resource, id);
     }
+    if (type === "chancemaker") {
+      this.chanceMaker.buyUpgradeLevel(this.resource, id);
+    }
+    if (type === "fractalEngine") {
+      this.fractalEngine.buyUpgradeLevel(this.resource, id);
+    }
+    if (type === "javascriptConsole") {
+      this.javascriptConsole.buyUpgradeLevel(this.resource, id);
+    }
+    if (type === "idleverse") {
+      this.idleverse.buyUpgradeLevel(this.resource, id);
+    }
+    if (type === "cortexBaker") {
+      this.cortexBaker.buyUpgradeLevel(this.resource, id);
+    }
+    if (type === "you") {
+      this.you.buyUpgradeLevel(this.resource, id);
+    }
     this.PassiveCalculateResourceGeneration();
   }
 
@@ -786,6 +918,24 @@ export default class Clicker {
     if (type === "prism") {
       return this.prism.canBuyStructureUpgrade(this.resource, id);
     }
+    if (type === "chancemaker") {
+      return this.chanceMaker.canBuyStructureUpgrade(this.resource, id);
+    }
+    if (type === "fractalEngine") {
+      return this.fractalEngine.canBuyStructureUpgrade(this.resource, id);
+    }
+    if (type === "javascriptConsole") {
+      return this.javascriptConsole.canBuyStructureUpgrade(this.resource, id);
+    }
+    if (type === "idleverse") {
+      return this.idleverse.canBuyStructureUpgrade(this.resource, id);
+    }
+    if (type === "cortexBaker") {
+      return this.cortexBaker.canBuyStructureUpgrade(this.resource, id);
+    }
+    if (type === "you") {
+      return this.you.canBuyStructureUpgrade(this.resource, id);
+    }
     return false;
   }
 
@@ -819,6 +969,12 @@ export default class Clicker {
       ...this.timeMachine.getUpgradesInRange(),
       ...this.antimatterCondenser.getUpgradesInRange(),
       ...this.prism.getUpgradesInRange(),
+      ...this.chanceMaker.getUpgradesInRange(),
+      ...this.fractalEngine.getUpgradesInRange(),
+      ...this.javascriptConsole.getUpgradesInRange(),
+      ...this.idleverse.getUpgradesInRange(),
+      ...this.cortexBaker.getUpgradesInRange(),
+      ...this.you.getUpgradesInRange(),
     ].sort((a, b) => {
       return a.cost.cookies - b.cost.cookies;
     });
@@ -947,6 +1103,57 @@ export default class Clicker {
         lifeTimeCookiesBuilding: this.prism.lifeTimeCookiesBuilding,
         prismUpgrades: Object.fromEntries(this.prism.prismUpgrades),
         prismAchievements: this.prism.prismAchievements,
+      },
+      chancemaker: {
+        structure: this.chanceMaker.structure,
+        structureCost: this.chanceMaker.structureCost,
+        lifeTimeCookiesBuilding: this.chanceMaker.lifeTimeCookiesBuilding,
+        chancemakerUpgrades: Object.fromEntries(
+          this.chanceMaker.chanceMakerUpgrades
+        ),
+        chancemakerAchievements: this.chanceMaker.chanceMakerAchievements,
+      },
+      fractalEngine: {
+        structure: this.fractalEngine.structure,
+        structureCost: this.fractalEngine.structureCost,
+        lifeTimeCookiesBuilding: this.fractalEngine.lifeTimeCookiesBuilding,
+        fractalEngineUpgrades: Object.fromEntries(
+          this.fractalEngine.fractalEngineUpgrades
+        ),
+        fractalEngineAchievements: this.fractalEngine.fractalEngineAchievements,
+      },
+      javascriptConsole: {
+        structure: this.javascriptConsole.structure,
+        structureCost: this.javascriptConsole.structureCost,
+        lifeTimeCookiesBuilding: this.javascriptConsole.lifeTimeCookiesBuilding,
+        javascriptConsoleUpgrades: Object.fromEntries(
+          this.javascriptConsole.javascriptConsoleUpgrades
+        ),
+        javascriptConsoleAchievements:
+          this.javascriptConsole.javascriptConsoleAchievements,
+      },
+      idleverse: {
+        structure: this.idleverse.structure,
+        structureCost: this.idleverse.structureCost,
+        lifeTimeCookiesBuilding: this.idleverse.lifeTimeCookiesBuilding,
+        idleverseUpgrades: Object.fromEntries(this.idleverse.idleVerse),
+        idleverseAchievements: this.idleverse.idleVerseAchievements,
+      },
+      cortexBaker: {
+        structure: this.cortexBaker.structure,
+        structureCost: this.cortexBaker.structureCost,
+        lifeTimeCookiesBuilding: this.cortexBaker.lifeTimeCookiesBuilding,
+        cortexBakerUpgrades: Object.fromEntries(
+          this.cortexBaker.cortexBakerUpgrades
+        ),
+        cortexBakerAchievements: this.cortexBaker.cortexBakerAchievements,
+      },
+      you: {
+        structure: this.you.structure,
+        structureCost: this.you.structureCost,
+        lifeTimeCookiesBuilding: this.you.lifeTimeCookiesBuilding,
+        youUpgrades: Object.fromEntries(this.you.youUpgrades),
+        youAchievements: this.you.youAchievements,
       },
     };
 
@@ -1137,6 +1344,68 @@ export default class Clicker {
     );
     this.prism.prismAchievements =
       save.prism.prismAchievements ?? PrismAchievements;
+    this.prism.calculateStructureResourceGeneration1();
+
+    // Set the chancemaker
+    this.chanceMaker.structureCost = save.chancemaker.structureCost;
+    this.chanceMaker.structure = save.chancemaker.structure;
+    this.chanceMaker.lifeTimeCookiesBuilding = save.chancemaker.lifeTimeCookiesBuilding ?? {cookies: 0};
+    this.chanceMaker.chanceMakerUpgrades = new Map(
+      Object.entries(save.chancemaker.chancemakerUpgrades)
+    );
+    this.chanceMaker.chanceMakerAchievements = save.chancemaker.chancemakerAchievements ?? ChanceMakerAchievements;
+    this.chanceMaker.calculateStructureResourceGeneration1();
+
+    // Set the fractalEngine
+    this.fractalEngine.structureCost = save.fractalEngine.structureCost;
+    this.fractalEngine.structure = save.fractalEngine.structure;
+    this.fractalEngine.lifeTimeCookiesBuilding = save.fractalEngine.lifeTimeCookiesBuilding ?? {cookies: 0};
+    this.fractalEngine.fractalEngineUpgrades = new Map(
+      Object.entries(save.fractalEngine.fractalEngineUpgrades)
+    );
+    this.fractalEngine.fractalEngineAchievements = save.fractalEngine.fractalEngineAchievements ?? FractalEngineAchievements;
+    this.fractalEngine.calculateStructureResourceGeneration1();
+
+    // Set the javascriptConsole
+    this.javascriptConsole.structureCost = save.javascriptConsole.structureCost;
+    this.javascriptConsole.structure = save.javascriptConsole.structure;
+    this.javascriptConsole.lifeTimeCookiesBuilding = save.javascriptConsole.lifeTimeCookiesBuilding ?? {cookies: 0};
+    this.javascriptConsole.javascriptConsoleUpgrades = new Map(
+      Object.entries(save.javascriptConsole.javascriptConsoleUpgrades)
+    );
+    this.javascriptConsole.javascriptConsoleAchievements = save.javascriptConsole.javascriptConsoleAchievements ?? JavascriptConsoleAchievement;
+    this.javascriptConsole.calculateStructureResourceGeneration1();
+
+    // Set the idleverse
+    this.idleverse.structureCost = save.idleverse.structureCost;
+    this.idleverse.structure = save.idleverse.structure;
+    this.idleverse.lifeTimeCookiesBuilding = save.idleverse.lifeTimeCookiesBuilding ?? {cookies: 0};
+    this.idleverse.idleVerse = new Map(
+      Object.entries(save.idleverse.idleverseUpgrades)
+    );
+    this.idleverse.idleVerseAchievements = save.idleverse.idleverseAchievements ?? IdleVerseAchievements;
+    this.idleverse.calculateStructureResourceGeneration1();
+
+    // Set the cortexBaker
+    this.cortexBaker.structureCost = save.cortexBaker.structureCost;
+    this.cortexBaker.structure = save.cortexBaker.structure;
+    this.cortexBaker.lifeTimeCookiesBuilding = save.cortexBaker.lifeTimeCookiesBuilding ?? {cookies: 0};
+    this.cortexBaker.cortexBakerUpgrades = new Map(
+      Object.entries(save.cortexBaker.cortexBakerUpgrades)
+    );
+    this.cortexBaker.cortexBakerAchievements = save.cortexBaker.cortexBakerAchievements ?? CortexBakerAchievements;
+    this.cortexBaker.calculateStructureResourceGeneration1();
+
+    // Set the you
+    this.you.structureCost = save.you.structureCost;
+    this.you.structure = save.you.structure;
+    this.you.lifeTimeCookiesBuilding = save.you.lifeTimeCookiesBuilding ?? {cookies: 0};
+    this.you.youUpgrades = new Map(
+      Object.entries(save.you.youUpgrades)
+    );
+    this.you.youAchievements = save.you.youAchievements ?? YouAchievements;
+    this.you.calculateStructureResourceGeneration1();
+
     // Reload Game generation
     this.InitCheckBuildingsAchievements();
     this.PassiveCalculateResourceGeneration();
@@ -1167,6 +1436,12 @@ export default class Clicker {
     this.timeMachine = new TimeMachine(this);
     this.antimatterCondenser = new AntiMatterCondenser(this);
     this.prism = new Prism(this);
+    this.chanceMaker = new ChanceMaker(this);
+    this.fractalEngine = new FractalEngine(this);
+    this.javascriptConsole = new JavaScriptConsole(this);
+    this.idleverse = new IdleVerse(this);
+    this.cortexBaker = new CortexBaker(this);
+    this.you = new You(this);
     this.flavoredCookies = FlavoredCookies;
     this.clickingAchievements = ClickingAchievements;
     this.TotalCookiesAchievements = totalCookiesAchievements;
@@ -5025,6 +5300,622 @@ class Prism extends Structure {
   }
   public canBuyStructureUpgrade(cookies: Resource, id: number): boolean {
     const nextUpgrade = this.prismUpgrades.get(id.toString());
+    if (!nextUpgrade) {
+      return false;
+    }
+
+    if (
+      cookies.cookies >= nextUpgrade.cost.cookies &&
+      this.getStructureAmount() >= nextUpgrade.requirement
+    ) {
+      return true;
+    }
+    return false;
+  }
+}
+
+class ChanceMaker extends Structure {
+  public chanceMakerUpgrades: Map<string, UpgradeType> = new Map(
+    Object.entries(ChanceMakersUpgrades)
+  );
+  public chanceMakerAchievements: AchievementType[] = ChanceMakerAchievements;
+  private game: Clicker;
+  constructor(game: Clicker) {
+    super({
+      structure: 0,
+      structureCost: { cookies: 26e15 },
+      structureResourceGeneration: { cookies: 21_000_000_000 },
+      structureResourceGenerationDefault: { cookies: 21_000_000_000 },
+
+      structureCostDefault: { cookies: 26e15 },
+    });
+    this.game = game;
+  }
+  public checkAchievements(): void {
+    this.chanceMakerAchievements.forEach((value) => {
+      if (
+        this.getStructureAmount() >= value.condition &&
+        !value.acquired &&
+        value.achievementType === "Having"
+      ) {
+        value.acquired = true;
+        this.game.toast(value.name);
+      } else if (
+        this.lifeTimeCookiesBuilding.cookies >= value.condition &&
+        !value.acquired &&
+        value.achievementType === "Baking"
+      ) {
+        value.acquired = true;
+        this.game.toast(value.name);
+      }
+    });
+  }
+  public getUpgradesInRange(): UpgradeType[] {
+    const upgrades: UpgradeType[] = [];
+    this.chanceMakerUpgrades.forEach((upgrade) => {
+      if (
+        upgrade.requirement <= this.getStructureAmount() &&
+        !upgrade.acquired
+      ) {
+        upgrades.push(upgrade);
+      }
+    });
+    return upgrades;
+  }
+  public buyUpgradeLevel(cookies: Resource, id: number): void {
+    const upgrade = this.chanceMakerUpgrades.get(id.toString());
+    if (!upgrade) return;
+    if (!this.canBuyStructureUpgrade(cookies, id)) return;
+    cookies.cookies -= upgrade.cost.cookies;
+    upgrade.acquired = true;
+    this.calculateStructureResourceGeneration1();
+    this.game.ClickCalculateResourceGeneration();
+  }
+  public calculateStructureResourceGeneration1(): void {
+    this.structureResourceGeneration.cookies =
+      this.structureResourceGenerationDefault.cookies;
+    this.chanceMakerUpgrades.forEach((value, key) => {
+      if (value.acquired) {
+        this.structureResourceGeneration.cookies *= value.multiplier;
+      }
+    });
+  }
+  public getStructureUpgradeCost(id: number): string {
+    return this.chanceMakerUpgrades
+      .get(id.toString())
+      ?.cost.cookies.toString()!;
+  }
+  public getBuildingCPS(): number {
+    return (
+      ((this.structureResourceGeneration.cookies *
+        this.structure *
+        this.game.multiplier) /
+        100) *
+      this.game.milkMultiplier
+    );
+  }
+  public getSingleBuildingCPS(): number {
+    return (
+      ((this.structureResourceGeneration.cookies * this.game.multiplier) /
+        100) *
+      this.game.milkMultiplier
+    );
+  }
+  public canBuyStructureUpgrade(cookies: Resource, id: number): boolean {
+    const nextUpgrade = this.chanceMakerUpgrades.get(id.toString());
+    if (!nextUpgrade) {
+      return false;
+    }
+
+    if (
+      cookies.cookies >= nextUpgrade.cost.cookies &&
+      this.getStructureAmount() >= nextUpgrade.requirement
+    ) {
+      return true;
+    }
+    return false;
+  }
+}
+
+class FractalEngine extends Structure {
+  public fractalEngineUpgrades: Map<string, UpgradeType> = new Map(
+    Object.entries(FractalEngineUpgrades)
+  );
+  public fractalEngineAchievements: AchievementType[] =
+    FractalEngineAchievements;
+  private game: Clicker;
+  constructor(game: Clicker) {
+    super({
+      structure: 0,
+      structureCost: { cookies: 310e15 },
+      structureResourceGeneration: { cookies: 150_000_000_000 },
+      structureResourceGenerationDefault: { cookies: 150_000_000_000 },
+
+      structureCostDefault: { cookies: 310e15 },
+    });
+    this.game = game;
+  }
+  public checkAchievements(): void {
+    this.fractalEngineAchievements.forEach((value) => {
+      if (
+        this.getStructureAmount() >= value.condition &&
+        !value.acquired &&
+        value.achievementType === "Having"
+      ) {
+        value.acquired = true;
+        this.game.toast(value.name);
+      } else if (
+        this.lifeTimeCookiesBuilding.cookies >= value.condition &&
+        !value.acquired &&
+        value.achievementType === "Baking"
+      ) {
+        value.acquired = true;
+        this.game.toast(value.name);
+      }
+    });
+  }
+  public getUpgradesInRange(): UpgradeType[] {
+    const upgrades: UpgradeType[] = [];
+    this.fractalEngineUpgrades.forEach((upgrade) => {
+      if (
+        upgrade.requirement <= this.getStructureAmount() &&
+        !upgrade.acquired
+      ) {
+        upgrades.push(upgrade);
+      }
+    });
+    return upgrades;
+  }
+  public buyUpgradeLevel(cookies: Resource, id: number): void {
+    const upgrade = this.fractalEngineUpgrades.get(id.toString());
+    if (!upgrade) return;
+    if (!this.canBuyStructureUpgrade(cookies, id)) return;
+    cookies.cookies -= upgrade.cost.cookies;
+    upgrade.acquired = true;
+    this.calculateStructureResourceGeneration1();
+    this.game.ClickCalculateResourceGeneration();
+  }
+  public calculateStructureResourceGeneration1(): void {
+    this.structureResourceGeneration.cookies =
+      this.structureResourceGenerationDefault.cookies;
+    this.fractalEngineUpgrades.forEach((value, key) => {
+      if (value.acquired) {
+        this.structureResourceGeneration.cookies *= value.multiplier;
+      }
+    });
+  }
+  public getStructureUpgradeCost(id: number): string {
+    return this.fractalEngineUpgrades
+      .get(id.toString())
+      ?.cost.cookies.toString()!;
+  }
+  public getBuildingCPS(): number {
+    return (
+      ((this.structureResourceGeneration.cookies *
+        this.structure *
+        this.game.multiplier) /
+        100) *
+      this.game.milkMultiplier
+    );
+  }
+  public getSingleBuildingCPS(): number {
+    return (
+      ((this.structureResourceGeneration.cookies * this.game.multiplier) /
+        100) *
+      this.game.milkMultiplier
+    );
+  }
+  public canBuyStructureUpgrade(cookies: Resource, id: number): boolean {
+    const nextUpgrade = this.fractalEngineUpgrades.get(id.toString());
+    if (!nextUpgrade) {
+      return false;
+    }
+
+    if (
+      cookies.cookies >= nextUpgrade.cost.cookies &&
+      this.getStructureAmount() >= nextUpgrade.requirement
+    ) {
+      return true;
+    }
+    return false;
+  }
+}
+
+class JavaScriptConsole extends Structure {
+  public javascriptConsoleUpgrades: Map<string, UpgradeType> = new Map(
+    Object.entries(JavaScriptConsoleUpgrades)
+  );
+  public javascriptConsoleAchievements: AchievementType[] =
+    JavascriptConsoleAchievement;
+  private game: Clicker;
+  constructor(game: Clicker) {
+    super({
+      structure: 0,
+      structureCost: { cookies: 7.1e19 },
+      structureResourceGeneration: { cookies: 1_100_000_000_000 },
+      structureResourceGenerationDefault: { cookies: 1_100_000_000_000 },
+
+      structureCostDefault: { cookies: 7.1e19 },
+    });
+    this.game = game;
+  }
+  public checkAchievements(): void {
+    this.javascriptConsoleAchievements.forEach((value) => {
+      if (
+        this.getStructureAmount() >= value.condition &&
+        !value.acquired &&
+        value.achievementType === "Having"
+      ) {
+        value.acquired = true;
+        this.game.toast(value.name);
+      } else if (
+        this.lifeTimeCookiesBuilding.cookies >= value.condition &&
+        !value.acquired &&
+        value.achievementType === "Baking"
+      ) {
+        value.acquired = true;
+        this.game.toast(value.name);
+      }
+    });
+  }
+  public getUpgradesInRange(): UpgradeType[] {
+    const upgrades: UpgradeType[] = [];
+    this.javascriptConsoleUpgrades.forEach((upgrade) => {
+      if (
+        upgrade.requirement <= this.getStructureAmount() &&
+        !upgrade.acquired
+      ) {
+        upgrades.push(upgrade);
+      }
+    });
+    return upgrades;
+  }
+  public buyUpgradeLevel(cookies: Resource, id: number): void {
+    const upgrade = this.javascriptConsoleUpgrades.get(id.toString());
+    if (!upgrade) return;
+    if (!this.canBuyStructureUpgrade(cookies, id)) return;
+    cookies.cookies -= upgrade.cost.cookies;
+    upgrade.acquired = true;
+    this.calculateStructureResourceGeneration1();
+    this.game.ClickCalculateResourceGeneration();
+  }
+  public calculateStructureResourceGeneration1(): void {
+    this.structureResourceGeneration.cookies =
+      this.structureResourceGenerationDefault.cookies;
+    this.javascriptConsoleUpgrades.forEach((value, key) => {
+      if (value.acquired) {
+        this.structureResourceGeneration.cookies *= value.multiplier;
+      }
+    });
+  }
+  public getStructureUpgradeCost(id: number): string {
+    return this.javascriptConsoleUpgrades
+      .get(id.toString())
+      ?.cost.cookies.toString()!;
+  }
+  public getBuildingCPS(): number {
+    return (
+      ((this.structureResourceGeneration.cookies *
+        this.structure *
+        this.game.multiplier) /
+        100) *
+      this.game.milkMultiplier
+    );
+  }
+  public getSingleBuildingCPS(): number {
+    return (
+      ((this.structureResourceGeneration.cookies * this.game.multiplier) /
+        100) *
+      this.game.milkMultiplier
+    );
+  }
+  public canBuyStructureUpgrade(cookies: Resource, id: number): boolean {
+    const nextUpgrade = this.javascriptConsoleUpgrades.get(id.toString());
+    if (!nextUpgrade) {
+      return false;
+    }
+
+    if (
+      cookies.cookies >= nextUpgrade.cost.cookies &&
+      this.getStructureAmount() >= nextUpgrade.requirement
+    ) {
+      return true;
+    }
+    return false;
+  }
+}
+
+class CortexBaker extends Structure {
+  public cortexBakerUpgrades: Map<string, UpgradeType> = new Map(
+    Object.entries(CortexBakerUpgrades)
+  );
+  public cortexBakerAchievements: AchievementType[] = CortexBakerAchievements;
+  private game: Clicker;
+  constructor(game: Clicker) {
+    super({
+      structure: 0,
+      structureCost: { cookies: 1.9e26 },
+      structureResourceGeneration: { cookies: 64_000_000_000_000 },
+      structureResourceGenerationDefault: { cookies: 64_000_000_000_000 },
+
+      structureCostDefault: { cookies: 1.9e26 },
+    });
+    this.game = game;
+  }
+  public checkAchievements(): void {
+    this.cortexBakerAchievements.forEach((value) => {
+      if (
+        this.getStructureAmount() >= value.condition &&
+        !value.acquired &&
+        value.achievementType === "Having"
+      ) {
+        value.acquired = true;
+        this.game.toast(value.name);
+      } else if (
+        this.lifeTimeCookiesBuilding.cookies >= value.condition &&
+        !value.acquired &&
+        value.achievementType === "Baking"
+      ) {
+        value.acquired = true;
+        this.game.toast(value.name);
+      }
+    });
+  }
+  public getUpgradesInRange(): UpgradeType[] {
+    const upgrades: UpgradeType[] = [];
+    this.cortexBakerUpgrades.forEach((upgrade) => {
+      if (
+        upgrade.requirement <= this.getStructureAmount() &&
+        !upgrade.acquired
+      ) {
+        upgrades.push(upgrade);
+      }
+    });
+    return upgrades;
+  }
+  public buyUpgradeLevel(cookies: Resource, id: number): void {
+    const upgrade = this.cortexBakerUpgrades.get(id.toString());
+    if (!upgrade) return;
+    if (!this.canBuyStructureUpgrade(cookies, id)) return;
+    cookies.cookies -= upgrade.cost.cookies;
+    upgrade.acquired = true;
+    this.calculateStructureResourceGeneration1();
+    this.game.ClickCalculateResourceGeneration();
+  }
+  public calculateStructureResourceGeneration1(): void {
+    this.structureResourceGeneration.cookies =
+      this.structureResourceGenerationDefault.cookies;
+    this.cortexBakerUpgrades.forEach((value, key) => {
+      if (value.acquired) {
+        this.structureResourceGeneration.cookies *= value.multiplier;
+      }
+    });
+  }
+  public getStructureUpgradeCost(id: number): string {
+    return this.cortexBakerUpgrades
+      .get(id.toString())
+      ?.cost.cookies.toString()!;
+  }
+  public getBuildingCPS(): number {
+    return (
+      ((this.structureResourceGeneration.cookies *
+        this.structure *
+        this.game.multiplier) /
+        100) *
+      this.game.milkMultiplier
+    );
+  }
+  public getSingleBuildingCPS(): number {
+    return (
+      ((this.structureResourceGeneration.cookies * this.game.multiplier) /
+        100) *
+      this.game.milkMultiplier
+    );
+  }
+  public canBuyStructureUpgrade(cookies: Resource, id: number): boolean {
+    const nextUpgrade = this.cortexBakerUpgrades.get(id.toString());
+    if (!nextUpgrade) {
+      return false;
+    }
+
+    if (
+      cookies.cookies >= nextUpgrade.cost.cookies &&
+      this.getStructureAmount() >= nextUpgrade.requirement
+    ) {
+      return true;
+    }
+    return false;
+  }
+}
+
+class IdleVerse extends Structure {
+  public idleVerse: Map<string, UpgradeType> = new Map(
+    Object.entries(IdleverseUpgrades)
+  );
+  public idleVerseAchievements: AchievementType[] = IdleVerseAchievements;
+  private game: Clicker;
+  constructor(game: Clicker) {
+    super({
+      structure: 0,
+      structureCost: { cookies: 1.2e21 },
+      structureResourceGeneration: { cookies: 8_300_000_000_000 },
+      structureResourceGenerationDefault: { cookies: 8_300_000_000_000 },
+
+      structureCostDefault: { cookies: 1.2e21 },
+    });
+    this.game = game;
+  }
+  public checkAchievements(): void {
+    this.idleVerseAchievements.forEach((value) => {
+      if (
+        this.getStructureAmount() >= value.condition &&
+        !value.acquired &&
+        value.achievementType === "Having"
+      ) {
+        value.acquired = true;
+        this.game.toast(value.name);
+      } else if (
+        this.lifeTimeCookiesBuilding.cookies >= value.condition &&
+        !value.acquired &&
+        value.achievementType === "Baking"
+      ) {
+        value.acquired = true;
+        this.game.toast(value.name);
+      }
+    });
+  }
+  public getUpgradesInRange(): UpgradeType[] {
+    const upgrades: UpgradeType[] = [];
+    this.idleVerse.forEach((upgrade) => {
+      if (
+        upgrade.requirement <= this.getStructureAmount() &&
+        !upgrade.acquired
+      ) {
+        upgrades.push(upgrade);
+      }
+    });
+    return upgrades;
+  }
+  public buyUpgradeLevel(cookies: Resource, id: number): void {
+    const upgrade = this.idleVerse.get(id.toString());
+    if (!upgrade) return;
+    if (!this.canBuyStructureUpgrade(cookies, id)) return;
+    cookies.cookies -= upgrade.cost.cookies;
+    upgrade.acquired = true;
+    this.calculateStructureResourceGeneration1();
+    this.game.ClickCalculateResourceGeneration();
+  }
+  public calculateStructureResourceGeneration1(): void {
+    this.structureResourceGeneration.cookies =
+      this.structureResourceGenerationDefault.cookies;
+    this.idleVerse.forEach((value, key) => {
+      if (value.acquired) {
+        this.structureResourceGeneration.cookies *= value.multiplier;
+      }
+    });
+  }
+  public getStructureUpgradeCost(id: number): string {
+    return this.idleVerse.get(id.toString())?.cost.cookies.toString()!;
+  }
+  public getBuildingCPS(): number {
+    return (
+      ((this.structureResourceGeneration.cookies *
+        this.structure *
+        this.game.multiplier) /
+        100) *
+      this.game.milkMultiplier
+    );
+  }
+  public getSingleBuildingCPS(): number {
+    return (
+      ((this.structureResourceGeneration.cookies * this.game.multiplier) /
+        100) *
+      this.game.milkMultiplier
+    );
+  }
+  public canBuyStructureUpgrade(cookies: Resource, id: number): boolean {
+    const nextUpgrade = this.idleVerse.get(id.toString());
+    if (!nextUpgrade) {
+      return false;
+    }
+
+    if (
+      cookies.cookies >= nextUpgrade.cost.cookies &&
+      this.getStructureAmount() >= nextUpgrade.requirement
+    ) {
+      return true;
+    }
+    return false;
+  }
+}
+
+class You extends Structure {
+  public youUpgrades: Map<string, UpgradeType> = new Map(
+    Object.entries(YouUpgrades)
+  );
+  public youAchievements: AchievementType[] = YouAchievements;
+  private game: Clicker;
+  constructor(game: Clicker) {
+    super({
+      structure: 0,
+      structureCost: { cookies: 540e24 },
+      structureResourceGeneration: { cookies: 510_000_000_000_000 },
+      structureResourceGenerationDefault: { cookies: 510_000_000_000_000 },
+
+      structureCostDefault: { cookies: 540e24 },
+    });
+    this.game = game;
+  }
+  public checkAchievements(): void {
+    this.youAchievements.forEach((value) => {
+      if (
+        this.getStructureAmount() >= value.condition &&
+        !value.acquired &&
+        value.achievementType === "Having"
+      ) {
+        value.acquired = true;
+        this.game.toast(value.name);
+      } else if (
+        this.lifeTimeCookiesBuilding.cookies >= value.condition &&
+        !value.acquired &&
+        value.achievementType === "Baking"
+      ) {
+        value.acquired = true;
+        this.game.toast(value.name);
+      }
+    });
+  }
+  public getUpgradesInRange(): UpgradeType[] {
+    const upgrades: UpgradeType[] = [];
+    this.youUpgrades.forEach((upgrade) => {
+      if (
+        upgrade.requirement <= this.getStructureAmount() &&
+        !upgrade.acquired
+      ) {
+        upgrades.push(upgrade);
+      }
+    });
+    return upgrades;
+  }
+  public buyUpgradeLevel(cookies: Resource, id: number): void {
+    const upgrade = this.youUpgrades.get(id.toString());
+    if (!upgrade) return;
+    if (!this.canBuyStructureUpgrade(cookies, id)) return;
+    cookies.cookies -= upgrade.cost.cookies;
+    upgrade.acquired = true;
+    this.calculateStructureResourceGeneration1();
+    this.game.ClickCalculateResourceGeneration();
+  }
+  public calculateStructureResourceGeneration1(): void {
+    this.structureResourceGeneration.cookies =
+      this.structureResourceGenerationDefault.cookies;
+    this.youUpgrades.forEach((value, key) => {
+      if (value.acquired) {
+        this.structureResourceGeneration.cookies *= value.multiplier;
+      }
+    });
+  }
+  public getStructureUpgradeCost(id: number): string {
+    return this.youUpgrades.get(id.toString())?.cost.cookies.toString()!;
+  }
+  public getBuildingCPS(): number {
+    return (
+      ((this.structureResourceGeneration.cookies *
+        this.structure *
+        this.game.multiplier) /
+        100) *
+      this.game.milkMultiplier
+    );
+  }
+  public getSingleBuildingCPS(): number {
+    return (
+      ((this.structureResourceGeneration.cookies * this.game.multiplier) /
+        100) *
+      this.game.milkMultiplier
+    );
+  }
+  public canBuyStructureUpgrade(cookies: Resource, id: number): boolean {
+    const nextUpgrade = this.youUpgrades.get(id.toString());
     if (!nextUpgrade) {
       return false;
     }

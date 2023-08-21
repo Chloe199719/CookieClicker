@@ -110,4 +110,46 @@ export interface SaveType {
     prismUpgrades: { [key: string]: UpgradeType };
     prismAchievements: AchievementType[];
   };
+  chancemaker: {
+    structure: number;
+    structureCost: Resource;
+    lifeTimeCookiesBuilding: Resource;
+    chancemakerUpgrades: { [key: string]: UpgradeType };
+    chancemakerAchievements: AchievementType[];
+  };
+  fractalEngine: {
+    structure: number;
+    structureCost: Resource;
+    lifeTimeCookiesBuilding: Resource;
+    fractalEngineUpgrades: { [key: string]: UpgradeType };
+    fractalEngineAchievements: AchievementType[];
+  };
+  javascriptConsole: {
+    structure: number;
+    structureCost: Resource;
+    lifeTimeCookiesBuilding: Resource;
+    javascriptConsoleUpgrades: { [key: string]: UpgradeType };
+    javascriptConsoleAchievements: AchievementType[];
+  };
+  idleverse: {
+    structure: number;
+    structureCost: Resource;
+    lifeTimeCookiesBuilding: Resource;
+    idleverseUpgrades: { [key: string]: UpgradeType };
+    idleverseAchievements: AchievementType[];
+  };
+  cortexBaker: {
+    structure: number;
+    structureCost: Resource;
+    lifeTimeCookiesBuilding: Resource;
+    cortexBakerUpgrades: { [key: string]: UpgradeType };
+    cortexBakerAchievements: AchievementType[];
+  };
+  you: {
+    structure: number;
+    structureCost: Resource;
+    lifeTimeCookiesBuilding: Resource;
+    youUpgrades: { [key: string]: UpgradeType };
+    youAchievements: AchievementType[];
+  };
 }
