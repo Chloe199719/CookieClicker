@@ -346,9 +346,13 @@ export default class Clicker {
       ...this.idleverse.idleVerseAchievements,
       ...this.cortexBaker.cortexBakerAchievements,
       ...this.you.youAchievements,
-    ].sort((a, b) => {
-      return a.acquired === b.acquired ? 0 : a.acquired ? -1 : 1;
-    });
+    ]
+      .sort((a, b) => {
+        return a.condition - b.condition;
+      })
+      .sort((a, b) => {
+        return a.acquired === b.acquired ? 0 : a.acquired ? -1 : 1;
+      });
   }
   // Check Buildings Achievements
   public checkBuildingsAchievements(type: BuildingType): void {
@@ -1349,60 +1353,71 @@ export default class Clicker {
     // Set the chancemaker
     this.chanceMaker.structureCost = save.chancemaker.structureCost;
     this.chanceMaker.structure = save.chancemaker.structure;
-    this.chanceMaker.lifeTimeCookiesBuilding = save.chancemaker.lifeTimeCookiesBuilding ?? {cookies: 0};
+    this.chanceMaker.lifeTimeCookiesBuilding = save.chancemaker
+      .lifeTimeCookiesBuilding ?? { cookies: 0 };
     this.chanceMaker.chanceMakerUpgrades = new Map(
       Object.entries(save.chancemaker.chancemakerUpgrades)
     );
-    this.chanceMaker.chanceMakerAchievements = save.chancemaker.chancemakerAchievements ?? ChanceMakerAchievements;
+    this.chanceMaker.chanceMakerAchievements =
+      save.chancemaker.chancemakerAchievements ?? ChanceMakerAchievements;
     this.chanceMaker.calculateStructureResourceGeneration1();
 
     // Set the fractalEngine
     this.fractalEngine.structureCost = save.fractalEngine.structureCost;
     this.fractalEngine.structure = save.fractalEngine.structure;
-    this.fractalEngine.lifeTimeCookiesBuilding = save.fractalEngine.lifeTimeCookiesBuilding ?? {cookies: 0};
+    this.fractalEngine.lifeTimeCookiesBuilding = save.fractalEngine
+      .lifeTimeCookiesBuilding ?? { cookies: 0 };
     this.fractalEngine.fractalEngineUpgrades = new Map(
       Object.entries(save.fractalEngine.fractalEngineUpgrades)
     );
-    this.fractalEngine.fractalEngineAchievements = save.fractalEngine.fractalEngineAchievements ?? FractalEngineAchievements;
+    this.fractalEngine.fractalEngineAchievements =
+      save.fractalEngine.fractalEngineAchievements ?? FractalEngineAchievements;
     this.fractalEngine.calculateStructureResourceGeneration1();
 
     // Set the javascriptConsole
     this.javascriptConsole.structureCost = save.javascriptConsole.structureCost;
     this.javascriptConsole.structure = save.javascriptConsole.structure;
-    this.javascriptConsole.lifeTimeCookiesBuilding = save.javascriptConsole.lifeTimeCookiesBuilding ?? {cookies: 0};
+    this.javascriptConsole.lifeTimeCookiesBuilding = save.javascriptConsole
+      .lifeTimeCookiesBuilding ?? { cookies: 0 };
     this.javascriptConsole.javascriptConsoleUpgrades = new Map(
       Object.entries(save.javascriptConsole.javascriptConsoleUpgrades)
     );
-    this.javascriptConsole.javascriptConsoleAchievements = save.javascriptConsole.javascriptConsoleAchievements ?? JavascriptConsoleAchievement;
+    this.javascriptConsole.javascriptConsoleAchievements =
+      save.javascriptConsole.javascriptConsoleAchievements ??
+      JavascriptConsoleAchievement;
     this.javascriptConsole.calculateStructureResourceGeneration1();
 
     // Set the idleverse
     this.idleverse.structureCost = save.idleverse.structureCost;
     this.idleverse.structure = save.idleverse.structure;
-    this.idleverse.lifeTimeCookiesBuilding = save.idleverse.lifeTimeCookiesBuilding ?? {cookies: 0};
+    this.idleverse.lifeTimeCookiesBuilding = save.idleverse
+      .lifeTimeCookiesBuilding ?? { cookies: 0 };
     this.idleverse.idleVerse = new Map(
       Object.entries(save.idleverse.idleverseUpgrades)
     );
-    this.idleverse.idleVerseAchievements = save.idleverse.idleverseAchievements ?? IdleVerseAchievements;
+    this.idleverse.idleVerseAchievements =
+      save.idleverse.idleverseAchievements ?? IdleVerseAchievements;
     this.idleverse.calculateStructureResourceGeneration1();
 
     // Set the cortexBaker
     this.cortexBaker.structureCost = save.cortexBaker.structureCost;
     this.cortexBaker.structure = save.cortexBaker.structure;
-    this.cortexBaker.lifeTimeCookiesBuilding = save.cortexBaker.lifeTimeCookiesBuilding ?? {cookies: 0};
+    this.cortexBaker.lifeTimeCookiesBuilding = save.cortexBaker
+      .lifeTimeCookiesBuilding ?? { cookies: 0 };
     this.cortexBaker.cortexBakerUpgrades = new Map(
       Object.entries(save.cortexBaker.cortexBakerUpgrades)
     );
-    this.cortexBaker.cortexBakerAchievements = save.cortexBaker.cortexBakerAchievements ?? CortexBakerAchievements;
+    this.cortexBaker.cortexBakerAchievements =
+      save.cortexBaker.cortexBakerAchievements ?? CortexBakerAchievements;
     this.cortexBaker.calculateStructureResourceGeneration1();
 
     // Set the you
     this.you.structureCost = save.you.structureCost;
     this.you.structure = save.you.structure;
-    this.you.lifeTimeCookiesBuilding = save.you.lifeTimeCookiesBuilding ?? {cookies: 0};
-    this.you.youUpgrades = new Map(
-      Object.entries(save.you.youUpgrades)
-    );
+    this.you.lifeTimeCookiesBuilding = save.you.lifeTimeCookiesBuilding ?? {
+      cookies: 0,
+    };
+    this.you.youUpgrades = new Map(Object.entries(save.you.youUpgrades));
     this.you.youAchievements = save.you.youAchievements ?? YouAchievements;
     this.you.calculateStructureResourceGeneration1();
 
