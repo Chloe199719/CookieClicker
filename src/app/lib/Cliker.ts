@@ -5649,11 +5649,11 @@ class CortexBaker extends Structure {
   constructor(game: Clicker) {
     super({
       structure: 0,
-      structureCost: { cookies: 1.9e26 },
+      structureCost: { cookies: 1.9e24 },
       structureResourceGeneration: { cookies: 64_000_000_000_000 },
       structureResourceGenerationDefault: { cookies: 64_000_000_000_000 },
 
-      structureCostDefault: { cookies: 1.9e26 },
+      structureCostDefault: { cookies: 1.9e24 },
     });
     this.game = game;
   }

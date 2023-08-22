@@ -20,7 +20,7 @@ export default function RootLayout({
         <ThemeProvider>
           <header className="flex px-6 h-20 py-4 justify-between bg-orange-300  dark:bg-red-700">
             <h1 className="text-4xl">Cookie Clicker</h1>
-            {/* <ModeToggle /> */}
+            <ModeToggle />
           </header>
 
           {children}
