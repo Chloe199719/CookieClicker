@@ -708,7 +708,7 @@ export default class Clicker {
     this.multiplier = 100;
     this.flavoredCookies.forEach((element) => {
       if (element.acquired) {
-        this.multiplier += element.multiplier;
+        this.multiplier += this.multiplier * (element.multiplier / 100);
       }
     });
   }
