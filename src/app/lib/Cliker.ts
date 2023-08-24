@@ -43,7 +43,14 @@ export interface AchievementType {
   description: string;
   acquired: boolean;
   condition: number;
-  type: BuildingType | "Generation" | "Click" | "Total";
+  type:
+    | BuildingType
+    | "Generation"
+    | "Click"
+    | "Total"
+    | "Owned Buildings"
+    | "Everything"
+    | "Purchase Upgrades";
   achievementType: "Having" | "Baking";
 }
 export type BuildingType =
