@@ -153,3 +153,8 @@ export interface SaveType {
     youAchievements: AchievementType[];
   };
 }
+
+export interface SavingType {
+  id: number;
+  acquired: boolean;
+}
