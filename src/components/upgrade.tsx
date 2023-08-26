@@ -136,6 +136,6 @@ function CookieIcon({ type }: Props2) {
         <Image src="/cortex.png" alt="Cortex Baker" width={32} height={32} />
       );
     case "you":
-      return <Image src="/youfemale.png" alt="You" width={32} height={32} />;
+      return <Image src="/youfemale.jpg" alt="You" width={32} height={32} />;
   }
 }

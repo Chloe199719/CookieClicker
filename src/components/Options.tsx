@@ -18,7 +18,7 @@ function Options({ game, setState }: Props) {
       <SheetTrigger>
         <div className="text-lg">Options</div>
       </SheetTrigger>
-      <SheetContent side="left" className="bg-gray-700">
+      <SheetContent side="left" className="bg-gray-700 w-96">
         <SheetHeader>
           <SheetTitle>Options</SheetTitle>
         </SheetHeader>
