@@ -1684,6 +1684,7 @@ export default class Clicker {
     this.clickingAchievements = [...ClickingAchievements];
     this.TotalCookiesAchievements = [...totalCookiesAchievements];
     this.cookiesPerSecondAchievements = [...cookiesPerSecondAchievements];
+    this.TotalBuildingsAchievements = [...TotalBuildingAndUpgradesAchievements];
     this.clickingUpgrades = [...ClickingUpgrades];
     this.kittens = [...KittensUpgrades];
     this.checkTotalBuildingsAchievements();
