@@ -135,9 +135,9 @@ export default class Clicker {
   public clickingMultiplier: number = 0;
 
   //Upgrades
-  private flavoredCookies: UpgradeType[] = FlavoredCookies;
-  private kittens: UpgradeType[] = KittensUpgrades;
-  private clickingUpgrades: UpgradeType[] = ClickingUpgrades;
+  private flavoredCookies: UpgradeType[] = [...FlavoredCookies];
+  private kittens: UpgradeType[] = [...KittensUpgrades];
+  private clickingUpgrades: UpgradeType[] = [...ClickingUpgrades];
 
   //Building's
   public grandma: Grandma = new Grandma(this);
@@ -164,12 +164,16 @@ export default class Clicker {
   public you: You = new You(this);
 
   //Achievements
-  public clickingAchievements: AchievementType[] = ClickingAchievements;
-  public TotalCookiesAchievements: AchievementType[] = totalCookiesAchievements;
-  public cookiesPerSecondAchievements: AchievementType[] =
-    cookiesPerSecondAchievements;
-  public TotalBuildingsAchievements: AchievementType[] =
-    TotalBuildingAndUpgradesAchievements;
+  public clickingAchievements: AchievementType[] = [...ClickingAchievements];
+  public TotalCookiesAchievements: AchievementType[] = [
+    ...totalCookiesAchievements,
+  ];
+  public cookiesPerSecondAchievements: AchievementType[] = [
+    ...cookiesPerSecondAchievements,
+  ];
+  public TotalBuildingsAchievements: AchievementType[] = [
+    ...TotalBuildingAndUpgradesAchievements,
+  ];
   // Generation
   private clickResourceGeneration: Resource;
   private resourceGeneration: Resource;
@@ -2016,7 +2020,7 @@ class Cursor extends Structure {
   };
   public cursorUpgrades = new Map(Object.entries(this.cursorUpgrades1));
   private game: Clicker;
-  public CursorAchievements = CursorAchievements;
+  public CursorAchievements = [...CursorAchievements];
   // Constructor Needs to be fixed to Allow for Saving
   constructor(game: Clicker) {
     super({
@@ -2327,7 +2331,7 @@ class Grandma extends Structure {
   public grandmaUpgrades: Map<string, UpgradeType> = new Map(
     Object.entries(this.grandmaUpgrades1)
   );
-  public grandmaAchievements = GrandmaAchievements;
+  public grandmaAchievements = [...GrandmaAchievements];
   private game: Clicker;
   constructor(game: Clicker) {
     super({
@@ -2615,7 +2619,7 @@ class Farm extends Structure {
   public farmUpgrades: Map<string, UpgradeType> = new Map(
     Object.entries(this.farmUpgrades1)
   );
-  public farmAchievements = FarmAchievements;
+  public farmAchievements = [...FarmAchievements];
   private game: Clicker;
   constructor(game: Clicker) {
     super({
@@ -2898,7 +2902,7 @@ class Mine extends Structure {
     Object.entries(this.farmUpgrades1)
   );
   private game: Clicker;
-  public mineAchievements: AchievementType[] = MineAchievements;
+  public mineAchievements: AchievementType[] = [...MineAchievements];
   constructor(game: Clicker) {
     super({
       structure: 0,
@@ -3166,7 +3170,7 @@ class Factory extends Structure {
     Object.entries(this.FactoryUpgrades1)
   );
   private game: Clicker;
-  public factoryAchievements: AchievementType[] = FactoryAchievements;
+  public factoryAchievements: AchievementType[] = [...FactoryAchievements];
   constructor(game: Clicker) {
     super({
       structure: 0,
@@ -3436,7 +3440,7 @@ class Bank extends Structure {
     Object.entries(this.BankUpgrades1)
   );
   private game: Clicker;
-  public bankAchievements: AchievementType[] = BankAchievements;
+  public bankAchievements: AchievementType[] = [...BankAchievements];
   constructor(game: Clicker) {
     super({
       structure: 0,
@@ -3708,7 +3712,7 @@ class Temple extends Structure {
     Object.entries(this.templeUpgrades1)
   );
   private game: Clicker;
-  public templeAchievements: AchievementType[] = TempleAchievements;
+  public templeAchievements: AchievementType[] = [...TempleAchievements];
   constructor(game: Clicker) {
     super({
       structure: 0,
@@ -3980,7 +3984,9 @@ class WizardTower extends Structure {
     Object.entries(this.wizardTowerUpgrades1)
   );
   private game: Clicker;
-  public wizardTowerAchievements: AchievementType[] = WizardTowerAchievements;
+  public wizardTowerAchievements: AchievementType[] = [
+    ...WizardTowerAchievements,
+  ];
   constructor(game: Clicker) {
     super({
       structure: 0,
@@ -4254,7 +4260,7 @@ class Shipment extends Structure {
     Object.entries(this.shipmentUpgrades1)
   );
   private game: Clicker;
-  public shipmentAchievements: AchievementType[] = ShipmentAchievements;
+  public shipmentAchievements: AchievementType[] = [...ShipmentAchievements];
   constructor(game: Clicker) {
     super({
       structure: 0,
@@ -4515,7 +4521,9 @@ class AlchemyLab extends Structure {
   public alchemyLabUpgrades: Map<string, UpgradeType> = new Map(
     Object.entries(this.AlchemyLabUpgrades1)
   );
-  public alchemyLabAchievements: AchievementType[] = AlchemyLabAchievements;
+  public alchemyLabAchievements: AchievementType[] = [
+    ...AlchemyLabAchievements,
+  ];
   private game: Clicker;
   constructor(game: Clicker) {
     super({
@@ -4792,7 +4800,7 @@ class Portal extends Structure {
     Object.entries(this.PortalUpgrades1)
   );
   private game: Clicker;
-  public portalAchievements: AchievementType[] = PortalAchievements;
+  public portalAchievements: AchievementType[] = [...PortalAchievements];
   constructor(game: Clicker) {
     super({
       structure: 0,
@@ -5069,7 +5077,9 @@ class TimeMachine extends Structure {
     Object.entries(this.timeMachineUpgrades1)
   );
   private game: Clicker;
-  public timeMachineAchievements: AchievementType[] = TimeMachineAchievements;
+  public timeMachineAchievements: AchievementType[] = [
+    ...TimeMachineAchievements,
+  ];
   constructor(game: Clicker) {
     super({
       structure: 0,
@@ -5348,8 +5358,9 @@ class AntiMatterCondenser extends Structure {
   public antimatterCondenserUpgrades: Map<string, UpgradeType> = new Map(
     Object.entries(this.antimatterCondenserUpgrades1)
   );
-  public antimatterCondenserAchievements: AchievementType[] =
-    AntiMatterCondenserAchievements;
+  public antimatterCondenserAchievements: AchievementType[] = [
+    ...AntiMatterCondenserAchievements,
+  ];
   private game: Clicker;
   constructor(game: Clicker) {
     super({
@@ -5452,7 +5463,7 @@ class Prism extends Structure {
   public prismUpgrades: Map<string, UpgradeType> = new Map(
     Object.entries(PrismUpgrades)
   );
-  public prismAchievements: AchievementType[] = PrismAchievements;
+  public prismAchievements: AchievementType[] = [...PrismAchievements];
   private game: Clicker;
   constructor(game: Clicker) {
     super({
@@ -5553,7 +5564,9 @@ class ChanceMaker extends Structure {
   public chanceMakerUpgrades: Map<string, UpgradeType> = new Map(
     Object.entries(ChanceMakersUpgrades)
   );
-  public chanceMakerAchievements: AchievementType[] = ChanceMakerAchievements;
+  public chanceMakerAchievements: AchievementType[] = [
+    ...ChanceMakerAchievements,
+  ];
   private game: Clicker;
   constructor(game: Clicker) {
     super({
@@ -5656,8 +5669,9 @@ class FractalEngine extends Structure {
   public fractalEngineUpgrades: Map<string, UpgradeType> = new Map(
     Object.entries(FractalEngineUpgrades)
   );
-  public fractalEngineAchievements: AchievementType[] =
-    FractalEngineAchievements;
+  public fractalEngineAchievements: AchievementType[] = [
+    ...FractalEngineAchievements,
+  ];
   private game: Clicker;
   constructor(game: Clicker) {
     super({
@@ -5760,8 +5774,9 @@ class JavaScriptConsole extends Structure {
   public javascriptConsoleUpgrades: Map<string, UpgradeType> = new Map(
     Object.entries(JavaScriptConsoleUpgrades)
   );
-  public javascriptConsoleAchievements: AchievementType[] =
-    JavascriptConsoleAchievement;
+  public javascriptConsoleAchievements: AchievementType[] = [
+    ...JavascriptConsoleAchievement,
+  ];
   private game: Clicker;
   constructor(game: Clicker) {
     super({
@@ -5864,7 +5879,9 @@ class CortexBaker extends Structure {
   public cortexBakerUpgrades: Map<string, UpgradeType> = new Map(
     Object.entries(CortexBakerUpgrades)
   );
-  public cortexBakerAchievements: AchievementType[] = CortexBakerAchievements;
+  public cortexBakerAchievements: AchievementType[] = [
+    ...CortexBakerAchievements,
+  ];
   private game: Clicker;
   constructor(game: Clicker) {
     super({
@@ -5967,7 +5984,7 @@ class IdleVerse extends Structure {
   public idleVerse: Map<string, UpgradeType> = new Map(
     Object.entries(IdleverseUpgrades)
   );
-  public idleVerseAchievements: AchievementType[] = IdleVerseAchievements;
+  public idleVerseAchievements: AchievementType[] = [...IdleVerseAchievements];
   private game: Clicker;
   constructor(game: Clicker) {
     super({
@@ -6068,7 +6085,7 @@ class You extends Structure {
   public youUpgrades: Map<string, UpgradeType> = new Map(
     Object.entries(YouUpgrades)
   );
-  public youAchievements: AchievementType[] = YouAchievements;
+  public youAchievements: AchievementType[] = [...YouAchievements];
   private game: Clicker;
   constructor(game: Clicker) {
     super({
