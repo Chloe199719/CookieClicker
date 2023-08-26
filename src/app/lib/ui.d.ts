@@ -12,6 +12,7 @@ export interface SaveType {
   clickingAchievements: AchievementType[];
   TotalCookiesAchievements: AchievementType[];
   cookiesPerSecondAchievement: AchievementType[];
+  TotalBuildingsAchievements: SavingType[];
   grandma: {
     structure: number;
     structureCost: Resource;

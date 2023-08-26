@@ -19,9 +19,10 @@ import { ShipmentAchievements } from "./achievements/Shipment";
 import { TempleAchievements } from "./achievements/Temple";
 import { TimeMachineAchievements } from "./achievements/TimeMachine";
 import { totalCookiesAchievements } from "./achievements/TotalCookies";
+import { TotalBuildingAndUpgradesAchievements } from "./achievements/Totals";
 import { WizardTowerAchievements } from "./achievements/WizardTowers";
 import { YouAchievements } from "./achievements/You";
-import { SaveType } from "./ui";
+import { SaveType, SavingType } from "./ui";
 import { ChanceMakersUpgrades } from "./upgrades/Chancemaker";
 import { ClickingUpgrades } from "./upgrades/Clicking";
 import { CortexBakerUpgrades } from "./upgrades/CortexBaker";
@@ -167,6 +168,8 @@ export default class Clicker {
   public TotalCookiesAchievements: AchievementType[] = totalCookiesAchievements;
   public cookiesPerSecondAchievements: AchievementType[] =
     cookiesPerSecondAchievements;
+  public TotalBuildingsAchievements: AchievementType[] =
+    TotalBuildingAndUpgradesAchievements;
   // Generation
   private clickResourceGeneration: Resource;
   private resourceGeneration: Resource;
@@ -284,6 +287,174 @@ export default class Clicker {
       }
     });
   }
+  public getTotalBuildings(): number {
+    let total = 0;
+    total += this.autoClicker.structure;
+    total += this.grandma.structure;
+    total += this.farm.structure;
+    total += this.mine.structure;
+    total += this.factory.structure;
+    total += this.bank.structure;
+    total += this.temple.structure;
+    total += this.wizardTower.structure;
+    total += this.shipment.structure;
+    total += this.alchemyLab.structure;
+    total += this.portal.structure;
+    total += this.timeMachine.structure;
+    total += this.antimatterCondenser.structure;
+    total += this.prism.structure;
+    total += this.chanceMaker.structure;
+    total += this.fractalEngine.structure;
+    total += this.javascriptConsole.structure;
+    total += this.idleverse.structure;
+    total += this.cortexBaker.structure;
+    total += this.you.structure;
+
+    return total;
+  }
+  public getTotalUpgrades(): number {
+    let total = 0;
+    this.autoClicker.cursorUpgrades.forEach((upgrade) => {
+      if (upgrade.acquired) {
+        total++;
+      }
+    });
+    this.grandma.grandmaUpgrades.forEach((upgrade) => {
+      if (upgrade.acquired) {
+        total++;
+      }
+    });
+    this.farm.farmUpgrades.forEach((upgrade) => {
+      if (upgrade.acquired) {
+        total++;
+      }
+    });
+    this.mine.mineUpgrades.forEach((upgrade) => {
+      if (upgrade.acquired) {
+        total++;
+      }
+    });
+    this.factory.factoryUpgrades.forEach((upgrade) => {
+      if (upgrade.acquired) {
+        total++;
+      }
+    });
+    this.bank.bankUpgrades.forEach((upgrade) => {
+      if (upgrade.acquired) {
+        total++;
+      }
+    });
+    this.temple.templeUpgrades.forEach((upgrade) => {
+      if (upgrade.acquired) {
+        total++;
+      }
+    });
+    this.wizardTower.WizardTowerUpgrades.forEach((upgrade) => {
+      if (upgrade.acquired) {
+        total++;
+      }
+    });
+    this.shipment.shipmentUpgrades.forEach((upgrade) => {
+      if (upgrade.acquired) {
+        total++;
+      }
+    });
+    this.alchemyLab.alchemyLabUpgrades.forEach((upgrade) => {
+      if (upgrade.acquired) {
+        total++;
+      }
+    });
+    this.portal.PortalUpgrades.forEach((upgrade) => {
+      if (upgrade.acquired) {
+        total++;
+      }
+    });
+    this.timeMachine.timeMachineUpgrades.forEach((upgrade) => {
+      if (upgrade.acquired) {
+        total++;
+      }
+    });
+    this.antimatterCondenser.antimatterCondenserUpgrades.forEach((upgrade) => {
+      if (upgrade.acquired) {
+        total++;
+      }
+    });
+    this.prism.prismUpgrades.forEach((upgrade) => {
+      if (upgrade.acquired) {
+        total++;
+      }
+    });
+    this.chanceMaker.chanceMakerUpgrades.forEach((upgrade) => {
+      if (upgrade.acquired) {
+        total++;
+      }
+    });
+    this.fractalEngine.fractalEngineUpgrades.forEach((upgrade) => {
+      if (upgrade.acquired) {
+        total++;
+      }
+    });
+    this.javascriptConsole.javascriptConsoleUpgrades.forEach((upgrade) => {
+      if (upgrade.acquired) {
+        total++;
+      }
+    });
+    this.idleverse.idleVerse.forEach((upgrade) => {
+      if (upgrade.acquired) {
+        total++;
+      }
+    });
+    this.cortexBaker.cortexBakerUpgrades.forEach((upgrade) => {
+      if (upgrade.acquired) {
+        total++;
+      }
+    });
+    this.you.youUpgrades.forEach((upgrade) => {
+      if (upgrade.acquired) {
+        total++;
+      }
+    });
+    this.clickingUpgrades.forEach((upgrade) => {
+      if (upgrade.acquired) {
+        total++;
+      }
+    });
+    this.flavoredCookies.forEach((upgrade) => {
+      if (upgrade.acquired) {
+        total++;
+      }
+    });
+    this.kittens.forEach((upgrade) => {
+      if (upgrade.acquired) {
+        total++;
+      }
+    });
+
+    return total;
+  }
+  public checkTotalBuildingsAchievements(): void {
+    const totalBuildings = this.getTotalBuildings();
+    const totalUpgrades = this.getTotalUpgrades();
+    this.TotalBuildingsAchievements.forEach((achievement) => {
+      if (
+        totalBuildings >= achievement.condition &&
+        !achievement.acquired &&
+        achievement.type === "Owned Buildings"
+      ) {
+        achievement.acquired = true;
+        this.calculateMilk();
+        this.toast(`Achievement Unlocked: ${achievement.name}`);
+      } else if (
+        totalUpgrades >= achievement.condition &&
+        !achievement.acquired &&
+        achievement.type === "Purchase Upgrades"
+      ) {
+        achievement.acquired = true;
+        this.calculateMilk();
+        this.toast(`Achievement Unlocked: ${achievement.name}`);
+      }
+    });
+  }
   private calculateClickingMultiplier(): void {
     this.clickingMultiplier = 0;
     this.clickingUpgrades.forEach((upgrade) => {
@@ -298,6 +469,7 @@ export default class Clicker {
       ...this.clickingAchievements,
       ...this.TotalCookiesAchievements,
       ...this.cookiesPerSecondAchievements,
+      ...this.TotalBuildingsAchievements,
       ...this.autoClicker.CursorAchievements,
       ...this.grandma.grandmaAchievements,
       ...this.farm.farmAchievements,
@@ -333,6 +505,7 @@ export default class Clicker {
       ...this.clickingAchievements,
       ...this.TotalCookiesAchievements,
       ...this.cookiesPerSecondAchievements,
+      ...this.TotalBuildingsAchievements,
       ...this.autoClicker.CursorAchievements,
       ...this.grandma.grandmaAchievements,
       ...this.farm.farmAchievements,
@@ -597,6 +770,7 @@ export default class Clicker {
     }
     this.PassiveCalculateResourceGeneration();
     this.checkBuildingsAchievements(type);
+    this.checkTotalBuildingsAchievements();
   }
   public canBuyBuilding(type: BuildingType, amount: number = 1): boolean {
     if (type === "cursor") {
@@ -838,6 +1012,7 @@ export default class Clicker {
     if (type === "you") {
       this.you.buyUpgradeLevel(this.resource, id);
     }
+    this.checkTotalBuildingsAchievements();
     this.PassiveCalculateResourceGeneration();
   }
 
@@ -1004,6 +1179,15 @@ export default class Clicker {
       clickingAchievements: this.clickingAchievements,
       TotalCookiesAchievements: this.TotalCookiesAchievements,
       cookiesPerSecondAchievement: this.cookiesPerSecondAchievements,
+      TotalBuildingsAchievements: this.TotalBuildingsAchievements.map(
+        (achievement) => {
+          let x: SavingType = {
+            id: achievement.id,
+            acquired: achievement.acquired,
+          };
+          return x;
+        }
+      ),
       flavoredCookies: this.flavoredCookies,
       clickingUpgrades: this.clickingUpgrades,
       kittens: this.kittens,
@@ -1188,10 +1372,23 @@ export default class Clicker {
       save.TotalCookiesAchievements ?? totalCookiesAchievements;
     this.cookiesPerSecondAchievements =
       save.cookiesPerSecondAchievement ?? cookiesPerSecondAchievements;
+    this.TotalBuildingsAchievements = this.TotalBuildingsAchievements.map(
+      (achievement) => {
+        if (save.TotalBuildingsAchievements) {
+          save.TotalBuildingsAchievements.forEach((element) => {
+            if (element.id === achievement.id) {
+              achievement.acquired = element.acquired;
+              return achievement;
+            }
+          });
+        }
+        return achievement;
+      }
+    );
     //Upgrade's
-    this.flavoredCookies = save.flavoredCookies ?? FlavoredCookies;
-    this.kittens = save.kittens ?? KittensUpgrades;
-    this.clickingUpgrades = save.clickingUpgrades ?? ClickingUpgrades;
+    this.flavoredCookies = save.flavoredCookies ?? [...FlavoredCookies];
+    this.kittens = save.kittens ?? [...KittensUpgrades];
+    this.clickingUpgrades = save.clickingUpgrades ?? [...ClickingUpgrades];
     // Set the Grandma
     this.grandma.structureCost = save.grandma.structureCost;
     this.grandma.structure = save.grandma.structure;
@@ -1200,8 +1397,9 @@ export default class Clicker {
     this.grandma.grandmaUpgrades = new Map(
       Object.entries(save.grandma.grandmaUpgrades)
     );
-    this.grandma.grandmaAchievements =
-      save.grandma.grandmaAchievements ?? GrandmaAchievements;
+    this.grandma.grandmaAchievements = save.grandma.grandmaAchievements ?? [
+      ...GrandmaAchievements,
+    ];
     this.grandma.calculateStructureResourceGeneration1();
     // Set the Cursor
     this.autoClicker.structureCost = save.autoClicker.structureCost;
@@ -1211,8 +1409,8 @@ export default class Clicker {
     this.autoClicker.cursorUpgrades = new Map(
       Object.entries(save.autoClicker.cursorUpgrades)
     );
-    this.autoClicker.CursorAchievements =
-      save.autoClicker.CursorAchievements ?? CursorAchievements;
+    this.autoClicker.CursorAchievements = save.autoClicker
+      .CursorAchievements ?? [...CursorAchievements];
     this.autoClicker.calculateStructureResourceGeneration1();
     // Set the farm
     this.farm.structureCost = save.farm.structureCost;
@@ -1221,7 +1419,9 @@ export default class Clicker {
       cookies: 0,
     };
     this.farm.farmUpgrades = new Map(Object.entries(save.farm.farmUpgrades));
-    this.farm.farmAchievements = save.farm.farmAchievements ?? FarmAchievements;
+    this.farm.farmAchievements = save.farm.farmAchievements ?? [
+      ...FarmAchievements,
+    ];
     this.farm.calculateStructureResourceGeneration1();
     // Set the mine
     this.mine.structureCost = save.mine.structureCost;
@@ -1230,7 +1430,9 @@ export default class Clicker {
       cookies: 0,
     };
     this.mine.mineUpgrades = new Map(Object.entries(save.mine.mineUpgrades));
-    this.mine.mineAchievements = save.mine.mineAchievements ?? MineAchievements;
+    this.mine.mineAchievements = save.mine.mineAchievements ?? [
+      ...MineAchievements,
+    ];
     this.mine.calculateStructureResourceGeneration1();
 
     // Set the factory
@@ -1241,8 +1443,9 @@ export default class Clicker {
     this.factory.factoryUpgrades = new Map(
       Object.entries(save.factory.factoryUpgrades)
     );
-    this.factory.factoryAchievements =
-      save.factory.factoryAchievements ?? FactoryAchievements;
+    this.factory.factoryAchievements = save.factory.factoryAchievements ?? [
+      ...FactoryAchievements,
+    ];
     this.factory.calculateStructureResourceGeneration1();
 
     // Set the bank
@@ -1252,7 +1455,9 @@ export default class Clicker {
       cookies: 0,
     };
     this.bank.bankUpgrades = new Map(Object.entries(save.bank.bankUpgrades));
-    this.bank.bankAchievements = save.bank.bankAchievements ?? BankAchievements;
+    this.bank.bankAchievements = save.bank.bankAchievements ?? [
+      ...BankAchievements,
+    ];
     this.bank.calculateStructureResourceGeneration1();
 
     // Set the temple
@@ -1263,8 +1468,9 @@ export default class Clicker {
     this.temple.templeUpgrades = new Map(
       Object.entries(save.temple.templeUpgrades)
     );
-    this.temple.templeAchievements =
-      save.temple.templeAchievements ?? TempleAchievements;
+    this.temple.templeAchievements = save.temple.templeAchievements ?? [
+      ...TempleAchievements,
+    ];
     this.temple.calculateStructureResourceGeneration1();
 
     // Set the wizardTower
@@ -1275,8 +1481,8 @@ export default class Clicker {
     this.wizardTower.WizardTowerUpgrades = new Map(
       Object.entries(save.wizardTower.wizardTowerUpgrades)
     );
-    this.wizardTower.wizardTowerAchievements =
-      save.wizardTower.wizardTowerAchievements ?? WizardTowerAchievements;
+    this.wizardTower.wizardTowerAchievements = save.wizardTower
+      .wizardTowerAchievements ?? [...WizardTowerAchievements];
     this.wizardTower.calculateStructureResourceGeneration1();
 
     // Set the shipment
@@ -1287,8 +1493,9 @@ export default class Clicker {
     this.shipment.shipmentUpgrades = new Map(
       Object.entries(save.shipment.shipmentUpgrades)
     );
-    this.shipment.shipmentAchievements =
-      save.shipment.shipmentAchievements ?? ShipmentAchievements;
+    this.shipment.shipmentAchievements = save.shipment.shipmentAchievements ?? [
+      ...ShipmentAchievements,
+    ];
     this.shipment.calculateStructureResourceGeneration1();
 
     // Set the alchemyLab
@@ -1299,8 +1506,8 @@ export default class Clicker {
     this.alchemyLab.alchemyLabUpgrades = new Map(
       Object.entries(save.alchemyLab.alchemyLabUpgrades)
     );
-    this.alchemyLab.alchemyLabAchievements =
-      save.alchemyLab.alchemyLabAchievements ?? AlchemyLabAchievements;
+    this.alchemyLab.alchemyLabAchievements = save.alchemyLab
+      .alchemyLabAchievements ?? [...AlchemyLabAchievements];
     this.alchemyLab.calculateStructureResourceGeneration1();
 
     // Set the portal
@@ -1313,8 +1520,9 @@ export default class Clicker {
     this.portal.PortalUpgrades = new Map(
       Object.entries(save.portal.portalUpgrades)
     );
-    this.portal.portalAchievements =
-      save.portal.portalAchievements ?? PortalAchievements;
+    this.portal.portalAchievements = save.portal.portalAchievements ?? [
+      ...PortalAchievements,
+    ];
     this.portal.calculateStructureResourceGeneration1();
 
     // Set the timeMachine
@@ -1325,8 +1533,8 @@ export default class Clicker {
     this.timeMachine.timeMachineUpgrades = new Map(
       Object.entries(save.timeMachine.timeMachineUpgrades)
     );
-    this.timeMachine.timeMachineAchievements =
-      save.timeMachine.timeMachineAchievements ?? TimeMachineAchievements;
+    this.timeMachine.timeMachineAchievements = save.timeMachine
+      .timeMachineAchievements ?? [...TimeMachineAchievements];
     this.timeMachine.calculateStructureResourceGeneration1();
 
     // Set the antimatterCondenser
@@ -1339,9 +1547,10 @@ export default class Clicker {
     this.antimatterCondenser.antimatterCondenserUpgrades = new Map(
       Object.entries(save.antimatterCondenser.antimatterCondenserUpgrades)
     );
-    this.antimatterCondenser.antimatterCondenserAchievements =
-      save.antimatterCondenser.antimatterCondenserAchievements ??
-      AntiMatterCondenserAchievements;
+    this.antimatterCondenser.antimatterCondenserAchievements = save
+      .antimatterCondenser.antimatterCondenserAchievements ?? [
+      ...AntiMatterCondenserAchievements,
+    ];
     this.antimatterCondenser.calculateStructureResourceGeneration1();
 
     // Set the prism
@@ -1353,8 +1562,9 @@ export default class Clicker {
     this.prism.prismUpgrades = new Map(
       Object.entries(save.prism.prismUpgrades)
     );
-    this.prism.prismAchievements =
-      save.prism.prismAchievements ?? PrismAchievements;
+    this.prism.prismAchievements = save.prism.prismAchievements ?? [
+      ...PrismAchievements,
+    ];
     this.prism.calculateStructureResourceGeneration1();
 
     // Set the chancemaker
@@ -1365,8 +1575,8 @@ export default class Clicker {
     this.chanceMaker.chanceMakerUpgrades = new Map(
       Object.entries(save.chancemaker.chancemakerUpgrades)
     );
-    this.chanceMaker.chanceMakerAchievements =
-      save.chancemaker.chancemakerAchievements ?? ChanceMakerAchievements;
+    this.chanceMaker.chanceMakerAchievements = save.chancemaker
+      .chancemakerAchievements ?? [...ChanceMakerAchievements];
     this.chanceMaker.calculateStructureResourceGeneration1();
 
     // Set the fractalEngine
@@ -1377,8 +1587,8 @@ export default class Clicker {
     this.fractalEngine.fractalEngineUpgrades = new Map(
       Object.entries(save.fractalEngine.fractalEngineUpgrades)
     );
-    this.fractalEngine.fractalEngineAchievements =
-      save.fractalEngine.fractalEngineAchievements ?? FractalEngineAchievements;
+    this.fractalEngine.fractalEngineAchievements = save.fractalEngine
+      .fractalEngineAchievements ?? [...FractalEngineAchievements];
     this.fractalEngine.calculateStructureResourceGeneration1();
 
     // Set the javascriptConsole
@@ -1389,9 +1599,10 @@ export default class Clicker {
     this.javascriptConsole.javascriptConsoleUpgrades = new Map(
       Object.entries(save.javascriptConsole.javascriptConsoleUpgrades)
     );
-    this.javascriptConsole.javascriptConsoleAchievements =
-      save.javascriptConsole.javascriptConsoleAchievements ??
-      JavascriptConsoleAchievement;
+    this.javascriptConsole.javascriptConsoleAchievements = save
+      .javascriptConsole.javascriptConsoleAchievements ?? [
+      ...JavascriptConsoleAchievement,
+    ];
     this.javascriptConsole.calculateStructureResourceGeneration1();
 
     // Set the idleverse
@@ -1402,8 +1613,8 @@ export default class Clicker {
     this.idleverse.idleVerse = new Map(
       Object.entries(save.idleverse.idleverseUpgrades)
     );
-    this.idleverse.idleVerseAchievements =
-      save.idleverse.idleverseAchievements ?? IdleVerseAchievements;
+    this.idleverse.idleVerseAchievements = save.idleverse
+      .idleverseAchievements ?? [...IdleVerseAchievements];
     this.idleverse.calculateStructureResourceGeneration1();
 
     // Set the cortexBaker
@@ -1414,8 +1625,8 @@ export default class Clicker {
     this.cortexBaker.cortexBakerUpgrades = new Map(
       Object.entries(save.cortexBaker.cortexBakerUpgrades)
     );
-    this.cortexBaker.cortexBakerAchievements =
-      save.cortexBaker.cortexBakerAchievements ?? CortexBakerAchievements;
+    this.cortexBaker.cortexBakerAchievements = save.cortexBaker
+      .cortexBakerAchievements ?? [...CortexBakerAchievements];
     this.cortexBaker.calculateStructureResourceGeneration1();
 
     // Set the you
@@ -1425,11 +1636,12 @@ export default class Clicker {
       cookies: 0,
     };
     this.you.youUpgrades = new Map(Object.entries(save.you.youUpgrades));
-    this.you.youAchievements = save.you.youAchievements ?? YouAchievements;
+    this.you.youAchievements = save.you.youAchievements ?? [...YouAchievements];
     this.you.calculateStructureResourceGeneration1();
 
     // Reload Game generation
     this.InitCheckBuildingsAchievements();
+    this.checkTotalBuildingsAchievements();
     this.PassiveCalculateResourceGeneration();
     this.ClickCalculateResourceGeneration();
     this.calculateMultiplier();
@@ -1464,12 +1676,13 @@ export default class Clicker {
     this.idleverse = new IdleVerse(this);
     this.cortexBaker = new CortexBaker(this);
     this.you = new You(this);
-    this.flavoredCookies = FlavoredCookies;
-    this.clickingAchievements = ClickingAchievements;
-    this.TotalCookiesAchievements = totalCookiesAchievements;
-    this.cookiesPerSecondAchievements = cookiesPerSecondAchievements;
-    this.clickingUpgrades = ClickingUpgrades;
-    this.kittens = KittensUpgrades;
+    this.flavoredCookies = [...FlavoredCookies];
+    this.clickingAchievements = [...ClickingAchievements];
+    this.TotalCookiesAchievements = [...totalCookiesAchievements];
+    this.cookiesPerSecondAchievements = [...cookiesPerSecondAchievements];
+    this.clickingUpgrades = [...ClickingUpgrades];
+    this.kittens = [...KittensUpgrades];
+    this.checkTotalBuildingsAchievements();
     this.PassiveCalculateResourceGeneration();
     this.ClickCalculateResourceGeneration();
     this.calculateMultiplier();
