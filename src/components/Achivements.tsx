@@ -24,12 +24,12 @@ function Achievements({ game }: Props) {
       </SheetTrigger>
       <SheetContent
         side="left"
-        className="bg-gray-700 max-h-screen overflow-y-scroll"
+        className="bg-gray-700 max-h-screen overflow-y-scroll w-3/4 max-w-none"
       >
         <SheetHeader>
           <SheetTitle>Achievements</SheetTitle>
         </SheetHeader>
-        <div className="grid grid-cols-6 gap-2 ">
+        <div className="grid grid-cols-10 gap-2  ">
           {game.getAchievementList().map((achievement) => {
             return (
               <HoverCard key={achievement.id}>
