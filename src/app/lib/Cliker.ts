@@ -1362,8 +1362,6 @@ export default class Clicker {
     return save;
   }
 
-  // Load Game from LocalStorage (not Stable)
-  //TODO: Type Save
   public LoadGame(save: SaveType) {
     // Set Cookies
     this.resource = save.resource;
@@ -2024,7 +2022,6 @@ class Cursor extends Structure {
   public cursorUpgrades = new Map(Object.entries(this.cursorUpgrades1));
   private game: Clicker;
   public CursorAchievements = [...CursorAchievements];
-  // Constructor Needs to be fixed to Allow for Saving
   constructor(game: Clicker) {
     super({
       structure: 0,
@@ -2127,8 +2124,6 @@ class Cursor extends Structure {
     }
     return false;
   }
-  // This Function needs to be updated
-  // TODO: Update this function as buildings are added
   public getNoneCursorAmount(): number {
     let amount = 0;
     amount += this.game.grandma.getStructureAmount();
@@ -2144,6 +2139,12 @@ class Cursor extends Structure {
     amount += this.game.timeMachine.getStructureAmount();
     amount += this.game.antimatterCondenser.getStructureAmount();
     amount += this.game.prism.getStructureAmount();
+    amount += this.game.chanceMaker.getStructureAmount();
+    amount += this.game.fractalEngine.getStructureAmount();
+    amount += this.game.javascriptConsole.getStructureAmount();
+    amount += this.game.idleverse.getStructureAmount();
+    amount += this.game.cortexBaker.getStructureAmount();
+    amount += this.game.you.getStructureAmount();
     return amount;
   }
 }
