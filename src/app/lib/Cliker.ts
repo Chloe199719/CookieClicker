@@ -505,38 +505,40 @@ export default class Clicker {
   }
   //Get Achievement List
   public getAchievementList(): AchievementType[] {
-    return [
-      ...this.clickingAchievements,
-      ...this.TotalCookiesAchievements,
-      ...this.cookiesPerSecondAchievements,
-      ...this.TotalBuildingsAchievements,
-      ...this.autoClicker.CursorAchievements,
-      ...this.grandma.grandmaAchievements,
-      ...this.farm.farmAchievements,
-      ...this.mine.mineAchievements,
-      ...this.factory.factoryAchievements,
-      ...this.bank.bankAchievements,
-      ...this.temple.templeAchievements,
-      ...this.wizardTower.wizardTowerAchievements,
-      ...this.shipment.shipmentAchievements,
-      ...this.alchemyLab.alchemyLabAchievements,
-      ...this.portal.portalAchievements,
-      ...this.timeMachine.timeMachineAchievements,
-      ...this.antimatterCondenser.antimatterCondenserAchievements,
-      ...this.prism.prismAchievements,
-      ...this.chanceMaker.chanceMakerAchievements,
-      ...this.fractalEngine.fractalEngineAchievements,
-      ...this.javascriptConsole.javascriptConsoleAchievements,
-      ...this.idleverse.idleVerseAchievements,
-      ...this.cortexBaker.cortexBakerAchievements,
-      ...this.you.youAchievements,
-    ]
-      .sort((a, b) => {
-        return a.condition - b.condition;
-      })
-      .sort((a, b) => {
-        return a.acquired === b.acquired ? 0 : a.acquired ? -1 : 1;
-      });
+    return (
+      [
+        ...this.clickingAchievements,
+        ...this.TotalCookiesAchievements,
+        ...this.cookiesPerSecondAchievements,
+        ...this.TotalBuildingsAchievements,
+        ...this.autoClicker.CursorAchievements,
+        ...this.grandma.grandmaAchievements,
+        ...this.farm.farmAchievements,
+        ...this.mine.mineAchievements,
+        ...this.factory.factoryAchievements,
+        ...this.bank.bankAchievements,
+        ...this.temple.templeAchievements,
+        ...this.wizardTower.wizardTowerAchievements,
+        ...this.shipment.shipmentAchievements,
+        ...this.alchemyLab.alchemyLabAchievements,
+        ...this.portal.portalAchievements,
+        ...this.timeMachine.timeMachineAchievements,
+        ...this.antimatterCondenser.antimatterCondenserAchievements,
+        ...this.prism.prismAchievements,
+        ...this.chanceMaker.chanceMakerAchievements,
+        ...this.fractalEngine.fractalEngineAchievements,
+        ...this.javascriptConsole.javascriptConsoleAchievements,
+        ...this.idleverse.idleVerseAchievements,
+        ...this.cortexBaker.cortexBakerAchievements,
+        ...this.you.youAchievements,
+      ]
+        // .sort((a, b) => {
+        //   return a.condition - b.condition;
+        // });
+        .sort((a, b) => {
+          return a.acquired === b.acquired ? 0 : a.acquired ? -1 : 1;
+        })
+    );
   }
   // Check Buildings Achievements
   public checkBuildingsAchievements(type: BuildingType): void {

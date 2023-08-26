@@ -2,7 +2,6 @@ import Clicker, { AchievementType } from "@/app/lib/Cliker";
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
@@ -10,13 +9,11 @@ import {
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card";
 import Image from "next/image";
 import { NumberFormatter } from "@/app/lib/NumberFormater";
-import { type } from "os";
 import { FaCookie } from "react-icons/fa";
 import { GiArrowCursor } from "react-icons/gi";
 
 type Props = {
   game: Clicker;
-  // setState: React.Dispatch<React.SetStateAction<boolean>>;
 };
 function Achievements({ game }: Props) {
   const numbers = NumberFormatter;
@@ -27,7 +24,7 @@ function Achievements({ game }: Props) {
       </SheetTrigger>
       <SheetContent
         side="left"
-        className="bg-gray-700 max-h-screen overflow-y-scroll w-3/4 max-w-none"
+        className="bg-gray-700 max-h-screen overflow-y-scroll  max-w-none"
       >
         <SheetHeader>
           <SheetTitle className="text-center pb-3">Achievements</SheetTitle>
@@ -39,7 +36,7 @@ function Achievements({ game }: Props) {
                 <HoverCardTrigger
                   className={`${
                     achievement.acquired
-                      ? "border border-green-400 bg-lime-100"
+                      ? "border-2 border-green-400 bg-lime-100"
                       : "border-2 border-red-700 bg-red-100 "
                   } flex justify-center items-center h-[40px] `}
                 >
