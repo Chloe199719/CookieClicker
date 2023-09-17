@@ -34,6 +34,7 @@ import { PrismUpgrades } from "./upgrades/Prism";
 import { YouUpgrades } from "./upgrades/You";
 import FlavoredCookies from "./upgrades/flavoredCookies";
 import toast from "react-hot-toast";
+
 export type Resource = {
   cookies: number;
 };
@@ -467,7 +468,7 @@ export default class Clicker {
       }
     });
   }
-  private calculateMilk(): void {
+  public calculateMilk(): void {
     let milk = 0;
     let list = [
       ...this.clickingAchievements,
@@ -2753,6 +2754,7 @@ class Cursor extends Structure {
         value.achievementType === "Having"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
         this.game.toast(value.name);
       } else if (
         this.lifeTimeCookiesBuilding.cookies >= value.condition &&
@@ -2761,6 +2763,7 @@ class Cursor extends Structure {
       ) {
         value.acquired = true;
         this.game.toast(value.name);
+        this.game.calculateMilk();
       }
     });
   }
@@ -3066,6 +3069,7 @@ class Grandma extends Structure {
         value.achievementType === "Having"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
         this.game.toast(value.name);
       } else if (
         this.lifeTimeCookiesBuilding.cookies >= value.condition &&
@@ -3073,6 +3077,8 @@ class Grandma extends Structure {
         value.achievementType === "Baking"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
+
         this.game.toast(value.name);
       }
     });
@@ -3354,6 +3360,8 @@ class Farm extends Structure {
         value.achievementType === "Having"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
+
         this.game.toast(value.name);
       } else if (
         this.lifeTimeCookiesBuilding.cookies >= value.condition &&
@@ -3361,6 +3369,8 @@ class Farm extends Structure {
         value.achievementType === "Baking"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
+
         this.game.toast(value.name);
       }
     });
@@ -3636,6 +3646,7 @@ class Mine extends Structure {
         value.achievementType === "Having"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
         this.game.toast(value.name);
       } else if (
         this.lifeTimeCookiesBuilding.cookies >= value.condition &&
@@ -3643,6 +3654,7 @@ class Mine extends Structure {
         value.achievementType === "Baking"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
         this.game.toast(value.name);
       }
     });
@@ -3904,6 +3916,7 @@ class Factory extends Structure {
         value.achievementType === "Having"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
         this.game.toast(value.name);
       } else if (
         this.lifeTimeCookiesBuilding.cookies >= value.condition &&
@@ -3911,6 +3924,7 @@ class Factory extends Structure {
         value.achievementType === "Baking"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
         this.game.toast(value.name);
       }
     });
@@ -4174,6 +4188,7 @@ class Bank extends Structure {
         value.achievementType === "Having"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
         this.game.toast(value.name);
       } else if (
         this.lifeTimeCookiesBuilding.cookies >= value.condition &&
@@ -4181,6 +4196,7 @@ class Bank extends Structure {
         value.achievementType === "Baking"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
         this.game.toast(value.name);
       }
     });
@@ -4446,6 +4462,7 @@ class Temple extends Structure {
         value.achievementType === "Having"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
         this.game.toast(value.name);
       } else if (
         this.lifeTimeCookiesBuilding.cookies >= value.condition &&
@@ -4453,6 +4470,7 @@ class Temple extends Structure {
         value.achievementType === "Baking"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
         this.game.toast(value.name);
       }
     });
@@ -4720,6 +4738,7 @@ class WizardTower extends Structure {
         value.achievementType === "Having"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
         this.game.toast(value.name);
       } else if (
         this.lifeTimeCookiesBuilding.cookies >= value.condition &&
@@ -4727,6 +4746,7 @@ class WizardTower extends Structure {
         value.achievementType === "Baking"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
         this.game.toast(value.name);
       }
     });
@@ -4995,6 +5015,7 @@ class Shipment extends Structure {
         value.achievementType === "Having"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
         this.game.toast(value.name);
       } else if (
         this.lifeTimeCookiesBuilding.cookies >= value.condition &&
@@ -5002,6 +5023,7 @@ class Shipment extends Structure {
         value.achievementType === "Baking"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
         this.game.toast(value.name);
       }
     });
@@ -5258,6 +5280,7 @@ class AlchemyLab extends Structure {
         value.achievementType === "Having"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
         this.game.toast(value.name);
       } else if (
         this.lifeTimeCookiesBuilding.cookies >= value.condition &&
@@ -5265,6 +5288,7 @@ class AlchemyLab extends Structure {
         value.achievementType === "Baking"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
         this.game.toast(value.name);
       }
     });
@@ -5534,6 +5558,7 @@ class Portal extends Structure {
         value.achievementType === "Having"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
         this.game.toast(value.name);
       } else if (
         this.lifeTimeCookiesBuilding.cookies >= value.condition &&
@@ -5541,6 +5566,7 @@ class Portal extends Structure {
         value.achievementType === "Baking"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
         this.game.toast(value.name);
       }
     });
@@ -5813,6 +5839,7 @@ class TimeMachine extends Structure {
         value.achievementType === "Having"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
         this.game.toast(value.name);
       } else if (
         this.lifeTimeCookiesBuilding.cookies >= value.condition &&
@@ -5820,6 +5847,7 @@ class TimeMachine extends Structure {
         value.achievementType === "Baking"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
         this.game.toast(value.name);
       }
     });
@@ -6095,6 +6123,7 @@ class AntiMatterCondenser extends Structure {
         value.achievementType === "Having"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
         this.game.toast(value.name);
       } else if (
         this.lifeTimeCookiesBuilding.cookies >= value.condition &&
@@ -6102,6 +6131,7 @@ class AntiMatterCondenser extends Structure {
         value.achievementType === "Baking"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
         this.game.toast(value.name);
       }
     });
@@ -6198,6 +6228,7 @@ class Prism extends Structure {
         value.achievementType === "Having"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
         this.game.toast(value.name);
       } else if (
         this.lifeTimeCookiesBuilding.cookies >= value.condition &&
@@ -6205,6 +6236,7 @@ class Prism extends Structure {
         value.achievementType === "Baking"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
         this.game.toast(value.name);
       }
     });
@@ -6301,6 +6333,7 @@ class ChanceMaker extends Structure {
         value.achievementType === "Having"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
         this.game.toast(value.name);
       } else if (
         this.lifeTimeCookiesBuilding.cookies >= value.condition &&
@@ -6308,6 +6341,7 @@ class ChanceMaker extends Structure {
         value.achievementType === "Baking"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
         this.game.toast(value.name);
       }
     });
@@ -6406,6 +6440,7 @@ class FractalEngine extends Structure {
         value.achievementType === "Having"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
         this.game.toast(value.name);
       } else if (
         this.lifeTimeCookiesBuilding.cookies >= value.condition &&
@@ -6413,6 +6448,7 @@ class FractalEngine extends Structure {
         value.achievementType === "Baking"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
         this.game.toast(value.name);
       }
     });
@@ -6511,6 +6547,7 @@ class JavaScriptConsole extends Structure {
         value.achievementType === "Having"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
         this.game.toast(value.name);
       } else if (
         this.lifeTimeCookiesBuilding.cookies >= value.condition &&
@@ -6518,6 +6555,7 @@ class JavaScriptConsole extends Structure {
         value.achievementType === "Baking"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
         this.game.toast(value.name);
       }
     });
@@ -6616,6 +6654,7 @@ class CortexBaker extends Structure {
         value.achievementType === "Having"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
         this.game.toast(value.name);
       } else if (
         this.lifeTimeCookiesBuilding.cookies >= value.condition &&
@@ -6623,6 +6662,7 @@ class CortexBaker extends Structure {
         value.achievementType === "Baking"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
         this.game.toast(value.name);
       }
     });
@@ -6719,6 +6759,7 @@ class IdleVerse extends Structure {
         value.achievementType === "Having"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
         this.game.toast(value.name);
       } else if (
         this.lifeTimeCookiesBuilding.cookies >= value.condition &&
@@ -6726,6 +6767,7 @@ class IdleVerse extends Structure {
         value.achievementType === "Baking"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
         this.game.toast(value.name);
       }
     });
@@ -6820,6 +6862,7 @@ class You extends Structure {
         value.achievementType === "Having"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
         this.game.toast(value.name);
       } else if (
         this.lifeTimeCookiesBuilding.cookies >= value.condition &&
@@ -6827,6 +6870,7 @@ class You extends Structure {
         value.achievementType === "Baking"
       ) {
         value.acquired = true;
+        this.game.calculateMilk();
         this.game.toast(value.name);
       }
     });

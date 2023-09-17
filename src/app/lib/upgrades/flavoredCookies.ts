@@ -355,6 +355,28 @@ const FlavoredCookies: UpgradeType[] = [
     type: "flavoredCookies",
     tier: "None",
   },
+  {
+    id: 211,
+    name: "Ladyfingers",
+    description: "One of the few cookies that can be eaten with dignity.",
+    cost: { cookies: 1e17 },
+    requirement: 5e15,
+    acquired: false,
+    multiplier: 3,
+    type: "flavoredCookies",
+    tier: "None",
+  },
+  {
+    id: 212,
+    name: "Tuiles",
+    description: "These cookies are shaped like a roof tile. Delicious.",
+    cost: { cookies: 5e17 },
+    requirement: 2.5e16,
+    acquired: false,
+    multiplier: 3,
+    type: "flavoredCookies",
+    tier: "None",
+  },
 ];
 
 export default FlavoredCookies;
