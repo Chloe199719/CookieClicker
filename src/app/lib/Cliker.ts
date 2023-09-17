@@ -1285,7 +1285,15 @@ export default class Clicker {
         structureCost: this.grandma.structureCost,
         lifeTimeCookiesBuilding: this.grandma.lifeTimeCookiesBuilding,
         grandmaUpgrades: GrandmaUpgrades,
-        grandmaAchievements: this.grandma.grandmaAchievements,
+        grandmaAchievements: this.grandma.grandmaAchievements.map(
+          (achievement) => {
+            let x: SavingType = {
+              id: achievement.id,
+              acquired: achievement.acquired,
+            };
+            return x;
+          }
+        ),
       },
       autoClicker: {
         structure: this.autoClicker.structure,
@@ -1479,9 +1487,19 @@ export default class Clicker {
       });
     }
 
-    this.grandma.grandmaAchievements = save.grandma.grandmaAchievements ?? [
-      ...GrandmaAchievements,
-    ];
+    this.grandma.grandmaAchievements = this.grandma.grandmaAchievements.map(
+      (achievement) => {
+        if (save.grandma.grandmaAchievements) {
+          save.grandma.grandmaAchievements.forEach((element) => {
+            if (element.id === achievement.id) {
+              achievement.acquired = element.acquired;
+              return achievement;
+            }
+          });
+        }
+        return achievement;
+      }
+    );
     this.grandma.calculateStructureResourceGeneration1();
     // Set the Cursor
     this.autoClicker.structureCost = save.autoClicker.structureCost;

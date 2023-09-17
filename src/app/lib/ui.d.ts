@@ -18,7 +18,7 @@ export interface SaveType {
     structureCost: Resource;
     lifeTimeCookiesBuilding: Resource;
     grandmaUpgrades: SavingTypeUpgrades[] | { [key: string]: UpgradeType };
-    grandmaAchievements: AchievementType[];
+    grandmaAchievements: SavingType[];
   };
   autoClicker: {
     structure: number;

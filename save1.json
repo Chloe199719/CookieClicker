@@ -1,0 +1,5648 @@
+{
+  "resource": { "cookies": 152052562004316000 },
+  "lifeTimeCookies": { "cookies": 1122787608236178300 },
+  "lifeTimeCookiesClicking": { "cookies": 65737104059996.734 },
+  "multiplier": 191.8386638169919,
+  "clickingMultiplier": 0.060000000000000005,
+  "clickingAchievements": [
+    {
+      "id": 98,
+      "name": "Clickastic",
+      "description": "Make 1000 cookies from clicking",
+      "condition": 1000,
+      "achievementType": "Baking",
+      "type": "Click",
+      "acquired": true
+    },
+    {
+      "id": 99,
+      "name": "Clickathlon",
+      "description": "Make 100,000 cookies from clicking",
+      "condition": 100000,
+      "achievementType": "Baking",
+      "type": "Click",
+      "acquired": true
+    },
+    {
+      "id": 100,
+      "name": "Clickolympics",
+      "description": "Make 10 Million cookies from clicking",
+      "condition": 10000000,
+      "achievementType": "Baking",
+      "type": "Click",
+      "acquired": true
+    },
+    {
+      "id": 101,
+      "name": "Clickorama",
+      "description": "Make 1 Billion cookies from clicking",
+      "condition": 1000000000,
+      "achievementType": "Baking",
+      "type": "Click",
+      "acquired": true
+    },
+    {
+      "id": 102,
+      "name": "Clickasmic",
+      "description": "Make 100 Billion cookies from clicking",
+      "condition": 100000000000,
+      "achievementType": "Baking",
+      "type": "Click",
+      "acquired": true
+    },
+    {
+      "id": 103,
+      "name": "Clickageddon",
+      "description": "Make 10 Trillion cookies from clicking",
+      "condition": 10000000000000,
+      "achievementType": "Baking",
+      "type": "Click",
+      "acquired": true
+    },
+    {
+      "id": 104,
+      "name": "Clicknarok",
+      "description": "Make 1 Quadrillion cookies from clicking",
+      "condition": 1000000000000000,
+      "achievementType": "Baking",
+      "type": "Click",
+      "acquired": false
+    },
+    {
+      "id": 105,
+      "name": "Clickastrophe",
+      "description": "Make 100 Quadrillion cookies from clicking",
+      "condition": 100000000000000000,
+      "achievementType": "Baking",
+      "type": "Click",
+      "acquired": false
+    },
+    {
+      "id": 106,
+      "name": "Clickataclysm",
+      "description": "Make 10 Quintillion cookies from clicking",
+      "condition": 10000000000000000000,
+      "achievementType": "Baking",
+      "type": "Click",
+      "acquired": false
+    },
+    {
+      "id": 107,
+      "name": "The Ultimate clickdown",
+      "description": "Make 1 Sextillion cookies from clicking",
+      "condition": 1e21,
+      "achievementType": "Baking",
+      "type": "Click",
+      "acquired": false
+    },
+    {
+      "id": 108,
+      "name": "All the other kids with the pumped up clicks",
+      "description": "Make 100 Sextillion cookies from clicking",
+      "condition": 1e23,
+      "achievementType": "Baking",
+      "type": "Click",
+      "acquired": false
+    },
+    {
+      "id": 109,
+      "name": "One...more...click...",
+      "description": "Make 10 Septillion cookies from clicking",
+      "condition": 1e25,
+      "achievementType": "Baking",
+      "type": "Click",
+      "acquired": false
+    },
+    {
+      "id": 110,
+      "name": "Neverclick",
+      "description": "Make 1 octillion cookies from clicking",
+      "condition": 1e27,
+      "achievementType": "Baking",
+      "type": "Click",
+      "acquired": false
+    },
+    {
+      "id": 111,
+      "name": "Click Deity",
+      "description": "Make 100 octillion cookies from clicking",
+      "condition": 1e29,
+      "achievementType": "Baking",
+      "type": "Click",
+      "acquired": false
+    },
+    {
+      "id": 112,
+      "name": "Clickerator",
+      "description": "Make 10 Nonillion cookies from clicking",
+      "condition": 1e31,
+      "achievementType": "Baking",
+      "type": "Click",
+      "acquired": false
+    }
+  ],
+  "TotalCookiesAchievements": [
+    {
+      "id": 0,
+      "name": "Wake and bake",
+      "description": "Make 1 cookie",
+      "condition": 1,
+      "acquired": true,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 1,
+      "name": "Making some dough",
+      "description": "Make 1000 cookies",
+      "condition": 1000,
+      "acquired": true,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 2,
+      "name": "So baked right now",
+      "description": "Make 100,000 cookies",
+      "condition": 100000,
+      "acquired": true,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 3,
+      "name": "Fledgling bakery",
+      "description": "Make 1,000,000 cookies",
+      "condition": 1000000,
+      "acquired": true,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 4,
+      "name": "Affluent bakery",
+      "description": "Make 100 Million cookies",
+      "condition": 100000000,
+      "acquired": true,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 5,
+      "name": "World-famous bakery",
+      "description": "Bake  1 Billion cookies",
+      "condition": 1000000000,
+      "acquired": true,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 6,
+      "name": "Cosmic bakery",
+      "description": "Bake 100 Billion cookies",
+      "condition": 100000000000,
+      "acquired": true,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 7,
+      "name": "Galactic bakery",
+      "description": "Bake 1 Trillion cookies",
+      "condition": 1000000000000,
+      "acquired": true,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 8,
+      "name": "Universal bakery",
+      "description": "Bake 100 Trillion cookies",
+      "condition": 100000000000000,
+      "acquired": true,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 9,
+      "name": "Timeless bakery",
+      "description": "Bake 1 Quadrillion cookies",
+      "condition": 1000000000000000,
+      "acquired": true,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 10,
+      "name": "Infinite bakery",
+      "description": "Bake 100 Quadrillion cookies",
+      "condition": 100000000000000000,
+      "acquired": true,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 11,
+      "name": "Immortal bakery",
+      "description": "Bake 1 Quintillion cookies",
+      "condition": 1000000000000000000,
+      "acquired": true,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 12,
+      "name": "Don't stop me now",
+      "description": "Bake 100 Quintillion cookies",
+      "condition": 100000000000000000000,
+      "acquired": false,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 13,
+      "name": "You can stop now",
+      "description": "Bake 1 Sextillion cookies",
+      "condition": 1e21,
+      "acquired": false,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 14,
+      "name": "Cookies all the way down",
+      "description": "Bake 100 Sextillion cookies",
+      "condition": 1e23,
+      "acquired": false,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 15,
+      "name": "Overdose",
+      "description": "Bake 1 Septillion cookies",
+      "condition": 1e24,
+      "acquired": false,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 16,
+      "name": "How?",
+      "description": "Bake 100 Septillion cookies",
+      "condition": 1e26,
+      "acquired": false,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 17,
+      "name": "The Land of Milk and Cookies",
+      "description": "Bake 1 Octillion cookies",
+      "condition": 1e27,
+      "acquired": false,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 18,
+      "name": "He who controls the cookies controls the universe",
+      "description": "Bake 100 Octillion cookies",
+      "condition": 1e29,
+      "acquired": false,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 19,
+      "name": "Tonight on Hoarders",
+      "description": "Bake 1 Nonillion cookies",
+      "condition": 1e30,
+      "acquired": false,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 20,
+      "name": "Are you gonna eat all that?",
+      "description": "Bake 100 Nonillion cookies",
+      "condition": 1e32,
+      "acquired": false,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 21,
+      "name": "We're gonna need a bigger bakery",
+      "description": "Bake 1 Decillion cookies",
+      "condition": 1e33,
+      "acquired": false,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 22,
+      "name": "In the mouth of madness",
+      "description": "Bake 100 Decillion cookies",
+      "condition": 1e35,
+      "acquired": false,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 23,
+      "name": "Bought to you by the letters 🍪",
+      "description": "Bake 1 Undecillion cookies",
+      "condition": 1e36,
+      "acquired": false,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 24,
+      "name": "The dreams in which I'm baking are the best I've ever had",
+      "description": "Bake 100 Undecillion cookies",
+      "condition": 1e38,
+      "acquired": false,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 25,
+      "name": "Set for life",
+      "description": "Bake 1 Duodecillion cookies",
+      "condition": 1e39,
+      "acquired": false,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 26,
+      "name": "Panic! at Nabisco",
+      "description": "Bake 100 Duodecillion cookies",
+      "condition": 1e41,
+      "acquired": false,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 27,
+      "name": "Bursting at the seams",
+      "description": "Bake 1 Tredecillion cookies",
+      "condition": 1e42,
+      "acquired": false,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 28,
+      "name": "Just about full",
+      "description": "Bake 100 Tredecillion cookies",
+      "condition": 1e44,
+      "acquired": false,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 29,
+      "name": "Hungry for more",
+      "description": "Bake 1 Quattuordecillion cookies",
+      "condition": 1e45,
+      "acquired": false,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 30,
+      "name": "Feed me Chloe",
+      "description": "Bake 100 Quattuordecillion cookies",
+      "condition": 1e47,
+      "acquired": false,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 31,
+      "name": "And then what?",
+      "description": "Bake 1 Quindecillion cookies",
+      "condition": 1e48,
+      "acquired": false,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 32,
+      "name": "I think its's safe to say you've got made",
+      "description": "Bake 100 Quindecillion cookies",
+      "condition": 1e50,
+      "acquired": false,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 33,
+      "name": "A Sometimes Food",
+      "description": "Bake 1 Sexdecillion cookies",
+      "condition": 1e51,
+      "acquired": false,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 34,
+      "name": "Not enough of a good thing",
+      "description": "Bake 100 Sexdecillion cookies",
+      "condition": 1e53,
+      "acquired": false,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 35,
+      "name": "Horn of plenty",
+      "description": "Bake 1 Septendecillion cookies",
+      "condition": 1e54,
+      "acquired": false,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 36,
+      "name": "Large and in charge",
+      "description": "Bake 100 Septendecillion cookies",
+      "condition": 1e56,
+      "acquired": false,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 37,
+      "name": "Absolutely stuffed",
+      "description": "Bake 1 Octodecillion cookies",
+      "condition": 1e57,
+      "acquired": false,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 38,
+      "name": "It's only wafer-thin",
+      "description": "Bake 100 Octodecillion cookies",
+      "condition": 1e59,
+      "acquired": false,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 39,
+      "name": "Think big",
+      "description": "Bake 1 Novemdecillion cookies",
+      "condition": 1e60,
+      "acquired": false,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 40,
+      "name": "Hypersize me",
+      "description": "Bake 100 Novemdecillion cookies",
+      "condition": 1e62,
+      "acquired": false,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 41,
+      "name": "Max Capacity",
+      "description": "Bake 1 Vigintillion cookies",
+      "condition": 1e63,
+      "acquired": false,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 42,
+      "name": "Fake it till you bake it",
+      "description": "Bake 100 Vigintillion cookies",
+      "condition": 1e65,
+      "acquired": false,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 43,
+      "name": "History in the baking",
+      "description": "Bake 1 unvigintillion cookies",
+      "condition": 1e66,
+      "acquired": false,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 44,
+      "name": "What do you get for the baker who was everything",
+      "description": "Bake 100 unvigintillion cookies",
+      "condition": 1e68,
+      "acquired": false,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 45,
+      "name": "Bottomless pit",
+      "description": "Bake 1 Duovigintillion cookies",
+      "condition": 1e69,
+      "acquired": false,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 46,
+      "name": "Rainy day fund",
+      "description": "Bake 100 Duovigintillion cookies",
+      "condition": 1e71,
+      "acquired": false,
+      "type": "Total",
+      "achievementType": "Baking"
+    },
+    {
+      "id": 47,
+      "name": "And a litle bit more",
+      "description": "Bake 1 Tresvigintillion cookies",
+      "condition": 1e73,
+      "acquired": false,
+      "type": "Total",
+      "achievementType": "Baking"
+    }
+  ],
+  "cookiesPerSecondAchievement": [
+    {
+      "id": 48,
+      "name": "Casual baking",
+      "description": "Produce 1 cookie per second.",
+      "type": "Generation",
+      "condition": 1,
+      "acquired": true,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 49,
+      "name": "Hardcore baking",
+      "description": "Produce 10 cookies per second.",
+      "type": "Generation",
+      "condition": 10,
+      "acquired": true,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 50,
+      "name": "Steady tasty stream",
+      "description": "Produce 100 cookies per second.",
+      "type": "Generation",
+      "condition": 100,
+      "acquired": true,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 51,
+      "name": "Cookie monster",
+      "description": "Produce 1,000 cookies per second.",
+      "type": "Generation",
+      "condition": 1000,
+      "acquired": true,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 52,
+      "name": "Mass producer",
+      "description": "Produce 10,000 cookies per second.",
+      "type": "Generation",
+      "condition": 10000,
+      "acquired": true,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 53,
+      "name": "Cookie vortex",
+      "description": "Produce 1 million cookies per second.",
+      "type": "Generation",
+      "condition": 1000000,
+      "acquired": true,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 54,
+      "name": "Cookie pulsar",
+      "description": "Produce 10 million cookies per second.",
+      "type": "Generation",
+      "condition": 10000000,
+      "acquired": true,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 55,
+      "name": "Cookie quasar",
+      "description": "Produce 100 million cookies per second.",
+      "type": "Generation",
+      "condition": 100000000,
+      "acquired": true,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 56,
+      "name": "Oh hey, you're still here",
+      "description": "Produce 1 billion cookies per second.",
+      "type": "Generation",
+      "condition": 1000000000,
+      "acquired": true,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 57,
+      "name": "Let's never bake again",
+      "description": "Produce 10 billion cookies per second.",
+      "type": "Generation",
+      "condition": 10000000000,
+      "acquired": true,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 58,
+      "name": "A word filed with cookies",
+      "description": "Produce 1 trillion cookies per second.",
+      "type": "Generation",
+      "condition": 1000000000000,
+      "acquired": true,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 59,
+      "name": "When this baby hits 36 Quadrillion cookies per hour",
+      "description": "Produce 10 trillion cookies per second.",
+      "type": "Generation",
+      "condition": 10000000000000,
+      "acquired": false,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 60,
+      "name": "Fast and delicious",
+      "description": "Produce 100 trillion cookies per second.",
+      "type": "Generation",
+      "condition": 100000000000000,
+      "acquired": false,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 61,
+      "name": "Cookiehertz : a really, really tasty hertz",
+      "description": "Produce 1 quadrillion cookies per second.",
+      "type": "Generation",
+      "condition": 1000000000000000,
+      "acquired": false,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 62,
+      "name": "Woops, you solved world hunger (no, not really)",
+      "description": "Produce 10 quadrillion cookies per second.",
+      "type": "Generation",
+      "condition": 10000000000000000,
+      "acquired": false,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 63,
+      "name": "Gotta bake them all!",
+      "description": "Produce 1 quintillion cookies per second.",
+      "type": "Generation",
+      "condition": 1000000000000000000,
+      "acquired": false,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 64,
+      "name": "Bake me, maybe?",
+      "description": "Produce 10 quintillion cookies per second.",
+      "type": "Generation",
+      "condition": 10000000000000000000,
+      "acquired": false,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 65,
+      "name": "Cookie production accellerator",
+      "description": "Produce 100 quintillion cookies per second.",
+      "type": "Generation",
+      "condition": 100000000000000000000,
+      "acquired": false,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 66,
+      "name": "The Abakening",
+      "description": "Produce 1 sextillion cookies per second.",
+      "type": "Generation",
+      "condition": 1e21,
+      "acquired": false,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 67,
+      "name": "There's really no hard limit to how long these achievement names can be and to be quite honest I'm rather curious to see how far we can go.\n    Adolphus W. Green (1844–1917) started as the Principal of the Groton School in 1864. By 1865, he became second assistant librarian at the New York Mercantile Library; from 1867 to 1869, he was promoted to full librarian. From 1869 to 1873, he worked for Evarts, Southmayd & Choate, a law firm co-founded by William M. Evarts, Charles Ferdinand Southmayd and Joseph Hodges Choate. He was admitted to the New York State Bar Association in 1873.\n    Anyway, how's your day been?",
+      "description": "Produce 10 sextillion cookies per second.",
+      "type": "Generation",
+      "condition": 1e22,
+      "acquired": false,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 68,
+      "name": "Fast",
+      "description": "Produce 1 septillion cookies per second.",
+      "type": "Generation",
+      "condition": 1e24,
+      "acquired": false,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 69,
+      "name": "Knead for speed",
+      "description": "Produce 10 septillion cookies per second.",
+      "type": "Generation",
+      "condition": 1e25,
+      "acquired": false,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 70,
+      "name": "Cookie speed baking III",
+      "description": "Produce 100 septillion cookies per second.",
+      "type": "Generation",
+      "condition": 1e26,
+      "acquired": false,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 71,
+      "name": "Cookiehertz, the grand one",
+      "description": "Produce 1 octillion cookies per second.",
+      "type": "Generation",
+      "condition": 1e27,
+      "acquired": false,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 72,
+      "name": "Ludicrous speed",
+      "description": "Produce 10 octillion cookies per second.",
+      "type": "Generation",
+      "condition": 1e28,
+      "acquired": false,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 73,
+      "name": "I'm too old for this",
+      "description": "Produce 1 nonillion cookies per second.",
+      "type": "Generation",
+      "condition": 1e30,
+      "acquired": false,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 74,
+      "name": "Spacetime jigamaroo",
+      "description": "Produce 10 nonillion cookies per second.",
+      "type": "Generation",
+      "condition": 1e31,
+      "acquired": false,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 75,
+      "name": "This took forever",
+      "description": "Produce 100 nonillion cookies per second.",
+      "type": "Generation",
+      "condition": 1e32,
+      "acquired": false,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 76,
+      "name": "GAS GAS GAS",
+      "description": "Produce 1 decillion cookies per second.",
+      "type": "Generation",
+      "condition": 1e33,
+      "acquired": false,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 77,
+      "name": "Green cookies sleep furiously",
+      "description": "Produce 10 decillion cookies per second.",
+      "type": "Generation",
+      "condition": 1e34,
+      "acquired": false,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 78,
+      "name": "Leisurely pace",
+      "description": "Produce 1 undecillion cookies per second.",
+      "type": "Generation",
+      "condition": 1e36,
+      "acquired": false,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 79,
+      "name": "Hypersonic",
+      "description": "Produce 10 undecillion cookies per second.",
+      "type": "Generation",
+      "condition": 1e37,
+      "acquired": false,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 80,
+      "name": "Gotta go fast",
+      "description": "Produce 100 undecillion cookies per second.",
+      "type": "Generation",
+      "condition": 1e38,
+      "acquired": false,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 81,
+      "name": "Bake him away, toys",
+      "description": "Produce 1 duodecillion cookies per second.",
+      "type": "Generation",
+      "condition": 1e39,
+      "acquired": false,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 82,
+      "name": "You're  #1 so why try harder",
+      "description": "Produce 10 duodecillion cookies per second.",
+      "type": "Generation",
+      "condition": 1e40,
+      "acquired": false,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 83,
+      "name": "Collecting these is like growing plants",
+      "description": "Produce 100 duodecillion cookies per second.",
+      "type": "Generation",
+      "condition": 1e41,
+      "acquired": false,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 84,
+      "name": "Havent even begun to peak",
+      "description": "Produce 1 tredecillion cookies per second.",
+      "type": "Generation",
+      "condition": 1e42,
+      "acquired": false,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 85,
+      "name": "What did we even eat before cookies?",
+      "description": "Produce 10 tredecillion cookies per second.",
+      "type": "Generation",
+      "condition": 1e43,
+      "acquired": false,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 86,
+      "name": "Heavy flow",
+      "description": "Produce 100 tredecillion cookies per second.",
+      "type": "Generation",
+      "condition": 1e44,
+      "acquired": false,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 87,
+      "name": "More you say?",
+      "description": "Produce 1 quattuordecillion cookies per second.",
+      "type": "Generation",
+      "condition": 1e45,
+      "acquired": false,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 88,
+      "name": "Keep going until i say stop",
+      "description": "Produce 10 quattuordecillion cookies per second.",
+      "type": "Generation",
+      "condition": 1e46,
+      "acquired": false,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 89,
+      "name": "But i didn't say stop, did i?",
+      "description": "Produce 1 quindecillion cookies per second.",
+      "type": "Generation",
+      "condition": 1e48,
+      "acquired": false,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 90,
+      "name": "Click delegate",
+      "description": "Produce 10 quindecillion cookies per second.",
+      "type": "Generation",
+      "condition": 1e49,
+      "acquired": false,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 91,
+      "name": "Yes I love technology",
+      "description": "Produce 100 quindecillion cookies per second.",
+      "type": "Generation",
+      "condition": 1e50,
+      "acquired": false,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 92,
+      "name": "System.out.println('More')",
+      "description": "Produce 1 sexdecillion cookies per second.",
+      "type": "Generation",
+      "condition": 1e51,
+      "acquired": false,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 93,
+      "name": "i'll rest when i'm dead",
+      "description": "Produce 10 sexdecillion cookies per second.",
+      "type": "Generation",
+      "condition": 1e52,
+      "acquired": false,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 94,
+      "name": "Can we get much higher?",
+      "description": "Produce 100 sexdecillion cookies per second.",
+      "type": "Generation",
+      "condition": 1e53,
+      "acquired": false,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 95,
+      "name": "And then what?",
+      "description": "Produce 1 septendecillion cookies per second.",
+      "type": "Generation",
+      "condition": 1e54,
+      "acquired": false,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 96,
+      "name": "Grandma needs a new pair of shoes",
+      "description": "Produce 10 septendecillion cookies per second.",
+      "type": "Generation",
+      "condition": 1e55,
+      "acquired": false,
+      "achievementType": "Baking"
+    },
+    {
+      "id": 97,
+      "name": "Speed's the name of the game (no it's not it's called Cookie Clicker)",
+      "description": "Produce 100 septendecillion cookies per second.",
+      "type": "Generation",
+      "condition": 1e56,
+      "acquired": false,
+      "achievementType": "Baking"
+    }
+  ],
+  "TotalBuildingsAchievements": [
+    { "id": 1000, "acquired": true },
+    { "id": 1001, "acquired": true },
+    { "id": 1002, "acquired": true },
+    { "id": 1003, "acquired": true },
+    { "id": 1004, "acquired": true },
+    { "id": 1005, "acquired": true },
+    { "id": 1006, "acquired": true },
+    { "id": 1007, "acquired": true },
+    { "id": 1008, "acquired": true },
+    { "id": 1009, "acquired": true },
+    { "id": 1010, "acquired": true },
+    { "id": 1011, "acquired": true },
+    { "id": 1012, "acquired": true },
+    { "id": 1013, "acquired": true },
+    { "id": 1014, "acquired": true },
+    { "id": 1015, "acquired": true },
+    { "id": 1016, "acquired": true },
+    { "id": 1017, "acquired": true },
+    { "id": 1018, "acquired": true },
+    { "id": 1019, "acquired": true },
+    { "id": 1020, "acquired": true },
+    { "id": 1021, "acquired": true },
+    { "id": 1022, "acquired": true },
+    { "id": 1023, "acquired": false },
+    { "id": 1024, "acquired": false },
+    { "id": 1025, "acquired": false },
+    { "id": 1026, "acquired": false },
+    { "id": 1027, "acquired": false },
+    { "id": 1028, "acquired": false },
+    { "id": 1029, "acquired": false },
+    { "id": 1030, "acquired": false },
+    { "id": 1031, "acquired": false },
+    { "id": 1032, "acquired": false },
+    { "id": 1033, "acquired": false },
+    { "id": 1034, "acquired": false },
+    { "id": 1035, "acquired": false },
+    { "id": 1036, "acquired": false },
+    { "id": 1037, "acquired": false },
+    { "id": 1038, "acquired": false },
+    { "id": 1039, "acquired": false },
+    { "id": 1040, "acquired": false },
+    { "id": 1041, "acquired": false },
+    { "id": 1042, "acquired": false },
+    { "id": 1043, "acquired": true },
+    { "id": 1044, "acquired": true },
+    { "id": 1045, "acquired": true },
+    { "id": 1046, "acquired": true },
+    { "id": 1047, "acquired": true },
+    { "id": 1048, "acquired": true },
+    { "id": 1049, "acquired": true },
+    { "id": 1050, "acquired": true },
+    { "id": 1051, "acquired": true },
+    { "id": 1052, "acquired": true },
+    { "id": 1053, "acquired": false },
+    { "id": 1054, "acquired": false },
+    { "id": 1055, "acquired": false },
+    { "id": 1056, "acquired": false },
+    { "id": 1057, "acquired": false },
+    { "id": 1058, "acquired": false },
+    { "id": 1059, "acquired": false },
+    { "id": 1060, "acquired": false },
+    { "id": 1061, "acquired": false },
+    { "id": 1062, "acquired": false },
+    { "id": 1063, "acquired": false },
+    { "id": 1064, "acquired": false },
+    { "id": 1065, "acquired": false },
+    { "id": 1066, "acquired": false },
+    { "id": 1067, "acquired": false },
+    { "id": 1068, "acquired": false },
+    { "id": 1069, "acquired": false },
+    { "id": 1070, "acquired": false },
+    { "id": 1071, "acquired": false },
+    { "id": 1072, "acquired": false },
+    { "id": 1073, "acquired": false },
+    { "id": 1074, "acquired": false },
+    { "id": 1075, "acquired": false },
+    { "id": 1076, "acquired": false },
+    { "id": 1077, "acquired": false },
+    { "id": 1078, "acquired": false },
+    { "id": 1079, "acquired": false }
+  ],
+  "flavoredCookies": [
+    {
+      "id": 180,
+      "name": "Plain Cookies",
+      "description": "Plain cookies are the best cookies",
+      "cost": { "cookies": 1000000 },
+      "requirement": 50000,
+      "acquired": true,
+      "multiplier": 1,
+      "type": "flavoredCookies"
+    },
+    {
+      "id": 181,
+      "name": "Sugar Cookies",
+      "description": "Sugar cookies are the best cookies",
+      "cost": { "cookies": 5000000 },
+      "requirement": 250000,
+      "acquired": true,
+      "multiplier": 1,
+      "type": "flavoredCookies"
+    },
+    {
+      "id": 182,
+      "name": "Oatmeal raisin Cookies",
+      "description": "Oatmeal raisin cookies are the best cookies",
+      "cost": { "cookies": 10000000 },
+      "requirement": 500000,
+      "acquired": true,
+      "multiplier": 1,
+      "type": "flavoredCookies"
+    },
+    {
+      "id": 183,
+      "name": "Peanut butter Cookies",
+      "description": "Peanut butter cookies are the best cookies",
+      "cost": { "cookies": 50000000 },
+      "requirement": 2500000,
+      "acquired": true,
+      "multiplier": 2,
+      "type": "flavoredCookies"
+    },
+    {
+      "id": 184,
+      "name": "Coconut cookies",
+      "description": "Flaky, but not unreliable. Some people go crazy for these.",
+      "cost": { "cookies": 100000000 },
+      "requirement": 5000000,
+      "acquired": true,
+      "multiplier": 2,
+      "type": "flavoredCookies"
+    },
+    {
+      "id": 185,
+      "name": "Macadamia nut cookies",
+      "description": "They're macadamn delicious!",
+      "cost": { "cookies": 100000000 },
+      "requirement": 5000000,
+      "acquired": true,
+      "multiplier": 2,
+      "type": "flavoredCookies"
+    },
+    {
+      "id": 186,
+      "name": "Almond cookies",
+      "description": "Sometimes you feel like one of these. Sometimes you don't",
+      "cost": { "cookies": 100000000 },
+      "requirement": 5000000,
+      "acquired": true,
+      "multiplier": 2,
+      "type": "flavoredCookies"
+    },
+    {
+      "id": 187,
+      "name": "Hazelnut cookies",
+      "description": "Tastes like a morning stroll through a fragrant forest, minus the clouds of gnats.",
+      "cost": { "cookies": 100000000 },
+      "requirement": 5000000,
+      "acquired": true,
+      "multiplier": 2,
+      "type": "flavoredCookies"
+    },
+    {
+      "id": 188,
+      "name": "Walnut cookies",
+      "description": "Some experts have pointed to the walnut's eerie resemblance to the human brain as a sign of its sentience - a theory most walnuts vehemently object to.",
+      "cost": { "cookies": 100000000 },
+      "requirement": 5000000,
+      "acquired": true,
+      "multiplier": 2,
+      "type": "flavoredCookies"
+    },
+    {
+      "id": 189,
+      "name": "Cashew cookies",
+      "description": "Let me tell you about cashews. Cashews are not nuts, but seeds that grow out of curious red or yellow fruits - which can be eaten on their own, or made into drinks. The shell around the nut itself contains a nasty substance that stains and irritates the hands of whoever handles it for too long. But that's okay, since now that you've read this you'll make sure it doesn't get into the cookies! Oh, you've already eaten how many? Okay then.",
+      "cost": { "cookies": 100000000 },
+      "requirement": 5000000,
+      "acquired": true,
+      "multiplier": 2,
+      "type": "flavoredCookies"
+    },
+    {
+      "id": 190,
+      "name": "White chocolate cookies",
+      "description": "I know what you'll say. It's just cocoa butter! It's not real chocolate!\n    Oh please.",
+      "cost": { "cookies": 500000000 },
+      "requirement": 25000000,
+      "acquired": true,
+      "multiplier": 2,
+      "type": "flavoredCookies"
+    },
+    {
+      "id": 191,
+      "name": "Milk chocolate cookies",
+      "description": "A strange inversion of chocolate milk. For those who are a little bit too hardcore for white chocolate, but not hardcore enough for dark.",
+      "cost": { "cookies": 500000000 },
+      "requirement": 25000000,
+      "acquired": true,
+      "multiplier": 2,
+      "type": "flavoredCookies"
+    },
+    {
+      "id": 192,
+      "name": "Double-chip cookies",
+      "description": "DOUBLE THE CHIPS\n    DOUBLE THE TASTY\n    (double the calories)",
+      "cost": { "cookies": 5000000000 },
+      "requirement": 250000000,
+      "acquired": true,
+      "multiplier": 2,
+      "type": "flavoredCookies"
+    },
+    {
+      "id": 193,
+      "name": "White chocolate macadamia nut cookies",
+      "description": "Chloe would love these.",
+      "cost": { "cookies": 10000000000 },
+      "requirement": 500000000,
+      "acquired": true,
+      "multiplier": 2,
+      "type": "flavoredCookies"
+    },
+    {
+      "id": 194,
+      "name": "All-chocolate cookies",
+      "description": "Chocolate chips, chocolate chunks, chocolate sprinkles, chocolate drizzle, chocolate powder, chocolate paste, chocolate dough, chocolate frosting, chocolate icing, chocolate batter, chocolate cookie, chocolate chocolate, chocolate chocolate chocolate, chocolate chocolate chocolate chocolate, chocolate chocolate chocolate chocolate chocolate, chocolate chocolate chocolate chocolate chocolate chocolate, chocolate chocolate chocolate chocolate chocolate chocolate chocolate, chocolate chocolate chocolate chocolate chocolate chocolate chocolate chocolate, chocolate chocolate chocolate chocolate chocolate chocolate chocolate chocolate chocolate, chocolate chocolate chocolate chocolate chocolat\n    (chocolate)",
+      "cost": { "cookies": 50000000000 },
+      "requirement": 2500000000,
+      "acquired": true,
+      "multiplier": 2,
+      "type": "flavoredCookies"
+    },
+    {
+      "id": 195,
+      "name": "Dark chocolate-coated cookies",
+      "description": "These absorb light so well you almost need to squint to see them.",
+      "cost": { "cookies": 100000000000 },
+      "requirement": 5000000000,
+      "acquired": true,
+      "multiplier": 5,
+      "type": "flavoredCookies"
+    },
+    {
+      "id": 196,
+      "name": "White chocolate-coated cookies",
+      "description": "These dazzling cookies absolutely glisten with flavor.",
+      "cost": { "cookies": 100000000000 },
+      "requirement": 5000000000,
+      "acquired": true,
+      "multiplier": 5,
+      "type": "flavoredCookies"
+    },
+    {
+      "id": 197,
+      "name": "Eclipse cookies",
+      "description": "Look to the cookie.",
+      "cost": { "cookies": 500000000000 },
+      "requirement": 25000000000,
+      "acquired": true,
+      "multiplier": 2,
+      "type": "flavoredCookies"
+    },
+    {
+      "id": 198,
+      "name": "Zebra cookies",
+      "description": "...",
+      "cost": { "cookies": 1000000000000 },
+      "requirement": 50000000000,
+      "acquired": true,
+      "multiplier": 2,
+      "type": "flavoredCookies"
+    },
+    {
+      "id": 199,
+      "name": "Snickerdoodles",
+      "description": "True to their name, these cookies are prone to chuckling and snorting when amused.",
+      "cost": { "cookies": 5000000000000 },
+      "requirement": 250000000000,
+      "acquired": true,
+      "multiplier": 2,
+      "type": "flavoredCookies"
+    },
+    {
+      "id": 200,
+      "name": "Stroopwafels",
+      "description": "if you can pronounce this, you deserve one.",
+      "cost": { "cookies": 10000000000000 },
+      "requirement": 500000000000,
+      "acquired": true,
+      "multiplier": 2,
+      "type": "flavoredCookies"
+    },
+    {
+      "id": 201,
+      "name": "Macaroons",
+      "description": "These are not macarons. These are macaroons. They are different. They are better. They are the best.",
+      "cost": { "cookies": 50000000000000 },
+      "requirement": 2500000000000,
+      "acquired": true,
+      "multiplier": 2,
+      "type": "flavoredCookies"
+    },
+    {
+      "id": 202,
+      "name": "Empire biscuits",
+      "description": "For the glory of the empire!",
+      "cost": { "cookies": 100000000000000 },
+      "requirement": 5000000000000,
+      "acquired": true,
+      "multiplier": 2,
+      "type": "flavoredCookies"
+    },
+    {
+      "id": 203,
+      "name": "Madeleines",
+      "description": "Unforgettable.",
+      "cost": { "cookies": 500000000000000 },
+      "requirement": 25000000000000,
+      "acquired": true,
+      "multiplier": 2,
+      "type": "flavoredCookies"
+    },
+    {
+      "id": 204,
+      "name": "Palmiers",
+      "description": "Palmier then chloe.",
+      "cost": { "cookies": 500000000000000 },
+      "requirement": 25000000000000,
+      "acquired": true,
+      "multiplier": 2,
+      "type": "flavoredCookies"
+    },
+    {
+      "id": 205,
+      "name": "Palets",
+      "description": "You could say these cookies are a little flat.",
+      "cost": { "cookies": 1000000000000000 },
+      "requirement": 50000000000000,
+      "acquired": true,
+      "multiplier": 2,
+      "type": "flavoredCookies"
+    },
+    {
+      "id": 206,
+      "name": "Sabl&eacute;s",
+      "description": "These cookies are a little sandy.",
+      "cost": { "cookies": 1000000000000000 },
+      "requirement": 50000000000000,
+      "acquired": true,
+      "multiplier": 2,
+      "type": "flavoredCookies"
+    },
+    {
+      "id": 207,
+      "name": "Gingerbread men",
+      "description": "You'd better eat them before they try to run away.",
+      "cost": { "cookies": 10000000000000000 },
+      "requirement": 500000000000000,
+      "acquired": true,
+      "multiplier": 2,
+      "type": "flavoredCookies"
+    },
+    {
+      "id": 208,
+      "name": "Gingerbread trees",
+      "description": "Evergreen.",
+      "cost": { "cookies": 10000000000000000 },
+      "requirement": 500000000000000,
+      "acquired": true,
+      "multiplier": 2,
+      "type": "flavoredCookies"
+    },
+    {
+      "id": 209,
+      "name": "Pure black chocolate cookies",
+      "description": "Dipped in the purest black chocolate, these cookies are so dark they absorb light around them.",
+      "cost": { "cookies": 50000000000000000 },
+      "requirement": 2500000000000000,
+      "acquired": false,
+      "multiplier": 5,
+      "type": "flavoredCookies"
+    },
+    {
+      "id": 210,
+      "name": "Pure white chocolate cookies",
+      "description": "Dipped in the purest white chocolate, these cookies are so bright they reflect light around them.",
+      "cost": { "cookies": 50000000000000000 },
+      "requirement": 2500000000000000,
+      "acquired": true,
+      "multiplier": 5,
+      "type": "flavoredCookies"
+    }
+  ],
+  "clickingUpgrades": [
+    {
+      "id": 1100,
+      "name": "Plastic mouse",
+      "description": "Clicking gains +1% of your CpS.",
+      "cost": { "cookies": 50000 },
+      "multiplier": 0.01,
+      "type": "clicking",
+      "acquired": true,
+      "requirement": 1000,
+      "tier": "Plain"
+    },
+    {
+      "id": 1101,
+      "name": "Iron mouse",
+      "description": "Clicking gains +1% of your CpS.",
+      "cost": { "cookies": 5000000 },
+      "multiplier": 0.01,
+      "type": "clicking",
+      "acquired": true,
+      "requirement": 100000,
+      "tier": "Berrylium"
+    },
+    {
+      "id": 1102,
+      "name": "Titanium mouse",
+      "description": "Clicking gains +1% of your CpS.",
+      "cost": { "cookies": 500000000 },
+      "multiplier": 0.01,
+      "type": "clicking",
+      "acquired": true,
+      "requirement": 10000000,
+      "tier": "Blueberrylium"
+    },
+    {
+      "id": 1103,
+      "name": "Adamantium mouse",
+      "description": "Clicking gains +1% of your CpS.",
+      "cost": { "cookies": 50000000000 },
+      "multiplier": 0.01,
+      "type": "clicking",
+      "acquired": true,
+      "requirement": 1000000000,
+      "tier": "Chalcedhoney"
+    },
+    {
+      "id": 1104,
+      "name": "Unobtainium mouse",
+      "description": "Clicking gains +1% of your CpS.",
+      "cost": { "cookies": 5000000000000 },
+      "multiplier": 0.01,
+      "type": "clicking",
+      "acquired": true,
+      "requirement": 100000000000,
+      "tier": "Buttergold"
+    },
+    {
+      "id": 1105,
+      "name": "Eludium mouse",
+      "description": "Clicking gains +1% of your CpS.",
+      "cost": { "cookies": 500000000000000 },
+      "multiplier": 0.01,
+      "type": "clicking",
+      "acquired": true,
+      "requirement": 10000000000000,
+      "tier": "Sugarmuck"
+    },
+    {
+      "id": 1106,
+      "name": "Wishalloy mouse",
+      "description": "Clicking gains +1% of your CpS.",
+      "cost": { "cookies": 50000000000000000 },
+      "multiplier": 0.01,
+      "type": "clicking",
+      "acquired": false,
+      "requirement": 1000000000000000,
+      "tier": "Jetmint"
+    },
+    {
+      "id": 1107,
+      "name": "Fantasteel mouse",
+      "description": "Clicking gains +1% of your CpS.",
+      "cost": { "cookies": 5000000000000000000 },
+      "multiplier": 0.01,
+      "type": "clicking",
+      "acquired": false,
+      "requirement": 100000000000000000,
+      "tier": "Cherrysilver"
+    },
+    {
+      "id": 1108,
+      "name": "Nevercrack mouse",
+      "description": "Clicking gains +1% of your CpS.",
+      "cost": { "cookies": 500000000000000000000 },
+      "multiplier": 0.01,
+      "type": "clicking",
+      "acquired": false,
+      "requirement": 10000000000000000000,
+      "tier": "Hazelrald"
+    },
+    {
+      "id": 1109,
+      "name": "Armythril mouse",
+      "description": "Clicking gains +1% of your CpS.",
+      "cost": { "cookies": 5e22 },
+      "multiplier": 0.01,
+      "type": "clicking",
+      "acquired": false,
+      "requirement": 1e21,
+      "tier": "Mooncandy"
+    },
+    {
+      "id": 1110,
+      "name": "Technobsidian mouse",
+      "description": "Clicking gains +1% of your CpS.",
+      "cost": { "cookies": 5e24 },
+      "multiplier": 0.01,
+      "type": "clicking",
+      "acquired": false,
+      "requirement": 1e23,
+      "tier": "Astrofudge"
+    },
+    {
+      "id": 1111,
+      "name": "Plasmarble mouse",
+      "description": "Clicking gains +1% of your CpS.",
+      "cost": { "cookies": 5e26 },
+      "multiplier": 0.01,
+      "type": "clicking",
+      "acquired": false,
+      "requirement": 1e25,
+      "tier": "Alabascream"
+    },
+    {
+      "id": 1112,
+      "name": "Miraculite mouse",
+      "description": "Clicking gains +1% of your CpS.",
+      "cost": { "cookies": 5e28 },
+      "multiplier": 0.01,
+      "type": "clicking",
+      "acquired": false,
+      "requirement": 1e27,
+      "tier": "Iridyum"
+    },
+    {
+      "id": 1113,
+      "name": "Aetherice mouse",
+      "description": "Clicking gains +1% of your CpS.",
+      "cost": { "cookies": 5e30 },
+      "multiplier": 0.01,
+      "type": "clicking",
+      "acquired": false,
+      "requirement": 1e29,
+      "tier": "Glucosmium"
+    },
+    {
+      "id": 1114,
+      "name": "\tOmniplast mouse",
+      "description": "Clicking gains +1% of your CpS.",
+      "cost": { "cookies": 5e32 },
+      "multiplier": 0.01,
+      "type": "clicking",
+      "acquired": false,
+      "requirement": 1e31,
+      "tier": "Glimmeringue"
+    }
+  ],
+  "kittens": [
+    {
+      "id": 999,
+      "name": "Kitten helpers",
+      "description": "You gain more CpS the more milk you have.",
+      "cost": { "cookies": 9000000 },
+      "multiplier": 0.1,
+      "type": "kittens",
+      "acquired": true,
+      "requirement": 13,
+      "tier": "Plain"
+    },
+    {
+      "id": 1000,
+      "name": "Kitten workers",
+      "description": "You gain more CpS the more milk you have.",
+      "cost": { "cookies": 9000000000 },
+      "multiplier": 0.125,
+      "type": "kittens",
+      "acquired": true,
+      "requirement": 25,
+      "tier": "Berrylium"
+    },
+    {
+      "id": 1001,
+      "name": "Kitten engineers",
+      "description": "You gain more CpS the more milk you have.",
+      "cost": { "cookies": 90000000000000 },
+      "multiplier": 0.15,
+      "type": "kittens",
+      "acquired": true,
+      "requirement": 50,
+      "tier": "Blueberrylium"
+    },
+    {
+      "id": 1002,
+      "name": "Kitten overseers",
+      "description": "You gain more CpS the more milk you have.",
+      "cost": { "cookies": 90000000000000000 },
+      "multiplier": 0.175,
+      "type": "kittens",
+      "acquired": true,
+      "requirement": 75,
+      "tier": "Chalcedhoney"
+    },
+    {
+      "id": 1003,
+      "name": "Kitten managers",
+      "description": "You gain more CpS the more milk you have.",
+      "cost": { "cookies": 900000000000000000000 },
+      "multiplier": 0.2,
+      "type": "kittens",
+      "acquired": false,
+      "requirement": 100,
+      "tier": "Buttergold"
+    },
+    {
+      "id": 1004,
+      "name": "Kitten accountants",
+      "description": "You gain more CpS the more milk you have.",
+      "cost": { "cookies": 9e23 },
+      "multiplier": 0.2,
+      "type": "kittens",
+      "acquired": false,
+      "requirement": 125,
+      "tier": "Sugarmuck"
+    },
+    {
+      "id": 1005,
+      "name": "Kitten specialists",
+      "description": "You gain more CpS the more milk you have.",
+      "cost": { "cookies": 9e26 },
+      "multiplier": 0.2,
+      "type": "kittens",
+      "acquired": false,
+      "requirement": 150,
+      "tier": "Jetmint"
+    },
+    {
+      "id": 1006,
+      "name": "Kitten experts",
+      "description": "You gain more CpS the more milk you have.",
+      "cost": { "cookies": 9e29 },
+      "multiplier": 0.2,
+      "type": "kittens",
+      "acquired": false,
+      "requirement": 175,
+      "tier": "Cherrysilver"
+    },
+    {
+      "id": 1007,
+      "name": "Kitten consultants",
+      "description": "You gain more CpS the more milk you have.",
+      "cost": { "cookies": 9e32 },
+      "multiplier": 0.2,
+      "type": "kittens",
+      "acquired": false,
+      "requirement": 200,
+      "tier": "Hazelrald"
+    },
+    {
+      "id": 1008,
+      "name": "Kitten assistants to the regional manager",
+      "description": "You gain more CpS the more milk you have.",
+      "cost": { "cookies": 9e35 },
+      "multiplier": 0.175,
+      "type": "kittens",
+      "acquired": false,
+      "requirement": 225,
+      "tier": "Mooncandy"
+    },
+    {
+      "id": 1009,
+      "name": "Kitten marketeers",
+      "description": "You gain more CpS the more milk you have.",
+      "cost": { "cookies": 9e38 },
+      "multiplier": 0.15,
+      "type": "kittens",
+      "acquired": false,
+      "requirement": 250,
+      "tier": "Astrofudge"
+    },
+    {
+      "id": 1010,
+      "name": "Kitten analysts",
+      "description": "You gain more CpS the more milk you have.",
+      "cost": { "cookies": 9e41 },
+      "multiplier": 0.125,
+      "type": "kittens",
+      "acquired": false,
+      "requirement": 275,
+      "tier": "Alabascream"
+    },
+    {
+      "id": 1011,
+      "name": "Kitten executives",
+      "description": "You gain more CpS the more milk you have.",
+      "cost": { "cookies": 9e44 },
+      "multiplier": 0.115,
+      "type": "kittens",
+      "acquired": false,
+      "requirement": 300,
+      "tier": "Iridyum"
+    },
+    {
+      "id": 1012,
+      "name": "Kitten Admins",
+      "description": "You gain more CpS the more milk you have.",
+      "cost": { "cookies": 9e47 },
+      "multiplier": 0.11,
+      "type": "kittens",
+      "acquired": false,
+      "requirement": 325,
+      "tier": "Glucosmium"
+    },
+    {
+      "id": 1013,
+      "name": "Kitten strategists",
+      "description": "You gain more CpS the more milk you have.",
+      "cost": { "cookies": 9e50 },
+      "multiplier": 0.105,
+      "type": "kittens",
+      "acquired": false,
+      "requirement": 350,
+      "tier": "Glimmeringue"
+    }
+  ],
+  "grandma": {
+    "structure": 210,
+    "structureCost": { "cookies": 557887298988361.94 },
+    "lifeTimeCookiesBuilding": { "cookies": 169680642730.0187 },
+    "grandmaUpgrades": [
+      { "id": "16", "acquired": true },
+      { "id": "17", "acquired": true },
+      { "id": "18", "acquired": true },
+      { "id": "19", "acquired": true },
+      { "id": "20", "acquired": true },
+      { "id": "21", "acquired": true },
+      { "id": "22", "acquired": true },
+      { "id": "23", "acquired": false },
+      { "id": "24", "acquired": false },
+      { "id": "25", "acquired": false },
+      { "id": "26", "acquired": false },
+      { "id": "27", "acquired": false },
+      { "id": "28", "acquired": false },
+      { "id": "29", "acquired": false },
+      { "id": "30", "acquired": false }
+    ],
+    "grandmaAchievements": [
+      {
+        "id": 130,
+        "name": "Grandma's cookies",
+        "description": "Have 1 grandma",
+        "condition": 1,
+        "achievementType": "Having",
+        "type": "grandma",
+        "acquired": true
+      },
+      {
+        "id": 131,
+        "name": "Sloppy kisses",
+        "description": "Have 50 grandmas",
+        "condition": 50,
+        "achievementType": "Having",
+        "type": "grandma",
+        "acquired": true
+      },
+      {
+        "id": 132,
+        "name": "Retirement home",
+        "description": "Have 100 grandmas",
+        "condition": 100,
+        "achievementType": "Having",
+        "type": "grandma",
+        "acquired": true
+      },
+      {
+        "id": 133,
+        "name": "Corporate synergy",
+        "description": "Have 125 grandmas",
+        "condition": 125,
+        "achievementType": "Having",
+        "type": "grandma",
+        "acquired": true
+      },
+      {
+        "id": 134,
+        "name": "Friend of the ancients",
+        "description": "Have 150 grandmas",
+        "condition": 150,
+        "achievementType": "Having",
+        "type": "grandma",
+        "acquired": true
+      },
+      {
+        "id": 135,
+        "name": "Come to grandma",
+        "description": "Have 150 grandmas",
+        "condition": 150,
+        "achievementType": "Having",
+        "type": "grandma",
+        "acquired": true
+      },
+      {
+        "id": 136,
+        "name": "Ruler of the ancients",
+        "description": "Have 200 grandmas",
+        "condition": 200,
+        "achievementType": "Having",
+        "type": "grandma",
+        "acquired": true
+      },
+      {
+        "id": 137,
+        "name": "The old never bothered me anyway",
+        "description": "Have 250 grandmas",
+        "condition": 250,
+        "achievementType": "Having",
+        "type": "grandma",
+        "acquired": false
+      },
+      {
+        "id": 138,
+        "name": "The agemaster",
+        "description": "Have 300 grandmas",
+        "condition": 300,
+        "achievementType": "Having",
+        "type": "grandma",
+        "acquired": false
+      },
+      {
+        "id": 139,
+        "name": "To oldly go",
+        "description": "Have 350 grandmas",
+        "condition": 350,
+        "achievementType": "Having",
+        "type": "grandma",
+        "acquired": false
+      },
+      {
+        "id": 140,
+        "name": "Gushing grannies",
+        "description": "Have 375 grandmas",
+        "condition": 375,
+        "achievementType": "Having",
+        "type": "grandma",
+        "acquired": false
+      },
+      {
+        "id": 141,
+        "name": "Aged well",
+        "description": "Have 400 grandmas",
+        "condition": 400,
+        "achievementType": "Having",
+        "type": "grandma",
+        "acquired": false
+      },
+      {
+        "id": 142,
+        "name": "101st birthday",
+        "description": "Have 450 grandmas",
+        "condition": 450,
+        "achievementType": "Having",
+        "type": "grandma",
+        "acquired": false
+      },
+      {
+        "id": 143,
+        "name": "But wait 'til you get older",
+        "description": "Have 500 grandmas",
+        "condition": 500,
+        "achievementType": "Having",
+        "type": "grandma",
+        "acquired": false
+      },
+      {
+        "id": 144,
+        "name": "Defense of the ancients",
+        "description": "Have 550 grandmas",
+        "condition": 550,
+        "achievementType": "Having",
+        "type": "grandma",
+        "acquired": false
+      },
+      {
+        "id": 145,
+        "name": "Okay boomer",
+        "description": "Have 600 grandmas",
+        "condition": 600,
+        "achievementType": "Having",
+        "type": "grandma",
+        "acquired": false
+      },
+      {
+        "id": 146,
+        "name": "They moistly come at night",
+        "description": "Have 650 grandmas",
+        "condition": 650,
+        "achievementType": "Having",
+        "type": "grandma",
+        "acquired": false
+      },
+      {
+        "id": 147,
+        "name": "And now you're even older",
+        "description": "Have 700 grandmas",
+        "condition": 700,
+        "achievementType": "Having",
+        "type": "grandma",
+        "acquired": false
+      },
+      {
+        "id": 148,
+        "name": "Gushing grannies",
+        "description": "Make 10 quintillion cookies just from grandmas",
+        "condition": 10000000000000000000,
+        "achievementType": "Baking",
+        "type": "grandma",
+        "acquired": false
+      },
+      {
+        "id": 149,
+        "name": "Panic at the bingo",
+        "description": "Make 100 septillion cookies just from grandmas",
+        "condition": 1e26,
+        "achievementType": "Baking",
+        "type": "grandma",
+        "acquired": false
+      },
+      {
+        "id": 150,
+        "name": "Frantiquites",
+        "description": "Make 1 decillion cookies just from grandmas",
+        "condition": 1e33,
+        "achievementType": "Baking",
+        "type": "grandma",
+        "acquired": false
+      },
+      {
+        "id": 151,
+        "name": "Not Implemented",
+        "description": "TODO",
+        "condition": 1e48,
+        "achievementType": "Baking",
+        "type": "grandma",
+        "acquired": false
+      }
+    ]
+  },
+  "autoClicker": {
+    "structure": 230,
+    "structureCost": { "cookies": 1369602500991408 },
+    "lifeTimeCookiesBuilding": { "cookies": 3514589555864545 },
+    "cursorUpgrades": [
+      { "id": "1", "acquired": true },
+      { "id": "2", "acquired": true },
+      { "id": "3", "acquired": true },
+      { "id": "4", "acquired": true },
+      { "id": "5", "acquired": true },
+      { "id": "6", "acquired": true },
+      { "id": "7", "acquired": true },
+      { "id": "8", "acquired": true },
+      { "id": "9", "acquired": false },
+      { "id": "10", "acquired": false },
+      { "id": "11", "acquired": false },
+      { "id": "12", "acquired": false },
+      { "id": "13", "acquired": false },
+      { "id": "14", "acquired": false },
+      { "id": "15", "acquired": false }
+    ],
+    "CursorAchievements": [
+      {
+        "id": 113,
+        "name": "Click",
+        "description": "Have 1 cursor",
+        "condition": 1,
+        "achievementType": "Having",
+        "type": "cursor",
+        "acquired": true
+      },
+      {
+        "id": 114,
+        "name": "Double-click",
+        "description": "Have 2 cursors",
+        "condition": 2,
+        "achievementType": "Having",
+        "type": "cursor",
+        "acquired": true
+      },
+      {
+        "id": 115,
+        "name": "Mouse wheel",
+        "description": "Have 50 cursors",
+        "condition": 50,
+        "achievementType": "Having",
+        "type": "cursor",
+        "acquired": true
+      },
+      {
+        "id": 116,
+        "name": "Of Mice and Men",
+        "description": "Have 100 cursors",
+        "condition": 100,
+        "achievementType": "Having",
+        "type": "cursor",
+        "acquired": true
+      },
+      {
+        "id": 117,
+        "name": "The Digital",
+        "description": "Have 200 cursors",
+        "condition": 200,
+        "achievementType": "Having",
+        "type": "cursor",
+        "acquired": true
+      },
+      {
+        "id": 118,
+        "name": "Extreme polydactyly",
+        "description": "Have 300 cursors",
+        "condition": 300,
+        "achievementType": "Having",
+        "type": "cursor",
+        "acquired": false
+      },
+      {
+        "id": 119,
+        "name": "Dr. T",
+        "description": "Have 400 cursors",
+        "condition": 400,
+        "achievementType": "Having",
+        "type": "cursor",
+        "acquired": false
+      },
+      {
+        "id": 120,
+        "name": "Thumbs, phalanges, metacarpals",
+        "description": "Have 500 cursors",
+        "condition": 500,
+        "achievementType": "Having",
+        "type": "cursor",
+        "acquired": false
+      },
+      {
+        "id": 121,
+        "name": "With her finger and her thumb",
+        "description": "Have 600 cursors",
+        "condition": 600,
+        "achievementType": "Having",
+        "type": "cursor",
+        "acquired": false
+      },
+      {
+        "id": 122,
+        "name": "Gotta hand it to you",
+        "description": "Have 700 cursors",
+        "condition": 700,
+        "achievementType": "Having",
+        "type": "cursor",
+        "acquired": false
+      },
+      {
+        "id": 123,
+        "name": "The devil's workshop",
+        "description": "Have 800 cursors",
+        "condition": 800,
+        "achievementType": "Having",
+        "type": "cursor",
+        "acquired": false
+      },
+      {
+        "id": 124,
+        "name": "All hand on deck",
+        "description": "Have 900 cursors",
+        "condition": 900,
+        "achievementType": "Having",
+        "type": "cursor",
+        "acquired": false
+      },
+      {
+        "id": 125,
+        "name": "A round of applause",
+        "description": "Have 1,000 cursors",
+        "condition": 1000,
+        "achievementType": "Having",
+        "type": "cursor",
+        "acquired": false
+      },
+      {
+        "id": 126,
+        "name": "Click delegator",
+        "description": "Make 10 Quintillion cookies just from cursors",
+        "condition": 10000000000000000000,
+        "achievementType": "Baking",
+        "type": "cursor",
+        "acquired": false
+      },
+      {
+        "id": 127,
+        "name": "Finger clickin' good",
+        "description": "Make 100 Sextillion cookies just from cursors",
+        "condition": 1e23,
+        "achievementType": "Baking",
+        "type": "cursor",
+        "acquired": false
+      },
+      {
+        "id": 128,
+        "name": "Click (starring Adam Sandler)",
+        "description": "Make 1 decillion cookies just from cursors.",
+        "condition": 1e27,
+        "achievementType": "Baking",
+        "type": "cursor",
+        "acquired": false
+      },
+      {
+        "id": 129,
+        "name": "Not Implemented",
+        "description": "TODO",
+        "condition": 1e48,
+        "achievementType": "Baking",
+        "type": "cursor",
+        "acquired": false
+      }
+    ]
+  },
+  "farm": {
+    "structure": 200,
+    "structureCost": { "cookies": 1516913288545157.2 },
+    "lifeTimeCookiesBuilding": { "cookies": 570610997776.6846 },
+    "farmUpgrades": [
+      { "id": "31", "acquired": true },
+      { "id": "32", "acquired": true },
+      { "id": "33", "acquired": true },
+      { "id": "34", "acquired": true },
+      { "id": "35", "acquired": true },
+      { "id": "36", "acquired": true },
+      { "id": "37", "acquired": false },
+      { "id": "38", "acquired": false },
+      { "id": "39", "acquired": false },
+      { "id": "40", "acquired": false },
+      { "id": "41", "acquired": false },
+      { "id": "42", "acquired": false },
+      { "id": "43", "acquired": false },
+      { "id": "44", "acquired": false },
+      { "id": "45", "acquired": false }
+    ],
+    "farmAchievements": [
+      {
+        "id": 152,
+        "name": "My first farm",
+        "description": "Have 1 farm",
+        "condition": 1,
+        "achievementType": "Having",
+        "type": "farm",
+        "acquired": true
+      },
+      {
+        "id": 153,
+        "name": "Reap what you sow",
+        "description": "Have 50 farms",
+        "condition": 50,
+        "achievementType": "Having",
+        "type": "farm",
+        "acquired": true
+      },
+      {
+        "id": 154,
+        "name": "Farm ill",
+        "description": "Have 100 farms",
+        "condition": 100,
+        "achievementType": "Having",
+        "type": "farm",
+        "acquired": true
+      },
+      {
+        "id": 155,
+        "name": "Perfected agriculture",
+        "description": "Have 150 farms",
+        "condition": 150,
+        "achievementType": "Having",
+        "type": "farm",
+        "acquired": true
+      },
+      {
+        "id": 156,
+        "name": "Homegrown",
+        "description": "Have 200 farms",
+        "condition": 200,
+        "achievementType": "Having",
+        "type": "farm",
+        "acquired": true
+      },
+      {
+        "id": 157,
+        "name": "Gardener extraordinaire",
+        "description": "Have 250 farms",
+        "condition": 250,
+        "achievementType": "Having",
+        "type": "farm",
+        "acquired": false
+      },
+      {
+        "id": 158,
+        "name": "Seedy business",
+        "description": "Have 300 farms",
+        "condition": 300,
+        "achievementType": "Having",
+        "type": "farm",
+        "acquired": false
+      },
+      {
+        "id": 159,
+        "name": "You and the beanstalk",
+        "description": "Have 350 farms",
+        "condition": 350,
+        "achievementType": "Having",
+        "type": "farm",
+        "acquired": false
+      },
+      {
+        "id": 160,
+        "name": "Harvest moon",
+        "description": "Have 400 farms",
+        "condition": 400,
+        "achievementType": "Having",
+        "type": "farm",
+        "acquired": false
+      },
+      {
+        "id": 161,
+        "name": "Make like a tree",
+        "description": "Have 450 farms",
+        "condition": 450,
+        "achievementType": "Having",
+        "type": "farm",
+        "acquired": false
+      },
+      {
+        "id": 162,
+        "name": "Sharpest tool in the shed",
+        "description": "Have 500 farms",
+        "condition": 500,
+        "achievementType": "Having",
+        "type": "farm",
+        "acquired": false
+      },
+      {
+        "id": 163,
+        "name": "Overripe",
+        "description": "Have 550 farms",
+        "condition": 550,
+        "achievementType": "Having",
+        "type": "farm",
+        "acquired": false
+      },
+      {
+        "id": 164,
+        "name": "in the green",
+        "description": "Have 600 farms",
+        "condition": 600,
+        "achievementType": "Having",
+        "type": "farm",
+        "acquired": false
+      },
+      {
+        "id": 165,
+        "name": "it's grown on you",
+        "description": "Have 650 farms",
+        "condition": 650,
+        "achievementType": "Having",
+        "type": "farm",
+        "acquired": false
+      },
+      {
+        "id": 166,
+        "name": "Au naturel",
+        "description": "Have 700 farms",
+        "condition": 700,
+        "achievementType": "Having",
+        "type": "farm",
+        "acquired": false
+      },
+      {
+        "id": 167,
+        "name": "I hate manure",
+        "description": "Make 100 trillion cookies just from farms",
+        "condition": 100000000000000,
+        "achievementType": "Baking",
+        "type": "farm",
+        "acquired": false
+      },
+      {
+        "id": 168,
+        "name": "Rake in the dough",
+        "description": "Make 1 sextillion cookies just from farms",
+        "condition": 1e21,
+        "achievementType": "Baking",
+        "type": "farm",
+        "acquired": false
+      },
+      {
+        "id": 169,
+        "name": "Overgrowth",
+        "description": "Make 10 Octillion cookies just from farms",
+        "condition": 1e28,
+        "achievementType": "Baking",
+        "type": "farm",
+        "acquired": false
+      },
+      {
+        "id": 170,
+        "name": "Not Implemented",
+        "description": "TODO",
+        "condition": 1e48,
+        "achievementType": "Baking",
+        "type": "farm",
+        "acquired": false
+      }
+    ]
+  },
+  "mine": {
+    "structure": 170,
+    "structureCost": { "cookies": 249927535193403.3 },
+    "lifeTimeCookiesBuilding": { "cookies": 3393866983789.6235 },
+    "mineUpgrades": [
+      { "id": "46", "acquired": true },
+      { "id": "47", "acquired": true },
+      { "id": "48", "acquired": true },
+      { "id": "49", "acquired": true },
+      { "id": "50", "acquired": true },
+      { "id": "51", "acquired": true },
+      { "id": "52", "acquired": false },
+      { "id": "53", "acquired": false },
+      { "id": "54", "acquired": false },
+      { "id": "55", "acquired": false },
+      { "id": "56", "acquired": false },
+      { "id": "57", "acquired": false },
+      { "id": "58", "acquired": false },
+      { "id": "59", "acquired": false },
+      { "id": "60", "acquired": false }
+    ],
+    "mineAchievements": [
+      {
+        "id": 171,
+        "name": "You know the drill",
+        "description": "Have 1 mine",
+        "condition": 1,
+        "achievementType": "Having",
+        "type": "mine",
+        "acquired": true
+      },
+      {
+        "id": 172,
+        "name": "Excavation site",
+        "description": "Have 50 mines",
+        "condition": 50,
+        "achievementType": "Having",
+        "type": "mine",
+        "acquired": true
+      },
+      {
+        "id": 173,
+        "name": "Hollow the earth",
+        "description": "Have 100 mines",
+        "condition": 100,
+        "achievementType": "Having",
+        "type": "mine",
+        "acquired": true
+      },
+      {
+        "id": 174,
+        "name": "Can you dig it?",
+        "description": "Have 150 mines",
+        "condition": 150,
+        "achievementType": "Having",
+        "type": "mine",
+        "acquired": true
+      },
+      {
+        "id": 175,
+        "name": "Center of the earth",
+        "description": "Have 200 mines",
+        "condition": 200,
+        "achievementType": "Having",
+        "type": "mine",
+        "acquired": false
+      },
+      {
+        "id": 176,
+        "name": "Tecktonic ambassador",
+        "description": "Have 250 mines",
+        "condition": 250,
+        "achievementType": "Having",
+        "type": "mine",
+        "acquired": false
+      },
+      {
+        "id": 177,
+        "name": "Freak fracking",
+        "description": "Have 300 mines",
+        "condition": 300,
+        "achievementType": "Having",
+        "type": "mine",
+        "acquired": false
+      },
+      {
+        "id": 178,
+        "name": "Romancing the stone",
+        "description": "Have 350 mines",
+        "condition": 350,
+        "achievementType": "Having",
+        "type": "mine",
+        "acquired": false
+      },
+      {
+        "id": 179,
+        "name": "Mine?",
+        "description": "Have 400 mines",
+        "condition": 400,
+        "achievementType": "Having",
+        "type": "mine",
+        "acquired": false
+      },
+      {
+        "id": 180,
+        "name": "Cave story",
+        "description": "Have 450 mines",
+        "condition": 450,
+        "achievementType": "Having",
+        "type": "mine",
+        "acquired": false
+      },
+      {
+        "id": 181,
+        "name": "Hey now, you're a rock",
+        "description": "Have 500 mines",
+        "condition": 500,
+        "achievementType": "Having",
+        "type": "mine",
+        "acquired": false
+      },
+      {
+        "id": 182,
+        "name": "Rock on",
+        "description": "Have 550 mines",
+        "condition": 550,
+        "achievementType": "Having",
+        "type": "mine",
+        "acquired": false
+      },
+      {
+        "id": 183,
+        "name": "Mountain out of a molehill, but like in a good way",
+        "description": "Have 600 mines",
+        "condition": 600,
+        "achievementType": "Having",
+        "type": "mine",
+        "acquired": false
+      },
+      {
+        "id": 184,
+        "name": "Don't let the walls cave in on you",
+        "description": "Have 650 mines",
+        "condition": 650,
+        "achievementType": "Having",
+        "type": "mine",
+        "acquired": false
+      },
+      {
+        "id": 185,
+        "name": "Dirt-rich",
+        "description": "Have 700 mines",
+        "condition": 700,
+        "achievementType": "Having",
+        "type": "mine",
+        "acquired": false
+      },
+      {
+        "id": 186,
+        "name": "Never dig down",
+        "description": "Make 1 quadrillion of cookies from mines",
+        "condition": 1000000000000000,
+        "achievementType": "Baking",
+        "type": "mine",
+        "acquired": false
+      },
+      {
+        "id": 187,
+        "name": "Quarry on",
+        "description": "Make 10 sextillion of cookies from mines",
+        "condition": 1e22,
+        "achievementType": "Baking",
+        "type": "mine",
+        "acquired": false
+      },
+      {
+        "id": 188,
+        "name": "Sedimentalism",
+        "description": "Make 100 octillion of cookies from mines",
+        "condition": 1e29,
+        "achievementType": "Baking",
+        "type": "mine",
+        "acquired": false
+      },
+      {
+        "id": 189,
+        "name": "TODO",
+        "description": "TODO",
+        "condition": 1e96,
+        "achievementType": "Baking",
+        "type": "mine",
+        "acquired": false
+      }
+    ]
+  },
+  "factory": {
+    "structure": 150,
+    "structureCost": { "cookies": 165431956248453.53 },
+    "lifeTimeCookiesBuilding": { "cookies": 14529531950700.559 },
+    "factoryUpgrades": [
+      { "id": "61", "acquired": true },
+      { "id": "62", "acquired": true },
+      { "id": "63", "acquired": true },
+      { "id": "64", "acquired": true },
+      { "id": "65", "acquired": true },
+      { "id": "66", "acquired": true },
+      { "id": "67", "acquired": false },
+      { "id": "68", "acquired": false },
+      { "id": "69", "acquired": false },
+      { "id": "70", "acquired": false },
+      { "id": "71", "acquired": false },
+      { "id": "72", "acquired": false },
+      { "id": "73", "acquired": false },
+      { "id": "74", "acquired": false },
+      { "id": "75", "acquired": false }
+    ],
+    "factoryAchievements": [
+      {
+        "id": 190,
+        "name": "Production chain",
+        "description": "Have 1 factory",
+        "condition": 1,
+        "achievementType": "Having",
+        "type": "factory",
+        "acquired": true
+      },
+      {
+        "id": 191,
+        "name": "Industrial revolution",
+        "description": "Have 50 factories",
+        "condition": 50,
+        "achievementType": "Having",
+        "type": "factory",
+        "acquired": true
+      },
+      {
+        "id": 192,
+        "name": "Globalization",
+        "description": "Have 100 factories",
+        "condition": 100,
+        "achievementType": "Having",
+        "type": "factory",
+        "acquired": true
+      },
+      {
+        "id": 193,
+        "name": "Ultimate automation",
+        "description": "Have 150 factories",
+        "condition": 150,
+        "achievementType": "Having",
+        "type": "factory",
+        "acquired": true
+      },
+      {
+        "id": 194,
+        "name": "Technocracy",
+        "description": "Have 200 factories",
+        "condition": 200,
+        "achievementType": "Having",
+        "type": "factory",
+        "acquired": false
+      },
+      {
+        "id": 195,
+        "name": "Rise of the machines",
+        "description": "Have 250 factories",
+        "condition": 250,
+        "achievementType": "Having",
+        "type": "factory",
+        "acquired": false
+      },
+      {
+        "id": 196,
+        "name": "Modern times",
+        "description": "Have 300 factories",
+        "condition": 300,
+        "achievementType": "Having",
+        "type": "factory",
+        "acquired": false
+      },
+      {
+        "id": 197,
+        "name": "Ex Machina",
+        "description": "Have 350 factories",
+        "condition": 350,
+        "achievementType": "Having",
+        "type": "factory",
+        "acquired": false
+      },
+      {
+        "id": 198,
+        "name": "In full gear",
+        "description": "Have 400 factories",
+        "condition": 400,
+        "achievementType": "Having",
+        "type": "factory",
+        "acquired": false
+      },
+      {
+        "id": 199,
+        "name": "In-cog-neato",
+        "description": "Have 450 factories",
+        "condition": 450,
+        "achievementType": "Having",
+        "type": "factory",
+        "acquired": false
+      },
+      {
+        "id": 200,
+        "name": "Break the mold",
+        "description": "Have 500 factories",
+        "condition": 500,
+        "achievementType": "Having",
+        "type": "factory",
+        "acquired": false
+      },
+      {
+        "id": 201,
+        "name": "Self-manmade man",
+        "description": "Have 550 factories",
+        "condition": 550,
+        "achievementType": "Having",
+        "type": "factory",
+        "acquired": false
+      },
+      {
+        "id": 202,
+        "name": "The wheels of progress",
+        "description": "Have 600 factories",
+        "condition": 600,
+        "achievementType": "Having",
+        "type": "factory",
+        "acquired": false
+      },
+      {
+        "id": 203,
+        "name": "Replaced by robots",
+        "description": "Have 650 factories",
+        "condition": 650,
+        "achievementType": "Having",
+        "type": "factory",
+        "acquired": false
+      },
+      {
+        "id": 204,
+        "name": "Bots build bots",
+        "description": "Have 700 factories",
+        "condition": 700,
+        "achievementType": "Having",
+        "type": "factory",
+        "acquired": false
+      },
+      {
+        "id": 205,
+        "name": "The incredible machine",
+        "description": "Make 10 quadrillion cookies just from factories.",
+        "condition": 10000000000000000,
+        "achievementType": "Baking",
+        "type": "factory",
+        "acquired": false
+      },
+      {
+        "id": 206,
+        "name": "Yes I love technology",
+        "description": "Make 100 sextillion cookies just from factories.",
+        "condition": 1e23,
+        "achievementType": "Baking",
+        "type": "factory",
+        "acquired": false
+      },
+      {
+        "id": 207,
+        "name": "Labor of love",
+        "description": "Make 1 nonillion cookies just from factories.",
+        "condition": 1e30,
+        "achievementType": "Baking",
+        "type": "factory",
+        "acquired": false
+      },
+      {
+        "id": 208,
+        "name": "TODO",
+        "description": "TODO",
+        "condition": 1e96,
+        "achievementType": "Baking",
+        "type": "factory",
+        "acquired": false
+      }
+    ]
+  },
+  "bank": {
+    "structure": 150,
+    "structureCost": { "cookies": 1781574913444884.2 },
+    "lifeTimeCookiesBuilding": { "cookies": 56161199872671.31 },
+    "bankUpgrades": [
+      { "id": "76", "acquired": true },
+      { "id": "77", "acquired": true },
+      { "id": "78", "acquired": true },
+      { "id": "79", "acquired": true },
+      { "id": "80", "acquired": true },
+      { "id": "81", "acquired": true },
+      { "id": "82", "acquired": false },
+      { "id": "83", "acquired": false },
+      { "id": "84", "acquired": false },
+      { "id": "85", "acquired": false },
+      { "id": "86", "acquired": false },
+      { "id": "87", "acquired": false },
+      { "id": "88", "acquired": false },
+      { "id": "89", "acquired": false },
+      { "id": "90", "acquired": false }
+    ],
+    "bankAchievements": [
+      {
+        "id": 209,
+        "name": "Pretty penny",
+        "description": "Have 1 bank",
+        "condition": 1,
+        "achievementType": "Having",
+        "type": "bank",
+        "acquired": true
+      },
+      {
+        "id": 210,
+        "name": "Fil the bill",
+        "description": "Have 50 banks",
+        "condition": 50,
+        "achievementType": "Having",
+        "type": "bank",
+        "acquired": true
+      },
+      {
+        "id": 211,
+        "name": "A loan in the dark",
+        "description": "Have 100 banks",
+        "condition": 100,
+        "achievementType": "Having",
+        "type": "bank",
+        "acquired": true
+      },
+      {
+        "id": 212,
+        "name": "Need for greed",
+        "description": "Have 150 banks",
+        "condition": 150,
+        "achievementType": "Having",
+        "type": "bank",
+        "acquired": true
+      },
+      {
+        "id": 213,
+        "name": "it's the economy, stupid",
+        "description": "Have 200 banks",
+        "condition": 200,
+        "achievementType": "Having",
+        "type": "bank",
+        "acquired": false
+      },
+      {
+        "id": 214,
+        "name": "Acquire currency",
+        "description": "Have 250 banks",
+        "condition": 250,
+        "achievementType": "Having",
+        "type": "bank",
+        "acquired": false
+      },
+      {
+        "id": 215,
+        "name": "The nerve of war",
+        "description": "Have 300 banks",
+        "condition": 300,
+        "achievementType": "Having",
+        "type": "bank",
+        "acquired": false
+      },
+      {
+        "id": 216,
+        "name": "And i need it now!",
+        "description": "Have 350 banks",
+        "condition": 350,
+        "achievementType": "Having",
+        "type": "bank",
+        "acquired": false
+      },
+      {
+        "id": 217,
+        "name": "Treacle tart economics",
+        "description": "Have 400 banks",
+        "condition": 400,
+        "achievementType": "Having",
+        "type": "bank",
+        "acquired": false
+      },
+      {
+        "id": 218,
+        "name": "Save your breath because that's all you've got left",
+        "description": "Have 450 banks",
+        "condition": 450,
+        "achievementType": "Having",
+        "type": "bank",
+        "acquired": false
+      },
+      {
+        "id": 219,
+        "name": "Get the show on, get paid",
+        "description": "Have 500 banks",
+        "condition": 500,
+        "achievementType": "Having",
+        "type": "bank",
+        "acquired": false
+      },
+      {
+        "id": 220,
+        "name": "Checks out",
+        "description": "Have 550 banks",
+        "condition": 550,
+        "achievementType": "Having",
+        "type": "bank",
+        "acquired": false
+      },
+      {
+        "id": 221,
+        "name": "That's rich",
+        "description": "Have 600 banks",
+        "condition": 600,
+        "achievementType": "Having",
+        "type": "bank",
+        "acquired": false
+      },
+      {
+        "id": 222,
+        "name": "Financial prodigy",
+        "description": "Have 650 banks",
+        "condition": 650,
+        "achievementType": "Having",
+        "type": "bank",
+        "acquired": false
+      },
+      {
+        "id": 223,
+        "name": "Getting that bag",
+        "description": "Have 700 banks",
+        "condition": 700,
+        "achievementType": "Having",
+        "type": "bank",
+        "acquired": false
+      },
+      {
+        "id": 224,
+        "name": "Vested interest",
+        "description": "Make 100 quadrillion cookies just from banks.",
+        "condition": 100000000000000000,
+        "achievementType": "Baking",
+        "type": "bank",
+        "acquired": false
+      },
+      {
+        "id": 225,
+        "name": "Paid in full",
+        "description": "Make 100 septillion cookies just from banks.",
+        "condition": 1e26,
+        "achievementType": "Baking",
+        "type": "bank",
+        "acquired": false
+      },
+      {
+        "id": 226,
+        "name": "Reverse funnel system",
+        "description": "Make 10 nonillion cookies just from banks.",
+        "condition": 1e31,
+        "achievementType": "Baking",
+        "type": "bank",
+        "acquired": false
+      },
+      {
+        "id": 227,
+        "name": "TODO",
+        "description": "TODO",
+        "condition": 1e96,
+        "achievementType": "Baking",
+        "type": "factory",
+        "acquired": false
+      }
+    ]
+  },
+  "temple": {
+    "structure": 110,
+    "structureCost": { "cookies": 95015057292527.22 },
+    "lifeTimeCookiesBuilding": { "cookies": 151526119506381.38 },
+    "templeUpgrades": [
+      { "id": "91", "acquired": true },
+      { "id": "92", "acquired": true },
+      { "id": "93", "acquired": true },
+      { "id": "94", "acquired": true },
+      { "id": "95", "acquired": true },
+      { "id": "96", "acquired": false },
+      { "id": "97", "acquired": false },
+      { "id": "98", "acquired": false },
+      { "id": "99", "acquired": false },
+      { "id": "100", "acquired": false },
+      { "id": "101", "acquired": false },
+      { "id": "102", "acquired": false },
+      { "id": "103", "acquired": false },
+      { "id": "104", "acquired": false },
+      { "id": "105", "acquired": false }
+    ],
+    "templeAchievements": [
+      {
+        "id": 228,
+        "name": "Your time to shrine",
+        "description": "Have 1 temple",
+        "condition": 1,
+        "achievementType": "Having",
+        "type": "temple",
+        "acquired": true
+      },
+      {
+        "id": 229,
+        "name": "Shady sect",
+        "description": "Have 50 temples",
+        "condition": 50,
+        "achievementType": "Having",
+        "type": "temple",
+        "acquired": true
+      },
+      {
+        "id": 230,
+        "name": "New-age cult",
+        "description": "Have 100 temples",
+        "condition": 100,
+        "achievementType": "Having",
+        "type": "temple",
+        "acquired": true
+      },
+      {
+        "id": 231,
+        "name": "Organized religion",
+        "description": "Have 150 temples",
+        "condition": 150,
+        "achievementType": "Having",
+        "type": "temple",
+        "acquired": false
+      },
+      {
+        "id": 232,
+        "name": "Fanaticism",
+        "description": "Have 200 temples",
+        "condition": 200,
+        "achievementType": "Having",
+        "type": "temple",
+        "acquired": false
+      },
+      {
+        "id": 233,
+        "name": "Zealotry",
+        "description": "Have 250 temples",
+        "condition": 250,
+        "achievementType": "Having",
+        "type": "temple",
+        "acquired": false
+      },
+      {
+        "id": 234,
+        "name": "Wololo",
+        "description": "Have 300 temples",
+        "condition": 300,
+        "achievementType": "Having",
+        "type": "temple",
+        "acquired": false
+      },
+      {
+        "id": 235,
+        "name": "Pray on the weak",
+        "description": "Have 350 temples",
+        "condition": 350,
+        "achievementType": "Having",
+        "type": "temple",
+        "acquired": false
+      },
+      {
+        "id": 236,
+        "name": "Holy cookies, grandma!",
+        "description": "Have 400 temples",
+        "condition": 400,
+        "achievementType": "Having",
+        "type": "temple",
+        "acquired": false
+      },
+      {
+        "id": 237,
+        "name": "Vengeful and almighty",
+        "description": "Have 450 temples",
+        "condition": 450,
+        "achievementType": "Having",
+        "type": "temple",
+        "acquired": false
+      },
+      {
+        "id": 238,
+        "name": "My world's on fire, how about yours?",
+        "description": "Have 500 temples",
+        "condition": 500,
+        "achievementType": "Having",
+        "type": "temple",
+        "acquired": false
+      },
+      {
+        "id": 239,
+        "name": "Living on a prayer",
+        "description": "Have 550 temples",
+        "condition": 550,
+        "achievementType": "Having",
+        "type": "temple",
+        "acquired": false
+      },
+      {
+        "id": 240,
+        "name": "Preaching to the choir",
+        "description": "Have 600 temples",
+        "condition": 600,
+        "achievementType": "Having",
+        "type": "temple",
+        "acquired": false
+      },
+      {
+        "id": 241,
+        "name": "And i will pray to a big god",
+        "description": "Have 650 temples",
+        "condition": 650,
+        "achievementType": "Having",
+        "type": "temple",
+        "acquired": false
+      },
+      {
+        "id": 242,
+        "name": "The Leader is good , the leader is great",
+        "description": "Have 700 temples",
+        "condition": 700,
+        "achievementType": "Having",
+        "type": "temple",
+        "acquired": false
+      },
+      {
+        "id": 243,
+        "name": "New world order",
+        "description": "Make 1 quintillion cookies just from temples.",
+        "condition": 1000000000000000000,
+        "achievementType": "Baking",
+        "type": "temple",
+        "acquired": false
+      },
+      {
+        "id": 244,
+        "name": "Church of cookiology",
+        "description": "Make 10 septillion cookies just from temples.",
+        "condition": 1e25,
+        "achievementType": "Baking",
+        "type": "temple",
+        "acquired": false
+      },
+      {
+        "id": 245,
+        "name": "thus spoke cookierathustra",
+        "description": "Make 100 nonillion cookies just from temples.",
+        "condition": 1e32,
+        "achievementType": "Baking",
+        "type": "temple",
+        "acquired": false
+      },
+      {
+        "id": 246,
+        "name": "Todo",
+        "description": "Todo",
+        "condition": 1e96,
+        "achievementType": "Baking",
+        "type": "temple",
+        "acquired": false
+      }
+    ]
+  },
+  "wizardTower": {
+    "structure": 100,
+    "structureCost": { "cookies": 387523438731092.2 },
+    "lifeTimeCookiesBuilding": { "cookies": 751273666863427.8 },
+    "wizardTowerUpgrades": [
+      { "id": "106", "acquired": true },
+      { "id": "107", "acquired": true },
+      { "id": "108", "acquired": true },
+      { "id": "109", "acquired": true },
+      { "id": "110", "acquired": true },
+      { "id": "111", "acquired": false },
+      { "id": "112", "acquired": false },
+      { "id": "113", "acquired": false },
+      { "id": "114", "acquired": false },
+      { "id": "115", "acquired": false },
+      { "id": "116", "acquired": false },
+      { "id": "117", "acquired": false },
+      { "id": "118", "acquired": false },
+      { "id": "119", "acquired": false },
+      { "id": "120", "acquired": false }
+    ],
+    "wizardTowerAchievements": [
+      {
+        "id": 247,
+        "name": "Bewitched",
+        "description": "Have 1 wizard tower",
+        "condition": 1,
+        "achievementType": "Having",
+        "type": "wizardTower",
+        "acquired": true
+      },
+      {
+        "id": 248,
+        "name": "The sorcerer's apprentice",
+        "description": "Have 50 wizard towers",
+        "condition": 50,
+        "achievementType": "Having",
+        "type": "wizardTower",
+        "acquired": true
+      },
+      {
+        "id": 249,
+        "name": "Charms and enchantments",
+        "description": "Have 100 wizard towers",
+        "condition": 100,
+        "achievementType": "Having",
+        "type": "wizardTower",
+        "acquired": true
+      },
+      {
+        "id": 250,
+        "name": "Curses and maledictions",
+        "description": "Have 150 wizard towers",
+        "condition": 150,
+        "achievementType": "Having",
+        "type": "wizardTower",
+        "acquired": false
+      },
+      {
+        "id": 251,
+        "name": "Magic kingdom",
+        "description": "Have 200 wizard towers",
+        "condition": 200,
+        "achievementType": "Having",
+        "type": "wizardTower",
+        "acquired": false
+      },
+      {
+        "id": 252,
+        "name": "The wizarding world",
+        "description": "Have 250 wizard towers",
+        "condition": 250,
+        "achievementType": "Having",
+        "type": "wizardTower",
+        "acquired": false
+      },
+      {
+        "id": 253,
+        "name": "And now for my next trick, I'll need a volunteer from the audience",
+        "description": "Have 300 wizard towers",
+        "condition": 300,
+        "achievementType": "Having",
+        "type": "wizardTower",
+        "acquired": false
+      },
+      {
+        "id": 254,
+        "name": "It's a kind of magic",
+        "description": "Have 350 wizard towers",
+        "condition": 350,
+        "achievementType": "Having",
+        "type": "wizardTower",
+        "acquired": false
+      },
+      {
+        "id": 255,
+        "name": "The Prestige",
+        "description": "Have 400 wizard towers",
+        "condition": 400,
+        "achievementType": "Having",
+        "type": "wizardTower",
+        "acquired": false
+      },
+      {
+        "id": 256,
+        "name": "Spell it out for you",
+        "description": "Have 450 wizard towers",
+        "condition": 450,
+        "achievementType": "Having",
+        "type": "wizardTower",
+        "acquired": false
+      },
+      {
+        "id": 257,
+        "name": "The metor men beg to differ",
+        "description": "Have 500 wizard towers",
+        "condition": 500,
+        "achievementType": "Having",
+        "type": "wizardTower",
+        "acquired": false
+      },
+      {
+        "id": 258,
+        "name": "Higtus Figitus migitus mum",
+        "description": "Have 550 wizard towers",
+        "condition": 550,
+        "achievementType": "Having",
+        "type": "wizardTower",
+        "acquired": false
+      },
+      {
+        "id": 259,
+        "name": "Magic thinking",
+        "description": "Have 600 wizard towers",
+        "condition": 600,
+        "achievementType": "Having",
+        "type": "wizardTower",
+        "acquired": false
+      },
+      {
+        "id": 260,
+        "name": "You don't think they could've used... it couldn't have been ma-",
+        "description": "Have 650 wizard towers",
+        "condition": 650,
+        "achievementType": "Having",
+        "type": "wizardTower",
+        "acquired": false
+      },
+      {
+        "id": 261,
+        "name": " Shople Colupis",
+        "description": "Have 700 wizard towers",
+        "condition": 700,
+        "achievementType": "Having",
+        "type": "wizardTower",
+        "acquired": false
+      },
+      {
+        "id": 262,
+        "name": "Hocus Pocus",
+        "description": "Make 10 quintillion cookies just from wizard towers.",
+        "condition": 10000000000000000000,
+        "achievementType": "Baking",
+        "type": "wizardTower",
+        "acquired": false
+      },
+      {
+        "id": 263,
+        "name": "To many rabbits, not enough hats",
+        "description": "Make 100 septillion cookies just from wizard towers.",
+        "condition": 1e26,
+        "achievementType": "Baking",
+        "type": "wizardTower",
+        "acquired": false
+      },
+      {
+        "id": 264,
+        "name": "Manafest destiny",
+        "description": "Make 1 decillion cookies just from wizard towers.",
+        "condition": 1e33,
+        "achievementType": "Baking",
+        "type": "wizardTower",
+        "acquired": false
+      },
+      {
+        "id": 265,
+        "name": "TODO",
+        "description": "TODO",
+        "condition": 1e96,
+        "achievementType": "Baking",
+        "type": "wizardTower",
+        "acquired": false
+      }
+    ]
+  },
+  "shipment": {
+    "structure": 70,
+    "structureCost": { "cookies": 90452172198023.14 },
+    "lifeTimeCookiesBuilding": { "cookies": 1662552310544980 },
+    "shipmentUpgrades": [
+      { "id": "121", "acquired": true },
+      { "id": "122", "acquired": true },
+      { "id": "123", "acquired": true },
+      { "id": "124", "acquired": true },
+      { "id": "125", "acquired": false },
+      { "id": "126", "acquired": false },
+      { "id": "127", "acquired": false },
+      { "id": "128", "acquired": false },
+      { "id": "129", "acquired": false },
+      { "id": "130", "acquired": false },
+      { "id": "131", "acquired": false },
+      { "id": "132", "acquired": false },
+      { "id": "133", "acquired": false },
+      { "id": "134", "acquired": false },
+      { "id": "135", "acquired": false }
+    ],
+    "shipmentAchievements": [
+      {
+        "id": 266,
+        "name": "Expedition",
+        "description": "Have 1 shipment",
+        "condition": 1,
+        "achievementType": "Having",
+        "type": "shipment",
+        "acquired": true
+      },
+      {
+        "id": 267,
+        "name": "Galactic highway",
+        "description": "Have 50 shipments",
+        "condition": 50,
+        "achievementType": "Having",
+        "type": "shipment",
+        "acquired": true
+      },
+      {
+        "id": 268,
+        "name": "Far far away",
+        "description": "Have 100 shipments",
+        "condition": 100,
+        "achievementType": "Having",
+        "type": "shipment",
+        "acquired": false
+      },
+      {
+        "id": 269,
+        "name": "Type II civilization",
+        "description": "Have 150 shipments",
+        "condition": 150,
+        "achievementType": "Having",
+        "type": "shipment",
+        "acquired": false
+      },
+      {
+        "id": 270,
+        "name": "We come in peace",
+        "description": "Have 200 shipments",
+        "condition": 200,
+        "achievementType": "Having",
+        "type": "shipment",
+        "acquired": false
+      },
+      {
+        "id": 271,
+        "name": "Parsec-masher",
+        "description": "Have 250 shipments",
+        "condition": 250,
+        "achievementType": "Having",
+        "type": "shipment",
+        "acquired": false
+      },
+      {
+        "id": 272,
+        "name": "It's not delivery",
+        "description": "Have 300 shipments",
+        "condition": 300,
+        "achievementType": "Having",
+        "type": "shipment",
+        "acquired": false
+      },
+      {
+        "id": 273,
+        "name": "Make it so",
+        "description": "Have 350 shipments",
+        "condition": 350,
+        "achievementType": "Having",
+        "type": "shipment",
+        "acquired": false
+      },
+      {
+        "id": 274,
+        "name": "That's just peanuts to space",
+        "description": "Have 400 shipments",
+        "condition": 400,
+        "achievementType": "Having",
+        "type": "shipment",
+        "acquired": false
+      },
+      {
+        "id": 275,
+        "name": "Space space space space space",
+        "description": "Have 450 shipments",
+        "condition": 450,
+        "achievementType": "Having",
+        "type": "shipment",
+        "acquired": false
+      },
+      {
+        "id": 276,
+        "name": "Only shooting stars",
+        "description": "Have 500 shipments",
+        "condition": 500,
+        "achievementType": "Having",
+        "type": "shipment",
+        "acquired": false
+      },
+      {
+        "id": 277,
+        "name": "The incredible journey",
+        "description": "Have 550 shipments",
+        "condition": 550,
+        "achievementType": "Having",
+        "type": "shipment",
+        "acquired": false
+      },
+      {
+        "id": 278,
+        "name": "Is there life on Mars?",
+        "description": "Have 600 shipments",
+        "condition": 600,
+        "achievementType": "Having",
+        "type": "shipment",
+        "acquired": false
+      },
+      {
+        "id": 279,
+        "name": "False vacuum",
+        "description": "Have 650 shipments",
+        "condition": 650,
+        "achievementType": "Having",
+        "type": "shipment",
+        "acquired": false
+      },
+      {
+        "id": 280,
+        "name": "Signed, sealed ,delivered",
+        "description": "Have 700 shipments",
+        "condition": 700,
+        "achievementType": "Having",
+        "type": "shipment",
+        "acquired": false
+      },
+      {
+        "id": 281,
+        "name": "And beyond",
+        "description": "Make 100 quintillion cookies just from shipments.",
+        "condition": 100000000000000000000,
+        "achievementType": "Baking",
+        "type": "shipment",
+        "acquired": false
+      },
+      {
+        "id": 282,
+        "name": "The most precious cargo",
+        "description": "Make 1 octillion cookies just from shipments.",
+        "condition": 1e27,
+        "achievementType": "Baking",
+        "type": "shipment",
+        "acquired": false
+      },
+      {
+        "id": 283,
+        "name": "Neither snow nor rain nor heat nor gloom of night",
+        "description": "Make 10 decillion cookies just from shipments.",
+        "condition": 1e34,
+        "achievementType": "Baking",
+        "type": "shipment",
+        "acquired": false
+      },
+      {
+        "id": 284,
+        "name": "TODO",
+        "description": "TODO",
+        "condition": 1e96,
+        "achievementType": "Baking",
+        "type": "shipment",
+        "acquired": false
+      }
+    ]
+  },
+  "alchemyLab": {
+    "structure": 50,
+    "structureCost": { "cookies": 81274308118796.5 },
+    "lifeTimeCookiesBuilding": { "cookies": 5059213598026422 },
+    "alchemyLabUpgrades": [
+      { "id": "136", "acquired": true },
+      { "id": "137", "acquired": true },
+      { "id": "138", "acquired": true },
+      { "id": "139", "acquired": true },
+      { "id": "140", "acquired": false },
+      { "id": "141", "acquired": false },
+      { "id": "142", "acquired": false },
+      { "id": "143", "acquired": false },
+      { "id": "144", "acquired": false },
+      { "id": "145", "acquired": false },
+      { "id": "146", "acquired": false },
+      { "id": "147", "acquired": false },
+      { "id": "148", "acquired": false },
+      { "id": "149", "acquired": false }
+    ],
+    "alchemyLabAchievements": [
+      {
+        "id": 285,
+        "name": "Transmutation",
+        "description": "Have 1 alchemy lab",
+        "condition": 1,
+        "achievementType": "Having",
+        "type": "alchemyLab",
+        "acquired": true
+      },
+      {
+        "id": 286,
+        "name": "Transmogrification",
+        "description": "Have 50 alchemy labs",
+        "condition": 50,
+        "achievementType": "Having",
+        "type": "alchemyLab",
+        "acquired": true
+      },
+      {
+        "id": 287,
+        "name": "Gold member",
+        "description": "Have 100 alchemy labs",
+        "condition": 100,
+        "achievementType": "Having",
+        "type": "alchemyLab",
+        "acquired": false
+      },
+      {
+        "id": 288,
+        "name": "Gild wars",
+        "description": "Have 150 alchemy labs",
+        "condition": 150,
+        "achievementType": "Having",
+        "type": "alchemyLab",
+        "acquired": false
+      },
+      {
+        "id": 289,
+        "name": "The secrets of the universe",
+        "description": "Have 200 alchemy labs",
+        "condition": 200,
+        "achievementType": "Having",
+        "type": "alchemyLab",
+        "acquired": false
+      },
+      {
+        "id": 290,
+        "name": "The work of a lifetime",
+        "description": "Have 250 alchemy labs",
+        "condition": 250,
+        "achievementType": "Having",
+        "type": "alchemyLab",
+        "acquired": false
+      },
+      {
+        "id": 291,
+        "name": "Gold, Jerry! Gold!",
+        "description": "Have 300 alchemy labs",
+        "condition": 300,
+        "achievementType": "Having",
+        "type": "alchemyLab",
+        "acquired": false
+      },
+      {
+        "id": 292,
+        "name": "All that glitters is gold",
+        "description": "Have 350 alchemy labs",
+        "condition": 350,
+        "achievementType": "Having",
+        "type": "alchemyLab",
+        "acquired": false
+      },
+      {
+        "id": 293,
+        "name": "Worth its weight in lead",
+        "description": "Have 400 alchemy labs",
+        "condition": 400,
+        "achievementType": "Having",
+        "type": "alchemyLab",
+        "acquired": false
+      },
+      {
+        "id": 294,
+        "name": "Don't get used to yourself, you're gonna have to change",
+        "description": "Have 450 alchemy labs",
+        "condition": 450,
+        "achievementType": "Having",
+        "type": "alchemyLab",
+        "acquired": false
+      },
+      {
+        "id": 295,
+        "name": "We could all use a little change",
+        "description": "Have 500 alchemy labs",
+        "condition": 500,
+        "achievementType": "Having",
+        "type": "alchemyLab",
+        "acquired": false
+      },
+      {
+        "id": 296,
+        "name": "Just a phase",
+        "description": "Have 550 alchemy labs",
+        "condition": 550,
+        "achievementType": "Having",
+        "type": "alchemyLab",
+        "acquired": false
+      },
+      {
+        "id": 297,
+        "name": "Bad chemistry",
+        "description": "Have 600 alchemy labs",
+        "condition": 600,
+        "achievementType": "Having",
+        "type": "alchemyLab",
+        "acquired": false
+      },
+      {
+        "id": 298,
+        "name": "Metalic taste",
+        "description": "Have 650 alchemy labs",
+        "condition": 650,
+        "achievementType": "Having",
+        "type": "alchemyLab",
+        "acquired": false
+      },
+      {
+        "id": 299,
+        "name": "Sugar, spice and everything nice",
+        "description": "Have 700 alchemy labs",
+        "condition": 700,
+        "achievementType": "Having",
+        "type": "alchemyLab",
+        "acquired": false
+      },
+      {
+        "id": 300,
+        "name": "Magnum Opus",
+        "description": "Make 1 sextillion cookies just from alchemy labs.",
+        "condition": 1e21,
+        "achievementType": "Baking",
+        "type": "alchemyLab",
+        "acquired": false
+      },
+      {
+        "id": 301,
+        "name": "The Aureate",
+        "description": "Make 10 octillion cookies just from alchemy labs.",
+        "condition": 1e28,
+        "achievementType": "Baking",
+        "type": "alchemyLab",
+        "acquired": false
+      },
+      {
+        "id": 302,
+        "name": "I've got the Midas touch",
+        "description": "Make 100 decillion cookies just from alchemy labs.",
+        "condition": 1e35,
+        "achievementType": "Baking",
+        "type": "alchemyLab",
+        "acquired": false
+      },
+      {
+        "id": 303,
+        "name": "TODO",
+        "description": "TODO",
+        "condition": 1e96,
+        "achievementType": "Baking",
+        "type": "alchemyLab",
+        "acquired": false
+      }
+    ]
+  },
+  "portal": {
+    "structure": 50,
+    "structureCost": { "cookies": 1083657441583953.4 },
+    "lifeTimeCookiesBuilding": { "cookies": 12475309637849256 },
+    "portalUpgrades": [
+      { "id": "150", "acquired": true },
+      { "id": "151", "acquired": true },
+      { "id": "152", "acquired": true },
+      { "id": "153", "acquired": true },
+      { "id": "154", "acquired": false },
+      { "id": "155", "acquired": false },
+      { "id": "156", "acquired": false },
+      { "id": "157", "acquired": false },
+      { "id": "158", "acquired": false },
+      { "id": "159", "acquired": false },
+      { "id": "160", "acquired": false },
+      { "id": "161", "acquired": false },
+      { "id": "162", "acquired": false },
+      { "id": "163", "acquired": false },
+      { "id": "164", "acquired": false }
+    ],
+    "portalAchievements": [
+      {
+        "id": 304,
+        "name": "A whole new world",
+        "description": "Have 1 portal",
+        "condition": 1,
+        "achievementType": "Having",
+        "type": "portal",
+        "acquired": true
+      },
+      {
+        "id": 305,
+        "name": "Now you're thinking",
+        "description": "Have 50 portals",
+        "condition": 50,
+        "achievementType": "Having",
+        "type": "portal",
+        "acquired": true
+      },
+      {
+        "id": 306,
+        "name": "Dimensional shift",
+        "description": "Have 100 portals",
+        "condition": 100,
+        "achievementType": "Having",
+        "type": "portal",
+        "acquired": false
+      },
+      {
+        "id": 307,
+        "name": "Brain-split",
+        "description": "Have 150 portals",
+        "condition": 150,
+        "achievementType": "Having",
+        "type": "portal",
+        "acquired": false
+      },
+      {
+        "id": 308,
+        "name": "Realm of the Mad God",
+        "description": "Have 200 portals",
+        "condition": 200,
+        "achievementType": "Having",
+        "type": "portal",
+        "acquired": false
+      },
+      {
+        "id": 309,
+        "name": "A place lost in time",
+        "description": "Have 250 portals",
+        "condition": 250,
+        "achievementType": "Having",
+        "type": "portal",
+        "acquired": false
+      },
+      {
+        "id": 310,
+        "name": "Forbidden zone",
+        "description": "Have 300 portals",
+        "condition": 300,
+        "achievementType": "Having",
+        "type": "portal",
+        "acquired": false
+      },
+      {
+        "id": 311,
+        "name": "H̸̷̢̛̭̣̲̗̦̦͡",
+        "description": "Have 350 portals",
+        "condition": 350,
+        "achievementType": "Having",
+        "type": "portal",
+        "acquired": false
+      },
+      {
+        "id": 312,
+        "name": "\tWhat happens in the vortex stays in the vortex",
+        "description": "Have 400 portals",
+        "condition": 400,
+        "achievementType": "Having",
+        "type": "portal",
+        "acquired": false
+      },
+      {
+        "id": 313,
+        "name": "Objects in the mirror dimension are closer than they appear",
+        "description": "Have 450 portals",
+        "condition": 450,
+        "achievementType": "Having",
+        "type": "portal",
+        "acquired": false
+      },
+      {
+        "id": 314,
+        "name": "Your brain gets smart but your head gets dumb",
+        "description": "Have 500 portals",
+        "condition": 500,
+        "achievementType": "Having",
+        "type": "portal",
+        "acquired": false
+      },
+      {
+        "id": 315,
+        "name": "Don't let me leave, Murph",
+        "description": "Have 550 portals",
+        "condition": 550,
+        "achievementType": "Having",
+        "type": "portal",
+        "acquired": false
+      },
+      {
+        "id": 316,
+        "name": "Reduced to gibbering heaps",
+        "description": "Have 600 portals",
+        "condition": 600,
+        "achievementType": "Having",
+        "type": "portal",
+        "acquired": false
+      },
+      {
+        "id": 317,
+        "name": "Swiss cheese universe",
+        "description": "Have 650 portals",
+        "condition": 650,
+        "achievementType": "Having",
+        "type": "portal",
+        "acquired": false
+      },
+      {
+        "id": 318,
+        "name": "Not even remotely close to Kansas anymore",
+        "description": "Have 700 portals",
+        "condition": 700,
+        "achievementType": "Having",
+        "type": "portal",
+        "acquired": false
+      },
+      {
+        "id": 319,
+        "name": "With strange eons",
+        "description": "Make 10 sextillion cookies just from portals.",
+        "condition": 1e22,
+        "achievementType": "Baking",
+        "type": "portal",
+        "acquired": false
+      },
+      {
+        "id": 320,
+        "name": "Ever more hideous",
+        "description": "Make 100 octillion cookies just from portals.",
+        "condition": 1e29,
+        "achievementType": "Baking",
+        "type": "portal",
+        "acquired": false
+      },
+      {
+        "id": 321,
+        "name": "Which eternal lie",
+        "description": "Make 1 undecillion cookies just from portals.",
+        "condition": 1e36,
+        "achievementType": "Baking",
+        "type": "portal",
+        "acquired": false
+      },
+      {
+        "id": 322,
+        "name": "TODO",
+        "description": "TODO",
+        "condition": 1e96,
+        "achievementType": "Baking",
+        "type": "portal",
+        "acquired": false
+      }
+    ]
+  },
+  "timeMachine": {
+    "structure": 40,
+    "structureCost": { "cookies": 3750089647285835.5 },
+    "lifeTimeCookiesBuilding": { "cookies": 67639417418042610 },
+    "timeMachineUpgrades": [
+      { "id": "165", "acquired": true },
+      { "id": "166", "acquired": true },
+      { "id": "167", "acquired": true },
+      { "id": "168", "acquired": false },
+      { "id": "169", "acquired": false },
+      { "id": "170", "acquired": false },
+      { "id": "171", "acquired": false },
+      { "id": "172", "acquired": false },
+      { "id": "173", "acquired": false },
+      { "id": "174", "acquired": false },
+      { "id": "175", "acquired": false },
+      { "id": "176", "acquired": false },
+      { "id": "177", "acquired": false },
+      { "id": "178", "acquired": false },
+      { "id": "179", "acquired": false }
+    ],
+    "timeMachineAchievements": [
+      {
+        "id": 323,
+        "name": "Time warp",
+        "description": "Have 1 time machine",
+        "condition": 1,
+        "achievementType": "Having",
+        "type": "timeMachine",
+        "acquired": true
+      },
+      {
+        "id": 324,
+        "name": "Alternate timeline",
+        "description": "Have 50 time machines",
+        "condition": 50,
+        "achievementType": "Having",
+        "type": "timeMachine",
+        "acquired": false
+      },
+      {
+        "id": 325,
+        "name": "Rewriting history",
+        "description": "Have 100 time machines",
+        "condition": 100,
+        "achievementType": "Having",
+        "type": "timeMachine",
+        "acquired": false
+      },
+      {
+        "id": 326,
+        "name": "Time duke",
+        "description": "Have 150 time machines",
+        "condition": 150,
+        "achievementType": "Having",
+        "type": "timeMachine",
+        "acquired": false
+      },
+      {
+        "id": 327,
+        "name": "Forever isn't that long",
+        "description": "Have 200 time machines",
+        "condition": 200,
+        "achievementType": "Having",
+        "type": "timeMachine",
+        "acquired": false
+      },
+      {
+        "id": 328,
+        "name": "Heat death",
+        "description": "Have 250 time machines",
+        "condition": 250,
+        "achievementType": "Having",
+        "type": "timeMachine",
+        "acquired": false
+      },
+      {
+        "id": 329,
+        "name": "Cookie clicker forever and forever a hundred years cookie clicker",
+        "description": "Have 300 time machines",
+        "condition": 300,
+        "achievementType": "Having",
+        "type": "timeMachine",
+        "acquired": false
+      },
+      {
+        "id": 330,
+        "name": "Way back then",
+        "description": "Have 350 time machines",
+        "condition": 350,
+        "achievementType": "Having",
+        "type": "timeMachine",
+        "acquired": false
+      },
+      {
+        "id": 331,
+        "name": "Invited to yesterday's party",
+        "description": "Have 400 time machines",
+        "condition": 400,
+        "achievementType": "Having",
+        "type": "timeMachine",
+        "acquired": false
+      },
+      {
+        "id": 332,
+        "name": "Groundhog day",
+        "description": "Have 450 time machines",
+        "condition": 450,
+        "achievementType": "Having",
+        "type": "timeMachine",
+        "acquired": false
+      },
+      {
+        "id": 333,
+        "name": "The years start coming",
+        "description": "Have 500 time machines",
+        "condition": 500,
+        "achievementType": "Having",
+        "type": "timeMachine",
+        "acquired": false
+      },
+      {
+        "id": 334,
+        "name": "Caveman to cosmos",
+        "description": "Have 550 time machines",
+        "condition": 550,
+        "achievementType": "Having",
+        "type": "timeMachine",
+        "acquired": false
+      },
+      {
+        "id": 335,
+        "name": "Back already?",
+        "description": "Have 600 time machines",
+        "condition": 600,
+        "achievementType": "Having",
+        "type": "timeMachine",
+        "acquired": false
+      },
+      {
+        "id": 336,
+        "name": "But the future refused to change",
+        "description": "Have 650 time machines",
+        "condition": 650,
+        "achievementType": "Having",
+        "type": "timeMachine",
+        "acquired": false
+      },
+      {
+        "id": 337,
+        "name": "I only meant to stay awhile",
+        "description": "Have 700 time machines",
+        "condition": 700,
+        "achievementType": "Having",
+        "type": "timeMachine",
+        "acquired": false
+      },
+      {
+        "id": 338,
+        "name": "Spacetime jigamaroo",
+        "description": "Make 100 sextillion cookies just from time machines.",
+        "condition": 1e23,
+        "achievementType": "Baking",
+        "type": "timeMachine",
+        "acquired": false
+      },
+      {
+        "id": 339,
+        "name": "Be kind, rewind",
+        "description": "Make 1 nonillion cookies just from time machines.",
+        "condition": 1e30,
+        "achievementType": "Baking",
+        "type": "timeMachine",
+        "acquired": false
+      },
+      {
+        "id": 340,
+        "name": "Déjà vu",
+        "description": "\tMake 10 undecillion cookies just from time machines.",
+        "condition": 1e37,
+        "achievementType": "Baking",
+        "type": "timeMachine",
+        "acquired": false
+      }
+    ]
+  },
+  "antimatterCondenser": {
+    "structure": 20,
+    "structureCost": { "cookies": 2782311356800835 },
+    "lifeTimeCookiesBuilding": { "cookies": 164424817674035260 },
+    "antimatterCondenserUpgrades": [
+      { "id": "1", "acquired": true },
+      { "id": "2", "acquired": true },
+      { "id": "3", "acquired": false },
+      { "id": "4", "acquired": false },
+      { "id": "5", "acquired": false },
+      { "id": "6", "acquired": false },
+      { "id": "7", "acquired": false },
+      { "id": "8", "acquired": false },
+      { "id": "9", "acquired": false },
+      { "id": "10", "acquired": false },
+      { "id": "11", "acquired": false },
+      { "id": "12", "acquired": false },
+      { "id": "13", "acquired": false },
+      { "id": "14", "acquired": false },
+      { "id": "15", "acquired": false }
+    ],
+    "antimatterCondenserAchievements": [
+      {
+        "id": 341,
+        "name": "Antibatter",
+        "description": "Have 1 antimatter condenser",
+        "condition": 1,
+        "achievementType": "Having",
+        "type": "antimatterCondenser",
+        "acquired": true
+      },
+      {
+        "id": 342,
+        "name": "Quirky quarks",
+        "description": "Have 50 antimatter condensers",
+        "condition": 50,
+        "achievementType": "Having",
+        "type": "antimatterCondenser",
+        "acquired": false
+      },
+      {
+        "id": 343,
+        "name": "It does matter!",
+        "description": "Have 100 antimatter condensers",
+        "condition": 100,
+        "achievementType": "Having",
+        "type": "antimatterCondenser",
+        "acquired": false
+      },
+      {
+        "id": 344,
+        "name": "Molecular maestro",
+        "description": "Have 150 antimatter condensers",
+        "condition": 150,
+        "achievementType": "Having",
+        "type": "antimatterCondenser",
+        "acquired": false
+      },
+      {
+        "id": 345,
+        "name": "Walk the planck",
+        "description": "Have 200 antimatter condensers",
+        "condition": 200,
+        "achievementType": "Having",
+        "type": "antimatterCondenser",
+        "acquired": false
+      },
+      {
+        "id": 346,
+        "name": "Microcosm",
+        "description": "Have 250 antimatter condensers",
+        "condition": 250,
+        "achievementType": "Having",
+        "type": "antimatterCondenser",
+        "acquired": false
+      },
+      {
+        "id": 347,
+        "name": "Scientists baffled everywhere",
+        "description": "Have 300 antimatter condensers",
+        "condition": 300,
+        "achievementType": "Having",
+        "type": "antimatterCondenser",
+        "acquired": false
+      },
+      {
+        "id": 348,
+        "name": "Exotic matter",
+        "description": "Have 350 antimatter condensers",
+        "condition": 350,
+        "achievementType": "Having",
+        "type": "antimatterCondenser",
+        "acquired": false
+      },
+      {
+        "id": 349,
+        "name": "Downsizing",
+        "description": "Have 400 antimatter condensers",
+        "condition": 400,
+        "achievementType": "Having",
+        "type": "antimatterCondenser",
+        "acquired": false
+      },
+      {
+        "id": 350,
+        "name": "A matter of perspective",
+        "description": "Have 450 antimatter condensers",
+        "condition": 450,
+        "achievementType": "Having",
+        "type": "antimatterCondenser",
+        "acquired": false
+      },
+      {
+        "id": 351,
+        "name": "What a concept",
+        "description": "Have 500 antimatter condensers",
+        "condition": 500,
+        "achievementType": "Having",
+        "type": "antimatterCondenser",
+        "acquired": false
+      },
+      {
+        "id": 352,
+        "name": "Particular tastes",
+        "description": "Have 550 antimatter condensers",
+        "condition": 550,
+        "achievementType": "Having",
+        "type": "antimatterCondenser",
+        "acquired": false
+      },
+      {
+        "id": 353,
+        "name": "Nuclear throne",
+        "description": "Have 600 antimatter condensers",
+        "condition": 600,
+        "achievementType": "Having",
+        "type": "antimatterCondenser",
+        "acquired": false
+      },
+      {
+        "id": 354,
+        "name": "What;s the dark matter with you?",
+        "description": "Have 650 antimatter condensers",
+        "condition": 650,
+        "achievementType": "Having",
+        "type": "antimatterCondenser",
+        "acquired": false
+      },
+      {
+        "id": 355,
+        "name": "Not 20 Years away forever",
+        "description": "Have 700 antimatter condensers",
+        "condition": 700,
+        "achievementType": "Having",
+        "type": "antimatterCondenser",
+        "acquired": false
+      },
+      {
+        "id": 356,
+        "name": "Supermassive",
+        "description": "Make 1 septillion cookies just from antimatter condensers.",
+        "condition": 1e24,
+        "achievementType": "Baking",
+        "type": "antimatterCondenser",
+        "acquired": false
+      },
+      {
+        "id": 357,
+        "name": "Infinitesimal",
+        "description": "Make 10 nonillion cookies just from antimatter condensers.",
+        "condition": 1e31,
+        "achievementType": "Baking",
+        "type": "antimatterCondenser",
+        "acquired": false
+      },
+      {
+        "id": 358,
+        "name": "Power of ten",
+        "description": "\tMake 100 undecillion cookies just from antimatter condensers.",
+        "condition": 1e38,
+        "achievementType": "Baking",
+        "type": "antimatterCondenser",
+        "acquired": false
+      },
+      {
+        "id": 359,
+        "name": "TODO",
+        "description": "TODO",
+        "condition": 1e96,
+        "achievementType": "Baking",
+        "type": "antimatterCondenser",
+        "acquired": false
+      }
+    ]
+  },
+  "prism": {
+    "structure": 15,
+    "structureCost": { "cookies": 17087829421240876 },
+    "lifeTimeCookiesBuilding": { "cookies": 416558675437026560 },
+    "prismUpgrades": [
+      { "id": "1", "acquired": true },
+      { "id": "2", "acquired": true },
+      { "id": "3", "acquired": false },
+      { "id": "4", "acquired": false },
+      { "id": "5", "acquired": false },
+      { "id": "6", "acquired": false },
+      { "id": "7", "acquired": false },
+      { "id": "8", "acquired": false },
+      { "id": "9", "acquired": false },
+      { "id": "10", "acquired": false },
+      { "id": "11", "acquired": false },
+      { "id": "12", "acquired": false },
+      { "id": "13", "acquired": false },
+      { "id": "14", "acquired": false },
+      { "id": "15", "acquired": false }
+    ],
+    "prismAchievements": [
+      {
+        "id": 360,
+        "name": "Lone photon",
+        "description": "Have 1 prism",
+        "condition": 1,
+        "achievementType": "Having",
+        "type": "prism",
+        "acquired": true
+      },
+      {
+        "id": 361,
+        "name": "Dazzling glimmer",
+        "description": "Have 50 prisms",
+        "condition": 50,
+        "achievementType": "Having",
+        "type": "prism",
+        "acquired": false
+      },
+      {
+        "id": 362,
+        "name": "Blinding flash",
+        "description": "Have 100 prisms",
+        "condition": 100,
+        "achievementType": "Having",
+        "type": "prism",
+        "acquired": false
+      },
+      {
+        "id": 363,
+        "name": "Unending glow",
+        "description": "Have 150 prisms",
+        "condition": 150,
+        "achievementType": "Having",
+        "type": "prism",
+        "acquired": false
+      },
+      {
+        "id": 364,
+        "name": "Rise and shine",
+        "description": "Have 200 prisms",
+        "condition": 200,
+        "achievementType": "Having",
+        "type": "prism",
+        "acquired": false
+      },
+      {
+        "id": 365,
+        "name": "Bright future",
+        "description": "Have 250 prisms",
+        "condition": 250,
+        "achievementType": "Having",
+        "type": "prism",
+        "acquired": false
+      },
+      {
+        "id": 366,
+        "name": "Harmony of the spheres",
+        "description": "Have 300 prisms",
+        "condition": 300,
+        "achievementType": "Having",
+        "type": "prism",
+        "acquired": false
+      },
+      {
+        "id": 367,
+        "name": "At the end of the tunnel",
+        "description": "Have 350 prisms",
+        "condition": 350,
+        "achievementType": "Having",
+        "type": "prism",
+        "acquired": false
+      },
+      {
+        "id": 368,
+        "name": "My eyes",
+        "description": "Have 400 prisms",
+        "condition": 400,
+        "achievementType": "Having",
+        "type": "prism",
+        "acquired": false
+      },
+      {
+        "id": 369,
+        "name": "Optical illusion",
+        "description": "Have 450 prisms",
+        "condition": 450,
+        "achievementType": "Having",
+        "type": "prism",
+        "acquired": false
+      },
+      {
+        "id": 370,
+        "name": "You'll never shine if you don't glow",
+        "description": "Have 500 prisms",
+        "condition": 500,
+        "achievementType": "Having",
+        "type": "prism",
+        "acquired": false
+      },
+      {
+        "id": 371,
+        "name": " A light snack",
+        "description": "Have 550 prisms",
+        "condition": 550,
+        "achievementType": "Having",
+        "type": "prism",
+        "acquired": false
+      },
+      {
+        "id": 372,
+        "name": "Making light of the situation",
+        "description": "Have 600 prisms",
+        "condition": 600,
+        "achievementType": "Having",
+        "type": "prism",
+        "acquired": false
+      },
+      {
+        "id": 373,
+        "name": "Enlightenment",
+        "description": "Have 650 prisms",
+        "condition": 650,
+        "achievementType": "Having",
+        "type": "prism",
+        "acquired": false
+      },
+      {
+        "id": 374,
+        "name": "Bright side of the moon",
+        "description": "Have 700 prisms",
+        "condition": 700,
+        "achievementType": "Having",
+        "type": "prism",
+        "acquired": false
+      },
+      {
+        "id": 375,
+        "name": "Praise the sun",
+        "description": "Make 10 septillion cookies just from prisms.",
+        "condition": 1e25,
+        "achievementType": "Baking",
+        "type": "prism",
+        "acquired": false
+      },
+      {
+        "id": 376,
+        "name": "A still more glorious dawn awaits",
+        "description": "Make 100 nonillion cookies just from prisms.",
+        "condition": 1e32,
+        "achievementType": "Baking",
+        "type": "prism",
+        "acquired": false
+      },
+      {
+        "id": 377,
+        "name": "Now the dark days are gone",
+        "description": "Make 1 duodecillion cookies just from prisms.",
+        "condition": 1e39,
+        "achievementType": "Baking",
+        "type": "prism",
+        "acquired": false
+      },
+      {
+        "id": 378,
+        "name": "Todo",
+        "description": "Todo",
+        "condition": 1e96,
+        "achievementType": "Baking",
+        "type": "prism",
+        "acquired": false
+      }
+    ]
+  },
+  "chancemaker": {
+    "structure": 7,
+    "structureCost": { "cookies": 69160516892187464 },
+    "lifeTimeCookiesBuilding": { "cookies": 350009617682632640 },
+    "chancemakerUpgrades": [
+      { "id": "1200", "acquired": false },
+      { "id": "1201", "acquired": false },
+      { "id": "1202", "acquired": false },
+      { "id": "1203", "acquired": false },
+      { "id": "1204", "acquired": false },
+      { "id": "1205", "acquired": false },
+      { "id": "1206", "acquired": false },
+      { "id": "1207", "acquired": false },
+      { "id": "1208", "acquired": false },
+      { "id": "1209", "acquired": false },
+      { "id": "1210", "acquired": false },
+      { "id": "1211", "acquired": false },
+      { "id": "1212", "acquired": false },
+      { "id": "1213", "acquired": false },
+      { "id": "1214", "acquired": false }
+    ],
+    "chancemakerAchievements": [
+      {
+        "id": 379,
+        "name": "Lucked out",
+        "description": "Have 1 chancemaker",
+        "condition": 1,
+        "achievementType": "Having",
+        "type": "chancemaker",
+        "acquired": true
+      },
+      {
+        "id": 380,
+        "name": "What are the odds",
+        "description": "Have 50 chancemakers",
+        "condition": 50,
+        "achievementType": "Having",
+        "type": "chancemaker",
+        "acquired": false
+      },
+      {
+        "id": 381,
+        "name": "Grandma needs a new pair of shoes",
+        "description": "Have 100 chancemakers",
+        "condition": 100,
+        "achievementType": "Having",
+        "type": "chancemaker",
+        "acquired": false
+      },
+      {
+        "id": 382,
+        "name": "Million to one shot",
+        "description": "Have 150 chancemakers",
+        "condition": 150,
+        "achievementType": "Having",
+        "type": "chancemaker",
+        "acquired": false
+      },
+      {
+        "id": 383,
+        "name": "As luck would have it",
+        "description": "Have 200 chancemakers",
+        "condition": 200,
+        "achievementType": "Having",
+        "type": "chancemaker",
+        "acquired": false
+      },
+      {
+        "id": 384,
+        "name": "Ever in your favor",
+        "description": "Have 250 chancemakers",
+        "condition": 250,
+        "achievementType": "Having",
+        "type": "chancemaker",
+        "acquired": false
+      },
+      {
+        "id": 385,
+        "name": "Be a lady",
+        "description": "Have 300 chancemakers",
+        "condition": 300,
+        "achievementType": "Having",
+        "type": "chancemaker",
+        "acquired": false
+      },
+      {
+        "id": 386,
+        "name": "Dicey business",
+        "description": "Have 350 chancemakers",
+        "condition": 350,
+        "achievementType": "Having",
+        "type": "chancemaker",
+        "acquired": false
+      },
+      {
+        "id": 387,
+        "name": "Maybe a chance in hell, actually",
+        "description": "Have 400 chancemakers",
+        "condition": 400,
+        "achievementType": "Having",
+        "type": "chancemaker",
+        "acquired": false
+      },
+      {
+        "id": 388,
+        "name": "Jackpot",
+        "description": "Have 450 chancemakers",
+        "condition": 450,
+        "achievementType": "Having",
+        "type": "chancemaker",
+        "acquired": false
+      },
+      {
+        "id": 389,
+        "name": "You'll never know if you don't go",
+        "description": "Have 500 chancemakers",
+        "condition": 500,
+        "achievementType": "Having",
+        "type": "chancemaker",
+        "acquired": false
+      },
+      {
+        "id": 390,
+        "name": "Tempting fate",
+        "description": "Have 550 chancemakers",
+        "condition": 550,
+        "achievementType": "Having",
+        "type": "chancemaker",
+        "acquired": false
+      },
+      {
+        "id": 391,
+        "name": "Flip a cookie. Chips, i win. Crust, you lose.",
+        "description": "Have 600 chancemakers",
+        "condition": 600,
+        "achievementType": "Having",
+        "type": "chancemaker",
+        "acquired": false
+      },
+      {
+        "id": 392,
+        "name": "Never tell me the odds",
+        "description": "Have 650 chancemakers",
+        "condition": 650,
+        "achievementType": "Having",
+        "type": "chancemaker",
+        "acquired": false
+      },
+      {
+        "id": 393,
+        "name": "Riding the Mersenne twister",
+        "description": "Have 700 chancemakers",
+        "condition": 700,
+        "achievementType": "Having",
+        "type": "chancemaker",
+        "acquired": false
+      },
+      {
+        "id": 394,
+        "name": "Fingers crossed",
+        "description": "Make 100 septillion cookies just from chancemakers.",
+        "condition": 1e26,
+        "achievementType": "Baking",
+        "type": "chancemaker",
+        "acquired": false
+      },
+      {
+        "id": 395,
+        "name": "Just a statistic",
+        "description": "Make 1 decillion cookies just from chancemakers.",
+        "condition": 1e33,
+        "achievementType": "Baking",
+        "type": "chancemaker",
+        "acquired": false
+      },
+      {
+        "id": 396,
+        "name": "Murphy's wild guess",
+        "description": "Make 10 duodecillion cookies just from chancemakers.",
+        "condition": 1e42,
+        "achievementType": "Baking",
+        "type": "chancemaker",
+        "acquired": false
+      },
+      {
+        "id": 397,
+        "name": "TODO",
+        "description": "TODO",
+        "condition": 1e96,
+        "achievementType": "Baking",
+        "type": "chancemaker",
+        "acquired": false
+      }
+    ]
+  },
+  "fractalEngine": {
+    "structure": 0,
+    "structureCost": { "cookies": 310000000000000000 },
+    "lifeTimeCookiesBuilding": { "cookies": 0 },
+    "fractalEngineUpgrades": [
+      { "id": "1300", "acquired": false },
+      { "id": "1301", "acquired": false },
+      { "id": "1302", "acquired": false },
+      { "id": "1303", "acquired": false },
+      { "id": "1304", "acquired": false },
+      { "id": "1305", "acquired": false },
+      { "id": "1306", "acquired": false },
+      { "id": "1307", "acquired": false },
+      { "id": "1308", "acquired": false },
+      { "id": "1309", "acquired": false },
+      { "id": "1310", "acquired": false },
+      { "id": "1311", "acquired": false },
+      { "id": "1312", "acquired": false },
+      { "id": "1313", "acquired": false },
+      { "id": "1314", "acquired": false }
+    ],
+    "fractalEngineAchievements": [
+      {
+        "id": 398,
+        "name": "Self-contained",
+        "description": "Have 1 Fractal Engine",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 1,
+        "type": "fractalEngine"
+      },
+      {
+        "id": 399,
+        "name": "Threw you for a loop",
+        "description": "Have 50 Fractal Engines",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 50,
+        "type": "fractalEngine"
+      },
+      {
+        "id": 400,
+        "name": "The sum of its parts",
+        "description": "Have 100 Fractal Engines",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 100,
+        "type": "fractalEngine"
+      },
+      {
+        "id": 401,
+        "name": "Bears repeating",
+        "description": "Have 150 Fractal Engines",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 150,
+        "type": "fractalEngine"
+      },
+      {
+        "id": 402,
+        "name": "More of the same",
+        "description": "Have 200 Fractal Engines",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 200,
+        "type": "fractalEngine"
+      },
+      {
+        "id": 403,
+        "name": "Last recurse",
+        "description": "Have 250 Fractal Engines",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 250,
+        "type": "fractalEngine"
+      },
+      {
+        "id": 404,
+        "name": "Out of one, many",
+        "description": "Have 300 Fractal Engines",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 300,
+        "type": "fractalEngine"
+      },
+      {
+        "id": 405,
+        "name": "An example of recursion",
+        "description": "Have 350 Fractal Engines",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 350,
+        "type": "fractalEngine"
+      },
+      {
+        "id": 406,
+        "name": "For more information on this achievement, please refer to its title",
+        "description": "Have 400 Fractal Engines",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 400,
+        "type": "fractalEngine"
+      },
+      {
+        "id": 407,
+        "name": "I'm so meta, even this achievement",
+        "description": "Have 450 Fractal Engines",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 450,
+        "type": "fractalEngine"
+      },
+      {
+        "id": 408,
+        "name": "Never got bored",
+        "description": "Have 500 Fractal Engines",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 500,
+        "type": "fractalEngine"
+      },
+      {
+        "id": 409,
+        "name": "Tautological",
+        "description": "Have 550 Fractal Engines",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 550,
+        "type": "fractalEngine"
+      },
+      {
+        "id": 410,
+        "name": "In and of itself",
+        "description": "Have 600 Fractal Engines",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 600,
+        "type": "fractalEngine"
+      },
+      {
+        "id": 411,
+        "name": "Blowing an Apollonian gasket",
+        "description": "Have 650 Fractal Engines",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 650,
+        "type": "fractalEngine"
+      },
+      {
+        "id": 412,
+        "name": "Divide and conquer",
+        "description": "Have 700 Fractal Engines",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 700,
+        "type": "fractalEngine"
+      },
+      {
+        "id": 413,
+        "name": "The needs of the many",
+        "description": "Make 1 octillion cookies just from fractal engines.",
+        "achievementType": "Baking",
+        "acquired": false,
+        "condition": 1e27,
+        "type": "fractalEngine"
+      },
+      {
+        "id": 414,
+        "name": "Eating its own",
+        "description": "Make 10 decillion cookies just from fractal engines.",
+        "achievementType": "Baking",
+        "acquired": false,
+        "condition": 1e34,
+        "type": "fractalEngine"
+      },
+      {
+        "id": 415,
+        "name": "We must go deeper",
+        "description": "Make 100 duodecillion cookies just from fractal engines.",
+        "achievementType": "Baking",
+        "acquired": false,
+        "condition": 1e41,
+        "type": "fractalEngine"
+      },
+      {
+        "id": 416,
+        "name": "TODO",
+        "description": "TODO",
+        "achievementType": "Baking",
+        "acquired": false,
+        "condition": 1e104,
+        "type": "fractalEngine"
+      }
+    ]
+  },
+  "javascriptConsole": {
+    "structure": 0,
+    "structureCost": { "cookies": 71000000000000000000 },
+    "lifeTimeCookiesBuilding": { "cookies": 0 },
+    "javascriptConsoleUpgrades": [
+      { "id": "1400", "acquired": false },
+      { "id": "1401", "acquired": false },
+      { "id": "1402", "acquired": false },
+      { "id": "1403", "acquired": false },
+      { "id": "1404", "acquired": false },
+      { "id": "1405", "acquired": false },
+      { "id": "1406", "acquired": false },
+      { "id": "1407", "acquired": false },
+      { "id": "1408", "acquired": false },
+      { "id": "1409", "acquired": false },
+      { "id": "1410", "acquired": false },
+      { "id": "1411", "acquired": false },
+      { "id": "1412", "acquired": false },
+      { "id": "1413", "acquired": false },
+      { "id": "1414", "acquired": false }
+    ],
+    "javascriptConsoleAchievements": [
+      {
+        "id": 416,
+        "name": "F12",
+        "description": "Have 1 Javascript Console",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 1,
+        "type": "javascriptConsole"
+      },
+      {
+        "id": 417,
+        "name": "Variable success",
+        "description": "Have 50 Javascript Consoles",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 50,
+        "type": "javascriptConsole"
+      },
+      {
+        "id": 418,
+        "name": "No comments",
+        "description": "Have 100 Javascript Consoles",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 100,
+        "type": "javascriptConsole"
+      },
+      {
+        "id": 419,
+        "name": "Up to code",
+        "description": "Have 150 Javascript Consoles",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 150,
+        "type": "javascriptConsole"
+      },
+      {
+        "id": 420,
+        "name": "Works on my machine",
+        "description": "Have 200 Javascript Consoles",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 200,
+        "type": "javascriptConsole"
+      },
+      {
+        "id": 421,
+        "name": "Technical debt",
+        "description": "Have 250 Javascript Consoles",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 250,
+        "type": "javascriptConsole"
+      },
+      {
+        "id": 422,
+        "name": "Mind your language",
+        "description": "Have 300 Javascript Consoles",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 300,
+        "type": "javascriptConsole"
+      },
+      {
+        "id": 423,
+        "name": "Inconsolable",
+        "description": "Have 350 Javascript Consoles",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 350,
+        "type": "javascriptConsole"
+      },
+      {
+        "id": 424,
+        "name": "Closure",
+        "description": "Have 400 Javascript Consoles",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 400,
+        "type": "javascriptConsole"
+      },
+      {
+        "id": 425,
+        "name": "Dude what if we're all living in a simulation like what if we're all just code on a computer somewhere",
+        "description": "Have 450 Javascript Consoles",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 450,
+        "type": "javascriptConsole"
+      },
+      {
+        "id": 426,
+        "name": "Taking the back streets",
+        "description": "Have 500 Javascript Consoles",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 500,
+        "type": "javascriptConsole"
+      },
+      {
+        "id": 427,
+        "name": "Curly braces",
+        "description": "Have 550 Javascript Consoles",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 550,
+        "type": "javascriptConsole"
+      },
+      {
+        "id": 428,
+        "name": "Duck typing",
+        "description": "Have 600 Javascript Consoles",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 600,
+        "type": "javascriptConsole"
+      },
+      {
+        "id": 429,
+        "name": "Glucosmium javascript console\tGet with the program",
+        "description": "Have 650 Javascript Consoles",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 650,
+        "type": "javascriptConsole"
+      },
+      {
+        "id": 430,
+        "name": "Pebcakes",
+        "description": "Have 700 Javascript Consoles",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 700,
+        "type": "javascriptConsole"
+      },
+      {
+        "id": 431,
+        "name": "Inherited prototype",
+        "description": "Make 10 octillion cookies just from javascript consoles.",
+        "achievementType": "Baking",
+        "acquired": false,
+        "condition": 1e28,
+        "type": "javascriptConsole"
+      },
+      {
+        "id": 432,
+        "name": "A model of document object",
+        "description": "Make 100 decillion cookies just from javascript consoles.",
+        "achievementType": "Baking",
+        "acquired": false,
+        "condition": 1e35,
+        "type": "javascriptConsole"
+      },
+      {
+        "id": 433,
+        "name": "First-class citizen",
+        "description": "Make 1 tredecillion cookies just from javascript consoles.",
+        "achievementType": "Baking",
+        "acquired": false,
+        "condition": 1e42,
+        "type": "javascriptConsole"
+      },
+      {
+        "id": 434,
+        "name": "TODO",
+        "description": "TODO",
+        "achievementType": "Baking",
+        "acquired": false,
+        "condition": 1e105,
+        "type": "javascriptConsole"
+      }
+    ]
+  },
+  "idleverse": {
+    "structure": 0,
+    "structureCost": { "cookies": 1.2e21 },
+    "lifeTimeCookiesBuilding": { "cookies": 0 },
+    "idleverseUpgrades": [
+      { "id": "1500", "acquired": false },
+      { "id": "1501", "acquired": false },
+      { "id": "1502", "acquired": false },
+      { "id": "1503", "acquired": false },
+      { "id": "1504", "acquired": false },
+      { "id": "1505", "acquired": false },
+      { "id": "1506", "acquired": false },
+      { "id": "1507", "acquired": false },
+      { "id": "1508", "acquired": false },
+      { "id": "1509", "acquired": false },
+      { "id": "1510", "acquired": false },
+      { "id": "1511", "acquired": false },
+      { "id": "1512", "acquired": false },
+      { "id": "1513", "acquired": false },
+      { "id": "1514", "acquired": false }
+    ],
+    "idleverseAchievements": [
+      {
+        "id": 435,
+        "name": "They'll never know what hit them",
+        "description": "Have 1 Idle Verse",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 1,
+        "type": "idleverse"
+      },
+      {
+        "id": 436,
+        "name": "Well-versed",
+        "description": "Have 50 Idle Verses",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 50,
+        "type": "idleverse"
+      },
+      {
+        "id": 437,
+        "name": "Ripe for the picking",
+        "description": "Have 100 Idle Verses",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 100,
+        "type": "idleverse"
+      },
+      {
+        "id": 438,
+        "name": "Unreal",
+        "description": "Have 150 Idle Verses",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 150,
+        "type": "idleverse"
+      },
+      {
+        "id": 439,
+        "name": "Once you've seen one",
+        "description": "Have 200 Idle Verses",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 200,
+        "type": "idleverse"
+      },
+      {
+        "id": 440,
+        "name": "Spoils and plunder",
+        "description": "Have 250 Idle Verses",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 250,
+        "type": "idleverse"
+      },
+      {
+        "id": 441,
+        "name": "Nobody exists on purpose, nobody belongs anywhere",
+        "description": "Have 300 Idle Verses",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 300,
+        "type": "idleverse"
+      },
+      {
+        "id": 442,
+        "name": "Hyperspace expressway",
+        "description": "Have 350 Idle Verses",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 350,
+        "type": "idleverse"
+      },
+      {
+        "id": 443,
+        "name": "Versatile",
+        "description": "Have 400 Idle Verses",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 400,
+        "type": "idleverse"
+      },
+      {
+        "id": 444,
+        "name": "You are inevitable",
+        "description": "Have 450 Idle Verses",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 450,
+        "type": "idleverse"
+      },
+      {
+        "id": 445,
+        "name": "Away from this place",
+        "description": "Have 500 Idle Verses",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 500,
+        "type": "idleverse"
+      },
+      {
+        "id": 446,
+        "name": "Everywhere at once",
+        "description": "Have 550 Idle Verses",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 550,
+        "type": "idleverse"
+      },
+      {
+        "id": 447,
+        "name": "Reject reality, substitute your own",
+        "description": "Have 600 Idle Verses",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 600,
+        "type": "idleverse"
+      },
+      {
+        "id": 448,
+        "name": "Lost your cosmic marbles",
+        "description": "Have 650 Idle Verses",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 650,
+        "type": "idleverse"
+      },
+      {
+        "id": 449,
+        "name": "Greener on the other side",
+        "description": "Have 700 Idle Verses",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 700,
+        "type": "idleverse"
+      },
+      {
+        "id": 450,
+        "name": "Fringe",
+        "description": "Make 100 octillion cookies just from idleverses.",
+        "achievementType": "Baking",
+        "acquired": false,
+        "condition": 1e29,
+        "type": "idleverse"
+      },
+      {
+        "id": 451,
+        "name": "Coherence",
+        "description": "Make 1 undecillion cookies just from idleverses.",
+        "achievementType": "Baking",
+        "acquired": false,
+        "condition": 1e36,
+        "type": "idleverse"
+      },
+      {
+        "id": 452,
+        "name": "Earth-616",
+        "description": "Make 10 tredecillion cookies just from idleverses.",
+        "achievementType": "Baking",
+        "acquired": false,
+        "condition": 1e43,
+        "type": "idleverse"
+      },
+      {
+        "id": 453,
+        "name": "TODO",
+        "description": "TODO",
+        "achievementType": "Baking",
+        "acquired": false,
+        "condition": 1e106,
+        "type": "idleverse"
+      }
+    ]
+  },
+  "cortexBaker": {
+    "structure": 0,
+    "structureCost": { "cookies": 1.9e24 },
+    "lifeTimeCookiesBuilding": { "cookies": 0 },
+    "cortexBakerUpgrades": [
+      { "id": "1600", "acquired": false },
+      { "id": "1601", "acquired": false },
+      { "id": "1602", "acquired": false },
+      { "id": "1603", "acquired": false },
+      { "id": "1604", "acquired": false },
+      { "id": "1605", "acquired": false },
+      { "id": "1606", "acquired": false },
+      { "id": "1607", "acquired": false },
+      { "id": "1608", "acquired": false },
+      { "id": "1609", "acquired": false },
+      { "id": "1610", "acquired": false },
+      { "id": "1611", "acquired": false },
+      { "id": "1612", "acquired": false },
+      { "id": "1613", "acquired": false },
+      { "id": "1614", "acquired": false }
+    ],
+    "cortexBakerAchievements": [
+      {
+        "id": 454,
+        "name": "It's big brain time",
+        "description": "Have 1 cortex bakers",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 1,
+        "type": "cortexBaker"
+      },
+      {
+        "id": 455,
+        "name": "Just my imagination",
+        "description": "Have 50 cortex bakers",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 50,
+        "type": "cortexBaker"
+      },
+      {
+        "id": 456,
+        "name": "Now there's an idea",
+        "description": "Have 100 cortex bakers",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 100,
+        "type": "cortexBaker"
+      },
+      {
+        "id": 457,
+        "name": "The organ that named itself",
+        "description": "Have 150 cortex bakers",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 150,
+        "type": "cortexBaker"
+      },
+      {
+        "id": 458,
+        "name": "Gyrification",
+        "description": "Have 200 cortex bakers",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 200,
+        "type": "cortexBaker"
+      },
+      {
+        "id": 459,
+        "name": "A trademarked portmanteau of 'imagination' and 'engineering'",
+        "description": "Have 250 cortex bakers",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 250,
+        "type": "cortexBaker"
+      },
+      {
+        "id": 460,
+        "name": "Mindfulness",
+        "description": "Have 300 cortex bakers",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 300,
+        "type": "cortexBaker"
+      },
+      {
+        "id": 461,
+        "name": "The 10% myth",
+        "description": "Have 350 cortex bakers",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 350,
+        "type": "cortexBaker"
+      },
+      {
+        "id": 462,
+        "name": "Don't think about it too hard",
+        "description": "Have 400 cortex bakers",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 400,
+        "type": "cortexBaker"
+      },
+      {
+        "id": 463,
+        "name": "Though fool seldom differ",
+        "description": "Have 450 cortex bakers",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 450,
+        "type": "cortexBaker"
+      },
+      {
+        "id": 464,
+        "name": "Looking kind of dumb",
+        "description": "Have 500 cortex bakers",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 500,
+        "type": "cortexBaker"
+      },
+      {
+        "id": 465,
+        "name": "A beautiful mind",
+        "description": "Have 550 cortex bakers",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 550,
+        "type": "cortexBaker"
+      },
+      {
+        "id": 466,
+        "name": "Cardinal synapses",
+        "description": "Have 600 cortex bakers",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 600,
+        "type": "cortexBaker"
+      },
+      {
+        "id": 467,
+        "name": "By will alone i set my mind in motion",
+        "description": "Have 650 cortex bakers",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 650,
+        "type": "cortexBaker"
+      },
+      {
+        "id": 468,
+        "name": "Where is my mind",
+        "description": "Have 700 cortex bakers",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 700,
+        "type": "cortexBaker"
+      },
+      {
+        "id": 469,
+        "name": "Positive thinking",
+        "description": "Make 1 nonillion cookies just from cortex bakers.",
+        "achievementType": "Baking",
+        "acquired": false,
+        "condition": 1e30,
+        "type": "cortexBaker"
+      },
+      {
+        "id": 470,
+        "name": "The thought that counts",
+        "description": "Make 10 undecillion cookies just from cortex bakers.",
+        "achievementType": "Baking",
+        "acquired": false,
+        "condition": 1e37,
+        "type": "cortexBaker"
+      },
+      {
+        "id": 471,
+        "name": "Unthinkable",
+        "description": "Make 100 tredecillion cookies just from cortex bakers.",
+        "achievementType": "Baking",
+        "acquired": false,
+        "condition": 1e44,
+        "type": "cortexBaker"
+      },
+      {
+        "id": 473,
+        "name": "TODO",
+        "description": "TODO",
+        "achievementType": "Baking",
+        "acquired": false,
+        "condition": 1e107,
+        "type": "cortexBaker"
+      }
+    ]
+  },
+  "you": {
+    "structure": 0,
+    "structureCost": { "cookies": 5.4e26 },
+    "lifeTimeCookiesBuilding": { "cookies": 0 },
+    "youUpgrades": [
+      { "id": "1700", "acquired": false },
+      { "id": "1701", "acquired": false },
+      { "id": "1702", "acquired": false },
+      { "id": "1703", "acquired": false },
+      { "id": "1704", "acquired": false },
+      { "id": "1705", "acquired": false },
+      { "id": "1706", "acquired": false },
+      { "id": "1707", "acquired": false },
+      { "id": "1708", "acquired": false },
+      { "id": "1709", "acquired": false },
+      { "id": "1710", "acquired": false },
+      { "id": "1711", "acquired": false },
+      { "id": "1712", "acquired": false },
+      { "id": "1713", "acquired": false },
+      { "id": "1714", "acquired": false }
+    ],
+    "youAchievements": [
+      {
+        "id": 474,
+        "name": "My own clone",
+        "description": "Have 1 You",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 1,
+        "type": "you"
+      },
+      {
+        "id": 475,
+        "name": "Multiplicity",
+        "description": "Have 50 Yous",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 50,
+        "type": "you"
+      },
+      {
+        "id": 476,
+        "name": "Born for this job",
+        "description": "Have 100 Yous",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 100,
+        "type": "you"
+      },
+      {
+        "id": 477,
+        "name": "Episode II",
+        "description": "Have 150 Yous",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 150,
+        "type": "you"
+      },
+      {
+        "id": 478,
+        "name": "Copy that",
+        "description": "Have 200 Yous",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 200,
+        "type": "you"
+      },
+      {
+        "id": 479,
+        "name": "Life finds a way",
+        "description": "Have 250 Yous",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 250,
+        "type": "you"
+      },
+      {
+        "id": 480,
+        "name": "Overcrowding",
+        "description": "Have 300 Yous",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 300,
+        "type": "you"
+      },
+      {
+        "id": 481,
+        "name": "Strength in numbers",
+        "description": "Have 350 Yous",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 350,
+        "type": "you"
+      },
+      {
+        "id": 482,
+        "name": "Army of me",
+        "description": "Have 400 Yous",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 400,
+        "type": "you"
+      },
+      {
+        "id": 483,
+        "name": "Know thyself",
+        "description": "Have 450 Yous",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 450,
+        "type": "you"
+      },
+      {
+        "id": 484,
+        "name": "Didn't maek sense not to live",
+        "description": "Have 500 Yous",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 500,
+        "type": "you"
+      },
+      {
+        "id": 485,
+        "name": "Genetic bottleneck",
+        "description": "Have 550 Yous",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 550,
+        "type": "you"
+      },
+      {
+        "id": 486,
+        "name": "Despite everything, it's still you",
+        "description": "Have 600 Yous",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 600,
+        "type": "you"
+      },
+      {
+        "id": 487,
+        "name": "Everyone everywhere all at once",
+        "description": "Have 650 Yous",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 650,
+        "type": "you"
+      },
+      {
+        "id": 488,
+        "name": "Introspection",
+        "description": "Have 700 Yous",
+        "achievementType": "Having",
+        "acquired": false,
+        "condition": 700,
+        "type": "you"
+      },
+      {
+        "id": 489,
+        "name": "Self-made",
+        "description": "Make 10 nonillion cookies just from You.",
+        "achievementType": "Baking",
+        "acquired": false,
+        "condition": 1e31,
+        "type": "you"
+      },
+      {
+        "id": 490,
+        "name": "Reproducible results",
+        "description": "Make 100 undecillion cookies just from You.",
+        "achievementType": "Baking",
+        "acquired": false,
+        "condition": 1e38,
+        "type": "you"
+      },
+      {
+        "id": 491,
+        "name": "That's all you",
+        "description": "Make 1 quattuordecillion cookies just from You.",
+        "achievementType": "Baking",
+        "acquired": false,
+        "condition": 1e45,
+        "type": "you"
+      }
+    ]
+  }
+}
