@@ -1180,6 +1180,84 @@ export default class Clicker {
     this.grandma.grandmaUpgrades.forEach((value, key) => {
       GrandmaUpgrades.push({ id: key, acquired: value.acquired });
     });
+    const CursorUpgrades: SavingTypeUpgrades[] = [];
+    this.autoClicker.cursorUpgrades.forEach((value, key) => {
+      CursorUpgrades.push({ id: key, acquired: value.acquired });
+    });
+    const FarmUpgrades: SavingTypeUpgrades[] = [];
+    this.farm.farmUpgrades.forEach((value, key) => {
+      FarmUpgrades.push({ id: key, acquired: value.acquired });
+    });
+    const MineUpgrades: SavingTypeUpgrades[] = [];
+    this.mine.mineUpgrades.forEach((value, key) => {
+      MineUpgrades.push({ id: key, acquired: value.acquired });
+    });
+    const FactoryUpgrades: SavingTypeUpgrades[] = [];
+    this.factory.factoryUpgrades.forEach((value, key) => {
+      FactoryUpgrades.push({ id: key, acquired: value.acquired });
+    });
+    const BankUpgrades: SavingTypeUpgrades[] = [];
+    this.bank.bankUpgrades.forEach((value, key) => {
+      BankUpgrades.push({ id: key, acquired: value.acquired });
+    });
+    const TempleUpgrades: SavingTypeUpgrades[] = [];
+    this.temple.templeUpgrades.forEach((value, key) => {
+      TempleUpgrades.push({ id: key, acquired: value.acquired });
+    });
+    const WizardTowerUpgrades: SavingTypeUpgrades[] = [];
+    this.wizardTower.WizardTowerUpgrades.forEach((value, key) => {
+      WizardTowerUpgrades.push({ id: key, acquired: value.acquired });
+    });
+    const ShipmentUpgrades: SavingTypeUpgrades[] = [];
+    this.shipment.shipmentUpgrades.forEach((value, key) => {
+      ShipmentUpgrades.push({ id: key, acquired: value.acquired });
+    });
+    const AlchemyLabUpgrades: SavingTypeUpgrades[] = [];
+    this.alchemyLab.alchemyLabUpgrades.forEach((value, key) => {
+      AlchemyLabUpgrades.push({ id: key, acquired: value.acquired });
+    });
+    const PortalUpgrades: SavingTypeUpgrades[] = [];
+    this.portal.PortalUpgrades.forEach((value, key) => {
+      PortalUpgrades.push({ id: key, acquired: value.acquired });
+    });
+    const TimeMachineUpgrades: SavingTypeUpgrades[] = [];
+    this.timeMachine.timeMachineUpgrades.forEach((value, key) => {
+      TimeMachineUpgrades.push({ id: key, acquired: value.acquired });
+    });
+    const AntimatterCondenserUpgrades: SavingTypeUpgrades[] = [];
+    this.antimatterCondenser.antimatterCondenserUpgrades.forEach(
+      (value, key) => {
+        AntimatterCondenserUpgrades.push({ id: key, acquired: value.acquired });
+      }
+    );
+    const PrismUpgrades: SavingTypeUpgrades[] = [];
+    this.prism.prismUpgrades.forEach((value, key) => {
+      PrismUpgrades.push({ id: key, acquired: value.acquired });
+    });
+    const ChanceMakerUpgrades: SavingTypeUpgrades[] = [];
+    this.chanceMaker.chanceMakerUpgrades.forEach((value, key) => {
+      ChanceMakerUpgrades.push({ id: key, acquired: value.acquired });
+    });
+    const FractalEngineUpgrades: SavingTypeUpgrades[] = [];
+    this.fractalEngine.fractalEngineUpgrades.forEach((value, key) => {
+      FractalEngineUpgrades.push({ id: key, acquired: value.acquired });
+    });
+    const JavascriptConsoleUpgrades: SavingTypeUpgrades[] = [];
+    this.javascriptConsole.javascriptConsoleUpgrades.forEach((value, key) => {
+      JavascriptConsoleUpgrades.push({ id: key, acquired: value.acquired });
+    });
+    const IdleverseUpgrades: SavingTypeUpgrades[] = [];
+    this.idleverse.idleVerse.forEach((value, key) => {
+      IdleverseUpgrades.push({ id: key, acquired: value.acquired });
+    });
+    const CortexBakerUpgrades: SavingTypeUpgrades[] = [];
+    this.cortexBaker.cortexBakerUpgrades.forEach((value, key) => {
+      CortexBakerUpgrades.push({ id: key, acquired: value.acquired });
+    });
+    const YouUpgrades: SavingTypeUpgrades[] = [];
+    this.you.youUpgrades.forEach((value, key) => {
+      YouUpgrades.push({ id: key, acquired: value.acquired });
+    });
 
     let save: SaveType = {
       resource: this.resource,
@@ -1187,9 +1265,31 @@ export default class Clicker {
       lifeTimeCookiesClicking: this.lifeTimeCookiesClick,
       multiplier: this.multiplier,
       clickingMultiplier: this.clickingMultiplier,
-      clickingAchievements: this.clickingAchievements,
-      TotalCookiesAchievements: this.TotalCookiesAchievements,
-      cookiesPerSecondAchievement: this.cookiesPerSecondAchievements,
+      clickingAchievements: this.clickingAchievements.map((achievement) => {
+        let x: SavingType = {
+          id: achievement.id,
+          acquired: achievement.acquired,
+        };
+        return x;
+      }),
+      TotalCookiesAchievements: this.TotalCookiesAchievements.map(
+        (achievement) => {
+          let x: SavingType = {
+            id: achievement.id,
+            acquired: achievement.acquired,
+          };
+          return x;
+        }
+      ),
+      cookiesPerSecondAchievement: this.cookiesPerSecondAchievements.map(
+        (achievement) => {
+          let x: SavingType = {
+            id: achievement.id,
+            acquired: achievement.acquired,
+          };
+          return x;
+        }
+      ),
       TotalBuildingsAchievements: this.TotalBuildingsAchievements.map(
         (achievement) => {
           let x: SavingType = {
@@ -1199,167 +1299,318 @@ export default class Clicker {
           return x;
         }
       ),
-      flavoredCookies: this.flavoredCookies,
-      clickingUpgrades: this.clickingUpgrades,
-      kittens: this.kittens,
+      flavoredCookies: this.flavoredCookies.map((flavoredCookie) => {
+        let x: SavingType = {
+          id: flavoredCookie.id,
+          acquired: flavoredCookie.acquired,
+        };
+        return x;
+      }),
+      clickingUpgrades: this.clickingUpgrades.map((clickingUpgrade) => {
+        let x: SavingType = {
+          id: clickingUpgrade.id,
+          acquired: clickingUpgrade.acquired,
+        };
+        return x;
+      }),
+      kittens: this.kittens.map((kitten) => {
+        let x: SavingType = {
+          id: kitten.id,
+          acquired: kitten.acquired,
+        };
+        return x;
+      }),
       grandma: {
         structure: this.grandma.structure,
         structureCost: this.grandma.structureCost,
         lifeTimeCookiesBuilding: this.grandma.lifeTimeCookiesBuilding,
         grandmaUpgrades: GrandmaUpgrades,
-        grandmaAchievements: this.grandma.grandmaAchievements,
+        grandmaAchievements: this.grandma.grandmaAchievements.map(
+          (achievement) => {
+            let x: SavingType = {
+              id: achievement.id,
+              acquired: achievement.acquired,
+            };
+            return x;
+          }
+        ),
       },
       autoClicker: {
         structure: this.autoClicker.structure,
         structureCost: this.autoClicker.structureCost,
         lifeTimeCookiesBuilding: this.autoClicker.lifeTimeCookiesBuilding,
-        cursorUpgrades: Object.fromEntries(this.autoClicker.cursorUpgrades),
-        CursorAchievements: this.autoClicker.CursorAchievements,
+        cursorUpgrades: CursorUpgrades,
+        CursorAchievements: this.autoClicker.CursorAchievements.map(
+          (achievement) => {
+            let x: SavingType = {
+              id: achievement.id,
+              acquired: achievement.acquired,
+            };
+            return x;
+          }
+        ),
       },
       farm: {
         structure: this.farm.structure,
         structureCost: this.farm.structureCost,
         lifeTimeCookiesBuilding: this.farm.lifeTimeCookiesBuilding,
-        farmUpgrades: Object.fromEntries(this.farm.farmUpgrades),
-        farmAchievements: this.farm.farmAchievements,
+        farmUpgrades: FarmUpgrades,
+        farmAchievements: this.farm.farmAchievements.map((achievement) => {
+          let x: SavingType = {
+            id: achievement.id,
+            acquired: achievement.acquired,
+          };
+          return x;
+        }),
       },
       mine: {
         structure: this.mine.structure,
         structureCost: this.mine.structureCost,
         lifeTimeCookiesBuilding: this.mine.lifeTimeCookiesBuilding,
-        mineUpgrades: Object.fromEntries(this.mine.mineUpgrades),
-        mineAchievements: this.mine.mineAchievements,
+        mineUpgrades: MineUpgrades,
+        mineAchievements: this.mine.mineAchievements.map((achievement) => {
+          let x: SavingType = {
+            id: achievement.id,
+            acquired: achievement.acquired,
+          };
+          return x;
+        }),
       },
       factory: {
         structure: this.factory.structure,
         structureCost: this.factory.structureCost,
         lifeTimeCookiesBuilding: this.factory.lifeTimeCookiesBuilding,
-        factoryUpgrades: Object.fromEntries(this.factory.factoryUpgrades),
-        factoryAchievements: this.factory.factoryAchievements,
+        factoryUpgrades: FactoryUpgrades,
+        factoryAchievements: this.factory.factoryAchievements.map(
+          (achievement) => {
+            let x: SavingType = {
+              id: achievement.id,
+              acquired: achievement.acquired,
+            };
+            return x;
+          }
+        ),
       },
       bank: {
         structure: this.bank.structure,
         structureCost: this.bank.structureCost,
         lifeTimeCookiesBuilding: this.bank.lifeTimeCookiesBuilding,
-        bankUpgrades: Object.fromEntries(this.bank.bankUpgrades),
-        bankAchievements: this.bank.bankAchievements,
+        bankUpgrades: BankUpgrades,
+        bankAchievements: this.bank.bankAchievements.map((achievement) => {
+          let x: SavingType = {
+            id: achievement.id,
+            acquired: achievement.acquired,
+          };
+          return x;
+        }),
       },
       temple: {
         structure: this.temple.structure,
         structureCost: this.temple.structureCost,
         lifeTimeCookiesBuilding: this.temple.lifeTimeCookiesBuilding,
-        templeUpgrades: Object.fromEntries(this.temple.templeUpgrades),
-        templeAchievements: this.temple.templeAchievements,
+        templeUpgrades: TempleUpgrades,
+        templeAchievements: this.temple.templeAchievements.map(
+          (achievement) => {
+            let x: SavingType = {
+              id: achievement.id,
+              acquired: achievement.acquired,
+            };
+            return x;
+          }
+        ),
       },
       wizardTower: {
         structure: this.wizardTower.structure,
         structureCost: this.wizardTower.structureCost,
         lifeTimeCookiesBuilding: this.wizardTower.lifeTimeCookiesBuilding,
-        wizardTowerUpgrades: Object.fromEntries(
-          this.wizardTower.WizardTowerUpgrades
+        wizardTowerUpgrades: WizardTowerUpgrades,
+        wizardTowerAchievements: this.wizardTower.wizardTowerAchievements.map(
+          (achievement) => {
+            let x: SavingType = {
+              id: achievement.id,
+              acquired: achievement.acquired,
+            };
+            return x;
+          }
         ),
-        wizardTowerAchievements: this.wizardTower.wizardTowerAchievements,
       },
       shipment: {
         structure: this.shipment.structure,
         structureCost: this.shipment.structureCost,
         lifeTimeCookiesBuilding: this.shipment.lifeTimeCookiesBuilding,
-        shipmentUpgrades: Object.fromEntries(this.shipment.shipmentUpgrades),
-        shipmentAchievements: this.shipment.shipmentAchievements,
+        shipmentUpgrades: ShipmentUpgrades,
+        shipmentAchievements: this.shipment.shipmentAchievements.map(
+          (achievement) => {
+            let x: SavingType = {
+              id: achievement.id,
+              acquired: achievement.acquired,
+            };
+            return x;
+          }
+        ),
       },
       alchemyLab: {
         structure: this.alchemyLab.structure,
         structureCost: this.alchemyLab.structureCost,
         lifeTimeCookiesBuilding: this.alchemyLab.lifeTimeCookiesBuilding,
-        alchemyLabUpgrades: Object.fromEntries(
-          this.alchemyLab.alchemyLabUpgrades
+        alchemyLabUpgrades: AlchemyLabUpgrades,
+        alchemyLabAchievements: this.alchemyLab.alchemyLabAchievements.map(
+          (achievement) => {
+            let x: SavingType = {
+              id: achievement.id,
+              acquired: achievement.acquired,
+            };
+            return x;
+          }
         ),
-        alchemyLabAchievements: this.alchemyLab.alchemyLabAchievements,
       },
       portal: {
         structure: this.portal.structure,
         structureCost: this.portal.structureCost,
         lifeTimeCookiesBuilding: this.portal.lifeTimeCookiesBuilding,
-        portalUpgrades: Object.fromEntries(this.portal.PortalUpgrades),
-        portalAchievements: this.portal.portalAchievements,
+        portalUpgrades: PortalUpgrades,
+        portalAchievements: this.portal.portalAchievements.map(
+          (achievement) => {
+            let x: SavingType = {
+              id: achievement.id,
+              acquired: achievement.acquired,
+            };
+            return x;
+          }
+        ),
       },
       timeMachine: {
         structure: this.timeMachine.structure,
         structureCost: this.timeMachine.structureCost,
         lifeTimeCookiesBuilding: this.timeMachine.lifeTimeCookiesBuilding,
-        timeMachineUpgrades: Object.fromEntries(
-          this.timeMachine.timeMachineUpgrades
+        timeMachineUpgrades: TimeMachineUpgrades,
+        timeMachineAchievements: this.timeMachine.timeMachineAchievements.map(
+          (achievement) => {
+            let x: SavingType = {
+              id: achievement.id,
+              acquired: achievement.acquired,
+            };
+            return x;
+          }
         ),
-        timeMachineAchievements: this.timeMachine.timeMachineAchievements,
       },
       antimatterCondenser: {
         structure: this.antimatterCondenser.structure,
         structureCost: this.antimatterCondenser.structureCost,
         lifeTimeCookiesBuilding:
           this.antimatterCondenser.lifeTimeCookiesBuilding,
-        antimatterCondenserUpgrades: Object.fromEntries(
-          this.antimatterCondenser.antimatterCondenserUpgrades
-        ),
+        antimatterCondenserUpgrades: AntimatterCondenserUpgrades,
         antimatterCondenserAchievements:
-          this.antimatterCondenser.antimatterCondenserAchievements,
+          this.antimatterCondenser.antimatterCondenserAchievements.map(
+            (achievement) => {
+              let x: SavingType = {
+                id: achievement.id,
+                acquired: achievement.acquired,
+              };
+              return x;
+            }
+          ),
       },
       prism: {
         structure: this.prism.structure,
         structureCost: this.prism.structureCost,
         lifeTimeCookiesBuilding: this.prism.lifeTimeCookiesBuilding,
-        prismUpgrades: Object.fromEntries(this.prism.prismUpgrades),
-        prismAchievements: this.prism.prismAchievements,
+        prismUpgrades: PrismUpgrades,
+        prismAchievements: this.prism.prismAchievements.map((achievement) => {
+          let x: SavingType = {
+            id: achievement.id,
+            acquired: achievement.acquired,
+          };
+          return x;
+        }),
       },
       chancemaker: {
         structure: this.chanceMaker.structure,
         structureCost: this.chanceMaker.structureCost,
         lifeTimeCookiesBuilding: this.chanceMaker.lifeTimeCookiesBuilding,
-        chancemakerUpgrades: Object.fromEntries(
-          this.chanceMaker.chanceMakerUpgrades
+        chancemakerUpgrades: ChanceMakerUpgrades,
+        chancemakerAchievements: this.chanceMaker.chanceMakerAchievements.map(
+          (achievement) => {
+            let x: SavingType = {
+              id: achievement.id,
+              acquired: achievement.acquired,
+            };
+            return x;
+          }
         ),
-        chancemakerAchievements: this.chanceMaker.chanceMakerAchievements,
       },
       fractalEngine: {
         structure: this.fractalEngine.structure,
         structureCost: this.fractalEngine.structureCost,
         lifeTimeCookiesBuilding: this.fractalEngine.lifeTimeCookiesBuilding,
-        fractalEngineUpgrades: Object.fromEntries(
-          this.fractalEngine.fractalEngineUpgrades
-        ),
-        fractalEngineAchievements: this.fractalEngine.fractalEngineAchievements,
+        fractalEngineUpgrades: FractalEngineUpgrades,
+        fractalEngineAchievements:
+          this.fractalEngine.fractalEngineAchievements.map((achievement) => {
+            let x: SavingType = {
+              id: achievement.id,
+              acquired: achievement.acquired,
+            };
+            return x;
+          }),
       },
       javascriptConsole: {
         structure: this.javascriptConsole.structure,
         structureCost: this.javascriptConsole.structureCost,
         lifeTimeCookiesBuilding: this.javascriptConsole.lifeTimeCookiesBuilding,
-        javascriptConsoleUpgrades: Object.fromEntries(
-          this.javascriptConsole.javascriptConsoleUpgrades
-        ),
+        javascriptConsoleUpgrades: JavascriptConsoleUpgrades,
         javascriptConsoleAchievements:
-          this.javascriptConsole.javascriptConsoleAchievements,
+          this.javascriptConsole.javascriptConsoleAchievements.map(
+            (achievement) => {
+              let x: SavingType = {
+                id: achievement.id,
+                acquired: achievement.acquired,
+              };
+              return x;
+            }
+          ),
       },
       idleverse: {
         structure: this.idleverse.structure,
         structureCost: this.idleverse.structureCost,
         lifeTimeCookiesBuilding: this.idleverse.lifeTimeCookiesBuilding,
-        idleverseUpgrades: Object.fromEntries(this.idleverse.idleVerse),
-        idleverseAchievements: this.idleverse.idleVerseAchievements,
+        idleverseUpgrades: IdleverseUpgrades,
+        idleverseAchievements: this.idleverse.idleVerseAchievements.map(
+          (achievement) => {
+            let x: SavingType = {
+              id: achievement.id,
+              acquired: achievement.acquired,
+            };
+            return x;
+          }
+        ),
       },
       cortexBaker: {
         structure: this.cortexBaker.structure,
         structureCost: this.cortexBaker.structureCost,
         lifeTimeCookiesBuilding: this.cortexBaker.lifeTimeCookiesBuilding,
-        cortexBakerUpgrades: Object.fromEntries(
-          this.cortexBaker.cortexBakerUpgrades
+        cortexBakerUpgrades: CortexBakerUpgrades,
+        cortexBakerAchievements: this.cortexBaker.cortexBakerAchievements.map(
+          (achievement) => {
+            let x: SavingType = {
+              id: achievement.id,
+              acquired: achievement.acquired,
+            };
+            return x;
+          }
         ),
-        cortexBakerAchievements: this.cortexBaker.cortexBakerAchievements,
       },
       you: {
         structure: this.you.structure,
         structureCost: this.you.structureCost,
         lifeTimeCookiesBuilding: this.you.lifeTimeCookiesBuilding,
-        youUpgrades: Object.fromEntries(this.you.youUpgrades),
-        youAchievements: this.you.youAchievements,
+        youUpgrades: YouUpgrades,
+        youAchievements: this.you.youAchievements.map((achievement) => {
+          let x: SavingType = {
+            id: achievement.id,
+            acquired: achievement.acquired,
+          };
+          return x;
+        }),
       },
     };
 
@@ -1376,12 +1627,43 @@ export default class Clicker {
     this.multiplier = save.multiplier ?? 100;
     this.clickingMultiplier = save.clickingMultiplier ?? 0;
     // Set Achievements
-    this.clickingAchievements =
-      save.clickingAchievements ?? ClickingAchievements;
-    this.TotalCookiesAchievements =
-      save.TotalCookiesAchievements ?? totalCookiesAchievements;
-    this.cookiesPerSecondAchievements =
-      save.cookiesPerSecondAchievement ?? cookiesPerSecondAchievements;
+    this.clickingAchievements = this.clickingAchievements.map((achievement) => {
+      if (save.clickingAchievements) {
+        save.clickingAchievements.forEach((element) => {
+          if (element.id === achievement.id) {
+            achievement.acquired = element.acquired;
+            return achievement;
+          }
+        });
+      }
+      return achievement;
+    });
+    this.TotalCookiesAchievements = this.TotalCookiesAchievements.map(
+      (achievement) => {
+        if (save.TotalCookiesAchievements) {
+          save.TotalCookiesAchievements.forEach((element) => {
+            if (element.id === achievement.id) {
+              achievement.acquired = element.acquired;
+              return achievement;
+            }
+          });
+        }
+        return achievement;
+      }
+    );
+    this.cookiesPerSecondAchievements = this.cookiesPerSecondAchievements.map(
+      (achievement) => {
+        if (save.cookiesPerSecondAchievement) {
+          save.cookiesPerSecondAchievement.forEach((element) => {
+            if (element.id === achievement.id) {
+              achievement.acquired = element.acquired;
+              return achievement;
+            }
+          });
+        }
+        return achievement;
+      }
+    );
     this.TotalBuildingsAchievements = this.TotalBuildingsAchievements.map(
       (achievement) => {
         if (save.TotalBuildingsAchievements) {
@@ -1396,9 +1678,39 @@ export default class Clicker {
       }
     );
     //Upgrade's
-    this.flavoredCookies = save.flavoredCookies ?? [...FlavoredCookies];
-    this.kittens = save.kittens ?? [...KittensUpgrades];
-    this.clickingUpgrades = save.clickingUpgrades ?? [...ClickingUpgrades];
+    this.flavoredCookies = this.flavoredCookies.map((flavoredCookie) => {
+      if (save.flavoredCookies) {
+        save.flavoredCookies.forEach((element) => {
+          if (element.id === flavoredCookie.id) {
+            flavoredCookie.acquired = element.acquired;
+            return flavoredCookie;
+          }
+        });
+      }
+      return flavoredCookie;
+    });
+    this.kittens = this.kittens.map((kitten) => {
+      if (save.kittens) {
+        save.kittens.forEach((element) => {
+          if (element.id === kitten.id) {
+            kitten.acquired = element.acquired;
+            return kitten;
+          }
+        });
+      }
+      return kitten;
+    });
+    this.clickingUpgrades = this.clickingUpgrades.map((clickingUpgrade) => {
+      if (save.clickingUpgrades) {
+        save.clickingUpgrades.forEach((element) => {
+          if (element.id === clickingUpgrade.id) {
+            clickingUpgrade.acquired = element.acquired;
+            return clickingUpgrade;
+          }
+        });
+      }
+      return clickingUpgrade;
+    });
     // Set the Grandma
     this.grandma.structureCost = save.grandma.structureCost;
     this.grandma.structure = save.grandma.structure;
@@ -1411,29 +1723,57 @@ export default class Clicker {
           element.acquired;
       });
     } else {
+      //Legacy Support
       Object.entries(save.grandma.grandmaUpgrades).forEach(([key, value]) => {
         this.grandma.grandmaUpgrades.get(key)!.acquired = value.acquired;
-        this.grandma.grandmaUpgrades.get(key)!.id = value.id;
       });
     }
 
-    // this.grandma.grandmaUpgrades = new Map(
-    //   Object.entries(save.grandma.grandmaUpgrades)
-    // ).forEach;
-    this.grandma.grandmaAchievements = save.grandma.grandmaAchievements ?? [
-      ...GrandmaAchievements,
-    ];
+    this.grandma.grandmaAchievements = this.grandma.grandmaAchievements.map(
+      (achievement) => {
+        if (save.grandma.grandmaAchievements) {
+          save.grandma.grandmaAchievements.forEach((element) => {
+            if (element.id === achievement.id) {
+              achievement.acquired = element.acquired;
+              return achievement;
+            }
+          });
+        }
+        return achievement;
+      }
+    );
     this.grandma.calculateStructureResourceGeneration1();
     // Set the Cursor
     this.autoClicker.structureCost = save.autoClicker.structureCost;
     this.autoClicker.structure = save.autoClicker.structure;
     this.autoClicker.lifeTimeCookiesBuilding = save.autoClicker
       .lifeTimeCookiesBuilding ?? { cookies: 0 };
-    this.autoClicker.cursorUpgrades = new Map(
-      Object.entries(save.autoClicker.cursorUpgrades)
-    );
-    this.autoClicker.CursorAchievements = save.autoClicker
-      .CursorAchievements ?? [...CursorAchievements];
+    if (save.autoClicker.cursorUpgrades instanceof Array) {
+      save.autoClicker.cursorUpgrades.forEach((element) => {
+        this.autoClicker.cursorUpgrades.get(element.id)!.acquired =
+          element.acquired;
+      });
+    } else {
+      //Legacy Support
+      Object.entries(save.autoClicker.cursorUpgrades).forEach(
+        ([key, value]) => {
+          this.autoClicker.cursorUpgrades.get(key)!.acquired = value.acquired;
+        }
+      );
+    }
+
+    this.autoClicker.CursorAchievements =
+      this.autoClicker.CursorAchievements.map((achievement) => {
+        if (save.autoClicker.CursorAchievements) {
+          save.autoClicker.CursorAchievements.forEach((element) => {
+            if (element.id === achievement.id) {
+              achievement.acquired = element.acquired;
+              return achievement;
+            }
+          });
+        }
+        return achievement;
+      });
     this.autoClicker.calculateStructureResourceGeneration1();
     // Set the farm
     this.farm.structureCost = save.farm.structureCost;
@@ -1441,10 +1781,29 @@ export default class Clicker {
     this.farm.lifeTimeCookiesBuilding = save.farm.lifeTimeCookiesBuilding ?? {
       cookies: 0,
     };
-    this.farm.farmUpgrades = new Map(Object.entries(save.farm.farmUpgrades));
-    this.farm.farmAchievements = save.farm.farmAchievements ?? [
-      ...FarmAchievements,
-    ];
+    if (save.farm.farmUpgrades instanceof Array) {
+      save.farm.farmUpgrades.forEach((element) => {
+        this.farm.farmUpgrades.get(element.id)!.acquired = element.acquired;
+      });
+    } else {
+      //Legacy Support
+      Object.entries(save.farm.farmUpgrades).forEach(([key, value]) => {
+        this.farm.farmUpgrades.get(key)!.acquired = value.acquired;
+      });
+    }
+    this.farm.farmAchievements = this.farm.farmAchievements.map(
+      (achievement) => {
+        if (save.farm.farmAchievements) {
+          save.farm.farmAchievements.forEach((element) => {
+            if (element.id === achievement.id) {
+              achievement.acquired = element.acquired;
+              return achievement;
+            }
+          });
+        }
+        return achievement;
+      }
+    );
     this.farm.calculateStructureResourceGeneration1();
     // Set the mine
     this.mine.structureCost = save.mine.structureCost;
@@ -1452,10 +1811,29 @@ export default class Clicker {
     this.mine.lifeTimeCookiesBuilding = save.mine.lifeTimeCookiesBuilding ?? {
       cookies: 0,
     };
-    this.mine.mineUpgrades = new Map(Object.entries(save.mine.mineUpgrades));
-    this.mine.mineAchievements = save.mine.mineAchievements ?? [
-      ...MineAchievements,
-    ];
+    if (save.mine.mineUpgrades instanceof Array) {
+      save.mine.mineUpgrades.forEach((element) => {
+        this.mine.mineUpgrades.get(element.id)!.acquired = element.acquired;
+      });
+    } else {
+      //Legacy Support
+      Object.entries(save.mine.mineUpgrades).forEach(([key, value]) => {
+        this.mine.mineUpgrades.get(key)!.acquired = value.acquired;
+      });
+    }
+    this.mine.mineAchievements = this.mine.mineAchievements.map(
+      (achievement) => {
+        if (save.mine.mineAchievements) {
+          save.mine.mineAchievements.forEach((element) => {
+            if (element.id === achievement.id) {
+              achievement.acquired = element.acquired;
+              return achievement;
+            }
+          });
+        }
+        return achievement;
+      }
+    );
     this.mine.calculateStructureResourceGeneration1();
 
     // Set the factory
@@ -1463,12 +1841,30 @@ export default class Clicker {
     this.factory.structure = save.factory.structure;
     this.factory.lifeTimeCookiesBuilding = save.factory
       .lifeTimeCookiesBuilding ?? { cookies: 0 };
-    this.factory.factoryUpgrades = new Map(
-      Object.entries(save.factory.factoryUpgrades)
+    if (save.factory.factoryUpgrades instanceof Array) {
+      save.factory.factoryUpgrades.forEach((element) => {
+        this.factory.factoryUpgrades.get(element.id)!.acquired =
+          element.acquired;
+      });
+    } else {
+      //Legacy Support
+      Object.entries(save.factory.factoryUpgrades).forEach(([key, value]) => {
+        this.factory.factoryUpgrades.get(key)!.acquired = value.acquired;
+      });
+    }
+    this.factory.factoryAchievements = this.factory.factoryAchievements.map(
+      (achievement) => {
+        if (save.factory.factoryAchievements) {
+          save.factory.factoryAchievements.forEach((element) => {
+            if (element.id === achievement.id) {
+              achievement.acquired = element.acquired;
+              return achievement;
+            }
+          });
+        }
+        return achievement;
+      }
     );
-    this.factory.factoryAchievements = save.factory.factoryAchievements ?? [
-      ...FactoryAchievements,
-    ];
     this.factory.calculateStructureResourceGeneration1();
 
     // Set the bank
@@ -1477,10 +1873,29 @@ export default class Clicker {
     this.bank.lifeTimeCookiesBuilding = save.bank.lifeTimeCookiesBuilding ?? {
       cookies: 0,
     };
-    this.bank.bankUpgrades = new Map(Object.entries(save.bank.bankUpgrades));
-    this.bank.bankAchievements = save.bank.bankAchievements ?? [
-      ...BankAchievements,
-    ];
+    if (save.bank.bankUpgrades instanceof Array) {
+      save.bank.bankUpgrades.forEach((element) => {
+        this.bank.bankUpgrades.get(element.id)!.acquired = element.acquired;
+      });
+    } else {
+      //Legacy Support
+      Object.entries(save.bank.bankUpgrades).forEach(([key, value]) => {
+        this.bank.bankUpgrades.get(key)!.acquired = value.acquired;
+      });
+    }
+    this.bank.bankAchievements = this.bank.bankAchievements.map(
+      (achievement) => {
+        if (save.bank.bankAchievements) {
+          save.bank.bankAchievements.forEach((element) => {
+            if (element.id === achievement.id) {
+              achievement.acquired = element.acquired;
+              return achievement;
+            }
+          });
+        }
+        return achievement;
+      }
+    );
     this.bank.calculateStructureResourceGeneration1();
 
     // Set the temple
@@ -1488,12 +1903,29 @@ export default class Clicker {
     this.temple.structure = save.temple.structure;
     this.temple.lifeTimeCookiesBuilding = save.temple
       .lifeTimeCookiesBuilding ?? { cookies: 0 };
-    this.temple.templeUpgrades = new Map(
-      Object.entries(save.temple.templeUpgrades)
+    if (save.temple.templeUpgrades instanceof Array) {
+      save.temple.templeUpgrades.forEach((element) => {
+        this.temple.templeUpgrades.get(element.id)!.acquired = element.acquired;
+      });
+    } else {
+      //Legacy Support
+      Object.entries(save.temple.templeUpgrades).forEach(([key, value]) => {
+        this.temple.templeUpgrades.get(key)!.acquired = value.acquired;
+      });
+    }
+    this.temple.templeAchievements = this.temple.templeAchievements.map(
+      (achievement) => {
+        if (save.temple.templeAchievements) {
+          save.temple.templeAchievements.forEach((element) => {
+            if (element.id === achievement.id) {
+              achievement.acquired = element.acquired;
+              return achievement;
+            }
+          });
+        }
+        return achievement;
+      }
     );
-    this.temple.templeAchievements = save.temple.templeAchievements ?? [
-      ...TempleAchievements,
-    ];
     this.temple.calculateStructureResourceGeneration1();
 
     // Set the wizardTower
@@ -1501,11 +1933,32 @@ export default class Clicker {
     this.wizardTower.structure = save.wizardTower.structure;
     this.wizardTower.lifeTimeCookiesBuilding = save.wizardTower
       .lifeTimeCookiesBuilding ?? { cookies: 0 };
-    this.wizardTower.WizardTowerUpgrades = new Map(
-      Object.entries(save.wizardTower.wizardTowerUpgrades)
-    );
-    this.wizardTower.wizardTowerAchievements = save.wizardTower
-      .wizardTowerAchievements ?? [...WizardTowerAchievements];
+    if (save.wizardTower.wizardTowerUpgrades instanceof Array) {
+      save.wizardTower.wizardTowerUpgrades.forEach((element) => {
+        this.wizardTower.WizardTowerUpgrades.get(element.id)!.acquired =
+          element.acquired;
+      });
+    } else {
+      //Legacy Support
+      Object.entries(save.wizardTower.wizardTowerUpgrades).forEach(
+        ([key, value]) => {
+          this.wizardTower.WizardTowerUpgrades.get(key)!.acquired =
+            value.acquired;
+        }
+      );
+    }
+    this.wizardTower.wizardTowerAchievements =
+      this.wizardTower.wizardTowerAchievements.map((achievement) => {
+        if (save.wizardTower.wizardTowerAchievements) {
+          save.wizardTower.wizardTowerAchievements.forEach((element) => {
+            if (element.id === achievement.id) {
+              achievement.acquired = element.acquired;
+              return achievement;
+            }
+          });
+        }
+        return achievement;
+      });
     this.wizardTower.calculateStructureResourceGeneration1();
 
     // Set the shipment
@@ -1513,12 +1966,30 @@ export default class Clicker {
     this.shipment.structure = save.shipment.structure;
     this.shipment.lifeTimeCookiesBuilding = save.shipment
       .lifeTimeCookiesBuilding ?? { cookies: 0 };
-    this.shipment.shipmentUpgrades = new Map(
-      Object.entries(save.shipment.shipmentUpgrades)
+    if (save.shipment.shipmentUpgrades instanceof Array) {
+      save.shipment.shipmentUpgrades.forEach((element) => {
+        this.shipment.shipmentUpgrades.get(element.id)!.acquired =
+          element.acquired;
+      });
+    } else {
+      //Legacy Support
+      Object.entries(save.shipment.shipmentUpgrades).forEach(([key, value]) => {
+        this.shipment.shipmentUpgrades.get(key)!.acquired = value.acquired;
+      });
+    }
+    this.shipment.shipmentAchievements = this.shipment.shipmentAchievements.map(
+      (achievement) => {
+        if (save.shipment.shipmentAchievements) {
+          save.shipment.shipmentAchievements.forEach((element) => {
+            if (element.id === achievement.id) {
+              achievement.acquired = element.acquired;
+              return achievement;
+            }
+          });
+        }
+        return achievement;
+      }
     );
-    this.shipment.shipmentAchievements = save.shipment.shipmentAchievements ?? [
-      ...ShipmentAchievements,
-    ];
     this.shipment.calculateStructureResourceGeneration1();
 
     // Set the alchemyLab
@@ -1526,11 +1997,32 @@ export default class Clicker {
     this.alchemyLab.structure = save.alchemyLab.structure;
     this.alchemyLab.lifeTimeCookiesBuilding = save.alchemyLab
       .lifeTimeCookiesBuilding ?? { cookies: 0 };
-    this.alchemyLab.alchemyLabUpgrades = new Map(
-      Object.entries(save.alchemyLab.alchemyLabUpgrades)
-    );
-    this.alchemyLab.alchemyLabAchievements = save.alchemyLab
-      .alchemyLabAchievements ?? [...AlchemyLabAchievements];
+    if (save.alchemyLab.alchemyLabUpgrades instanceof Array) {
+      save.alchemyLab.alchemyLabUpgrades.forEach((element) => {
+        this.alchemyLab.alchemyLabUpgrades.get(element.id)!.acquired =
+          element.acquired;
+      });
+    } else {
+      //Legacy Support
+      Object.entries(save.alchemyLab.alchemyLabUpgrades).forEach(
+        ([key, value]) => {
+          this.alchemyLab.alchemyLabUpgrades.get(key)!.acquired =
+            value.acquired;
+        }
+      );
+    }
+    this.alchemyLab.alchemyLabAchievements =
+      this.alchemyLab.alchemyLabAchievements.map((achievement) => {
+        if (save.alchemyLab.alchemyLabAchievements) {
+          save.alchemyLab.alchemyLabAchievements.forEach((element) => {
+            if (element.id === achievement.id) {
+              achievement.acquired = element.acquired;
+              return achievement;
+            }
+          });
+        }
+        return achievement;
+      });
     this.alchemyLab.calculateStructureResourceGeneration1();
 
     // Set the portal
@@ -1540,12 +2032,29 @@ export default class Clicker {
       .lifeTimeCookiesBuilding ?? {
       cookies: 0,
     };
-    this.portal.PortalUpgrades = new Map(
-      Object.entries(save.portal.portalUpgrades)
+    if (save.portal.portalUpgrades instanceof Array) {
+      save.portal.portalUpgrades.forEach((element) => {
+        this.portal.PortalUpgrades.get(element.id)!.acquired = element.acquired;
+      });
+    } else {
+      //Legacy Support
+      Object.entries(save.portal.portalUpgrades).forEach(([key, value]) => {
+        this.portal.PortalUpgrades.get(key)!.acquired = value.acquired;
+      });
+    }
+    this.portal.portalAchievements = this.portal.portalAchievements.map(
+      (achievement) => {
+        if (save.portal.portalAchievements) {
+          save.portal.portalAchievements.forEach((element) => {
+            if (element.id === achievement.id) {
+              achievement.acquired = element.acquired;
+              return achievement;
+            }
+          });
+        }
+        return achievement;
+      }
     );
-    this.portal.portalAchievements = save.portal.portalAchievements ?? [
-      ...PortalAchievements,
-    ];
     this.portal.calculateStructureResourceGeneration1();
 
     // Set the timeMachine
@@ -1553,11 +2062,32 @@ export default class Clicker {
     this.timeMachine.structure = save.timeMachine.structure;
     this.timeMachine.lifeTimeCookiesBuilding = save.timeMachine
       .lifeTimeCookiesBuilding ?? { cookies: 0 };
-    this.timeMachine.timeMachineUpgrades = new Map(
-      Object.entries(save.timeMachine.timeMachineUpgrades)
-    );
-    this.timeMachine.timeMachineAchievements = save.timeMachine
-      .timeMachineAchievements ?? [...TimeMachineAchievements];
+    if (save.timeMachine.timeMachineUpgrades instanceof Array) {
+      save.timeMachine.timeMachineUpgrades.forEach((element) => {
+        this.timeMachine.timeMachineUpgrades.get(element.id)!.acquired =
+          element.acquired;
+      });
+    } else {
+      //Legacy Support
+      Object.entries(save.timeMachine.timeMachineUpgrades).forEach(
+        ([key, value]) => {
+          this.timeMachine.timeMachineUpgrades.get(key)!.acquired =
+            value.acquired;
+        }
+      );
+    }
+    this.timeMachine.timeMachineAchievements =
+      this.timeMachine.timeMachineAchievements.map((achievement) => {
+        if (save.timeMachine.timeMachineAchievements) {
+          save.timeMachine.timeMachineAchievements.forEach((element) => {
+            if (element.id === achievement.id) {
+              achievement.acquired = element.acquired;
+              return achievement;
+            }
+          });
+        }
+        return achievement;
+      });
     this.timeMachine.calculateStructureResourceGeneration1();
 
     // Set the antimatterCondenser
@@ -1567,13 +2097,40 @@ export default class Clicker {
     this.antimatterCondenser.structure = save.antimatterCondenser.structure;
     this.antimatterCondenser.lifeTimeCookiesBuilding = save.antimatterCondenser
       .lifeTimeCookiesBuilding ?? { cookies: 0 };
-    this.antimatterCondenser.antimatterCondenserUpgrades = new Map(
-      Object.entries(save.antimatterCondenser.antimatterCondenserUpgrades)
-    );
-    this.antimatterCondenser.antimatterCondenserAchievements = save
-      .antimatterCondenser.antimatterCondenserAchievements ?? [
-      ...AntiMatterCondenserAchievements,
-    ];
+    if (save.antimatterCondenser.antimatterCondenserUpgrades instanceof Array) {
+      save.antimatterCondenser.antimatterCondenserUpgrades.forEach(
+        (element) => {
+          this.antimatterCondenser.antimatterCondenserUpgrades.get(
+            element.id
+          )!.acquired = element.acquired;
+        }
+      );
+    } else {
+      //Legacy Support
+      Object.entries(
+        save.antimatterCondenser.antimatterCondenserUpgrades
+      ).forEach(([key, value]) => {
+        this.antimatterCondenser.antimatterCondenserUpgrades.get(
+          key
+        )!.acquired = value.acquired;
+      });
+    }
+    this.antimatterCondenser.antimatterCondenserAchievements =
+      this.antimatterCondenser.antimatterCondenserAchievements.map(
+        (achievement) => {
+          if (save.antimatterCondenser.antimatterCondenserAchievements) {
+            save.antimatterCondenser.antimatterCondenserAchievements.forEach(
+              (element) => {
+                if (element.id === achievement.id) {
+                  achievement.acquired = element.acquired;
+                  return achievement;
+                }
+              }
+            );
+          }
+          return achievement;
+        }
+      );
     this.antimatterCondenser.calculateStructureResourceGeneration1();
 
     // Set the prism
@@ -1582,12 +2139,29 @@ export default class Clicker {
     this.prism.lifeTimeCookiesBuilding = save.prism.lifeTimeCookiesBuilding ?? {
       cookies: 0,
     };
-    this.prism.prismUpgrades = new Map(
-      Object.entries(save.prism.prismUpgrades)
+    if (save.prism.prismUpgrades instanceof Array) {
+      save.prism.prismUpgrades.forEach((element) => {
+        this.prism.prismUpgrades.get(element.id)!.acquired = element.acquired;
+      });
+    } else {
+      //Legacy Support
+      Object.entries(save.prism.prismUpgrades).forEach(([key, value]) => {
+        this.prism.prismUpgrades.get(key)!.acquired = value.acquired;
+      });
+    }
+    this.prism.prismAchievements = this.prism.prismAchievements.map(
+      (achievement) => {
+        if (save.prism.prismAchievements) {
+          save.prism.prismAchievements.forEach((element) => {
+            if (element.id === achievement.id) {
+              achievement.acquired = element.acquired;
+              return achievement;
+            }
+          });
+        }
+        return achievement;
+      }
     );
-    this.prism.prismAchievements = save.prism.prismAchievements ?? [
-      ...PrismAchievements,
-    ];
     this.prism.calculateStructureResourceGeneration1();
 
     // Set the chancemaker
@@ -1595,11 +2169,24 @@ export default class Clicker {
     this.chanceMaker.structure = save.chancemaker.structure;
     this.chanceMaker.lifeTimeCookiesBuilding = save.chancemaker
       .lifeTimeCookiesBuilding ?? { cookies: 0 };
-    this.chanceMaker.chanceMakerUpgrades = new Map(
-      Object.entries(save.chancemaker.chancemakerUpgrades)
-    );
-    this.chanceMaker.chanceMakerAchievements = save.chancemaker
-      .chancemakerAchievements ?? [...ChanceMakerAchievements];
+    if (save.chancemaker.chancemakerUpgrades instanceof Array) {
+      save.chancemaker.chancemakerUpgrades.forEach((element) => {
+        this.chanceMaker.chanceMakerUpgrades.get(element.id)!.acquired =
+          element.acquired;
+      });
+    }
+    this.chanceMaker.chanceMakerAchievements =
+      this.chanceMaker.chanceMakerAchievements.map((achievement) => {
+        if (save.chancemaker.chancemakerAchievements) {
+          save.chancemaker.chancemakerAchievements.forEach((element) => {
+            if (element.id === achievement.id) {
+              achievement.acquired = element.acquired;
+              return achievement;
+            }
+          });
+        }
+        return achievement;
+      });
     this.chanceMaker.calculateStructureResourceGeneration1();
 
     // Set the fractalEngine
@@ -1607,11 +2194,32 @@ export default class Clicker {
     this.fractalEngine.structure = save.fractalEngine.structure;
     this.fractalEngine.lifeTimeCookiesBuilding = save.fractalEngine
       .lifeTimeCookiesBuilding ?? { cookies: 0 };
-    this.fractalEngine.fractalEngineUpgrades = new Map(
-      Object.entries(save.fractalEngine.fractalEngineUpgrades)
-    );
-    this.fractalEngine.fractalEngineAchievements = save.fractalEngine
-      .fractalEngineAchievements ?? [...FractalEngineAchievements];
+    if (save.fractalEngine.fractalEngineUpgrades instanceof Array) {
+      save.fractalEngine.fractalEngineUpgrades.forEach((element) => {
+        this.fractalEngine.fractalEngineUpgrades.get(element.id)!.acquired =
+          element.acquired;
+      });
+    } else {
+      //Legacy Support
+      Object.entries(save.fractalEngine.fractalEngineUpgrades).forEach(
+        ([key, value]) => {
+          this.fractalEngine.fractalEngineUpgrades.get(key)!.acquired =
+            value.acquired;
+        }
+      );
+    }
+    this.fractalEngine.fractalEngineAchievements =
+      this.fractalEngine.fractalEngineAchievements.map((achievement) => {
+        if (save.fractalEngine.fractalEngineAchievements) {
+          save.fractalEngine.fractalEngineAchievements.forEach((element) => {
+            if (element.id === achievement.id) {
+              achievement.acquired = element.acquired;
+              return achievement;
+            }
+          });
+        }
+        return achievement;
+      });
     this.fractalEngine.calculateStructureResourceGeneration1();
 
     // Set the javascriptConsole
@@ -1619,13 +2227,37 @@ export default class Clicker {
     this.javascriptConsole.structure = save.javascriptConsole.structure;
     this.javascriptConsole.lifeTimeCookiesBuilding = save.javascriptConsole
       .lifeTimeCookiesBuilding ?? { cookies: 0 };
-    this.javascriptConsole.javascriptConsoleUpgrades = new Map(
-      Object.entries(save.javascriptConsole.javascriptConsoleUpgrades)
-    );
-    this.javascriptConsole.javascriptConsoleAchievements = save
-      .javascriptConsole.javascriptConsoleAchievements ?? [
-      ...JavascriptConsoleAchievement,
-    ];
+    if (save.javascriptConsole.javascriptConsoleUpgrades instanceof Array) {
+      save.javascriptConsole.javascriptConsoleUpgrades.forEach((element) => {
+        this.javascriptConsole.javascriptConsoleUpgrades.get(
+          element.id
+        )!.acquired = element.acquired;
+      });
+    } else {
+      //Legacy Support
+      Object.entries(save.javascriptConsole.javascriptConsoleUpgrades).forEach(
+        ([key, value]) => {
+          this.javascriptConsole.javascriptConsoleUpgrades.get(key)!.acquired =
+            value.acquired;
+        }
+      );
+    }
+    this.javascriptConsole.javascriptConsoleAchievements =
+      this.javascriptConsole.javascriptConsoleAchievements.map(
+        (achievement) => {
+          if (save.javascriptConsole.javascriptConsoleAchievements) {
+            save.javascriptConsole.javascriptConsoleAchievements.forEach(
+              (element) => {
+                if (element.id === achievement.id) {
+                  achievement.acquired = element.acquired;
+                  return achievement;
+                }
+              }
+            );
+          }
+          return achievement;
+        }
+      );
     this.javascriptConsole.calculateStructureResourceGeneration1();
 
     // Set the idleverse
@@ -1633,11 +2265,30 @@ export default class Clicker {
     this.idleverse.structure = save.idleverse.structure;
     this.idleverse.lifeTimeCookiesBuilding = save.idleverse
       .lifeTimeCookiesBuilding ?? { cookies: 0 };
-    this.idleverse.idleVerse = new Map(
-      Object.entries(save.idleverse.idleverseUpgrades)
-    );
-    this.idleverse.idleVerseAchievements = save.idleverse
-      .idleverseAchievements ?? [...IdleVerseAchievements];
+    if (save.idleverse.idleverseUpgrades instanceof Array) {
+      save.idleverse.idleverseUpgrades.forEach((element) => {
+        this.idleverse.idleVerse.get(element.id)!.acquired = element.acquired;
+      });
+    } else {
+      //Legacy Support
+      Object.entries(save.idleverse.idleverseUpgrades).forEach(
+        ([key, value]) => {
+          this.idleverse.idleVerse.get(key)!.acquired = value.acquired;
+        }
+      );
+    }
+    this.idleverse.idleVerseAchievements =
+      this.idleverse.idleVerseAchievements.map((achievement) => {
+        if (save.idleverse.idleverseAchievements) {
+          save.idleverse.idleverseAchievements.forEach((element) => {
+            if (element.id === achievement.id) {
+              achievement.acquired = element.acquired;
+              return achievement;
+            }
+          });
+        }
+        return achievement;
+      });
     this.idleverse.calculateStructureResourceGeneration1();
 
     // Set the cortexBaker
@@ -1645,11 +2296,32 @@ export default class Clicker {
     this.cortexBaker.structure = save.cortexBaker.structure;
     this.cortexBaker.lifeTimeCookiesBuilding = save.cortexBaker
       .lifeTimeCookiesBuilding ?? { cookies: 0 };
-    this.cortexBaker.cortexBakerUpgrades = new Map(
-      Object.entries(save.cortexBaker.cortexBakerUpgrades)
-    );
-    this.cortexBaker.cortexBakerAchievements = save.cortexBaker
-      .cortexBakerAchievements ?? [...CortexBakerAchievements];
+    if (save.cortexBaker.cortexBakerUpgrades instanceof Array) {
+      save.cortexBaker.cortexBakerUpgrades.forEach((element) => {
+        this.cortexBaker.cortexBakerUpgrades.get(element.id)!.acquired =
+          element.acquired;
+      });
+    } else {
+      //Legacy Support
+      Object.entries(save.cortexBaker.cortexBakerUpgrades).forEach(
+        ([key, value]) => {
+          this.cortexBaker.cortexBakerUpgrades.get(key)!.acquired =
+            value.acquired;
+        }
+      );
+    }
+    this.cortexBaker.cortexBakerAchievements =
+      this.cortexBaker.cortexBakerAchievements.map((achievement) => {
+        if (save.cortexBaker.cortexBakerAchievements) {
+          save.cortexBaker.cortexBakerAchievements.forEach((element) => {
+            if (element.id === achievement.id) {
+              achievement.acquired = element.acquired;
+              return achievement;
+            }
+          });
+        }
+        return achievement;
+      });
     this.cortexBaker.calculateStructureResourceGeneration1();
 
     // Set the you
@@ -1658,8 +2330,27 @@ export default class Clicker {
     this.you.lifeTimeCookiesBuilding = save.you.lifeTimeCookiesBuilding ?? {
       cookies: 0,
     };
-    this.you.youUpgrades = new Map(Object.entries(save.you.youUpgrades));
-    this.you.youAchievements = save.you.youAchievements ?? [...YouAchievements];
+    if (save.you.youUpgrades instanceof Array) {
+      save.you.youUpgrades.forEach((element) => {
+        this.you.youUpgrades.get(element.id)!.acquired = element.acquired;
+      });
+    } else {
+      //Legacy Support
+      Object.entries(save.you.youUpgrades).forEach(([key, value]) => {
+        this.you.youUpgrades.get(key)!.acquired = value.acquired;
+      });
+    }
+    this.you.youAchievements = this.you.youAchievements.map((achievement) => {
+      if (save.you.youAchievements) {
+        save.you.youAchievements.forEach((element) => {
+          if (element.id === achievement.id) {
+            achievement.acquired = element.acquired;
+            return achievement;
+          }
+        });
+      }
+      return achievement;
+    });
     this.you.calculateStructureResourceGeneration1();
 
     // Reload Game generation

@@ -80,7 +80,9 @@ function Options({ game, setState }: Props) {
           <button
             className="p2 px-3 bg-red-400 "
             onClick={() => {
-              game.devModeIncreaseResource({ cookies: 100000000000000 });
+              game.devModeIncreaseResource({
+                cookies: 100_000_000_000_000_000,
+              });
               setState((prevState) => !prevState);
             }}
           >
