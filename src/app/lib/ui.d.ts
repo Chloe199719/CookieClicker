@@ -1,5 +1,5 @@
 import { Resource } from "./Cliker";
-import { UpgradeType } from "./Cliker";
+import { UpgradeType, AchievementType } from "./Cliker";
 export interface SaveType {
   resource: Resource;
   lifeTimeCookies: Resource;
@@ -25,77 +25,77 @@ export interface SaveType {
     structureCost: Resource;
     lifeTimeCookiesBuilding: Resource;
     cursorUpgrades: SavingTypeUpgrades[] | { [key: string]: UpgradeType };
-    CursorAchievements: AchievementType[];
+    CursorAchievements: SavingType[];
   };
   farm: {
     structure: number;
     structureCost: Resource;
     lifeTimeCookiesBuilding: Resource;
     farmUpgrades: SavingTypeUpgrades[] | { [key: string]: UpgradeType };
-    farmAchievements: AchievementType[];
+    farmAchievements: SavingType[];
   };
   mine: {
     structure: number;
     structureCost: Resource;
     lifeTimeCookiesBuilding: Resource;
     mineUpgrades: SavingTypeUpgrades[] | { [key: string]: UpgradeType };
-    mineAchievements: AchievementType[];
+    mineAchievements: SavingType[];
   };
   factory: {
     structure: number;
     structureCost: Resource;
     lifeTimeCookiesBuilding: Resource;
     factoryUpgrades: SavingTypeUpgrades[] | { [key: string]: UpgradeType };
-    factoryAchievements: AchievementType[];
+    factoryAchievements: SavingType[];
   };
   bank: {
     structure: number;
     structureCost: Resource;
     lifeTimeCookiesBuilding: Resource;
     bankUpgrades: SavingTypeUpgrades[] | { [key: string]: UpgradeType };
-    bankAchievements: AchievementType[];
+    bankAchievements: SavingType[];
   };
   temple: {
     structure: number;
     structureCost: Resource;
     lifeTimeCookiesBuilding: Resource;
     templeUpgrades: SavingTypeUpgrades[] | { [key: string]: UpgradeType };
-    templeAchievements: AchievementType[];
+    templeAchievements: SavingType[];
   };
   wizardTower: {
     structure: number;
     structureCost: Resource;
     lifeTimeCookiesBuilding: Resource;
     wizardTowerUpgrades: SavingTypeUpgrades[] | { [key: string]: UpgradeType };
-    wizardTowerAchievements: AchievementType[];
+    wizardTowerAchievements: SavingType[];
   };
   shipment: {
     structure: number;
     structureCost: Resource;
     lifeTimeCookiesBuilding: Resource;
     shipmentUpgrades: SavingTypeUpgrades[] | { [key: string]: UpgradeType };
-    shipmentAchievements: AchievementType[];
+    shipmentAchievements: SavingType[];
   };
   alchemyLab: {
     structure: number;
     structureCost: Resource;
     lifeTimeCookiesBuilding: Resource;
     alchemyLabUpgrades: SavingTypeUpgrades[] | { [key: string]: UpgradeType };
-    alchemyLabAchievements: AchievementType[];
+    alchemyLabAchievements: SavingType[];
   };
   portal: {
     structure: number;
     structureCost: Resource;
     lifeTimeCookiesBuilding: Resource;
     portalUpgrades: SavingTypeUpgrades[] | { [key: string]: UpgradeType };
-    portalAchievements: AchievementType[];
+    portalAchievements: SavingType[];
   };
   timeMachine: {
     structure: number;
     structureCost: Resource;
     lifeTimeCookiesBuilding: Resource;
     timeMachineUpgrades: SavingTypeUpgrades[] | { [key: string]: UpgradeType };
-    timeMachineAchievements: AchievementType[];
+    timeMachineAchievements: SavingType[];
   };
   antimatterCondenser: {
     structure: number;
@@ -104,21 +104,21 @@ export interface SaveType {
     antimatterCondenserUpgrades:
       | SavingTypeUpgrades[]
       | { [key: string]: UpgradeType };
-    antimatterCondenserAchievements: AchievementType[];
+    antimatterCondenserAchievements: SavingType[];
   };
   prism: {
     structure: number;
     structureCost: Resource;
     lifeTimeCookiesBuilding: Resource;
     prismUpgrades: SavingTypeUpgrades[] | { [key: string]: UpgradeType };
-    prismAchievements: AchievementType[];
+    prismAchievements: SavingType[];
   };
   chancemaker: {
     structure: number;
     structureCost: Resource;
     lifeTimeCookiesBuilding: Resource;
     chancemakerUpgrades: SavingTypeUpgrades[] | { [key: string]: UpgradeType };
-    chancemakerAchievements: AchievementType[];
+    chancemakerAchievements: SavingType[];
   };
   fractalEngine: {
     structure: number;
@@ -127,7 +127,7 @@ export interface SaveType {
     fractalEngineUpgrades:
       | SavingTypeUpgrades[]
       | { [key: string]: UpgradeType };
-    fractalEngineAchievements: AchievementType[];
+    fractalEngineAchievements: SavingType[];
   };
   javascriptConsole: {
     structure: number;
@@ -136,28 +136,28 @@ export interface SaveType {
     javascriptConsoleUpgrades:
       | SavingTypeUpgrades[]
       | { [key: string]: UpgradeType };
-    javascriptConsoleAchievements: AchievementType[];
+    javascriptConsoleAchievements: SavingType[];
   };
   idleverse: {
     structure: number;
     structureCost: Resource;
     lifeTimeCookiesBuilding: Resource;
     idleverseUpgrades: SavingTypeUpgrades[] | { [key: string]: UpgradeType };
-    idleverseAchievements: AchievementType[];
+    idleverseAchievements: SavingType[];
   };
   cortexBaker: {
     structure: number;
     structureCost: Resource;
     lifeTimeCookiesBuilding: Resource;
     cortexBakerUpgrades: SavingTypeUpgrades[] | { [key: string]: UpgradeType };
-    cortexBakerAchievements: AchievementType[];
+    cortexBakerAchievements: SavingType[];
   };
   you: {
     structure: number;
     structureCost: Resource;
     lifeTimeCookiesBuilding: Resource;
     youUpgrades: SavingTypeUpgrades[] | { [key: string]: UpgradeType };
-    youAchievements: AchievementType[];
+    youAchievements: SavingType[];
   };
 }
 
