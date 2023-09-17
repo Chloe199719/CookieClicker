@@ -22,7 +22,7 @@ import { totalCookiesAchievements } from "./achievements/TotalCookies";
 import { TotalBuildingAndUpgradesAchievements } from "./achievements/Totals";
 import { WizardTowerAchievements } from "./achievements/WizardTowers";
 import { YouAchievements } from "./achievements/You";
-import { SaveType, SavingType } from "./ui";
+import { SaveType, SavingType, SavingTypeUpgrades } from "./ui";
 import { ChanceMakersUpgrades } from "./upgrades/Chancemaker";
 import { ClickingUpgrades } from "./upgrades/Clicking";
 import { CortexBakerUpgrades } from "./upgrades/CortexBaker";
@@ -1176,6 +1176,11 @@ export default class Clicker {
 
   // Save Game to LocalStorage (not Stable)
   public SaveGame() {
+    const GrandmaUpgrades: SavingTypeUpgrades[] = [];
+    this.grandma.grandmaUpgrades.forEach((value, key) => {
+      GrandmaUpgrades.push({ id: key, acquired: value.acquired });
+    });
+
     let save: SaveType = {
       resource: this.resource,
       lifeTimeCookies: this.lifeTimeCookies,
@@ -1201,7 +1206,7 @@ export default class Clicker {
         structure: this.grandma.structure,
         structureCost: this.grandma.structureCost,
         lifeTimeCookiesBuilding: this.grandma.lifeTimeCookiesBuilding,
-        grandmaUpgrades: Object.fromEntries(this.grandma.grandmaUpgrades),
+        grandmaUpgrades: GrandmaUpgrades,
         grandmaAchievements: this.grandma.grandmaAchievements,
       },
       autoClicker: {
@@ -1364,6 +1369,7 @@ export default class Clicker {
 
   public LoadGame(save: SaveType) {
     // Set Cookies
+
     this.resource = save.resource;
     this.lifeTimeCookies = save.lifeTimeCookies;
     this.lifeTimeCookiesClick = save.lifeTimeCookiesClicking ?? { cookies: 0 };
@@ -1398,9 +1404,22 @@ export default class Clicker {
     this.grandma.structure = save.grandma.structure;
     this.grandma.lifeTimeCookiesBuilding = save.grandma
       .lifeTimeCookiesBuilding ?? { cookies: 0 };
-    this.grandma.grandmaUpgrades = new Map(
-      Object.entries(save.grandma.grandmaUpgrades)
-    );
+
+    if (save.grandma.grandmaUpgrades instanceof Array) {
+      save.grandma.grandmaUpgrades.forEach((element) => {
+        this.grandma.grandmaUpgrades.get(element.id)!.acquired =
+          element.acquired;
+      });
+    } else {
+      Object.entries(save.grandma.grandmaUpgrades).forEach(([key, value]) => {
+        this.grandma.grandmaUpgrades.get(key)!.acquired = value.acquired;
+        this.grandma.grandmaUpgrades.get(key)!.id = value.id;
+      });
+    }
+
+    // this.grandma.grandmaUpgrades = new Map(
+    //   Object.entries(save.grandma.grandmaUpgrades)
+    // ).forEach;
     this.grandma.grandmaAchievements = save.grandma.grandmaAchievements ?? [
       ...GrandmaAchievements,
     ];

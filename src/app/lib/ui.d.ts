@@ -1,5 +1,5 @@
 import { Resource } from "./Cliker";
-
+import { UpgradeType } from "./Cliker";
 export interface SaveType {
   resource: Resource;
   lifeTimeCookies: Resource;
@@ -17,7 +17,7 @@ export interface SaveType {
     structure: number;
     structureCost: Resource;
     lifeTimeCookiesBuilding: Resource;
-    grandmaUpgrades: { [key: string]: UpgradeType };
+    grandmaUpgrades: SavingTypeUpgrades[] | { [key: string]: UpgradeType };
     grandmaAchievements: AchievementType[];
   };
   autoClicker: {
@@ -157,5 +157,9 @@ export interface SaveType {
 
 export interface SavingType {
   id: number;
+  acquired: boolean;
+}
+export interface SavingTypeUpgrades {
+  id: string;
   acquired: boolean;
 }

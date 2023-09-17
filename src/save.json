@@ -1,9 +1,9 @@
 {
-  "resource": { "cookies": 2838738282032.699 },
-  "lifeTimeCookies": { "cookies": 60104636174658.234 },
-  "lifeTimeCookiesClicking": { "cookies": 11127318062.505762 },
-  "multiplier": 143,
-  "clickingMultiplier": 0.04,
+  "resource": { "cookies": 220761165015033120 },
+  "lifeTimeCookies": { "cookies": 1015496211247063300 },
+  "lifeTimeCookiesClicking": { "cookies": 62106843916060.16 },
+  "multiplier": 191.8386638169919,
+  "clickingMultiplier": 0.060000000000000005,
   "clickingAchievements": [
     {
       "id": 98,
@@ -48,7 +48,7 @@
       "condition": 100000000000,
       "achievementType": "Baking",
       "type": "Click",
-      "acquired": false
+      "acquired": true
     },
     {
       "id": 103,
@@ -57,7 +57,7 @@
       "condition": 10000000000000,
       "achievementType": "Baking",
       "type": "Click",
-      "acquired": false
+      "acquired": true
     },
     {
       "id": 104,
@@ -219,7 +219,7 @@
       "name": "Universal bakery",
       "description": "Bake 100 Trillion cookies",
       "condition": 100000000000000,
-      "acquired": false,
+      "acquired": true,
       "type": "Total",
       "achievementType": "Baking"
     },
@@ -228,7 +228,7 @@
       "name": "Timeless bakery",
       "description": "Bake 1 Quadrillion cookies",
       "condition": 1000000000000000,
-      "acquired": false,
+      "acquired": true,
       "type": "Total",
       "achievementType": "Baking"
     },
@@ -237,7 +237,7 @@
       "name": "Infinite bakery",
       "description": "Bake 100 Quadrillion cookies",
       "condition": 100000000000000000,
-      "acquired": false,
+      "acquired": true,
       "type": "Total",
       "achievementType": "Baking"
     },
@@ -246,7 +246,7 @@
       "name": "Immortal bakery",
       "description": "Bake 1 Quintillion cookies",
       "condition": 1000000000000000000,
-      "acquired": false,
+      "acquired": true,
       "type": "Total",
       "achievementType": "Baking"
     },
@@ -654,7 +654,7 @@
       "description": "Produce 1 billion cookies per second.",
       "type": "Generation",
       "condition": 1000000000,
-      "acquired": false,
+      "acquired": true,
       "achievementType": "Baking"
     },
     {
@@ -663,7 +663,7 @@
       "description": "Produce 10 billion cookies per second.",
       "type": "Generation",
       "condition": 10000000000,
-      "acquired": false,
+      "acquired": true,
       "achievementType": "Baking"
     },
     {
@@ -672,7 +672,7 @@
       "description": "Produce 1 trillion cookies per second.",
       "type": "Generation",
       "condition": 1000000000000,
-      "acquired": false,
+      "acquired": true,
       "achievementType": "Baking"
     },
     {
@@ -1027,6 +1027,88 @@
       "achievementType": "Baking"
     }
   ],
+  "TotalBuildingsAchievements": [
+    { "id": 1000, "acquired": true },
+    { "id": 1001, "acquired": true },
+    { "id": 1002, "acquired": true },
+    { "id": 1003, "acquired": true },
+    { "id": 1004, "acquired": true },
+    { "id": 1005, "acquired": true },
+    { "id": 1006, "acquired": true },
+    { "id": 1007, "acquired": true },
+    { "id": 1008, "acquired": true },
+    { "id": 1009, "acquired": true },
+    { "id": 1010, "acquired": true },
+    { "id": 1011, "acquired": true },
+    { "id": 1012, "acquired": true },
+    { "id": 1013, "acquired": true },
+    { "id": 1014, "acquired": true },
+    { "id": 1015, "acquired": true },
+    { "id": 1016, "acquired": true },
+    { "id": 1017, "acquired": true },
+    { "id": 1018, "acquired": true },
+    { "id": 1019, "acquired": true },
+    { "id": 1020, "acquired": true },
+    { "id": 1021, "acquired": true },
+    { "id": 1022, "acquired": true },
+    { "id": 1023, "acquired": false },
+    { "id": 1024, "acquired": false },
+    { "id": 1025, "acquired": false },
+    { "id": 1026, "acquired": false },
+    { "id": 1027, "acquired": false },
+    { "id": 1028, "acquired": false },
+    { "id": 1029, "acquired": false },
+    { "id": 1030, "acquired": false },
+    { "id": 1031, "acquired": false },
+    { "id": 1032, "acquired": false },
+    { "id": 1033, "acquired": false },
+    { "id": 1034, "acquired": false },
+    { "id": 1035, "acquired": false },
+    { "id": 1036, "acquired": false },
+    { "id": 1037, "acquired": false },
+    { "id": 1038, "acquired": false },
+    { "id": 1039, "acquired": false },
+    { "id": 1040, "acquired": false },
+    { "id": 1041, "acquired": false },
+    { "id": 1042, "acquired": false },
+    { "id": 1043, "acquired": true },
+    { "id": 1044, "acquired": true },
+    { "id": 1045, "acquired": true },
+    { "id": 1046, "acquired": true },
+    { "id": 1047, "acquired": true },
+    { "id": 1048, "acquired": true },
+    { "id": 1049, "acquired": true },
+    { "id": 1050, "acquired": true },
+    { "id": 1051, "acquired": true },
+    { "id": 1052, "acquired": true },
+    { "id": 1053, "acquired": false },
+    { "id": 1054, "acquired": false },
+    { "id": 1055, "acquired": false },
+    { "id": 1056, "acquired": false },
+    { "id": 1057, "acquired": false },
+    { "id": 1058, "acquired": false },
+    { "id": 1059, "acquired": false },
+    { "id": 1060, "acquired": false },
+    { "id": 1061, "acquired": false },
+    { "id": 1062, "acquired": false },
+    { "id": 1063, "acquired": false },
+    { "id": 1064, "acquired": false },
+    { "id": 1065, "acquired": false },
+    { "id": 1066, "acquired": false },
+    { "id": 1067, "acquired": false },
+    { "id": 1068, "acquired": false },
+    { "id": 1069, "acquired": false },
+    { "id": 1070, "acquired": false },
+    { "id": 1071, "acquired": false },
+    { "id": 1072, "acquired": false },
+    { "id": 1073, "acquired": false },
+    { "id": 1074, "acquired": false },
+    { "id": 1075, "acquired": false },
+    { "id": 1076, "acquired": false },
+    { "id": 1077, "acquired": false },
+    { "id": 1078, "acquired": false },
+    { "id": 1079, "acquired": false }
+  ],
   "flavoredCookies": [
     {
       "id": 180,
@@ -1234,7 +1316,7 @@
       "description": "if you can pronounce this, you deserve one.",
       "cost": { "cookies": 10000000000000 },
       "requirement": 500000000000,
-      "acquired": false,
+      "acquired": true,
       "multiplier": 2,
       "type": "flavoredCookies"
     },
@@ -1244,7 +1326,7 @@
       "description": "These are not macarons. These are macaroons. They are different. They are better. They are the best.",
       "cost": { "cookies": 50000000000000 },
       "requirement": 2500000000000,
-      "acquired": false,
+      "acquired": true,
       "multiplier": 2,
       "type": "flavoredCookies"
     },
@@ -1254,7 +1336,7 @@
       "description": "For the glory of the empire!",
       "cost": { "cookies": 100000000000000 },
       "requirement": 5000000000000,
-      "acquired": false,
+      "acquired": true,
       "multiplier": 2,
       "type": "flavoredCookies"
     },
@@ -1264,7 +1346,7 @@
       "description": "Unforgettable.",
       "cost": { "cookies": 500000000000000 },
       "requirement": 25000000000000,
-      "acquired": false,
+      "acquired": true,
       "multiplier": 2,
       "type": "flavoredCookies"
     },
@@ -1274,7 +1356,7 @@
       "description": "Palmier then chloe.",
       "cost": { "cookies": 500000000000000 },
       "requirement": 25000000000000,
-      "acquired": false,
+      "acquired": true,
       "multiplier": 2,
       "type": "flavoredCookies"
     },
@@ -1284,7 +1366,7 @@
       "description": "You could say these cookies are a little flat.",
       "cost": { "cookies": 1000000000000000 },
       "requirement": 50000000000000,
-      "acquired": false,
+      "acquired": true,
       "multiplier": 2,
       "type": "flavoredCookies"
     },
@@ -1294,7 +1376,7 @@
       "description": "These cookies are a little sandy.",
       "cost": { "cookies": 1000000000000000 },
       "requirement": 50000000000000,
-      "acquired": false,
+      "acquired": true,
       "multiplier": 2,
       "type": "flavoredCookies"
     },
@@ -1304,7 +1386,7 @@
       "description": "You'd better eat them before they try to run away.",
       "cost": { "cookies": 10000000000000000 },
       "requirement": 500000000000000,
-      "acquired": false,
+      "acquired": true,
       "multiplier": 2,
       "type": "flavoredCookies"
     },
@@ -1314,7 +1396,7 @@
       "description": "Evergreen.",
       "cost": { "cookies": 10000000000000000 },
       "requirement": 500000000000000,
-      "acquired": false,
+      "acquired": true,
       "multiplier": 2,
       "type": "flavoredCookies"
     },
@@ -1334,7 +1416,7 @@
       "description": "Dipped in the purest white chocolate, these cookies are so bright they reflect light around them.",
       "cost": { "cookies": 50000000000000000 },
       "requirement": 2500000000000000,
-      "acquired": false,
+      "acquired": true,
       "multiplier": 5,
       "type": "flavoredCookies"
     }
@@ -1391,7 +1473,7 @@
       "cost": { "cookies": 5000000000000 },
       "multiplier": 0.01,
       "type": "clicking",
-      "acquired": false,
+      "acquired": true,
       "requirement": 100000000000,
       "tier": "Buttergold"
     },
@@ -1402,7 +1484,7 @@
       "cost": { "cookies": 500000000000000 },
       "multiplier": 0.01,
       "type": "clicking",
-      "acquired": false,
+      "acquired": true,
       "requirement": 10000000000000,
       "tier": "Sugarmuck"
     },
@@ -1536,7 +1618,7 @@
       "cost": { "cookies": 90000000000000 },
       "multiplier": 0.15,
       "type": "kittens",
-      "acquired": false,
+      "acquired": true,
       "requirement": 50,
       "tier": "Blueberrylium"
     },
@@ -1547,7 +1629,7 @@
       "cost": { "cookies": 90000000000000000 },
       "multiplier": 0.175,
       "type": "kittens",
-      "acquired": false,
+      "acquired": true,
       "requirement": 75,
       "tier": "Chalcedhoney"
     },
@@ -1674,9 +1756,9 @@
     }
   ],
   "grandma": {
-    "structure": 120,
-    "structureCost": { "cookies": 1921944500.1925673 },
-    "lifeTimeCookiesBuilding": { "cookies": 1813882519.9830253 },
+    "structure": 210,
+    "structureCost": { "cookies": 557887298988361.94 },
+    "lifeTimeCookiesBuilding": { "cookies": 169192280099.05914 },
     "grandmaUpgrades": {
       "16": {
         "id": 16,
@@ -1739,7 +1821,7 @@
         "cost": { "cookies": 50000000000 },
         "multiplier": 2,
         "requirement": 150,
-        "acquired": false,
+        "acquired": true,
         "type": "grandma",
         "description": "Grandmas are twice as efficient.\n      \"Counter-intuitively, grandmas have the uncanny ability to become more powerful the older they get.\"",
         "tier": "Sugarmuck"
@@ -1750,7 +1832,7 @@
         "cost": { "cookies": 50000000000000 },
         "multiplier": 2,
         "requirement": 200,
-        "acquired": false,
+        "acquired": true,
         "type": "grandma",
         "description": "Grandmas are twice as efficient.\n      \"Complete with flame decals and a little horn that goes \"toot\".\"",
         "tier": "Jetmint"
@@ -1879,7 +1961,7 @@
         "condition": 125,
         "achievementType": "Having",
         "type": "grandma",
-        "acquired": false
+        "acquired": true
       },
       {
         "id": 134,
@@ -1888,7 +1970,7 @@
         "condition": 150,
         "achievementType": "Having",
         "type": "grandma",
-        "acquired": false
+        "acquired": true
       },
       {
         "id": 135,
@@ -1897,7 +1979,7 @@
         "condition": 150,
         "achievementType": "Having",
         "type": "grandma",
-        "acquired": false
+        "acquired": true
       },
       {
         "id": 136,
@@ -1906,7 +1988,7 @@
         "condition": 200,
         "achievementType": "Having",
         "type": "grandma",
-        "acquired": false
+        "acquired": true
       },
       {
         "id": 137,
@@ -2046,9 +2128,9 @@
     ]
   },
   "autoClicker": {
-    "structure": 150,
-    "structureCost": { "cookies": 19088302644.05233 },
-    "lifeTimeCookiesBuilding": { "cookies": 1580115281015.0728 },
+    "structure": 230,
+    "structureCost": { "cookies": 1369602500991408 },
+    "lifeTimeCookiesBuilding": { "cookies": 3503307070975968 },
     "cursorUpgrades": {
       "1": {
         "id": 1,
@@ -2134,7 +2216,7 @@
         "cost": { "cookies": 10000000000000 },
         "multiplier": 20,
         "requirement": 200,
-        "acquired": false,
+        "acquired": true,
         "type": "cursor",
         "tier": "Cherrysilver"
       },
@@ -2260,7 +2342,7 @@
         "condition": 200,
         "achievementType": "Having",
         "type": "cursor",
-        "acquired": false
+        "acquired": true
       },
       {
         "id": 118,
@@ -2373,9 +2455,9 @@
     ]
   },
   "farm": {
-    "structure": 110,
-    "structureCost": { "cookies": 5225828151.088997 },
-    "lifeTimeCookiesBuilding": { "cookies": 8744370788.815857 },
+    "structure": 200,
+    "structureCost": { "cookies": 1516913288545157.2 },
+    "lifeTimeCookiesBuilding": { "cookies": 568750568706.5942 },
     "farmUpgrades": {
       "31": {
         "id": 31,
@@ -2438,7 +2520,7 @@
         "cost": { "cookies": 550000000000000 },
         "multiplier": 2,
         "requirement": 150,
-        "acquired": false,
+        "acquired": true,
         "type": "farm",
         "description": "Farms are twice as efficient.\n      \"There's no such thing as over-watering. The moistest is the bestest.\"",
         "tier": "Sugarmuck"
@@ -2578,7 +2660,7 @@
         "condition": 150,
         "achievementType": "Having",
         "type": "farm",
-        "acquired": false
+        "acquired": true
       },
       {
         "id": 156,
@@ -2587,7 +2669,7 @@
         "condition": 200,
         "achievementType": "Having",
         "type": "farm",
-        "acquired": false
+        "acquired": true
       },
       {
         "id": 157,
@@ -2718,9 +2800,9 @@
     ]
   },
   "mine": {
-    "structure": 100,
-    "structureCost": { "cookies": 14091761408.403353 },
-    "lifeTimeCookiesBuilding": { "cookies": 55788284994.36267 },
+    "structure": 170,
+    "structureCost": { "cookies": 249927535193403.3 },
+    "lifeTimeCookiesBuilding": { "cookies": 3384576466120.259 },
     "mineUpgrades": {
       "46": {
         "id": 46,
@@ -2783,7 +2865,7 @@
         "cost": { "cookies": 6000000000000 },
         "multiplier": 2,
         "requirement": 150,
-        "acquired": false,
+        "acquired": true,
         "type": "mine",
         "description": "Mines are twice as efficient.\n      \"You've finally dug a tunnel down to the Earth's core. It's pretty warm down here.\"",
         "tier": "Sugarmuck"
@@ -2923,7 +3005,7 @@
         "condition": 150,
         "achievementType": "Having",
         "type": "mine",
-        "acquired": false
+        "acquired": true
       },
       {
         "id": 175,
@@ -3063,9 +3145,9 @@
     ]
   },
   "factory": {
-    "structure": 100,
-    "structureCost": { "cookies": 152660748591.03632 },
-    "lifeTimeCookiesBuilding": { "cookies": 183786785651.97574 },
+    "structure": 150,
+    "structureCost": { "cookies": 165431956248453.53 },
+    "lifeTimeCookiesBuilding": { "cookies": 14484183992114.355 },
     "factoryUpgrades": {
       "61": {
         "id": 61,
@@ -3128,7 +3210,7 @@
         "cost": { "cookies": 65000000000000 },
         "multiplier": 2,
         "requirement": 150,
-        "acquired": false,
+        "acquired": true,
         "type": "factory",
         "description": "Factories are twice as efficient.",
         "tier": "Sugarmuck"
@@ -3268,7 +3350,7 @@
         "condition": 150,
         "achievementType": "Having",
         "type": "factory",
-        "acquired": false
+        "acquired": true
       },
       {
         "id": 194,
@@ -3408,9 +3490,9 @@
     ]
   },
   "bank": {
-    "structure": 81,
-    "structureCost": { "cookies": 115518915836.30328 },
-    "lifeTimeCookiesBuilding": { "cookies": 593326841918.285 },
+    "structure": 150,
+    "structureCost": { "cookies": 1781574913444884.2 },
+    "lifeTimeCookiesBuilding": { "cookies": 55917018557214.766 },
     "bankUpgrades": {
       "76": {
         "id": 76,
@@ -3462,7 +3544,7 @@
         "cost": { "cookies": 7000000000000 },
         "multiplier": 2,
         "requirement": 100,
-        "acquired": false,
+        "acquired": true,
         "type": "bank",
         "description": "Banks are twice as efficient.",
         "tier": "Buttergold"
@@ -3473,7 +3555,7 @@
         "cost": { "cookies": 700000000000000 },
         "multiplier": 2,
         "requirement": 150,
-        "acquired": false,
+        "acquired": true,
         "type": "bank",
         "description": "Banks are twice as efficient.",
         "tier": "Sugarmuck"
@@ -3604,7 +3686,7 @@
         "condition": 100,
         "achievementType": "Having",
         "type": "bank",
-        "acquired": false
+        "acquired": true
       },
       {
         "id": 212,
@@ -3613,7 +3695,7 @@
         "condition": 150,
         "achievementType": "Having",
         "type": "bank",
-        "acquired": false
+        "acquired": true
       },
       {
         "id": 213,
@@ -3753,9 +3835,9 @@
     ]
   },
   "temple": {
-    "structure": 58,
-    "structureCost": { "cookies": 66298657779.318 },
-    "lifeTimeCookiesBuilding": { "cookies": 1244679544167.0623 },
+    "structure": 110,
+    "structureCost": { "cookies": 95015057292527.22 },
+    "lifeTimeCookiesBuilding": { "cookies": 151027291961949.4 },
     "templeUpgrades": {
       "91": {
         "id": 91,
@@ -3807,7 +3889,7 @@
         "cost": { "cookies": 100000000000000 },
         "multiplier": 2,
         "requirement": 100,
-        "acquired": false,
+        "acquired": true,
         "type": "temple",
         "description": "Temples are twice as efficient.",
         "tier": "Buttergold"
@@ -3949,7 +4031,7 @@
         "condition": 100,
         "achievementType": "Having",
         "type": "temple",
-        "acquired": false
+        "acquired": true
       },
       {
         "id": 231,
@@ -4098,9 +4180,9 @@
     ]
   },
   "wizardTower": {
-    "structure": 50,
-    "structureCost": { "cookies": 357606955722.70465 },
-    "lifeTimeCookiesBuilding": { "cookies": 4290936509598.908 },
+    "structure": 100,
+    "structureCost": { "cookies": 387523438731092.2 },
+    "lifeTimeCookiesBuilding": { "cookies": 748669066165096.4 },
     "wizardTowerUpgrades": {
       "106": {
         "id": 106,
@@ -4141,7 +4223,7 @@
         "cost": { "cookies": 16500000000000 },
         "multiplier": 2,
         "requirement": 50,
-        "acquired": false,
+        "acquired": true,
         "type": "wizardTower",
         "description": "Wizard towers are twice as efficient.",
         "tier": "Chalcedhoney"
@@ -4152,7 +4234,7 @@
         "cost": { "cookies": 1650000000000000 },
         "multiplier": 2,
         "requirement": 100,
-        "acquired": false,
+        "acquired": true,
         "type": "wizardTower",
         "description": "Wizard towers are twice as efficient.",
         "tier": "Buttergold"
@@ -4294,7 +4376,7 @@
         "condition": 100,
         "achievementType": "Having",
         "type": "wizardTower",
-        "acquired": false
+        "acquired": true
       },
       {
         "id": 250,
@@ -4443,9 +4525,9 @@
     ]
   },
   "shipment": {
-    "structure": 25,
-    "structureCost": { "cookies": 167886658360.92703 },
-    "lifeTimeCookiesBuilding": { "cookies": 9403661128730.613 },
+    "structure": 70,
+    "structureCost": { "cookies": 90452172198023.14 },
+    "lifeTimeCookiesBuilding": { "cookies": 1657261715376704.8 },
     "shipmentUpgrades": {
       "121": {
         "id": 121,
@@ -4486,7 +4568,7 @@
         "cost": { "cookies": 255000000000000 },
         "multiplier": 2,
         "requirement": 50,
-        "acquired": false,
+        "acquired": true,
         "type": "shipment",
         "description": "Shipments are twice as efficient.",
         "tier": "Chalcedhoney"
@@ -4630,7 +4712,7 @@
         "condition": 50,
         "achievementType": "Having",
         "type": "shipment",
-        "acquired": false
+        "acquired": true
       },
       {
         "id": 268,
@@ -4788,9 +4870,9 @@
     ]
   },
   "alchemyLab": {
-    "structure": 16,
-    "structureCost": { "cookies": 701821565515.2501 },
-    "lifeTimeCookiesBuilding": { "cookies": 24075087042123.375 },
+    "structure": 50,
+    "structureCost": { "cookies": 81274308118796.5 },
+    "lifeTimeCookiesBuilding": { "cookies": 5035958234646731 },
     "alchemyLabUpgrades": {
       "136": {
         "id": 136,
@@ -4820,7 +4902,7 @@
         "cost": { "cookies": 37500000000000 },
         "multiplier": 2,
         "requirement": 25,
-        "acquired": false,
+        "acquired": true,
         "type": "alchemyLab",
         "description": "Alchemy labs are twice as efficient.",
         "tier": "Blueberrylium"
@@ -4831,7 +4913,7 @@
         "cost": { "cookies": 3750000000000000 },
         "multiplier": 2,
         "requirement": 50,
-        "acquired": false,
+        "acquired": true,
         "type": "alchemyLab",
         "description": "Alchemy labs are twice as efficient.",
         "tier": "Chalcedhoney"
@@ -4964,7 +5046,7 @@
         "condition": 50,
         "achievementType": "Having",
         "type": "alchemyLab",
-        "acquired": false
+        "acquired": true
       },
       {
         "id": 287,
@@ -5122,9 +5204,9 @@
     ]
   },
   "portal": {
-    "structure": 10,
-    "structureCost": { "cookies": 4045557735707.9067 },
-    "lifeTimeCookiesBuilding": { "cookies": 18602729606540.66 },
+    "structure": 50,
+    "structureCost": { "cookies": 1083657441583953.4 },
+    "lifeTimeCookiesBuilding": { "cookies": 12391025796456898 },
     "portalUpgrades": {
       "150": {
         "id": 150,
@@ -5143,7 +5225,7 @@
         "cost": { "cookies": 50000000000000 },
         "multiplier": 2,
         "requirement": 5,
-        "acquired": false,
+        "acquired": true,
         "type": "portal",
         "description": "Portals are twice as efficient.",
         "tier": "Berrylium"
@@ -5154,7 +5236,7 @@
         "cost": { "cookies": 500000000000000 },
         "multiplier": 2,
         "requirement": 25,
-        "acquired": false,
+        "acquired": true,
         "type": "portal",
         "description": "Portals are twice as efficient.",
         "tier": "Blueberrylium"
@@ -5309,7 +5391,7 @@
         "condition": 50,
         "achievementType": "Having",
         "type": "portal",
-        "acquired": false
+        "acquired": true
       },
       {
         "id": 306,
@@ -5467,9 +5549,9 @@
     ]
   },
   "timeMachine": {
-    "structure": 0,
-    "structureCost": { "cookies": 14000000000000 },
-    "lifeTimeCookiesBuilding": { "cookies": 0 },
+    "structure": 40,
+    "structureCost": { "cookies": 3750089647285835.5 },
+    "lifeTimeCookiesBuilding": { "cookies": 67261517763166850 },
     "timeMachineUpgrades": {
       "165": {
         "id": 165,
@@ -5477,7 +5559,7 @@
         "cost": { "cookies": 140000000000000 },
         "multiplier": 2,
         "requirement": 1,
-        "acquired": false,
+        "acquired": true,
         "type": "timeMachine",
         "description": "Time machines are twice as efficient.",
         "tier": "Plain"
@@ -5488,7 +5570,7 @@
         "cost": { "cookies": 700000000000000 },
         "multiplier": 2,
         "requirement": 5,
-        "acquired": false,
+        "acquired": true,
         "type": "timeMachine",
         "description": "Time machines are twice as efficient.",
         "tier": "Berrylium"
@@ -5499,7 +5581,7 @@
         "cost": { "cookies": 7000000000000000 },
         "multiplier": 2,
         "requirement": 25,
-        "acquired": false,
+        "acquired": true,
         "type": "timeMachine",
         "description": "Time machines are twice as efficient.",
         "tier": "Blueberrylium"
@@ -5645,7 +5727,7 @@
         "condition": 1,
         "achievementType": "Having",
         "type": "timeMachine",
-        "acquired": false
+        "acquired": true
       },
       {
         "id": 324,
@@ -5803,9 +5885,9 @@
     ]
   },
   "antimatterCondenser": {
-    "structure": 0,
-    "structureCost": { "cookies": 170000000000000 },
-    "lifeTimeCookiesBuilding": { "cookies": 0 },
+    "structure": 20,
+    "structureCost": { "cookies": 2782311356800835 },
+    "lifeTimeCookiesBuilding": { "cookies": 163799829783270820 },
     "antimatterCondenserUpgrades": {
       "1": {
         "id": 1,
@@ -5813,7 +5895,7 @@
         "cost": { "cookies": 1700000000000000 },
         "multiplier": 2,
         "requirement": 1,
-        "acquired": false,
+        "acquired": true,
         "type": "antimatterCondenser",
         "description": "Antimatter condensers are twice as efficient.",
         "tier": "Plain"
@@ -5824,7 +5906,7 @@
         "cost": { "cookies": 8500000000000000 },
         "multiplier": 2,
         "requirement": 5,
-        "acquired": false,
+        "acquired": true,
         "type": "antimatterCondenser",
         "description": "Antimatter condensers are twice as efficient.",
         "tier": "Berrylium"
@@ -5981,7 +6063,7 @@
         "condition": 1,
         "achievementType": "Having",
         "type": "antimatterCondenser",
-        "acquired": false
+        "acquired": true
       },
       {
         "id": 342,
@@ -6148,16 +6230,16 @@
     ]
   },
   "prism": {
-    "structure": 0,
-    "structureCost": { "cookies": 2100000000000000 },
-    "lifeTimeCookiesBuilding": { "cookies": 0 },
+    "structure": 15,
+    "structureCost": { "cookies": 17087829421240876 },
+    "lifeTimeCookiesBuilding": { "cookies": 413472046573096800 },
     "prismUpgrades": {
       "1": {
         "id": 1,
         "name": "Gem polish",
         "description": "Prisms are twice as efficient",
         "cost": { "cookies": 21000000000000000 },
-        "acquired": false,
+        "acquired": true,
         "type": "prism",
         "multiplier": 2,
         "requirement": 1,
@@ -6168,7 +6250,7 @@
         "name": "9th color",
         "description": "Prisms are twice as efficient",
         "cost": { "cookies": 105000000000000000 },
-        "acquired": false,
+        "acquired": true,
         "type": "prism",
         "multiplier": 2,
         "requirement": 5,
@@ -6326,7 +6408,7 @@
         "condition": 1,
         "achievementType": "Having",
         "type": "prism",
-        "acquired": false
+        "acquired": true
       },
       {
         "id": 361,
@@ -6493,9 +6575,9 @@
     ]
   },
   "chancemaker": {
-    "structure": 0,
-    "structureCost": { "cookies": 26000000000000000 },
-    "lifeTimeCookiesBuilding": { "cookies": 0 },
+    "structure": 7,
+    "structureCost": { "cookies": 69160516892187464 },
+    "lifeTimeCookiesBuilding": { "cookies": 347338884544736800 },
     "chancemakerUpgrades": {
       "1200": {
         "id": 1200,
@@ -6671,7 +6753,7 @@
         "condition": 1,
         "achievementType": "Having",
         "type": "chancemaker",
-        "acquired": false
+        "acquired": true
       },
       {
         "id": 380,
