@@ -1265,9 +1265,31 @@ export default class Clicker {
       lifeTimeCookiesClicking: this.lifeTimeCookiesClick,
       multiplier: this.multiplier,
       clickingMultiplier: this.clickingMultiplier,
-      clickingAchievements: this.clickingAchievements,
-      TotalCookiesAchievements: this.TotalCookiesAchievements,
-      cookiesPerSecondAchievement: this.cookiesPerSecondAchievements,
+      clickingAchievements: this.clickingAchievements.map((achievement) => {
+        let x: SavingType = {
+          id: achievement.id,
+          acquired: achievement.acquired,
+        };
+        return x;
+      }),
+      TotalCookiesAchievements: this.TotalCookiesAchievements.map(
+        (achievement) => {
+          let x: SavingType = {
+            id: achievement.id,
+            acquired: achievement.acquired,
+          };
+          return x;
+        }
+      ),
+      cookiesPerSecondAchievement: this.cookiesPerSecondAchievements.map(
+        (achievement) => {
+          let x: SavingType = {
+            id: achievement.id,
+            acquired: achievement.acquired,
+          };
+          return x;
+        }
+      ),
       TotalBuildingsAchievements: this.TotalBuildingsAchievements.map(
         (achievement) => {
           let x: SavingType = {
@@ -1277,9 +1299,27 @@ export default class Clicker {
           return x;
         }
       ),
-      flavoredCookies: this.flavoredCookies,
-      clickingUpgrades: this.clickingUpgrades,
-      kittens: this.kittens,
+      flavoredCookies: this.flavoredCookies.map((flavoredCookie) => {
+        let x: SavingType = {
+          id: flavoredCookie.id,
+          acquired: flavoredCookie.acquired,
+        };
+        return x;
+      }),
+      clickingUpgrades: this.clickingUpgrades.map((clickingUpgrade) => {
+        let x: SavingType = {
+          id: clickingUpgrade.id,
+          acquired: clickingUpgrade.acquired,
+        };
+        return x;
+      }),
+      kittens: this.kittens.map((kitten) => {
+        let x: SavingType = {
+          id: kitten.id,
+          acquired: kitten.acquired,
+        };
+        return x;
+      }),
       grandma: {
         structure: this.grandma.structure,
         structureCost: this.grandma.structureCost,
@@ -1587,12 +1627,43 @@ export default class Clicker {
     this.multiplier = save.multiplier ?? 100;
     this.clickingMultiplier = save.clickingMultiplier ?? 0;
     // Set Achievements
-    this.clickingAchievements =
-      save.clickingAchievements ?? ClickingAchievements;
-    this.TotalCookiesAchievements =
-      save.TotalCookiesAchievements ?? totalCookiesAchievements;
-    this.cookiesPerSecondAchievements =
-      save.cookiesPerSecondAchievement ?? cookiesPerSecondAchievements;
+    this.clickingAchievements = this.clickingAchievements.map((achievement) => {
+      if (save.clickingAchievements) {
+        save.clickingAchievements.forEach((element) => {
+          if (element.id === achievement.id) {
+            achievement.acquired = element.acquired;
+            return achievement;
+          }
+        });
+      }
+      return achievement;
+    });
+    this.TotalCookiesAchievements = this.TotalCookiesAchievements.map(
+      (achievement) => {
+        if (save.TotalCookiesAchievements) {
+          save.TotalCookiesAchievements.forEach((element) => {
+            if (element.id === achievement.id) {
+              achievement.acquired = element.acquired;
+              return achievement;
+            }
+          });
+        }
+        return achievement;
+      }
+    );
+    this.cookiesPerSecondAchievements = this.cookiesPerSecondAchievements.map(
+      (achievement) => {
+        if (save.cookiesPerSecondAchievement) {
+          save.cookiesPerSecondAchievement.forEach((element) => {
+            if (element.id === achievement.id) {
+              achievement.acquired = element.acquired;
+              return achievement;
+            }
+          });
+        }
+        return achievement;
+      }
+    );
     this.TotalBuildingsAchievements = this.TotalBuildingsAchievements.map(
       (achievement) => {
         if (save.TotalBuildingsAchievements) {
@@ -1607,9 +1678,39 @@ export default class Clicker {
       }
     );
     //Upgrade's
-    this.flavoredCookies = save.flavoredCookies ?? [...FlavoredCookies];
-    this.kittens = save.kittens ?? [...KittensUpgrades];
-    this.clickingUpgrades = save.clickingUpgrades ?? [...ClickingUpgrades];
+    this.flavoredCookies = this.flavoredCookies.map((flavoredCookie) => {
+      if (save.flavoredCookies) {
+        save.flavoredCookies.forEach((element) => {
+          if (element.id === flavoredCookie.id) {
+            flavoredCookie.acquired = element.acquired;
+            return flavoredCookie;
+          }
+        });
+      }
+      return flavoredCookie;
+    });
+    this.kittens = this.kittens.map((kitten) => {
+      if (save.kittens) {
+        save.kittens.forEach((element) => {
+          if (element.id === kitten.id) {
+            kitten.acquired = element.acquired;
+            return kitten;
+          }
+        });
+      }
+      return kitten;
+    });
+    this.clickingUpgrades = this.clickingUpgrades.map((clickingUpgrade) => {
+      if (save.clickingUpgrades) {
+        save.clickingUpgrades.forEach((element) => {
+          if (element.id === clickingUpgrade.id) {
+            clickingUpgrade.acquired = element.acquired;
+            return clickingUpgrade;
+          }
+        });
+      }
+      return clickingUpgrade;
+    });
     // Set the Grandma
     this.grandma.structureCost = save.grandma.structureCost;
     this.grandma.structure = save.grandma.structure;

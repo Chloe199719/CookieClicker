@@ -1,1031 +1,127 @@
 {
-  "resource": { "cookies": 188798317333145540 },
-  "lifeTimeCookies": { "cookies": 1159533363565100800 },
+  "resource": { "cookies": 188811062257481400 },
+  "lifeTimeCookies": { "cookies": 1159546108489437000 },
   "lifeTimeCookiesClicking": { "cookies": 68258387210703.34 },
   "multiplier": 191.8386638169919,
   "clickingMultiplier": 0.060000000000000005,
   "clickingAchievements": [
-    {
-      "id": 98,
-      "name": "Clickastic",
-      "description": "Make 1000 cookies from clicking",
-      "condition": 1000,
-      "achievementType": "Baking",
-      "type": "Click",
-      "acquired": true
-    },
-    {
-      "id": 99,
-      "name": "Clickathlon",
-      "description": "Make 100,000 cookies from clicking",
-      "condition": 100000,
-      "achievementType": "Baking",
-      "type": "Click",
-      "acquired": true
-    },
-    {
-      "id": 100,
-      "name": "Clickolympics",
-      "description": "Make 10 Million cookies from clicking",
-      "condition": 10000000,
-      "achievementType": "Baking",
-      "type": "Click",
-      "acquired": true
-    },
-    {
-      "id": 101,
-      "name": "Clickorama",
-      "description": "Make 1 Billion cookies from clicking",
-      "condition": 1000000000,
-      "achievementType": "Baking",
-      "type": "Click",
-      "acquired": true
-    },
-    {
-      "id": 102,
-      "name": "Clickasmic",
-      "description": "Make 100 Billion cookies from clicking",
-      "condition": 100000000000,
-      "achievementType": "Baking",
-      "type": "Click",
-      "acquired": true
-    },
-    {
-      "id": 103,
-      "name": "Clickageddon",
-      "description": "Make 10 Trillion cookies from clicking",
-      "condition": 10000000000000,
-      "achievementType": "Baking",
-      "type": "Click",
-      "acquired": true
-    },
-    {
-      "id": 104,
-      "name": "Clicknarok",
-      "description": "Make 1 Quadrillion cookies from clicking",
-      "condition": 1000000000000000,
-      "achievementType": "Baking",
-      "type": "Click",
-      "acquired": false
-    },
-    {
-      "id": 105,
-      "name": "Clickastrophe",
-      "description": "Make 100 Quadrillion cookies from clicking",
-      "condition": 100000000000000000,
-      "achievementType": "Baking",
-      "type": "Click",
-      "acquired": false
-    },
-    {
-      "id": 106,
-      "name": "Clickataclysm",
-      "description": "Make 10 Quintillion cookies from clicking",
-      "condition": 10000000000000000000,
-      "achievementType": "Baking",
-      "type": "Click",
-      "acquired": false
-    },
-    {
-      "id": 107,
-      "name": "The Ultimate clickdown",
-      "description": "Make 1 Sextillion cookies from clicking",
-      "condition": 1e21,
-      "achievementType": "Baking",
-      "type": "Click",
-      "acquired": false
-    },
-    {
-      "id": 108,
-      "name": "All the other kids with the pumped up clicks",
-      "description": "Make 100 Sextillion cookies from clicking",
-      "condition": 1e23,
-      "achievementType": "Baking",
-      "type": "Click",
-      "acquired": false
-    },
-    {
-      "id": 109,
-      "name": "One...more...click...",
-      "description": "Make 10 Septillion cookies from clicking",
-      "condition": 1e25,
-      "achievementType": "Baking",
-      "type": "Click",
-      "acquired": false
-    },
-    {
-      "id": 110,
-      "name": "Neverclick",
-      "description": "Make 1 octillion cookies from clicking",
-      "condition": 1e27,
-      "achievementType": "Baking",
-      "type": "Click",
-      "acquired": false
-    },
-    {
-      "id": 111,
-      "name": "Click Deity",
-      "description": "Make 100 octillion cookies from clicking",
-      "condition": 1e29,
-      "achievementType": "Baking",
-      "type": "Click",
-      "acquired": false
-    },
-    {
-      "id": 112,
-      "name": "Clickerator",
-      "description": "Make 10 Nonillion cookies from clicking",
-      "condition": 1e31,
-      "achievementType": "Baking",
-      "type": "Click",
-      "acquired": false
-    }
+    { "id": 98, "acquired": true },
+    { "id": 99, "acquired": true },
+    { "id": 100, "acquired": true },
+    { "id": 101, "acquired": true },
+    { "id": 102, "acquired": true },
+    { "id": 103, "acquired": true },
+    { "id": 104, "acquired": false },
+    { "id": 105, "acquired": false },
+    { "id": 106, "acquired": false },
+    { "id": 107, "acquired": false },
+    { "id": 108, "acquired": false },
+    { "id": 109, "acquired": false },
+    { "id": 110, "acquired": false },
+    { "id": 111, "acquired": false },
+    { "id": 112, "acquired": false }
   ],
   "TotalCookiesAchievements": [
-    {
-      "id": 0,
-      "name": "Wake and bake",
-      "description": "Make 1 cookie",
-      "condition": 1,
-      "acquired": true,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 1,
-      "name": "Making some dough",
-      "description": "Make 1000 cookies",
-      "condition": 1000,
-      "acquired": true,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 2,
-      "name": "So baked right now",
-      "description": "Make 100,000 cookies",
-      "condition": 100000,
-      "acquired": true,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 3,
-      "name": "Fledgling bakery",
-      "description": "Make 1,000,000 cookies",
-      "condition": 1000000,
-      "acquired": true,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 4,
-      "name": "Affluent bakery",
-      "description": "Make 100 Million cookies",
-      "condition": 100000000,
-      "acquired": true,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 5,
-      "name": "World-famous bakery",
-      "description": "Bake  1 Billion cookies",
-      "condition": 1000000000,
-      "acquired": true,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 6,
-      "name": "Cosmic bakery",
-      "description": "Bake 100 Billion cookies",
-      "condition": 100000000000,
-      "acquired": true,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 7,
-      "name": "Galactic bakery",
-      "description": "Bake 1 Trillion cookies",
-      "condition": 1000000000000,
-      "acquired": true,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 8,
-      "name": "Universal bakery",
-      "description": "Bake 100 Trillion cookies",
-      "condition": 100000000000000,
-      "acquired": true,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 9,
-      "name": "Timeless bakery",
-      "description": "Bake 1 Quadrillion cookies",
-      "condition": 1000000000000000,
-      "acquired": true,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 10,
-      "name": "Infinite bakery",
-      "description": "Bake 100 Quadrillion cookies",
-      "condition": 100000000000000000,
-      "acquired": true,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 11,
-      "name": "Immortal bakery",
-      "description": "Bake 1 Quintillion cookies",
-      "condition": 1000000000000000000,
-      "acquired": true,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 12,
-      "name": "Don't stop me now",
-      "description": "Bake 100 Quintillion cookies",
-      "condition": 100000000000000000000,
-      "acquired": false,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 13,
-      "name": "You can stop now",
-      "description": "Bake 1 Sextillion cookies",
-      "condition": 1e21,
-      "acquired": false,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 14,
-      "name": "Cookies all the way down",
-      "description": "Bake 100 Sextillion cookies",
-      "condition": 1e23,
-      "acquired": false,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 15,
-      "name": "Overdose",
-      "description": "Bake 1 Septillion cookies",
-      "condition": 1e24,
-      "acquired": false,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 16,
-      "name": "How?",
-      "description": "Bake 100 Septillion cookies",
-      "condition": 1e26,
-      "acquired": false,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 17,
-      "name": "The Land of Milk and Cookies",
-      "description": "Bake 1 Octillion cookies",
-      "condition": 1e27,
-      "acquired": false,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 18,
-      "name": "He who controls the cookies controls the universe",
-      "description": "Bake 100 Octillion cookies",
-      "condition": 1e29,
-      "acquired": false,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 19,
-      "name": "Tonight on Hoarders",
-      "description": "Bake 1 Nonillion cookies",
-      "condition": 1e30,
-      "acquired": false,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 20,
-      "name": "Are you gonna eat all that?",
-      "description": "Bake 100 Nonillion cookies",
-      "condition": 1e32,
-      "acquired": false,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 21,
-      "name": "We're gonna need a bigger bakery",
-      "description": "Bake 1 Decillion cookies",
-      "condition": 1e33,
-      "acquired": false,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 22,
-      "name": "In the mouth of madness",
-      "description": "Bake 100 Decillion cookies",
-      "condition": 1e35,
-      "acquired": false,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 23,
-      "name": "Bought to you by the letters 🍪",
-      "description": "Bake 1 Undecillion cookies",
-      "condition": 1e36,
-      "acquired": false,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 24,
-      "name": "The dreams in which I'm baking are the best I've ever had",
-      "description": "Bake 100 Undecillion cookies",
-      "condition": 1e38,
-      "acquired": false,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 25,
-      "name": "Set for life",
-      "description": "Bake 1 Duodecillion cookies",
-      "condition": 1e39,
-      "acquired": false,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 26,
-      "name": "Panic! at Nabisco",
-      "description": "Bake 100 Duodecillion cookies",
-      "condition": 1e41,
-      "acquired": false,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 27,
-      "name": "Bursting at the seams",
-      "description": "Bake 1 Tredecillion cookies",
-      "condition": 1e42,
-      "acquired": false,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 28,
-      "name": "Just about full",
-      "description": "Bake 100 Tredecillion cookies",
-      "condition": 1e44,
-      "acquired": false,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 29,
-      "name": "Hungry for more",
-      "description": "Bake 1 Quattuordecillion cookies",
-      "condition": 1e45,
-      "acquired": false,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 30,
-      "name": "Feed me Chloe",
-      "description": "Bake 100 Quattuordecillion cookies",
-      "condition": 1e47,
-      "acquired": false,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 31,
-      "name": "And then what?",
-      "description": "Bake 1 Quindecillion cookies",
-      "condition": 1e48,
-      "acquired": false,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 32,
-      "name": "I think its's safe to say you've got made",
-      "description": "Bake 100 Quindecillion cookies",
-      "condition": 1e50,
-      "acquired": false,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 33,
-      "name": "A Sometimes Food",
-      "description": "Bake 1 Sexdecillion cookies",
-      "condition": 1e51,
-      "acquired": false,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 34,
-      "name": "Not enough of a good thing",
-      "description": "Bake 100 Sexdecillion cookies",
-      "condition": 1e53,
-      "acquired": false,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 35,
-      "name": "Horn of plenty",
-      "description": "Bake 1 Septendecillion cookies",
-      "condition": 1e54,
-      "acquired": false,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 36,
-      "name": "Large and in charge",
-      "description": "Bake 100 Septendecillion cookies",
-      "condition": 1e56,
-      "acquired": false,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 37,
-      "name": "Absolutely stuffed",
-      "description": "Bake 1 Octodecillion cookies",
-      "condition": 1e57,
-      "acquired": false,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 38,
-      "name": "It's only wafer-thin",
-      "description": "Bake 100 Octodecillion cookies",
-      "condition": 1e59,
-      "acquired": false,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 39,
-      "name": "Think big",
-      "description": "Bake 1 Novemdecillion cookies",
-      "condition": 1e60,
-      "acquired": false,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 40,
-      "name": "Hypersize me",
-      "description": "Bake 100 Novemdecillion cookies",
-      "condition": 1e62,
-      "acquired": false,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 41,
-      "name": "Max Capacity",
-      "description": "Bake 1 Vigintillion cookies",
-      "condition": 1e63,
-      "acquired": false,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 42,
-      "name": "Fake it till you bake it",
-      "description": "Bake 100 Vigintillion cookies",
-      "condition": 1e65,
-      "acquired": false,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 43,
-      "name": "History in the baking",
-      "description": "Bake 1 unvigintillion cookies",
-      "condition": 1e66,
-      "acquired": false,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 44,
-      "name": "What do you get for the baker who was everything",
-      "description": "Bake 100 unvigintillion cookies",
-      "condition": 1e68,
-      "acquired": false,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 45,
-      "name": "Bottomless pit",
-      "description": "Bake 1 Duovigintillion cookies",
-      "condition": 1e69,
-      "acquired": false,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 46,
-      "name": "Rainy day fund",
-      "description": "Bake 100 Duovigintillion cookies",
-      "condition": 1e71,
-      "acquired": false,
-      "type": "Total",
-      "achievementType": "Baking"
-    },
-    {
-      "id": 47,
-      "name": "And a litle bit more",
-      "description": "Bake 1 Tresvigintillion cookies",
-      "condition": 1e73,
-      "acquired": false,
-      "type": "Total",
-      "achievementType": "Baking"
-    }
+    { "id": 0, "acquired": true },
+    { "id": 1, "acquired": true },
+    { "id": 2, "acquired": true },
+    { "id": 3, "acquired": true },
+    { "id": 4, "acquired": true },
+    { "id": 5, "acquired": true },
+    { "id": 6, "acquired": true },
+    { "id": 7, "acquired": true },
+    { "id": 8, "acquired": true },
+    { "id": 9, "acquired": true },
+    { "id": 10, "acquired": true },
+    { "id": 11, "acquired": true },
+    { "id": 12, "acquired": false },
+    { "id": 13, "acquired": false },
+    { "id": 14, "acquired": false },
+    { "id": 15, "acquired": false },
+    { "id": 16, "acquired": false },
+    { "id": 17, "acquired": false },
+    { "id": 18, "acquired": false },
+    { "id": 19, "acquired": false },
+    { "id": 20, "acquired": false },
+    { "id": 21, "acquired": false },
+    { "id": 22, "acquired": false },
+    { "id": 23, "acquired": false },
+    { "id": 24, "acquired": false },
+    { "id": 25, "acquired": false },
+    { "id": 26, "acquired": false },
+    { "id": 27, "acquired": false },
+    { "id": 28, "acquired": false },
+    { "id": 29, "acquired": false },
+    { "id": 30, "acquired": false },
+    { "id": 31, "acquired": false },
+    { "id": 32, "acquired": false },
+    { "id": 33, "acquired": false },
+    { "id": 34, "acquired": false },
+    { "id": 35, "acquired": false },
+    { "id": 36, "acquired": false },
+    { "id": 37, "acquired": false },
+    { "id": 38, "acquired": false },
+    { "id": 39, "acquired": false },
+    { "id": 40, "acquired": false },
+    { "id": 41, "acquired": false },
+    { "id": 42, "acquired": false },
+    { "id": 43, "acquired": false },
+    { "id": 44, "acquired": false },
+    { "id": 45, "acquired": false },
+    { "id": 46, "acquired": false },
+    { "id": 47, "acquired": false }
   ],
   "cookiesPerSecondAchievement": [
-    {
-      "id": 48,
-      "name": "Casual baking",
-      "description": "Produce 1 cookie per second.",
-      "type": "Generation",
-      "condition": 1,
-      "acquired": true,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 49,
-      "name": "Hardcore baking",
-      "description": "Produce 10 cookies per second.",
-      "type": "Generation",
-      "condition": 10,
-      "acquired": true,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 50,
-      "name": "Steady tasty stream",
-      "description": "Produce 100 cookies per second.",
-      "type": "Generation",
-      "condition": 100,
-      "acquired": true,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 51,
-      "name": "Cookie monster",
-      "description": "Produce 1,000 cookies per second.",
-      "type": "Generation",
-      "condition": 1000,
-      "acquired": true,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 52,
-      "name": "Mass producer",
-      "description": "Produce 10,000 cookies per second.",
-      "type": "Generation",
-      "condition": 10000,
-      "acquired": true,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 53,
-      "name": "Cookie vortex",
-      "description": "Produce 1 million cookies per second.",
-      "type": "Generation",
-      "condition": 1000000,
-      "acquired": true,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 54,
-      "name": "Cookie pulsar",
-      "description": "Produce 10 million cookies per second.",
-      "type": "Generation",
-      "condition": 10000000,
-      "acquired": true,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 55,
-      "name": "Cookie quasar",
-      "description": "Produce 100 million cookies per second.",
-      "type": "Generation",
-      "condition": 100000000,
-      "acquired": true,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 56,
-      "name": "Oh hey, you're still here",
-      "description": "Produce 1 billion cookies per second.",
-      "type": "Generation",
-      "condition": 1000000000,
-      "acquired": true,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 57,
-      "name": "Let's never bake again",
-      "description": "Produce 10 billion cookies per second.",
-      "type": "Generation",
-      "condition": 10000000000,
-      "acquired": true,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 58,
-      "name": "A word filed with cookies",
-      "description": "Produce 1 trillion cookies per second.",
-      "type": "Generation",
-      "condition": 1000000000000,
-      "acquired": true,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 59,
-      "name": "When this baby hits 36 Quadrillion cookies per hour",
-      "description": "Produce 10 trillion cookies per second.",
-      "type": "Generation",
-      "condition": 10000000000000,
-      "acquired": false,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 60,
-      "name": "Fast and delicious",
-      "description": "Produce 100 trillion cookies per second.",
-      "type": "Generation",
-      "condition": 100000000000000,
-      "acquired": false,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 61,
-      "name": "Cookiehertz : a really, really tasty hertz",
-      "description": "Produce 1 quadrillion cookies per second.",
-      "type": "Generation",
-      "condition": 1000000000000000,
-      "acquired": false,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 62,
-      "name": "Woops, you solved world hunger (no, not really)",
-      "description": "Produce 10 quadrillion cookies per second.",
-      "type": "Generation",
-      "condition": 10000000000000000,
-      "acquired": false,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 63,
-      "name": "Gotta bake them all!",
-      "description": "Produce 1 quintillion cookies per second.",
-      "type": "Generation",
-      "condition": 1000000000000000000,
-      "acquired": false,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 64,
-      "name": "Bake me, maybe?",
-      "description": "Produce 10 quintillion cookies per second.",
-      "type": "Generation",
-      "condition": 10000000000000000000,
-      "acquired": false,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 65,
-      "name": "Cookie production accellerator",
-      "description": "Produce 100 quintillion cookies per second.",
-      "type": "Generation",
-      "condition": 100000000000000000000,
-      "acquired": false,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 66,
-      "name": "The Abakening",
-      "description": "Produce 1 sextillion cookies per second.",
-      "type": "Generation",
-      "condition": 1e21,
-      "acquired": false,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 67,
-      "name": "There's really no hard limit to how long these achievement names can be and to be quite honest I'm rather curious to see how far we can go.\n    Adolphus W. Green (1844–1917) started as the Principal of the Groton School in 1864. By 1865, he became second assistant librarian at the New York Mercantile Library; from 1867 to 1869, he was promoted to full librarian. From 1869 to 1873, he worked for Evarts, Southmayd & Choate, a law firm co-founded by William M. Evarts, Charles Ferdinand Southmayd and Joseph Hodges Choate. He was admitted to the New York State Bar Association in 1873.\n    Anyway, how's your day been?",
-      "description": "Produce 10 sextillion cookies per second.",
-      "type": "Generation",
-      "condition": 1e22,
-      "acquired": false,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 68,
-      "name": "Fast",
-      "description": "Produce 1 septillion cookies per second.",
-      "type": "Generation",
-      "condition": 1e24,
-      "acquired": false,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 69,
-      "name": "Knead for speed",
-      "description": "Produce 10 septillion cookies per second.",
-      "type": "Generation",
-      "condition": 1e25,
-      "acquired": false,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 70,
-      "name": "Cookie speed baking III",
-      "description": "Produce 100 septillion cookies per second.",
-      "type": "Generation",
-      "condition": 1e26,
-      "acquired": false,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 71,
-      "name": "Cookiehertz, the grand one",
-      "description": "Produce 1 octillion cookies per second.",
-      "type": "Generation",
-      "condition": 1e27,
-      "acquired": false,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 72,
-      "name": "Ludicrous speed",
-      "description": "Produce 10 octillion cookies per second.",
-      "type": "Generation",
-      "condition": 1e28,
-      "acquired": false,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 73,
-      "name": "I'm too old for this",
-      "description": "Produce 1 nonillion cookies per second.",
-      "type": "Generation",
-      "condition": 1e30,
-      "acquired": false,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 74,
-      "name": "Spacetime jigamaroo",
-      "description": "Produce 10 nonillion cookies per second.",
-      "type": "Generation",
-      "condition": 1e31,
-      "acquired": false,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 75,
-      "name": "This took forever",
-      "description": "Produce 100 nonillion cookies per second.",
-      "type": "Generation",
-      "condition": 1e32,
-      "acquired": false,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 76,
-      "name": "GAS GAS GAS",
-      "description": "Produce 1 decillion cookies per second.",
-      "type": "Generation",
-      "condition": 1e33,
-      "acquired": false,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 77,
-      "name": "Green cookies sleep furiously",
-      "description": "Produce 10 decillion cookies per second.",
-      "type": "Generation",
-      "condition": 1e34,
-      "acquired": false,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 78,
-      "name": "Leisurely pace",
-      "description": "Produce 1 undecillion cookies per second.",
-      "type": "Generation",
-      "condition": 1e36,
-      "acquired": false,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 79,
-      "name": "Hypersonic",
-      "description": "Produce 10 undecillion cookies per second.",
-      "type": "Generation",
-      "condition": 1e37,
-      "acquired": false,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 80,
-      "name": "Gotta go fast",
-      "description": "Produce 100 undecillion cookies per second.",
-      "type": "Generation",
-      "condition": 1e38,
-      "acquired": false,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 81,
-      "name": "Bake him away, toys",
-      "description": "Produce 1 duodecillion cookies per second.",
-      "type": "Generation",
-      "condition": 1e39,
-      "acquired": false,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 82,
-      "name": "You're  #1 so why try harder",
-      "description": "Produce 10 duodecillion cookies per second.",
-      "type": "Generation",
-      "condition": 1e40,
-      "acquired": false,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 83,
-      "name": "Collecting these is like growing plants",
-      "description": "Produce 100 duodecillion cookies per second.",
-      "type": "Generation",
-      "condition": 1e41,
-      "acquired": false,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 84,
-      "name": "Havent even begun to peak",
-      "description": "Produce 1 tredecillion cookies per second.",
-      "type": "Generation",
-      "condition": 1e42,
-      "acquired": false,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 85,
-      "name": "What did we even eat before cookies?",
-      "description": "Produce 10 tredecillion cookies per second.",
-      "type": "Generation",
-      "condition": 1e43,
-      "acquired": false,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 86,
-      "name": "Heavy flow",
-      "description": "Produce 100 tredecillion cookies per second.",
-      "type": "Generation",
-      "condition": 1e44,
-      "acquired": false,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 87,
-      "name": "More you say?",
-      "description": "Produce 1 quattuordecillion cookies per second.",
-      "type": "Generation",
-      "condition": 1e45,
-      "acquired": false,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 88,
-      "name": "Keep going until i say stop",
-      "description": "Produce 10 quattuordecillion cookies per second.",
-      "type": "Generation",
-      "condition": 1e46,
-      "acquired": false,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 89,
-      "name": "But i didn't say stop, did i?",
-      "description": "Produce 1 quindecillion cookies per second.",
-      "type": "Generation",
-      "condition": 1e48,
-      "acquired": false,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 90,
-      "name": "Click delegate",
-      "description": "Produce 10 quindecillion cookies per second.",
-      "type": "Generation",
-      "condition": 1e49,
-      "acquired": false,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 91,
-      "name": "Yes I love technology",
-      "description": "Produce 100 quindecillion cookies per second.",
-      "type": "Generation",
-      "condition": 1e50,
-      "acquired": false,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 92,
-      "name": "System.out.println('More')",
-      "description": "Produce 1 sexdecillion cookies per second.",
-      "type": "Generation",
-      "condition": 1e51,
-      "acquired": false,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 93,
-      "name": "i'll rest when i'm dead",
-      "description": "Produce 10 sexdecillion cookies per second.",
-      "type": "Generation",
-      "condition": 1e52,
-      "acquired": false,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 94,
-      "name": "Can we get much higher?",
-      "description": "Produce 100 sexdecillion cookies per second.",
-      "type": "Generation",
-      "condition": 1e53,
-      "acquired": false,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 95,
-      "name": "And then what?",
-      "description": "Produce 1 septendecillion cookies per second.",
-      "type": "Generation",
-      "condition": 1e54,
-      "acquired": false,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 96,
-      "name": "Grandma needs a new pair of shoes",
-      "description": "Produce 10 septendecillion cookies per second.",
-      "type": "Generation",
-      "condition": 1e55,
-      "acquired": false,
-      "achievementType": "Baking"
-    },
-    {
-      "id": 97,
-      "name": "Speed's the name of the game (no it's not it's called Cookie Clicker)",
-      "description": "Produce 100 septendecillion cookies per second.",
-      "type": "Generation",
-      "condition": 1e56,
-      "acquired": false,
-      "achievementType": "Baking"
-    }
+    { "id": 48, "acquired": true },
+    { "id": 49, "acquired": true },
+    { "id": 50, "acquired": true },
+    { "id": 51, "acquired": true },
+    { "id": 52, "acquired": true },
+    { "id": 53, "acquired": true },
+    { "id": 54, "acquired": true },
+    { "id": 55, "acquired": true },
+    { "id": 56, "acquired": true },
+    { "id": 57, "acquired": true },
+    { "id": 58, "acquired": true },
+    { "id": 59, "acquired": false },
+    { "id": 60, "acquired": false },
+    { "id": 61, "acquired": false },
+    { "id": 62, "acquired": false },
+    { "id": 63, "acquired": false },
+    { "id": 64, "acquired": false },
+    { "id": 65, "acquired": false },
+    { "id": 66, "acquired": false },
+    { "id": 67, "acquired": false },
+    { "id": 68, "acquired": false },
+    { "id": 69, "acquired": false },
+    { "id": 70, "acquired": false },
+    { "id": 71, "acquired": false },
+    { "id": 72, "acquired": false },
+    { "id": 73, "acquired": false },
+    { "id": 74, "acquired": false },
+    { "id": 75, "acquired": false },
+    { "id": 76, "acquired": false },
+    { "id": 77, "acquired": false },
+    { "id": 78, "acquired": false },
+    { "id": 79, "acquired": false },
+    { "id": 80, "acquired": false },
+    { "id": 81, "acquired": false },
+    { "id": 82, "acquired": false },
+    { "id": 83, "acquired": false },
+    { "id": 84, "acquired": false },
+    { "id": 85, "acquired": false },
+    { "id": 86, "acquired": false },
+    { "id": 87, "acquired": false },
+    { "id": 88, "acquired": false },
+    { "id": 89, "acquired": false },
+    { "id": 90, "acquired": false },
+    { "id": 91, "acquired": false },
+    { "id": 92, "acquired": false },
+    { "id": 93, "acquired": false },
+    { "id": 94, "acquired": false },
+    { "id": 95, "acquired": false },
+    { "id": 96, "acquired": false },
+    { "id": 97, "acquired": false }
   ],
   "TotalBuildingsAchievements": [
     { "id": 1000, "acquired": true },
@@ -1758,7 +854,7 @@
   "grandma": {
     "structure": 210,
     "structureCost": { "cookies": 557887298988361.94 },
-    "lifeTimeCookiesBuilding": { "cookies": 172235506333.69852 },
+    "lifeTimeCookiesBuilding": { "cookies": 172236392525.2428 },
     "grandmaUpgrades": [
       { "id": "16", "acquired": true },
       { "id": "17", "acquired": true },
@@ -1804,7 +900,7 @@
   "autoClicker": {
     "structure": 230,
     "structureCost": { "cookies": 1369602500991408 },
-    "lifeTimeCookiesBuilding": { "cookies": 3573613748493284.5 },
+    "lifeTimeCookiesBuilding": { "cookies": 3573634221891681.5 },
     "cursorUpgrades": [
       { "id": "1", "acquired": true },
       { "id": "2", "acquired": true },
@@ -1845,7 +941,7 @@
   "farm": {
     "structure": 200,
     "structureCost": { "cookies": 1516913288545157.2 },
-    "lifeTimeCookiesBuilding": { "cookies": 580343811504.7025 },
+    "lifeTimeCookiesBuilding": { "cookies": 580347187472.4897 },
     "farmUpgrades": [
       { "id": "31", "acquired": true },
       { "id": "32", "acquired": true },
@@ -1888,7 +984,7 @@
   "mine": {
     "structure": 170,
     "structureCost": { "cookies": 249927535193403.3 },
-    "lifeTimeCookiesBuilding": { "cookies": 3442470222344.656 },
+    "lifeTimeCookiesBuilding": { "cookies": 3442487081083.7935 },
     "mineUpgrades": [
       { "id": "46", "acquired": true },
       { "id": "47", "acquired": true },
@@ -1931,7 +1027,7 @@
   "factory": {
     "structure": 150,
     "structureCost": { "cookies": 165431956248453.53 },
-    "lifeTimeCookiesBuilding": { "cookies": 14766769285324.65 },
+    "lifeTimeCookiesBuilding": { "cookies": 14766851574539.467 },
     "factoryUpgrades": [
       { "id": "61", "acquired": true },
       { "id": "62", "acquired": true },
@@ -1974,7 +1070,7 @@
   "bank": {
     "structure": 150,
     "structureCost": { "cookies": 1781574913444884.2 },
-    "lifeTimeCookiesBuilding": { "cookies": 57438631674487.98 },
+    "lifeTimeCookiesBuilding": { "cookies": 57439074770260.05 },
     "bankUpgrades": [
       { "id": "76", "acquired": true },
       { "id": "77", "acquired": true },
@@ -2017,7 +1113,7 @@
   "temple": {
     "structure": 110,
     "structureCost": { "cookies": 95015057292527.22 },
-    "lifeTimeCookiesBuilding": { "cookies": 154135730187243.12 },
+    "lifeTimeCookiesBuilding": { "cookies": 154136635368606.1 },
     "templeUpgrades": [
       { "id": "91", "acquired": true },
       { "id": "92", "acquired": true },
@@ -2060,7 +1156,7 @@
   "wizardTower": {
     "structure": 100,
     "structureCost": { "cookies": 387523438731092.2 },
-    "lifeTimeCookiesBuilding": { "cookies": 764899606082959.5 },
+    "lifeTimeCookiesBuilding": { "cookies": 764904332437862 },
     "wizardTowerUpgrades": [
       { "id": "106", "acquired": true },
       { "id": "107", "acquired": true },
@@ -2103,7 +1199,7 @@
   "shipment": {
     "structure": 70,
     "structureCost": { "cookies": 90452172198023.14 },
-    "lifeTimeCookiesBuilding": { "cookies": 1690229999584419.2 },
+    "lifeTimeCookiesBuilding": { "cookies": 1690239599992814.2 },
     "shipmentUpgrades": [
       { "id": "121", "acquired": true },
       { "id": "122", "acquired": true },
@@ -2146,7 +1242,7 @@
   "alchemyLab": {
     "structure": 50,
     "structureCost": { "cookies": 81274308118796.5 },
-    "lifeTimeCookiesBuilding": { "cookies": 5180873769631220 },
+    "lifeTimeCookiesBuilding": { "cookies": 5180915969228565 },
     "alchemyLabUpgrades": [
       { "id": "136", "acquired": true },
       { "id": "137", "acquired": true },
@@ -2188,7 +1284,7 @@
   "portal": {
     "structure": 50,
     "structureCost": { "cookies": 1083657441583953.4 },
-    "lifeTimeCookiesBuilding": { "cookies": 13235685710359428 },
+    "lifeTimeCookiesBuilding": { "cookies": 13235949457842810 },
     "portalUpgrades": [
       { "id": "150", "acquired": true },
       { "id": "151", "acquired": true },
@@ -2231,7 +1327,7 @@
   "timeMachine": {
     "structure": 40,
     "structureCost": { "cookies": 3750089647285835.5 },
-    "lifeTimeCookiesBuilding": { "cookies": 69616395206571670 },
+    "lifeTimeCookiesBuilding": { "cookies": 69617080950028456 },
     "timeMachineUpgrades": [
       { "id": "165", "acquired": true },
       { "id": "166", "acquired": true },
@@ -2273,7 +1369,7 @@
   "antimatterCondenser": {
     "structure": 20,
     "structureCost": { "cookies": 2782311356800835 },
-    "lifeTimeCookiesBuilding": { "cookies": 167694434785839520 },
+    "lifeTimeCookiesBuilding": { "cookies": 167695568900018020 },
     "antimatterCondenserUpgrades": [
       { "id": "1", "acquired": true },
       { "id": "2", "acquired": true },
@@ -2316,7 +1412,7 @@
   "prism": {
     "structure": 15,
     "structureCost": { "cookies": 17087829421240876 },
-    "lifeTimeCookiesBuilding": { "cookies": 433096855014213000 },
+    "lifeTimeCookiesBuilding": { "cookies": 433102591521976640 },
     "prismUpgrades": [
       { "id": "1", "acquired": true },
       { "id": "2", "acquired": true },
@@ -2359,7 +1455,7 @@
   "chancemaker": {
     "structure": 7,
     "structureCost": { "cookies": 69160516892187464 },
-    "lifeTimeCookiesBuilding": { "cookies": 363981528015059900 },
+    "lifeTimeCookiesBuilding": { "cookies": 363986374375067000 },
     "chancemakerUpgrades": [
       { "id": "1200", "acquired": false },
       { "id": "1201", "acquired": false },

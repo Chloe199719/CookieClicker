@@ -6,12 +6,12 @@ export interface SaveType {
   lifeTimeCookiesClicking: Resource;
   multiplier: number;
   clickingMultiplier: number;
-  clickingUpgrades: UpgradeType[];
-  flavoredCookies: UpgradeType[];
-  kittens: UpgradeType[];
-  clickingAchievements: AchievementType[];
-  TotalCookiesAchievements: AchievementType[];
-  cookiesPerSecondAchievement: AchievementType[];
+  clickingUpgrades: SavingType[];
+  flavoredCookies: SavingType[];
+  kittens: SavingType[];
+  clickingAchievements: SavingType[];
+  TotalCookiesAchievements: SavingType[];
+  cookiesPerSecondAchievement: SavingType[];
   TotalBuildingsAchievements: SavingType[];
   grandma: {
     structure: number;
