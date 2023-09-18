@@ -503,6 +503,7 @@ export default class Clicker {
     });
     this.milk = milk;
     this.earnedAchievements = milk / 4;
+    this.calculateMilkMultiplier();
   }
   //Get Achievement List
   public getAchievementList(): AchievementType[] {
