@@ -16,7 +16,7 @@ type Props = {
 function upgrade({ game, setState }: Props) {
   const numbers = NumberFormatter;
   return (
-    <div className="grid grid-cols-6 p-5  gap-1 bg-gray-900 dark:bg-gray-800  place-items-center">
+    <div className="grid grid-cols-6 p-5  gap-2 bg-gray-900 dark:bg-gray-800  place-items-center">
       {game.getPossibleUpgradeList().map((upgrade) => {
         return (
           <TooltipProvider key={upgrade.id}>
@@ -28,7 +28,7 @@ function upgrade({ game, setState }: Props) {
                     setState((prevState) => !prevState);
                   }
                 }}
-                className=" p-2 border-4 border-amber-400 hover:border-amber-500 hover:rounded-md cursor-pointer"
+                className="w-16 h-16 flex justify-center items-center p-2 border-4 border-amber-400 hover:border-amber-500 hover:rounded-md cursor-pointer"
               >
                 <CookieIcon type={upgrade.type} />
               </TooltipTrigger>
