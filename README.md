@@ -32,7 +32,7 @@ Welcome to the Cookie Clicker game repository. This game is all about clicking c
    cd CookieClicker
    ```
 
-3. Install Depenecies:
+3. Install Dependencies:
 
    ```bash
    yarn install
@@ -53,8 +53,6 @@ Welcome to the Cookie Clicker game repository. This game is all about clicking c
 ## Screenshots
 
 ![Screenshot 1](https://cdn.discordapp.com/attachments/1054197800545570836/1140460626343362662/image.png)
-
-
 
 ## Contribute
 
