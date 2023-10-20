@@ -19,7 +19,7 @@ function upgrade({ game, setState }: Props) {
     <div className="grid grid-cols-6 p-5  gap-2 bg-gray-900 dark:bg-gray-800  place-items-center">
       {game.getPossibleUpgradeList().map((upgrade) => {
         return (
-          <TooltipProvider key={upgrade.id}>
+          <TooltipProvider key={upgrade.name}>
             <Tooltip>
               <TooltipTrigger
                 onClick={() => {
